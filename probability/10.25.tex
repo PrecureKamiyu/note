@@ -1,0 +1,72 @@
+\documentclass[a4paper, 10pt]{ctexart} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片用的
+\usepackage{hyperref}           %用来生成一些可跳转的标签
+\usepackage{amsfonts}           %对某一些字体之支持
+\usepackage{amsmath}            %数学公式
+\usepackage{amsthm}             %定义, 定理, 证明, 例子这些环境的支持
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %用来插入图片
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage[]{color}            %用来给部分文本上色的
+\usepackage{algorithm}          %用来写伪代码的
+\usepackage{algorithmic}        %同上
+%\usepackage{minted}
+\usepackage{amssymb}            %用来加入一些数学符号, 比如说 $\varnothing$
+%\usepackage{fontspec}           %不知道用来干嘛的
+%\setmonofont{Ubuntu Mono}       %?
+%\usemintedstyle{custommanni}    %设置minted插入代码的风格
+
+\newtheorem{theorem}{定理}
+\newtheorem{example}{Example}
+\newtheorem{definition}{定义}
+\newtheorem{lemma}{引理}
+\title{六章}
+\author{mhx}
+\begin{document}
+\section{总体和样本}
+blahblah, 一堆扯淡, 我们说 $X$ 是一个随机变量, 我可以将其视为 总体. 
+我们进行 $n$ 次的抽样, 能够得到 $n$ 个随机变量 $\left\{X_n\right\}$ , 这个东西, 这个集合, 这个向量, 就称为是一个样本. 然后
+向量 $\left(x_1,x_2,\cdots , x_n\right)$ 称为是样本的一个观察值, 称为样本值. 然后随机向量 $\left(X_1, \cdots , X_n\right)$ 的分布就称为是样本的分布. 
+
+$\mathbf{definition}$ 随机向量 $\left(X_1, \cdots ,X_n\right)$ 是总体的一个样本. 
+
+$\mathbf{definition}$ 一个 $n$ 维向量 $\left(x_1, \cdots ,x_n\right)$ 是样本值. 
+
+我们平常中的抽样基本都是独立的, 当然独立好啊, 并且还是同分布的. 
+
+这样的抽样称为简单随机抽样. 
+
+$\mathbf{definition}$  随机向量 $\mathbf{X}$ 各个分量相互独立且同分布.
+
+这样就有 
+
+
+
+$$P(X=x_1, \cdots ,X_n = x_n) = \prod _{i=1}^{n} P\left(X_{i} = x_{i}\right)$$
+
+\section{直方图的画法}
+什么几把.
+\section{$\chi^{2}$, $t$, $F$分布}
+艹直接给出定义. 
+$\mathbf{definition}$ : 
+
+$$\chi^{2}\left(n\right) \sim \sum_{i=1}^{n}X^{2}_{i}$$
+
+其中 $X \sim N \left(0, 1\right)$
+
+$\mathbf{definition}$
+
+$$t\left(n\right) \sim \frac{X}{\sqrt{Y / n}}$$
+
+其中 $X\sim N\left(0,1\right) , Y \sim \chi ^{2} \left(n\right)$
+
+$\mathbf{definition}$
+
+$$F\left(n_1, n_2\right) \sim \frac{\chi^{2}\left(n_1 \right)}{\chi ^{2}\left(n_2\right)}$$
+
+\end{document}

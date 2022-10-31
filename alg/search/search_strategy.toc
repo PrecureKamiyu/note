@@ -1,0 +1,12 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}深度优先搜索和广度优先搜索}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}BFS}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}DFS}{3}{section.1.2}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}搜索的优化}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}爬山法}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Best-First 搜索}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}分支界限}{6}{section.2.3}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}剪枝方法与人员安排问题}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}问题定义}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}算法的优化: 针对代价矩阵做出的优化}{7}{section.3.2}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}旅行商问题}{9}{chapter.4}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}A*算法}{11}{chapter.5}%

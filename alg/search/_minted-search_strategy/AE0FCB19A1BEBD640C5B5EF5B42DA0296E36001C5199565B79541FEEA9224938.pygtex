@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{c+c1}{// 构造由根组成的队列 Q}
+  \PYG{k}{if} \PYG{n}{Q} \PYG{err}{中的第一个元素} \PYG{n}{x} \PYG{err}{是目标节点}
+      \PYG{n}{stop}
+  \PYG{k}{else}
+      \PYG{err}{从} \PYG{n}{Q} \PYG{err}{中删除} \PYG{n}{x}\PYG{p}{,} \PYG{err}{将} \PYG{n}{x} \PYG{err}{的所有子节点放进} \PYG{n}{Q} \PYG{err}{中}\PYG{p}{.}
+  \PYG{k}{if} \PYG{n}{Q} \PYG{o}{==} \PYG{n+nb}{NULL}
+      \PYG{k}{return} \PYG{n}{failed}\PYG{p}{;}
+  \PYG{k}{else} \PYG{k}{goto} \PYG{l+m+mi}{2}
+\end{Verbatim}

@@ -1,0 +1,116 @@
+\documentclass[a4paper, 10pt]{ctexbook} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片用的
+\usepackage[]{amsmath}          %数学公式
+\usepackage{amsfonts}           %加载数学字体, 比如说\mathbb, 没有这个宏包的话可能会报错
+\usepackage{amsthm}             %定义, 定理, 证明, 例子这些环境的支持
+\usepackage[]{amsmath}
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %用来插入图片
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage[]{color}            %用来给部分文本上色的
+\usepackage{algorithm}          %用来写伪代码的
+\usepackage{algorithmic}        %同上
+%\usepackage{minted}
+\usepackage{extarrows}
+\usepackage[]{hyperref}
+%以下是宏包 amsthm 的命令, 我们使用这些环境的时候必须先对其进行一个定义
+\newtheorem{theorem}{定理}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\begin{document}
+    \tableofcontents
+    \newpage
+    \chapter{期望}
+    \section{期望和方差}
+    期望是概率空间 $\left( \Omega , \mathcal F, P\right)$ 上的一个 LS 积分. 有些人可能会对这个定义产生疑惑. 但这实际上是一个公理化定义, 
+    我们已经定义出了一个测度空间, LS 便是这个基础上发展而来的.
+
+    我们接下来的、对积分的定义, 就是遵循上面的 LS 积分, 但是这里毕竟是概率论, 并不是实分析, 所以不会那么难. 
+
+    我们首先是对离散随机变量 $X$ 定义期望. 从其分布函数 $F$ 入手, 我们说 $F$ 满足一个 weighted partition : $\left\{\Lambda _{i} , b_i\right\}$
+
+    那么
+    \begin{definition}[离散随机变量之期望]
+        期望定义为: 
+    \[
+    E\ X = \sum_{i=1} ^{\infty} b_i P\left(\Lambda _{i}\right) 
+    \]
+    \end{definition}
+
+    面对一个非负函数 $X$ , 我们就可以用一个简单的函数序列逼近这个 $X$ , 然后用函数序列的期望值定义 $X$ 的期望. 而对于一般类型的函数, 我们只需要分别讨论大于零的部分和小于零的部分就行了. 这方面的知识其实了解一下即可. 这里我们得点出, 书本上的分类方法是完全错误的. 
+    一方面, 这里的积分从未说明是 Lebesgue-Stieljes 积分还是黎曼积分, 黎曼可积性的要求高很多. 
+    另一方面, 存在分布函数, 他既不能写为 $\int  f \ \mathrm{d}x$ 的形式, 也不是离散的 (即他是连续的), 
+    如果说 $X$ 的一个分布函数可以写为 $\int  f \ \mathrm{d}x$ , 
+    那么 $X$ 是绝对连续的, 这是书本上没有说明的. 同时, 一个分布函数可以分解为三类函数, 
+    正是下面三类: 1. 离散型函数 2. 绝对连续函数 3. 奇异连续函数.\footnote{奇异的意思就是分布函数的导数几乎处处为 $0$}
+
+    \begin{definition}[一般随机变量之期望]
+        略. 这里不做过多介绍. 记 $E \left(X\right) = \int  X \ \mathrm{d}P$
+    \end{definition}
+    \begin{theorem}
+        $E \left(X\right) < \infty \iff  \int \left| X \right| \ \mathrm{d}P < \infty$
+    \end{theorem}
+    \begin{proof}
+        TODO
+    \end{proof}
+    \begin{example}[二项分布]
+        $P\left(X = k \right) =\displaystyle  \binom{n}{k} p^{k}q ^{n-k}$, 计算其期望. 
+
+        这里就不算了, 反正等于 $np$, 哥们算数很差.
+    \end{example}
+    \begin{example}[泊松分布]
+        $P\left(X = k\right) = \dfrac{\lambda ^{k}}{k!} e^{-\lambda}\quad , k =0,1,2,\cdots$, 求期望 
+
+        \[
+        E \left(X\right) = \sum_{k=0}^{\infty} k \frac{\lambda ^{k}}{k!} e ^{-\lambda} = \lambda e ^{-\lambda} \sum_{k=1}^{\infty} \frac{k ^{k-1}}{\left(k-1\right)!} = \lambda 
+        \]
+    \end{example}
+    \subsection{期望的性质}
+    期望还可以记为 $E \left(X\right) = \int  x \ \mathrm{d} F$
+    \begin{theorem}
+        \[
+        E \left(c\right) =c 
+        \] c 是一个常数.
+    \end{theorem}
+    \begin{theorem}
+        \[
+        E \left(g \left(X\right)\right) = \int g\left(x\right) \  \mathrm{d} F
+        \]
+    \end{theorem}
+    \begin{theorem}
+        \[
+        E \left(aX_1 + bX_2\right) = aE\left(X_{1}\right) + bE \left(X _{2}\right)
+        \]如果LHS的两个期望均存在. 
+    \end{theorem}
+    \begin{theorem}
+        \[
+        E \left(X_{1} X_{2}\right) = E \left(X_{1}\right) E \left(X_2\right)
+        \] 如果 $X_{1}, X_{2}$ 相互独立. 
+    \end{theorem}
+    \subsection{方差的基本概念}
+    \begin{definition}[方差]
+        \[
+        \text{var }X  =\left(X - E\left(X\right)    \right)^{2} 
+        \]
+    variance , 有时记为 $D$, D for deviation, 其正平方根称为标准差, 常记为 $\sigma$
+    \end{definition}
+    平时计算variance, 常用公式
+    \[
+    \text{var }\left(X\right) = E \left(X ^{2}\right) - \left(E \left(X\right)\right) ^{2}
+    \]
+    \begin{proof}
+        \[
+        \begin{aligned}
+            E \left(X - E \left(X\right)\right)^{2} & = E  \left(X ^{2} - 2 X E \left(X\right) + E ^{2}\left(X\right)\right)\\
+            & = E \left(X ^{2}\right) -2  E \left(X\right) \cdot  E \left(X\right) + E ^{2} \left(X\right)\\
+            & = E \left(X^{2}\right) - E ^{2} \left(X\right) \qedhere 
+        \end{aligned}
+        \]
+    \end{proof}
+\end{document}

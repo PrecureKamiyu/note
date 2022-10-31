@@ -1,0 +1,157 @@
+\documentclass[a4paper, 10pt]{ctexart} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片用的
+\usepackage{amsmath}          %数学公式
+\usepackage{amsfonts}           %加载数学字体, 比如说\mathbb, 没有这个宏包的话可能会报错
+\usepackage{amsthm}             %定义, 定理, 证明, 例子这些环境的支持
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %用来插入图片
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage{color}            %用来给部分文本上色的
+\usepackage{algorithm}          %用来写伪代码的
+\usepackage{algorithmic}        %同上
+%\usepackage{minted}
+\usepackage{extarrows}          %用来使用大箭头. 没什么用.
+%以下是宏包 amsthm 的命令, 我们使用这些环境的时候必须先对其进行一个定义
+
+\newtheorem{theorem}{定理}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\begin{document}
+    我们首先会是定义期望, 个人思考了一会这个期望之定义的动机, 目前认为, 这个定义是和Lebesgue-Stieljes积分息息相关的. 
+
+    一上来, 我们能够定义简单函数的积分, 就是离散随机变量的期望, 我们说对于离散随机变量 $X$ , 存在划分 $\left\{\Lambda_n\right\}$ 和数列 $\left\{b_n\right\}$
+    , 使得 $X = \sum_{i=1} ^{n}b_i 1_{\Lambda_i}$ \footnote{$1_{\Lambda_i}$的定义在上一节已经给出了}
+
+    那么 
+    \[
+    E \left(X\right) = \sum_{i=1} ^{n} b_i P\left( \Lambda _{i}\right)
+    \]
+
+    对于一般函数, 假设是正值函数, 定义划分 $\left\{\Lambda_{mn} \right\}, \Lambda_{mn} = \left\{\omega : \dfrac{n}{2^{m}} \le X\left(\omega\right) < \dfrac{n+1}{2^{m}} \right\}$
+
+    据此构造一个随机变量序列, 记为 $\displaystyle X _{m} = \sum_{i=1} ^{\infty} \frac{n}{2 ^{m}} 1_{\Lambda_{mn}}$
+    我们有 $X _{m} \left(\omega\right) - X \left( \omega\right) \le \dfrac{1}{2^{m}}$, 因此我们说, 
+    \[
+    \lim _{m \to \infty} X_{m} = X
+    \]
+    我们现在用 $X _{m}$ 的期望的极限值来定义 $X$ 的期望值. 
+    \[
+    E \left(X\right) = \lim_{ m \to \infty} E \left(X _{m}\right)
+    \]
+    如果 $\text{LHS}$ 不是 $\infty$. 
+
+    上面就是期望值的定义, 我觉得这是从Lebesgue-Stieljes积分出发的, 这样的定义之下, 可以将期望写为LS积分. 
+
+    \[
+    E \left(X\right) = \int _{\Omega} X \left(\omega\right) P\left(\mathrm{d} \omega\right)\quad \text{ 简写为 } \quad \int _{\Omega} X \ \mathrm{d} P 
+    \]
+
+    前面说 $X$ 是正值函数, 对于一般函数, 我们只需要分别取正值部分和负值部分, 记为 $X ^{+}$ 和 $-X ^{-}$, 然后 $E (X)  = E \left( X ^{+}\right) - E \left(X ^{-}\right)$. 
+
+    对于 $ \left(\mathcal U ,  \mathcal B , m\right)$ \footnote{就是 $[0,1]$ 上的均匀分布}上的随机变量, 将 $X$ 换为 $f$ ,  $\omega$ 为 $x$, 就有
+    \[
+    \int _{a}^{b} f\left(x\right) m \left( \mathrm{d}x\right) = \int ^{b}_{a} f\left(x\right) \ \mathrm{d}x
+    \]
+    LHS是Lebesgue积分. 
+
+
+    \section{一些性质}
+    接下来我们介绍一些性质, 其中有非常重要的定理, 但是我们的书中并没有给出证明. 当然我们的读者可以很容易在网上找到这些性质的证明, 但我还是认为, 这些证明虽然说比较偏分析, 但还是有必要掌握的, 
+    至少说, 我们把它抄录在这里, 读者能够读个几遍, 能够看懂. 
+
+    \begin{theorem}[Absolute integrability]
+        $\int _{\Lambda}\ \mathrm{d}P$ 是有限的, iff 
+        \[
+        \int _{\Lambda} \left| X \right| \ \mathrm{d}P < \infty
+        \]
+    \end{theorem}
+    \begin{theorem}[linearity]
+        \[
+        \int _{\Lambda}\left(aX + bY\right) \ \mathrm{d}P = a \int _{\Lambda  } X \ \mathrm{d}P + b \int _{\Lambda} Y \ \mathrm{d}P
+        \]
+        就如同极限的可加性的定义, 最好LHS都是有定义的.
+    \end{theorem}
+    \begin{theorem}[additivity over sets]
+        if $\Lambda _{n}$ 是不相交的, 那么
+        \[
+        \int _{\bigcup \Lambda _{n}} X \ \mathrm{d}P = \sum_{} ^{n} \int _{\Lambda _{n}} X \ \mathrm{d} P
+        \]
+    \end{theorem}
+    \begin{theorem}[positivity]
+        if $X \ge 0$ a.e. on $\Lambda$ , 那么 
+        \[
+        \int _{\Lambda} X \ \mathrm{d}P  \ge 0
+        \]
+    \end{theorem}
+    \begin{theorem}[monotonicity]
+        如果 $X _{1} \le X \le X_{2}$ a.e. on $\Lambda$, 那么
+        \[
+        \int _{\Lambda} X_{1} \ \mathrm{d}P \le \int _{\Lambda} X \ \mathrm{d} P \le \int _{\Lambda} X_{2} \ \mathrm{d}P
+        \]
+    \end{theorem}
+    \begin{theorem}
+        \dots
+    \end{theorem}
+    省略啦, 烦死了捏.
+    \section{一个定理的证明}
+    \begin{theorem}
+        \[
+        \sum_{n=1} ^{\infty} P\left(\left| X \right|  \ge n \right) \le E \left( \left| X \right| \right) \le 1 + \sum_{n=1} ^{\infty} P\left(\left| X \right|  \ge n\right)
+        \]
+    \end{theorem}
+    \begin{proof}
+        我们进行一个划分, $\Lambda _{n} = \left\{\omega : n \le | X \left( \omega\right)| < n+1\right\}$
+
+        使用mean value thm 就有
+
+        \[
+        \sum_{n=1} ^{\infty} n P\left( \Lambda _{n}\right) \le E (\left| X \right| ) \le \sum_{n=1} ^{\infty} \left(n +1\right) P( \Lambda _{n}) = 1 + \sum_{n=1} ^{\infty} n P(\Lambda_{n})
+        \]
+        接下来证明 
+        \[
+        \sum_{n=1} ^{\infty} n P\left(\Lambda_{n}\right) = \sum_{n=1} ^{\infty} P\left( \left| X \right|  \ge n\right)
+        \]
+        $\Lambda_{n}$ 可以写为 $ X \in [n, \infty) - X \in [n+1 , \infty )$ , 于是
+        \[
+        \begin{aligned}
+            \sum_{n=1} ^{N}n P \left(\Lambda _{n}\right) & = \sum_{n=1} ^{N} n \Big(P (\left| X \right|  \ge n)  - P\left(\left| X \right|  \ge n+1   \right) \Big)\\
+            & = \sum_{n=1} ^{N}  P (\left| X \right| \ge n) - N P (\left| X \right|  \ge N+1  )\\
+        \end{aligned}
+        \]
+        只需要证明 $\displaystyle \lim_{N \to \infty} N P(\left| X\ge N +1 \right| ) = 0$ 就行了. 
+        实际上这是显然的, 只需要注意到 
+        \[
+        N P \left( \left| X \right|  \ge N + 1 \right) \le \int _{\left| X \right| \ge N +1} \left|X \right|  \ \mathrm{d}P 
+        \]
+        LHS是趋于零的, 因为积分是收敛的. 
+    \end{proof}
+    \section{几个有名的不等式}
+    \subsection{Holder Minkowski 不等式}
+    柯西Schwarz不等式是其中的一个特例.
+    \subsection{Jensen 不等式}
+    $\varphi$ 是一个凸函数, 那么 
+    \[
+    E \left( \varphi \left(x\right)\right) \le \varphi ( E (X))
+    \]
+    \subsection{chebyshev 不等式}
+    $\varphi$ 是一个增函数, 那么
+    \[
+    P\left( X \ge u\right) \le \frac{E \left( \varphi (X)\right)}{\varphi (u)}
+    \]
+    \begin{proof}
+        \[
+        E \left(X\right) = \int _{\Omega} \varphi \left(X\right) \ \mathrm{d}P \ge \int _{\left\{\left| X \right| \ge u\right\}} \varphi \left(X\right) \ \mathrm{d}P \ge \varphi (u) P(\left| X \right|  \ge u)
+        \]
+        换一下位置不等式就证明完了.
+    \end{proof}
+    当 $\varphi \left(x\right)  = x^{2}$, 将 $X$ 换为 $X - E\left(X\right)$时, 就能够得到基础概率论中的chebyshev不等式
+    \[
+    P \left(X - E\left(X\right) \ge u\right) \le \frac{\text{var} \left(X\right)}{u^{2}}
+    \]
+\end{document}
