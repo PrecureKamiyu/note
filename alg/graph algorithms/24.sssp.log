@@ -1,12 +1,12 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  1 NOV 2022 19:07
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  1 NOV 2022 20:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**aa
-(./aa.tex
+**24.sssp
+(./24.sssp.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
-(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexbook.cls
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexart.cls
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-02-14 L3 programming layer (loader) 
 
@@ -17,8 +17,8 @@ File: l3backend-xdvipdfmx.def 2020-02-03 L3 backend support: xdvipdfmx
 \g__pdf_backend_object_int=\count164
 \g__pdf_backend_annotation_int=\count165
 ))
-Document Class: ctexbook 2019/05/29 v2.4.16 Chinese adapter for class book (CTE
-X)
+Document Class: ctexart 2019/05/29 v2.4.16 Chinese adapter for class article (C
+TEX)
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2020-02-14 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count166
@@ -54,20 +54,19 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 (/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
 File: ctexopts.cfg 2019/05/29 v2.4.16 Option configuration file (CTEX)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count173
-\c@chapter=\count174
-\c@section=\count175
-\c@subsection=\count176
-\c@subsubsection=\count177
-\c@paragraph=\count178
-\c@subparagraph=\count179
-\c@figure=\count180
-\c@table=\count181
+\c@section=\count174
+\c@subsection=\count175
+\c@subsubsection=\count176
+\c@paragraph=\count177
+\c@subparagraph=\count178
+\c@figure=\count179
+\c@table=\count180
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen135
@@ -81,17 +80,17 @@ Package: xeCJK 2020/02/14 v3.8.1 Typesetting CJK scripts with XeLaTeX
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
 Package: xtemplate 2020-02-14 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen136
-\l__xtemplate_tmp_int=\count182
+\l__xtemplate_tmp_int=\count181
 \l__xtemplate_tmp_muskip=\muskip16
 \l__xtemplate_tmp_skip=\skip49
 )
-\l__xeCJK_tmp_int=\count183
+\l__xeCJK_tmp_int=\count182
 \l__xeCJK_tmp_box=\box47
 \l__xeCJK_tmp_dim=\dimen137
 \l__xeCJK_tmp_skip=\skip50
-\g__xeCJK_space_factor_int=\count184
-\l__xeCJK_begin_int=\count185
-\l__xeCJK_end_int=\count186
+\g__xeCJK_space_factor_int=\count183
+\l__xeCJK_begin_int=\count184
+\l__xeCJK_end_int=\count185
 \c__xeCJK_CJK_class_int=\XeTeXcharclass1
 \c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
 \c__xeCJK_FullRight_class_int=\XeTeXcharclass3
@@ -101,7 +100,7 @@ Package: xtemplate 2020-02-14 L3 Experimental prototype document functions
 \c__xeCJK_CM_class_int=\XeTeXcharclass7
 \c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
 \l__xeCJK_last_skip=\skip51
-\g__xeCJK_node_int=\count187
+\g__xeCJK_node_int=\count186
 \c__xeCJK_CJK_node_dim=\dimen138
 \c__xeCJK_CJK-space_node_dim=\dimen139
 \c__xeCJK_default_node_dim=\dimen140
@@ -111,10 +110,10 @@ Package: xtemplate 2020-02-14 L3 Experimental prototype document functions
 \l__xeCJK_ccglue_skip=\skip52
 \l__xeCJK_ecglue_skip=\skip53
 \l__xeCJK_punct_kern_skip=\skip54
-\l__xeCJK_last_penalty_int=\count188
+\l__xeCJK_last_penalty_int=\count187
 \l__xeCJK_last_bound_dim=\dimen144
 \l__xeCJK_last_kern_dim=\dimen145
-\l__xeCJK_widow_penalty_int=\count189
+\l__xeCJK_widow_penalty_int=\count188
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 (xtemplate)             argument(s) on line 2302.
@@ -138,10 +137,10 @@ Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 \l__xeCJK_margin_dim=\dimen162
 \l__xeCJK_minimum_bound_dim=\dimen163
 \l__xeCJK_kerning_margin_dim=\dimen164
-\g__xeCJK_family_int=\count190
-\l__xeCJK_fam_int=\count191
-\g__xeCJK_fam_allocation_int=\count192
-\l__xeCJK_verb_case_int=\count193
+\g__xeCJK_family_int=\count189
+\l__xeCJK_fam_int=\count190
+\g__xeCJK_fam_allocation_int=\count191
+\l__xeCJK_verb_case_int=\count192
 \l__xeCJK_verb_exspace_skip=\skip55
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
@@ -150,17 +149,17 @@ Package: fontspec 2020/02/03 v2.7h Font selection for XeLaTeX and LuaLaTeX
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/03 v2.7h Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count194
-\l__fontspec_language_int=\count195
-\l__fontspec_strnum_int=\count196
-\l__fontspec_tmp_int=\count197
-\l__fontspec_tmpa_int=\count198
-\l__fontspec_tmpb_int=\count199
-\l__fontspec_tmpc_int=\count266
-\l__fontspec_em_int=\count267
-\l__fontspec_emdef_int=\count268
-\l__fontspec_strong_int=\count269
-\l__fontspec_strongdef_int=\count270
+\l__fontspec_script_int=\count193
+\l__fontspec_language_int=\count194
+\l__fontspec_strnum_int=\count195
+\l__fontspec_tmp_int=\count196
+\l__fontspec_tmpa_int=\count197
+\l__fontspec_tmpb_int=\count198
+\l__fontspec_tmpc_int=\count199
+\l__fontspec_em_int=\count266
+\l__fontspec_emdef_int=\count267
+\l__fontspec_strong_int=\count268
+\l__fontspec_strongdef_int=\count269
 \l__fontspec_tmpa_dim=\dimen165
 \l__fontspec_tmpb_dim=\dimen166
 \l__fontspec_tmpc_dim=\dimen167
@@ -181,7 +180,7 @@ Package: xeCJKfntef 2020/02/14 v3.8.1 xeCJK font effect
 \UL@skip=\skip56
 \UL@hook=\toks14
 \UL@height=\dimen168
-\UL@pe=\count271
+\UL@pe=\count270
 \UL@pixel=\dimen169
 \ULC@box=\box50
 Package: ulem 2019/11/18
@@ -201,21 +200,21 @@ Package: ulem 2019/11/18
 
 (/usr/share/texlive/texmf-dist/tex/latex/zhnumber/zhnumber.sty
 Package: zhnumber 2019/04/07 v2.7 Typesetting numbers with Chinese glyphs
-\l__zhnum_scale_int=\count272
+\l__zhnum_scale_int=\count271
 
 (/usr/share/texlive/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
 File: zhnumber-utf8.cfg 2019/04/07 v2.7 Chinese numerals with UTF8 encoding
 ))
 \l__ctex_heading_skip=\skip60
 
-(/usr/share/texlive/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-book.d
-ef
-File: ctex-scheme-chinese-book.def 2019/05/29 v2.4.16 Chinese scheme for book (
-CTEX)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-articl
+e.def
+File: ctex-scheme-chinese-article.def 2019/05/29 v2.4.16 Chinese scheme for art
+icle (CTEX)
  (/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
 File: ctex-name-utf8.cfg 2019/05/29 v2.4.16 Caption with encoding UTF8 (CTEX)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def
+)) (/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.de
+f
 File: ctex-fontset-fandol.def 2019/05/29 v2.4.16 Fandol fonts definition (CTEX)
 
 
@@ -247,7 +246,7 @@ File: ctex.cfg 2019/05/29 v2.4.16 Configuration file (CTEX)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count273
+\c@float@type=\count272
 \float@exts=\toks15
 \float@box=\box54
 \@float@everytoks=\toks16
@@ -283,7 +282,7 @@ File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count274
+\c@r@tfl@t=\count273
 \rotFPtop=\skip61
 \rotFPbot=\skip62
 \rot@float@box=\box56
@@ -331,8 +330,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
 \@linkdim=\dimen176
-\Hy@linkcounter=\count275
-\Hy@pagecounter=\count276
+\Hy@linkcounter=\count274
+\Hy@pagecounter=\count275
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
@@ -343,7 +342,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count277
+\Hy@SavedSpaceFactor=\count276
 Package hyperref Info: Option `unicode' set `true' on input line 4421.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
@@ -356,7 +355,7 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count278
+\c@Hy@tempcnt=\count277
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
@@ -372,7 +371,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count279
+\Fld@menulength=\count278
 \Field@Width=\dimen178
 \Fld@charsize=\dimen179
 Package hyperref Info: Hyper figures OFF on input line 6430.
@@ -388,9 +387,9 @@ LaTeX Info: Redefining \pageref on input line 6504.
 (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count280
-\c@Item=\count281
-\c@Hfootnote=\count282
+\Hy@abspage=\count279
+\c@Item=\count280
+\c@Hfootnote=\count281
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -402,10 +401,10 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box57
-\c@Hy@AnnotLevel=\count283
-\HyField@AnnotCount=\count284
-\Fld@listcount=\count285
-\c@bookmark@seq@number=\count286
+\c@Hy@AnnotLevel=\count282
+\HyField@AnnotCount=\count283
+\Fld@listcount=\count284
+\c@bookmark@seq@number=\count285
 
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -451,13 +450,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count287
+\inf@bad=\count286
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count288
-\leftroot@=\count289
+\uproot@=\count287
+\leftroot@=\count288
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count290
-\DOTSCASE@=\count291
+\classnum@=\count289
+\DOTSCASE@=\count290
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
@@ -466,15 +465,15 @@ LaTeX Info: Redefining \cdots on input line 610.
 \big@size=\dimen182
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count292
-\c@MaxMatrixCols=\count293
+\macc@depth=\count291
+\c@MaxMatrixCols=\count292
 \dotsspace@=\muskip18
-\c@parentequation=\count294
-\dspbrk@lvl=\count295
+\c@parentequation=\count293
+\dspbrk@lvl=\count294
 \tag@help=\toks21
-\row@=\count296
-\column@=\count297
-\maxfields@=\count298
+\row@=\count295
+\column@=\count296
+\maxfields@=\count297
 \andhelp@=\toks22
 \eqnshift@=\dimen183
 \alignsep@=\dimen184
@@ -507,9 +506,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count299
-\Gm@cntv=\count300
-\c@Gm@tempcnt=\count301
+\Gm@cnth=\count298
+\Gm@cntv=\count299
+\c@Gm@tempcnt=\count300
 \Gm@bindingoffset=\dimen189
 \Gm@wd@mp=\dimen190
 \Gm@odd@mp=\dimen191
@@ -533,15 +532,15 @@ Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 \@float@every@algorithm=\toks32
-\c@algorithm=\count302
+\c@algorithm=\count301
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count303
-\c@ALC@line=\count304
-\c@ALC@rem=\count305
-\c@ALC@depth=\count306
+\c@ALC@unique=\count302
+\c@ALC@line=\count303
+\c@ALC@rem=\count304
+\c@ALC@depth=\count305
 \ALC@tlm=\skip70
 \algorithmicindent=\skip71
 )
@@ -553,15 +552,15 @@ Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count307
+\etb@tempcnta=\count306
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count308
+\FV@CodeLineNo=\count307
 \FV@InFile=\read2
 \FV@TabBox=\box60
-\c@FancyVerbLine=\count309
-\FV@StepNumber=\count310
+\c@FancyVerbLine=\count308
+\FV@StepNumber=\count309
 \FV@OutFile=\write3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
@@ -574,56 +573,56 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 Invalid UTF-8 byte or sequence at line 296 replaced by U+FFFD.
-\linenopenalty=\count311
+\linenopenalty=\count310
 \output=\toks33
-\linenoprevgraf=\count312
+\linenoprevgraf=\count311
 \linenumbersep=\dimen197
 \linenumberwidth=\dimen198
-\c@linenumber=\count313
-\c@pagewiselinenumber=\count314
-\c@LN@truepage=\count315
-\c@internallinenumber=\count316
-\c@internallinenumbers=\count317
+\c@linenumber=\count312
+\c@pagewiselinenumber=\count313
+\c@LN@truepage=\count314
+\c@internallinenumber=\count315
+\c@internallinenumbers=\count316
 \quotelinenumbersep=\dimen199
 \bframerule=\dimen256
 \bframesep=\dimen257
 \bframebox=\box61
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count318
-\c@FV@TrueTabCounter=\count319
+\c@FV@TrueTabGroupLevel=\count317
+\c@FV@TrueTabCounter=\count318
 \FV@TabBox@Group=\box62
 \FV@TmpLength=\skip72
-\c@FV@HighlightLinesStart=\count320
-\c@FV@HighlightLinesStop=\count321
-\FV@LoopCount=\count322
+\c@FV@HighlightLinesStart=\count319
+\c@FV@HighlightLinesStop=\count320
+\FV@LoopCount=\count321
 \FV@NCharsBox=\box63
 \FV@BreakIndent=\dimen258
-\FV@BreakIndentNChars=\count323
+\FV@BreakIndentNChars=\count322
 \FV@BreakSymbolSepLeft=\dimen259
-\FV@BreakSymbolSepLeftNChars=\count324
+\FV@BreakSymbolSepLeftNChars=\count323
 \FV@BreakSymbolSepRight=\dimen260
-\FV@BreakSymbolSepRightNChars=\count325
+\FV@BreakSymbolSepRightNChars=\count324
 \FV@BreakSymbolIndentLeft=\dimen261
-\FV@BreakSymbolIndentLeftNChars=\count326
+\FV@BreakSymbolIndentLeftNChars=\count325
 \FV@BreakSymbolIndentRight=\dimen262
-\FV@BreakSymbolIndentRightNChars=\count327
-\c@FancyVerbLineBreakLast=\count328
+\FV@BreakSymbolIndentRightNChars=\count326
+\c@FancyVerbLineBreakLast=\count327
 \FV@LineBox=\box64
 \FV@LineIndentBox=\box65
 \FV@LineWidth=\dimen263
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count329
-\calc@Bcount=\count330
+\calc@Acount=\count328
+\calc@Bcount=\count329
 \calc@Adimen=\dimen264
 \calc@Bdimen=\dimen265
 \calc@Askip=\skip73
 \calc@Bskip=\skip74
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count331
+\calc@Ccount=\count330
 \calc@Cskip=\skip75
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
@@ -639,17 +638,16 @@ Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-runsystem(uname -s > "aa.w18")...executed.
+runsystem(uname -s > "24.sssp.w18")...executed.
 
- (./aa.w18)
-runsystem(rm -- "aa.w18")...executed.
+ (./24.sssp.w18)
+runsystem(rm -- "24.sssp.w18")...executed.
 
-)
-(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count332
+\integerpart=\count331
 Invalid UTF-8 byte or sequence at line 35 replaced by U+FFFD.
-\decimalpart=\count333
+\decimalpart=\count332
 Invalid UTF-8 byte or sequence at line 79 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 79 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 83 replaced by U+FFFD.
@@ -799,16 +797,28 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \minted@appexistsfile=\read3
 \minted@bgbox=\box66
 \minted@code=\write4
-\c@minted@FancyVerbLineTemp=\count334
-\c@minted@pygmentizecounter=\count335
+\c@minted@FancyVerbLineTemp=\count333
+\c@minted@pygmentizecounter=\count334
 \@float@every@listing=\toks34
-\c@listing=\count336
+\c@listing=\count335
 )
-runsystem(mkdir -p _minted-aa)...executed.
+runsystem(mkdir -p _minted-24.sssp)...executed.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box67
+\beforetitleunit=\skip77
+\aftertitleunit=\skip78
+\ttl@plus=\dimen270
+\ttl@minus=\dimen271
+\ttl@toksa=\toks35
+\titlewidth=\dimen272
+\titlewidthlast=\dimen273
+\titlewidthfirst=\dimen274
 )
 
 Package fontspec Info: Font family 'UbuntuMono(0)' created for font 'Ubuntu
@@ -852,101 +862,100 @@ Space].
 (fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
 (fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
 
-\c@theorem=\count337
-\c@example=\count338
-\c@definition=\count339
-\c@lemma=\count340
-\c@proposition=\count341
-runsystem(which pygmentize && touch aa.aex)...executed.
+\c@theorem=\count336
+\c@example=\count337
+\c@definition=\count338
+\c@lemma=\count339
+\c@proposition=\count340
+runsystem(which pygmentize && touch 24.sssp.aex)...executed.
 
-runsystem(rm aa.aex)...executed.
+runsystem(rm 24.sssp.aex)...executed.
 
- (./aa.aux)
-\openout1 = `aa.aux'.
+ (./24.sssp.aux)
+\openout1 = `24.sssp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 29.
+LaTeX Info: Redefining \selectfont on input line 37.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 29.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 29.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 29.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 29.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 29.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 29.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 29.
-LaTeX Font Info:    Redeclaring math accent \check on input line 29.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 29.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 29.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 29.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 29.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 29.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 37.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 37.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 37.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 37.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 37.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 37.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 37.
+LaTeX Font Info:    Redeclaring math accent \check on input line 37.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 37.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 37.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 37.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 37.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 29.
+(Font)              `operators' in the math version `normal' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 29.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 37.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 29.
+(Font)              `operators' in the math version `bold' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 29.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 29.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 29.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 29.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 29.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/UbuntuMono(0)/m/n on input line 29.
+(Font)                  OT1/cmtt/m/n --> TU/UbuntuMono(0)/m/n on input line 37.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 29.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 29.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 29.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/UbuntuMono(0)/b/n on input line 29.
+(Font)                  OT1/cmtt/m/n --> TU/UbuntuMono(0)/b/n on input line 37.
 
-\AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring OFF on input line 29.
+\AtBeginShipoutBox=\box68
+Package hyperref Info: Link coloring OFF on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -957,15 +966,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count342
+\c@section@level=\count341
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
-(./aa.out) (./aa.out)
+(./24.sssp.out) (./24.sssp.out)
 \@outlinefile=\write5
-\openout5 = `aa.out'.
+\openout5 = `24.sssp.out'.
 
 
 *geometry* driver: auto-detecting
@@ -975,57 +984,79 @@ LaTeX Info: Redefining \nameref on input line 29.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(90.3375pt, 416.83289pt, 90.3375pt)
+* modes: 
+* h-part:(L,W,R)=(108.405pt, 380.69788pt, 108.405pt)
 * v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=416.83289pt
+* \textwidth=380.69788pt
 * \textheight=700.50687pt
-* \oddsidemargin=18.0675pt
-* \evensidemargin=18.0675pt
-* \topmargin=-30.06749pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=-37.0pt
 * \headheight=12.0pt
-* \headsep=18.06749pt
+* \headsep=25.0pt
 * \topskip=10.0pt
-* \footskip=25.29494pt
-* \marginparwidth=115.0pt
-* \marginparsep=7.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./aa.toc)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+[1
+
+] (./24.sssp.toc)
 \tf@toc=\write6
-\openout6 = `aa.toc'.
+\openout6 = `24.sssp.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
- [1
+File: sssp1.png Graphic file (type bmp)
+<sssp1.png>
+ [1] [2]
+File: sssp2.png Graphic file (type bmp)
+<sssp2.png>
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
+ [3] [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
+ (./24.sssp.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 163.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 163.
+Package rerunfilecheck Info: File `24.sssp.out' has not changed.
+(rerunfilecheck)             Checksum: C53425F1515287486806F21D2E677043;2914.
 
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
- (./aa.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 34.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
-Package rerunfilecheck Info: File `aa.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 163.
  ) 
 Here is how much of TeX's memory you used:
- 19478 strings out of 479819
- 403536 string characters out of 5895846
- 737770 words of memory out of 5000000
- 36309 multiletter control sequences out of 15000+600000
- 532980 words of font info for 48 fonts, out of 8000000 for 9000
+ 19735 strings out of 479819
+ 404472 string characters out of 5895846
+ 748512 words of memory out of 5000000
+ 36513 multiletter control sequences out of 15000+600000
+ 539436 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,5n,72p,2152b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,9n,72p,996b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on aa.pdf (1 page).
+Output written on 24.sssp.pdf (5 pages).

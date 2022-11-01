@@ -1,0 +1,34 @@
+\documentclass[a4paper, 10pt]{ctexart} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片
+\usepackage{hyperref}           %生成可跳转的书签
+\usepackage{amsfonts}           %对某一些字体之支持
+\usepackage[]{amsmath}          %数学公式
+\usepackage{amsthm}             %定义, 定理, 证明, 例子环境的支持
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %插入图片
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage[]{color}            %给部分文本上色的
+\usepackage{algorithm}          %写伪代码的
+\usepackage{algorithmic}        %同上
+\usepackage{minted}
+\usepackage{amssymb}            %用来加入一些数学符号, 比如说 $\varnothing$
+\usepackage{fontspec}           %不知道用来干嘛的
+\setmonofont{Ubuntu Mono}       %?
+\usemintedstyle{custommanni}    %设置minted插入代码的风格
+
+\newtheorem{theorem}{定理}
+\newtheorem{example}{Example}
+\newtheorem{definition}{定义}
+\newtheorem{lemma}{引理}
+\newtheorem{proposition}{命题}
+\begin{document}
+\tableofcontents
+\section{Shortest paths and matrix multiplication}
+\section{Floyd-Warshell algorithm}
+\section{我日}
+\end{document}
