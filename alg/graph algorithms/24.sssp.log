@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  1 NOV 2022 20:29
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  1 NOV 2022 22:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1036,27 +1036,50 @@ File: sssp1.png Graphic file (type bmp)
  [1] [2]
 File: sssp2.png Graphic file (type bmp)
 <sssp2.png>
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
- [3] [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
+File: sssp3.png Graphic file (type bmp)
+<sssp3.png>
+
+
+Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
+(fontspec)                Script "CJK".
+
+
+Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Script={CJK},Extension={.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+[3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+ [4] [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./24.sssp.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 163.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 163.
-Package rerunfilecheck Info: File `24.sssp.out' has not changed.
-(rerunfilecheck)             Checksum: C53425F1515287486806F21D2E677043;2914.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Package rerunfilecheck Warning: File `24.sssp.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 163.
+Package rerunfilecheck Info: Checksums for `24.sssp.out':
+(rerunfilecheck)             Before: C53425F1515287486806F21D2E677043;2914
+(rerunfilecheck)             After:  CD24B70A6D238A9EFD5852370F60975B;3139.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 19735 strings out of 479819
- 404472 string characters out of 5895846
- 748512 words of memory out of 5000000
- 36513 multiletter control sequences out of 15000+600000
- 539436 words of font info for 88 fonts, out of 8000000 for 9000
+ 19764 strings out of 479819
+ 405702 string characters out of 5895846
+ 748567 words of memory out of 5000000
+ 36536 multiletter control sequences out of 15000+600000
+ 539468 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,9n,72p,996b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,9n,72p,996b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 24.sssp.pdf (5 pages).
+Output written on 24.sssp.pdf (6 pages).

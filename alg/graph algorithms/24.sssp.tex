@@ -93,7 +93,6 @@ rt. 最短路径具有优化子结构, 即,
     trivial!
 \end{proof}
 
-
 \subsection{representation of shortest paths} 
 这涉及到前面我还没看的部分, 即无向无权图的最短路径求解. 这里我们涉及 \textbf{predecessor} , 符号 $\pi  $ 的出现说明其和 \textbf{predecessor} 有关. 比如说: 
 $v. \pi$ 是 $v$ 的一个前驱
@@ -124,33 +123,73 @@ $$E _{\pi   } = \left\{ \left(v.\pi , v\right):v \in V_{\pi} - \left\{s\right\} 
     \caption{初始化的伪代码}
     \label{iss}
 \end{figure}
-
-
-
+ss
 
 \subsubsection{relaxation: code and definition}
 
 relaxation是一个很简单但是很重要的操作. relaxation这个词我们之前就已经见过了, 可能有人那时候开始就觉得: 
-松弛是什么几把叫法啊. 总之, 鬼知道, 确实不够自然. 
+松弛是什么叫法啊. 总之, 确实不够自然. 
 应该可以将其称为renew或者update. 
 
 \begin{definition}[relaxation]
-
+% left empty
 \end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{sssp3.png}
+    \caption{code}
+    \label{relaxation}
+\end{figure}
+
+意思即为, $u$ 到 $v$ 的一个松弛, 如果说走到 $u$ 然后走到 $v$ 的长度更短, 我们就更新 $v.d$ 目前最短路径长度; $v.\pi$ $v$ 的前驱, i.e. 更新为 $u$
+而 \verb|relaxation| 只需要常数时间. 
+
+% quotation 的间距好像也不是很理想.
+% quotation 好像很难加上caption
+% 说起来figure的caption的前缀很难改欸.
+\begin{quotation}
+Each algorithm in this chapter calls INITIALIZE-SINGLE-SOURCE and then repeatedly relaxes edges. Moreover, relaxation is the only means by which shortest
+path estimates and predecessors change. The algorithms in this chapter differ in
+how many times they relax each edge and the order in which they relax edges. Dijkstra's algorithm and the shortest-paths algorithm for directed acyclic graphs relax
+each edge exactly once. The Bellman-Ford algorithm relaxes each edge $\left| V \right|  -1$
+times.
+\end{quotation}
+
+
 \subsection{some property}
 
 你可以将两点之间的最短路径视为一个度量, 即, $\delta \left(u ,v\right)$ , 至少在正权图中, 满足度量的三个性质: 
 
 \begin{itemize}
-    \item 
-    1. 正定性: $\delta \left(v, u\right) \ge 0$
-    \item 
-    2. 忘了什么性: $\delta \left(u,v\right) = 0   \implies u = v$ 
-    \item
-    3. 三角不等式. $\delta (u, v ) + \delta \left(v , w\right) \ge \delta (u ,w)$
+% 你奶奶的, 怎么修改item的间距来着?
+    \item 1. 正定性: $\delta \left(v, u\right) \ge 0$
+    \item 2. 忘了什么性: $\delta \left(u,v\right) = 0   \implies u = v$ 
+    \item 3. 三角不等式. $\delta (u, v ) + \delta \left(v , w\right) \ge \delta (u ,w)$
 \end{itemize}
 
-至少这样好像挺有意思的. 
+至少这样好像挺有意思的. 然后虽然这样说并不是很好, 但是, 书本上涉及的这部分性质, 其实是非常直观并且感觉很明显的事情. 
+只有这不等式没有如此显然. 
+\subsection{an outline copied from textbook}
+Section 24.1 presents the Bellman-Ford algorithm, which solves the single-source
+shortest-paths problem in the general case in which edges can have negative weight.
+The Bellman-Ford algorithm is remarkably simple, and it has the further benefit
+of detecting whether a negative-weight cycle is reachable from the source. 
+Section 24.2 gives a linear-time algorithm for computing shortest paths from a single
+source in a directed acyclic graph. Section 24.3 covers Dijkstra's algorithm, which
+has a lower running time than the Bellman-Ford algorithm but requires the edge
+weights to be nonnegative. Section 24.4 shows how we can use the Bellman-Ford
+algorithm to solve a special case of linear programming. Finally, Section 24.5
+proves the properties of shortest paths and relaxation stated above.
+
+We require some conventions for doing arithmetic with infinities. We shall assume
+that for any real number $a \ne \infty$, we have $a + \infty  = \infty + a = \infty$. Also, to
+make our proofs hold in the presence of negative-weight cycles, we shall assume
+that for any real number $a \ne 1$, we have $a + \left(- \infty\right) = \left(  - \infty\right) + a =  - \infty$
+
+All algorithms in this chapter assume that the directed graph G is stored in the
+adjacency-list representation. Additionally, stored with each edge is its weight, so
+that as we traverse each adjacency list, we can determine the edge weights in $O \left(1\right)$ 
+time per edge.
 \section{Bellman-Ford algorithm}
 \subsection{an introd}
 \subsection{algorithm}
