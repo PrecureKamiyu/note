@@ -102,6 +102,7 @@ the text.
 我们可以开始一个概述, 
 我们从朴素方法开始. 
 
+\subsection{朴素方法}
 \paragraph{朴素方法} % (fold)
 \label{par:朴素方法}
 朴素方法没什么好说的, 这是因为,
@@ -116,6 +117,7 @@ the text.
 只能说是明显.
 % paragraph朴素方法 (end)
 
+\subsection{Rabin-Karp algorithm}
 \paragraph{Rabin-Karp algorithm} % (fold)
 \label{par:Rabin-Karp algorithm}
 这个是什么? 
@@ -236,8 +238,52 @@ The muching time that finite automata proceed along the Text is
 pretty good: $O \left(n\right)$. 
 But the running that state transition requires is that 
 $O\left( \left| \Sigma \right| m\right)$
-
 % paragraph (end)
 
+\subsection{KMP algorithm}
+\paragraph{KMP} % (fold)
+\label{par:KMP}
+We follow ppt here.
 
+The $\pi\left[ k \right]$ value is 
+actually 
+the length the longest common
+prefix and suffix.
+
+The while loop in the algorithm is 
+a way to efficiently lower the 
+value of k.  Figure~\ref{fig:sm2} shows a
+example of how the 
+pi array is worked out. And Figure~\ref{fig:sm3} 
+is the code that calculates the 
+pi array.
+\begin{figure}[]
+    \centering
+    \includegraphics[scale  = 0.4]{sm2.png}
+    \caption{pi array}
+    \label{fig:sm2}
+\end{figure}
+\begin{figure}[]
+    \centering
+    \includegraphics[scale = 0.5]{sm3.png}
+    \caption{code}
+    \label{fig:sm3}
+\end{figure}
+\begin{figure}[]
+    \centering
+    \includegraphics[scale = 0.5]{sm4.png}
+    \caption{code of matcher}
+    \label{fig:sm4}
+\end{figure}
+
+And then Figure~\ref{fig:sm4} is the code of 
+how matcher works. 
+
+Finally, without any proof, the ppt 
+tells us that 
+the worst case running time is 
+$O\left( n  +m\right)$. 
+Where we need $O\left(m\right)$ time to 
+compute the $\pi$ array. 
+% paragraphKMP (end)
 \end{document}
