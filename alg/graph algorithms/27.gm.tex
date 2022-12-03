@@ -1,0 +1,76 @@
+\documentclass[a4paper, 10pt]{ctexart} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片
+\usepackage{hyperref}           %生成可跳转的书签
+\usepackage{amsfonts}           %对某一些字体之支持
+\usepackage[]{amsmath}          %数学公式
+\usepackage{amsthm}             %定义, 定理, 证明, 例子环境的支持
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %插入图片
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage[]{color}            %给部分文本上色的
+\usepackage{algorithm}          %写伪代码的
+\usepackage{algorithmic}        %同上
+\usepackage{minted}
+\usepackage{amssymb}            %用来加入一些数学符号, 比如说 $\varnothing$
+\usepackage{titlesec}
+\usepackage{fontspec}           %不知道用来干嘛的
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setmonofont{Ubuntu Mono}       %?
+\usemintedstyle{custommanni}    %设置minted插入代码的风格
+\titleformat*{\section}{\huge\bfseries}             %管理title的字体和大小
+\titleformat*{\subsection}{\Large\bfseries}         %bfseries就是默认的字体.
+\titleformat*{\subsubsection}{\large\bfseries}      % 日, content里的不还是没变? 难堪的一笔
+% --------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+% --------------------------------
+\title{graph match}
+
+\begin{document}
+\tableofcontents
+\maketitle
+\section{some definition and the description of the problem}
+
+总之我们的目的是要找出匹配边, 至于说匹配是用来干什么的? 我目前还不太清楚. Anyway, 下面给出一系列的定义. 
+
+\begin{definition}[匹配]
+匹配是图的子图, 设为 $G' = \left(V' , E'\right)$, 其中 $V' = V$ , $E ' = \left\{e \in E : e \text{互不相邻}\right\}$
+\end{definition}
+画图就不画了, 你可以自己画一画, latex里画图好几把麻烦. 关键在于不相邻这个条件. 
+\begin{definition}[最大匹配]
+最大匹配是边数最多的匹配
+\end{definition}
+其实还有极大匹配, 就是说当前情况, 并不能再直接加边了的匹配, 但是明显, 极大匹配不一定是最大匹配. 
+\begin{definition}[匹配边, 非匹配边]
+$E' $ 即为匹配边, $E - E' $ 为非匹配边.
+\end{definition}
+\begin{definition}[交错路径]
+如果说 $p = \left< e_1, \cdots  , e_{n}\right>$ 中 $e_{i}$ 交错地是匹配边和非匹配边, i.e.  $e_{i}$ 是匹配边, 那么 $e_{i+1}, e_{i-1}$ 都是非匹配边, 那么称这个路径是交错路径.
+\end{definition}
+\begin{definition}[增广路径]
+如果说一个路径, 是交错路径, 并且非匹配边多于匹配边, 那么这个路径是增广路径.
+\end{definition}
+
+如果我们已知一个增广路径, 我们可以将其增广, viz. 将他们匹配和非匹配的身份调换, 这样匹配边数量加一.
+\section{algorithm}
+有定理: 
+\begin{theorem}
+一个匹配是最大匹配 $\iff $ 其没有增广路径.
+\end{theorem}
+那么这个定理足以证明下面算法的正确性:
+\begin{description}
+    \item[1] 找到augmenting路径.\footnote{一个不和匹配边相邻的边, 也能称为augmenting路径} 
+    \item[2] 将augmenting路径augment. 
+    \item[3] 直到不存在augmenting路径.
+\end{description}
+
+\section{application}
+\end{document}

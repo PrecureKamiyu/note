@@ -21,7 +21,7 @@
 \usepackage{hyperref}           %生成可跳转的书签
 \usepackage{blindtext}          %for test
 \pagestyle{plain}               %这是调整页面的风格, plain的情况下只有页码
-                                %页眉太几把烦了, 不想管
+%页眉太几把烦了, 不想管
 \titleformat*{\section}{\huge\bfseries}             %管理title的字体和大小
 \titleformat*{\subsection}{\Large\bfseries}         %bfseries就是默认的字体.
 \titleformat*{\subsubsection}{\large\bfseries}      % 日, content里的不还是没变? 难堪的一笔
@@ -39,8 +39,15 @@
 
 \title{test}
 \begin{document}
+\tableofcontents
 \maketitle
 
+$$ c_f \left(u ,v \right) = \begin{cases} c (u,v)  -f (u,v) & \text{if } \left(u ,v\right) \in E \\ f \left( v, u\right) & \text{otherwise} \end{cases} $$
+
+$$ f\uparrow f' \left( u ,v\right)= \begin{cases} f( u , v) + f' \left(u ,v\right) - f\left( v , u\right), &\text{ if } \left(u ,v\right) \in E \\ 0 & \text{ otherwise} \end{cases} $$
+
+我们熟知周期函数 $f$ 可以使用傅里叶级数表示, 设其角速度为 $\omega$, 周期为 $T$, 有
+$$ \begin{aligned} f \left(t\right) & = a_0 + \sum_{n=1} ^{\infty} \left[ a_{n} \cos  \left(n\omega t\right) + b_{n} \sin  \left(n \omega t\right)\right] \end{aligned} $$
 \section{the outline of logic}
 \[
     \text{数理逻辑}

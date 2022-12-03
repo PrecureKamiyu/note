@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int} \PYG{n}{Ford}\PYG{o}{\PYGZhy{}}\PYG{n}{Fulkerson} \PYG{p}{(}\PYG{n}{G}\PYG{p}{,} \PYG{n}{s}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{for} \PYG{n}{each} \PYG{n}{edge} \PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)} \PYG{n}{in} \PYG{n}{E}\PYG{p}{\PYGZob{}}
+        \PYG{n}{f}\PYG{p}{.(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{p}{\PYGZcb{}} \PYG{c+c1}{// initialization}
+    \PYG{k}{while} \PYG{n}{there} \PYG{n}{exists} \PYG{n}{an} \PYG{n}{augmenting} \PYG{n}{path} \PYG{n}{in} \PYG{n}{the} \PYG{n}{residual} \PYG{n}{graph}\PYG{p}{\PYGZob{}}
+        \PYG{n}{c\PYGZus{}f}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)} \PYG{o}{=} \PYG{n}{lowest} \PYG{n}{capacity} \PYG{n}{in} \PYG{n}{p}\PYG{p}{;}
+        \PYG{k}{for} \PYG{p}{(}\PYG{n}{each} \PYG{n}{edge} \PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)} \PYG{n}{in} \PYG{n}{p}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)} \PYG{n}{in} \PYG{n}{E}   \PYG{c+c1}{// if (u,v) in E , we augment it.}
+                \PYG{n}{f}\PYG{p}{.(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)} \PYG{o}{+} \PYG{n}{c\PYGZus{}f}\PYG{p}{(}\PYG{n}{p}\PYG{p}{);}
+            \PYG{k}{else}            \PYG{c+c1}{// if (v,u) not in E, we reduce it.}
+                \PYG{n}{f}\PYG{p}{.(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{u}\PYG{p}{)} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{u}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{c\PYGZus{}f}\PYG{p}{(}\PYG{n}{p}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

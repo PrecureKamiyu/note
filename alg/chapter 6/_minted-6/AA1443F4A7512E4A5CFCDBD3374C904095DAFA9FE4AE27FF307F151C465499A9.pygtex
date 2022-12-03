@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{err}{依照} \PYG{n}{f} \PYG{err}{的值为比较的}\PYG{n}{key}\PYG{p}{,} \PYG{err}{构造出一个堆}\PYG{p}{,} \PYG{err}{先是构造只有起点} \PYG{n}{r} \PYG{err}{的堆}
+  \PYG{k}{if} \PYG{n}{H} \PYG{err}{的根} \PYG{n}{x} \PYG{err}{是目标节点} \PYG{n}{then} \PYG{n}{stop}\PYG{p}{;}
+  \PYG{n}{delete\PYGZus{}max}\PYG{p}{(}\PYG{n}{H}\PYG{p}{);}  \PYG{err}{将} \PYG{n}{x} \PYG{err}{的子节点插入}\PYG{n}{heap}\PYG{p}{;}
+  \PYG{k}{if} \PYG{n}{H} \PYG{o}{==} \PYG{n+nb}{NULL} \PYG{n}{then} \PYG{n}{failed}\PYG{p}{;}
+  \PYG{k}{else} \PYG{k}{goto} \PYG{l+m+mi}{2}
+\end{Verbatim}

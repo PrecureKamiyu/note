@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{c+c1}{// 构造由根组成的栈 S}
+  \PYG{k}{if} \PYG{n}{S} \PYG{err}{中的第一个元素} \PYG{n}{x} \PYG{err}{是目标节点}
+      \PYG{n}{stop}
+  \PYG{k}{else}
+      \PYG{n+nf}{Pop} \PYG{p}{(}\PYG{n}{S}\PYG{p}{)} \PYG{p}{;}
+      \PYG{n}{Push} \PYG{p}{(}\PYG{n}{s}\PYG{p}{);} \PYG{c+c1}{// 将 x 的子节点按照给出的排列顺序压入栈.}
+  \PYG{k}{if} \PYG{n}{S} \PYG{o}{==} \PYG{n+nb}{NULL}
+      \PYG{k}{return} \PYG{n}{failed}\PYG{p}{;}
+  \PYG{k}{else} \PYG{k}{goto} \PYG{l+m+mi}{2}
+\end{Verbatim}

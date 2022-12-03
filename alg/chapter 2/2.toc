@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}阶}{1}{section.1}%
+\contentsline {section}{\numberline {2}和式的估计和界限}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}1. 直接算}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}2. 数学归纳法}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}放缩法}{4}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}裂项求和}{5}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}积分近似法}{6}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}递归方程}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}替换方法}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}替换方法2}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}变量替换法}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}递归数方法}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Master theorem}{10}{subsection.3.5}%

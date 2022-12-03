@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{k+kt}{int} \PYG{n+nf}{main} \PYG{p}{()\PYGZob{}}
+      \PYG{k+kt}{int} \PYG{n}{n} \PYG{o}{=} \PYG{o}{|}\PYG{n}{C}\PYG{o}{|}\PYG{p}{;}
+      \PYG{n}{init} \PYG{p}{(}\PYG{n}{Q}\PYG{p}{,} \PYG{n}{C}\PYG{p}{);} \PYG{c+c1}{// initialize Q with C , Q is a heap}
+      \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}=} \PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1} \PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+          \PYG{n}{z} \PYG{o}{=} \PYG{n}{AllocateNode} \PYG{p}{();} \PYG{c+c1}{// z 是一个节点.}
+          \PYG{n}{left}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)} \PYG{o}{=} \PYG{n}{Extract}\PYG{o}{\PYGZhy{}}\PYG{n}{Min}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{);} \PYG{c+c1}{// 取出Q中最小的}
+          \PYG{n}{right}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}\PYG{o}{=} \PYG{n}{Extract}\PYG{o}{\PYGZhy{}}\PYG{n}{Min}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{);} \PYG{c+c1}{// 同上}
+          \PYG{n}{x} \PYG{o}{=} \PYG{n}{left}\PYG{p}{(}\PYG{n}{z}\PYG{p}{);} \PYG{c+c1}{// 将 z 的左边赋给 x}
+          \PYG{n}{y} \PYG{o}{=} \PYG{n}{right}\PYG{p}{(}\PYG{n}{z}\PYG{p}{);}
+          \PYG{n}{p}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)} \PYG{o}{=} \PYG{n}{p}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{n}{p}\PYG{p}{(}\PYG{n}{y}\PYG{p}{);} \PYG{c+c1}{// 给出 z 的概率.}
+          \PYG{n}{insert} \PYG{p}{(}\PYG{n}{Q}\PYG{p}{,} \PYG{n}{z}\PYG{p}{);} \PYG{c+c1}{// 将 z 插进 Q}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{return} \PYG{n}{Q}
+  \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,575 @@
+\documentclass[a4paper, 10pt]{ctexart} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片
+\usepackage{amsfonts}           %对某一些字体之支持
+\usepackage{mathrsfs}           %mathscr e.g.
+\usepackage[]{amsmath}          %数学公式
+\usepackage{amsthm}             %定义, 定理, 证明, 例子环境的支持
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %插入图片
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage[]{color}            %给部分文本上色的
+\usepackage{algorithm}          %写伪代码的
+%\usepackage{algorithmic}       %同上
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+%\usepackage{minted}
+\usepackage{amssymb}            %用来加入一些数学符号, 比如说 $\varnothing$
+\usepackage{titlesec}
+\usepackage{fontspec}           %不知道用来干嘛的
+\usepackage{hyperref}           %生成可跳转的书签
+% -------------------------------
+%\setmonofont{Ubuntu Mono}       %?
+%\usemintedstyle{custommanni}    %设置minted插入代码的风格
+\titleformat*{\section}{\huge\bfseries}             %管理title的字体和大小
+\titleformat*{\subsection}{\Large\bfseries}         %bfseries就是默认的字体.
+\titleformat*{\subsubsection}{\large\bfseries}
+% -------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{corollary}{Comment}
+\newtheorem{proposition}{Proposition}
+\title{chapter 2}
+\pagestyle{plain}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{阶}
+\paragraph*{时间复杂度} 通常我们使用同阶函数的符号来描述一个算法的时间复杂度 viz. $\varTheta \left( f(n)\right)$  就是说, 当输入规模为 $n$ 的时候, 
+运行时间和 $ f\left(n\right)$ 同阶. 这个算法的运行时间和 $f\left(n\right)$ 有着相同的增长率. 
+
+我们于是可以使用 $\varTheta$ 来比较某些算法的时间效率. 
+
+\paragraph*{渐进} 渐进就是考虑无穷远处附近的情况. 比如说我们有一个渐进正的函数 $f$
+那么 $\exists c$ s.t. $x > c \implies f(x) > 0$. 输入规模很大的时候, 我们就可以只考虑
+最高阶的项
+
+\paragraph*{增长符号} 这些符号有五种, 我们现在给出其严格定义.
+
+\paragraph*{渐进上界 $O$}  
+\[
+O \left(f \right) = \left\{ g : \exists c , n_{0}, n > n_{0} \implies g  \left(n\right) \le c f\left(n\right) \right\}
+\]
+这个符号说明 $f$ 是一个渐进上界, $O\left(f\right)$ 就表示那些, 在远处来看, 比 $f$ 小的函数. 我们在描述一些算法的复杂度的时候, 也会使用
+这个符号, 因为一个算法的最坏情况和最好情况是不一样. 描述整个算法的时候常用 $O$ , 也能用 $\Theta$ , 只不过注明 , 基本都是考虑最坏情况下的时间.
+
+
+\paragraph*{渐进紧界 $\varTheta$} :
+\[
+\varTheta \left(f\right) = \left\{g: \exists c_{1} , c_2, n > n_{0} \implies  c_{1} f\left(n\right) \le g\left(n\right) \le c_{2} f\left(n\right)\right\}
+\]
+这个是同阶函数的意思, 我们说在远处, $f$ 和 $g$ 之间的区别就是一个常数倍的关系. 我们很容易知道 
+$ n^{2} + \frac{1}{2} n^{0.5} +  n^{0.6} \in \Theta \left(n^{2}\right)$ 
+我们只用考虑这里面的最大项数, 其中的那些小项可以直接忽略不计. 证明需要从定义出发:
+比如说证明 $\frac{1}{2} n^{2} - 3n \in \Theta \left(n^{2}\right)$. 
+
+取 $c_{2} = \frac{1}{2}$ , 然后 $\displaystyle  \frac{1}{2} n^{2}  - 3n = n \left(\frac{1}{2} n - 3\right) =n \left(\frac{1}{3} n+ \frac{1}{6} n - 3\right)$ 取 $n_{0} = 9$ 那么 $n >n_{0}$ 有 
+$\displaystyle  \frac{1}{3} n+ \frac{1}{6} n - 3 > \frac{1}{6} n$
+
+于是取 $c_1 = \dfrac{1}{6}$,  $c_{1} ,c_{2} , n_{0}$ 都取定了, 那么就证明完了.
+
+\paragraph*{渐进下界 $\Omega$} 
+\[
+\Omega \left(f\right) = \left\{ g: \exists c , n_{0}, n> n_{0} \implies g\left(n\right) > c f\left(n\right)\right\}
+\]
+和 $O$ 很类似. 我们可以通俗的将 $\Theta$ 理解为 $ = $ , 将 $\Omega$ 视为 $\ge$ , $O$ 看作 $\le$. 
+$O$ 用来表示渐进上界, $\Theta$ 表示的是渐进紧界, $\Omega$ 表示的渐进下界.
+\paragraph*{多项式界限的. $f\left(n\right) = O\left( p\left(n\right)\right)$} where $p$ is a polynomial, 那么我们称呼 $f$ 是多项式界限的.
+
+\paragraph*{严格渐进上界} $o$: 小o 符号, 是严格小于的意思. 实际上就是将那些同阶的函数给去掉了, 但是这种去掉的方法值得注意. 其严格的数学定义如下.
+\[
+o \left(f\right) = \left\{ g: \forall  c >  0, n_{0} , \forall n > n_{0} \implies g \left(n\right) < f \left(n\right)\right\}
+\]
+证明 $2 n^{2} \ne o \left(n^{2}\right)$ 即 我们要证明 存在 $c$ 使得 ``$\forall n > n_{0}, 2 n^{2} < n^{2}$'' 不成立. 注意到 $c = 1 >0 $ 则对于任意的 $n$, $ 2 n^{2} < cn^{2}$ 都不成立.\\
+证明有点乱, 勉强看把. 
+同时我们有一种等价描述法: 
+$$f\left(n \right)   = o \left(g\left(n\right)\right) \iff  \lim_{n \to \infty} \frac{ f\left(n\right)}{g\left(n\right)} =  0$$
+至少我认为这是等价的.
+
+\paragraph*{严格渐进下界} $\omega$: 小 $\omega$ 符号, 是严格大于的意思, 也是将那些同阶的函数去掉了. 和上面的定义完全类似.
+\[
+\omega \left(f\right) = \left\{ g:\forall c > 0 , \exists n_{0} , \forall  n > n_{0} \implies g \left(n \right) > cf \left(n\right)\right\}
+\]
+类似的, 我们也有等价的描述法: 
+$$ \lim_{n \to \infty} \frac{f\left(n\right)}{g\left(n\right)} = \infty$$
+
+\paragraph*{增长符号之间的关系}
+我们将他们考虑为那些小于等于号, 等于号, 大于等于号就行了, 并不是很难处理的. 我们著需要理解就行了.
+
+\begin{remark}
+    我们这里定义的这种关系实际上并不是良序的. 就是说, 存在两个函数, 他们是不可比的. 比如说
+    $$ n ,\quad  n ^{1 + \sin  n }$$
+    The latter is a BAD function.
+\end{remark}
+\begin{example}
+    Is $f\left(n\right) + o \left(f \left(n\right) \right) = \Theta \left(f \left(n\right)\right)$ correct?
+\end{example}
+
+\section{和式的估计和界限}
+我们有几种方法, 1. 硬算; 2. 数学归纳法; 3. 放缩
+
+\subsection{1. 直接算}
+\begin{proposition}
+    有限的求和能够拆开来:
+    $$\sum_{k=1} ^{n} \left(c a_{k} + b_{k}\right) = c \sum_{k=1} ^{n} a_{k} + \sum_{k=1} ^{n} b_{k}$$
+    这当然是显然的, 因为是有限的. 
+\end{proposition}
+\begin{example}
+算术级数: $\displaystyle \sum_{k=1} ^{n} k = \frac{n\left(n+1\right)}{2} = \Theta \left(n^{2}\right)$
+
+几何级数: $\displaystyle \sum_{k=0} ^{n} = 1 + x + \cdots +x^{n} = \frac{x ^{n+1} -1}{x - 1}$
+
+前后项抵消: $\displaystyle \sum_{k=1} ^{n} \left(a_{k} - a_{k-1} \right) = a_{n} - a_{0}$
+
+裂项求和: $\displaystyle \sum_{k=1} ^{n-1   } \frac{1 }{k \left(k+1\right)} = \sum_{k=1} ^{n-1} \left(\frac{1}{k} - \frac{1}{k+1}\right) = 1 - \frac{1}{n}$
+\end{example}
+\subsection{2. 数学归纳法}
+主要是使用第二数学归纳法, 证明一个上界而已. 
+\begin{example}
+证明 $\displaystyle \sum_{k=0}^{n} 3^{k} = O\left(3 ^{n}\right)$
+\begin{proof}
+步骤 1. $n = 1$ 的时候, 我们取 $c$ 是一个大于 $1$ 的数就行了, 具体地, 我们取 $c = \frac{3}{2}$ 等会就能知道为什么了. 
+
+步骤 2. $n  = i$ 的时候, 根据假设, $\displaystyle \sum_{k=0} ^{n} 3^{k} = O \left(3^{n}\right)$ 成立
+
+步骤 3. 我们现在要证明 $n   = i+1$ 的时候, 上面的式子也成立. $\sum_{k=0} ^{i+ 1} 3^{k} =\sum_{k=0} ^{i}   3^{k} + 3 ^{i +1} \le c 3 ^{i} + 3 ^{i + 1}$
+有
+\[
+c 3 ^{i} +  3 ^{i+1} = c 3^{i+1} \left( \frac{1}{3} + \frac{1}{c}\right) \le c 3 ^{i+1}
+\] 
+得证. 
+这里用到了 $c = \frac{3}{2} $ 的性质. 
+\end{proof}
+\end{example}
+\begin{example}
+    一个错误示范: $\sum_{k=1} ^{n} k = O\left(n\right)$
+    \begin{proof}
+        1. $n= 1$ 的时候当然成立. 
+
+        2. $n = m $ 的时候成立, 根据假设
+
+        3. $n = m + 1$ 的时候
+        \[
+        \sum_{k=1} ^{m +1 } k =  \sum_{k=1} ^{m} + \left(m  + 1\right) \le cm + \left(m + 1\right) = \left(c+1\right) m +1 = O\left(m\right) \qedhere
+        \]
+    \end{proof}
+    这个证明是错误的, 因为其我们考虑这个 $n =  m +1$ 的时候, 因为我们已经给定了这个 $c$ , 那么需要维持这个 $c$ . 就是说, 我们要得到 
+    $c n$ viz. $ c\cdot \left( m+1\right)$ 
+    而不是上面这个 $\left(c + 1\right) \cdot  m +  1    $
+    
+    我们需要有不等式: 
+    $$ c m + m + 1 \le c \left( m + 1\right)$$
+    就有 
+    $$c \ge m+1$$ 这个时候能够看出 $c$ 是一个随着 $n$ 变化而变化的函数值 $($ 并且这个函数没有上界 $)$, 并不是一个常数. 
+\end{example}
+
+\subsection{放缩法}
+\begin{example}
+    \[
+    \sum_{k=1} ^{n} k \le \sum_{k=1} ^{n} n = n^{2} 
+    \]
+\end{example}
+\begin{example}
+    \[
+    \sum_{k=1} ^{n} a_{k} \le n\times \max_{}\left\{a_{k}\right\} 
+    \]
+\end{example}
+\begin{example}[使用等比数列作为上界]
+    If $\forall k   > 0 , a_{0} \ge 0,  0 \le \dfrac{a_{k+1}}{a_{k}} \le r < 1$ , 求 $\sum_{k=0}^{n} a_{k}$ 的上界 
+    \begin{proof}
+        明显这个数列的每一项, 都是小于一个 $r$ 为公比, $a_{0}$ 为首项的等比数列.
+        \[
+        a_{k} \le a_0 r ^{k} 
+        \]
+        那么 $\sum\limits^{n}_{k=0} a_{k}\le \sum\limits_{k=0}^{\infty} a_{0} r ^{k} = a_{0} \sum\limits_{ k=0} ^{\infty} r^{k} = a _{0} \dfrac{1}{1-r}$ $\left(\left| r \right|  \le 1\right)$
+    \end{proof}
+\end{example}
+\begin{example}
+    求 $\sum\limits_{k=1}^{\infty}  \left( \dfrac{k}{3^{k}}\right)$ 的上界. 
+    \begin{proof}
+        能够注意到 
+        $$a_{k+1}/ a_{k} = \frac{\left(k+1\right) / 3 ^{k +1}}{k / 3 ^{k}} = \frac{1}{3} \times \frac{k+1}{ k} \le \frac{1}{3} \times 2  = \frac{2}{3}$$
+        我们设 $r$ 为 $\dfrac{2}{3}$ 就能够使用上面的方法
+    \end{proof}
+\end{example}
+\subsubsection{裂项求和}
+\begin{example}
+    求 $\sum_{k=1} ^{n} k   $ 的下界 
+    \begin{proof}
+        \[
+        \sum_{ k=1}  ^{n} k = \sum^{\lceil n /2\rceil } _{k=1}k + \sum_{k = \lceil n / 2\rceil} ^{n} k
+        \]
+        我们将这个东西放小. 
+        $\displaystyle \sum_{k=1}^{\lceil n / 2 \rceil} k \ge 0 $, 并且 $\displaystyle \sum_{k= \lceil n / 2 \rceil + 1} ^{n} k \ge  \sum_{k= \lceil n / 2 \rceil + 1} ^{n} \dfrac{n}{2} $
+
+        就能够得到 
+        \[
+        \sum_{k=1} ^{n} k \ge \sum_{\lceil n / 2 \rceil  +1 }^{n} \frac{n}{2} \ge \left( \frac{n}{2}\right)   ^{2}  = \frac{n^{2}}{4}
+        \] 这就说明这个逼登东西的下界是 $\Omega \left(n ^{2}\right)$
+    \end{proof}
+\end{example}
+\begin{example}
+    $\sum_{k=0} ^{\infty} \frac{k^{2} }{2^{k}}$ 的上界
+    \begin{proof}
+        对于类似这样的东西, 我们可以联想到放缩为等比数列的那个东西. 
+        
+        注意到 $k \ge 3$ 的时候 
+        \[
+        \frac{ \left(k  +1\right) ^{2}  /  2 ^{k+1}}{ k ^{2} / 2 ^{k}}  =  
+        \frac{ \left(k+1\right) ^{2} }{ 2 k^{2}} \le
+        \frac{8}{9}
+        \]
+        于是我们将这个东西拆分为两个部分, 一个部分是 前面 $\sum_{k=0} ^{2}         \displaystyle \frac{k^{2} }{ 2 ^{k} }$ 以及 
+        从 $k  =3$ 开始的后面的那些东西. 
+        
+        那么有 
+        \begin{align*}
+        \sum_{ k=0} ^{\infty} \frac{k^{2} }{2 ^{k}}  =& \sum_{k  = 0}  ^{2} \frac{k^{2} }{ 2 ^{k} } + \sum_{ k=3}  ^{\infty} \frac{k^{2} }{2^{k} } \\
+        \le& 0 + \frac{1}{2} + 1   +  \sum_{k=3}  ^{\infty} \frac{9}{8} \left( \frac{8}{9}\right) ^{k}   \\
+        \le& \frac{3}{2}  + \left( \frac{8}{9}\right) ^{k}\sum_{k = 0} \left( \frac{8}{9}\right) ^{k} \\
+        =& \frac{3}{2} + \left( \frac{8}{9}\right) ^{2} \cdot  \frac{1}{1-  \frac{8}{9}}  \\
+        =& \text{不知道多少} = O\left(1\right)
+        \end{align*}
+    \end{proof}
+\end{example}
+\begin{example}
+    求调和级数 $H_{n} = \sum_{k=1} ^{n} \frac{1}{k}$ 的上界
+    \begin{proof}
+    Not so good the proof.
+
+    \begin{align*}
+        \sum_{k=1} ^{n} \frac{1}{k} & = \frac{1}{1} + \left( \frac{1}{2} + \frac{1}{3} \right) + (\frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \frac{1}{7} )  \\
+        &\quad +\left( \frac{1}{8}  +\frac{1}{9} + \frac{1}{10} + \frac{1}{11} + \frac{1}{12} + \frac{1}{13} + \frac{1}{14} + \frac{1}{15}\right) \\
+        &\quad + \cdots 
+    \end{align*}
+    我们进行一个观察, 这个括号\footnote{你是否记得什么情况下括号是合法的?}里面的几把东西, 可以看出 
+    $\displaystyle  \left(\frac{1}{2} + \frac{1}{3}\right) \le \left( \frac{1}{2} + \frac{1}{2} \right)  =1$
+    每一个括号都是类似的. 所以说 
+    \begin{align*}
+        \sum_{k=1} ^{n} \frac{1}{k} \le \sum_{i = 0}  ^{\lceil\log n\rceil} 1 \le \log n + 1 = O \left(\log  n  \right)
+    \end{align*} 
+    \end{proof}
+\end{example}
+
+\subsubsection{积分近似法}
+其实就是画长方形. 
+
+我们有近似方法: 如果说 $f$ 是单调的, 那么有
+\begin{align*}
+&\int ^{n} _{m-1} f\left(x\right) \ \mathrm{d} x \le \sum_{k=m} ^{n} f\left(k\right)\\
+&\int ^{n + 1} _{m} f\left(x\right)\ \mathrm{d} x \ge \sum_{k = m}  ^{n} \left(k\right)
+\end{align*}
+这个好像叫什么darboux上和, darboux下和什么的. 没有什么必要进行死记, 理解就行
+
+我个人建议画一个图, 反正我画不了.
+
+\begin{example}
+如果 $f$ 是单调递减的, 那么 
+\begin{align*}
+    \int ^{n + 1} _{m} f\left(x\right) \ \mathrm{d} x 
+    \le  \sum_{k= m }  ^{n} f\left(k\right) 
+    \le \int ^{n} _{m-1} f\left(x\right) \ \mathrm{d} x
+\end{align*}
+\begin{proof}
+    略
+\end{proof}
+\end{example}
+\begin{example}
+    \begin{align*}
+        \log \left( n + 1\right) = \log x | ^{n+1} _{1} = \int  ^{ n+1 }_{1} \frac{1}{x} \ \mathrm{d}x \le \sum_{k=1} ^{n} \frac{1}{k}
+    \end{align*}
+    while 
+    \begin{align*}
+        \sum_{k=2} ^{n} \frac{1}{k} \le \int ^{n} _{1} \frac{1}{x} \ \mathrm{d} x  = \log  x | ^{n} _{1}  = \log n
+    \end{align*} 
+\end{example}
+\begin{example}
+    $H_{n} = o\left(n\right)$ 是对的吗?
+\end{example}
+
+\section{递归方程}
+\begin{example}
+    比如说这时一个递归方程: 
+    \begin{align*}
+        T \left(n\right) = 
+        \begin{cases}
+            2 T \left( \frac{n}{2}\right) + 11 \cdot n & n > 1\\
+            1 & n \le 1
+        \end{cases}
+    \end{align*}
+    这个东西就描述了一种递归关系. 对于这个 $T \left(n\right)$ 我们希望找到这个东西的阶. 
+    
+    上述这个递归方程的就有 $ T \left(n\right) =  O\left( n \log  n  \right)$
+\end{example}
+
+一般来说, 对于递归方程的初始条件,  $n \le 1$ 的时候的值, 都是给定的. 不是一般性, 我们都假定这个东西是 $O(1)$. 
+因为就算说, 阿, 这个东西, 哈, 初始的时候就有 $T \left(1\right)  = O\left(n\right)$ 什么的, 其实没什么用, 我只需要照常求,
+然后在结果上面加上一个 $O\left(n\right)$ 就行了. 
+
+
+我们求解递归方程有三个主要的方法
+\begin{figure}[H]
+    \centering
+    \begin{align*}
+        \begin{cases}
+            1. \text{替换方法} \\
+            2. \text{递归树方法} \\
+            3. \text{Master定理} 
+        \end{cases}
+    \end{align*}
+    \caption{三个主要方法}
+\end{figure}
+进行一点说明: 1. 其实就是猜, 然后使用数学归纳法. 2. 画出递归树, 然后将方程转化为一个 series 然后使用估计的方法机型求解. 
+3. 可以求解形如 $T \left(n\right) =  a \cdot   T \left( n /  b\right) + f\left(n\right)$
+
+\subsection{替换方法}
+\begin{example}
+    求解 $ T \left(n\right) =  2 \cdot  T \left(\lfloor n / 2 \rfloor \right) + n , T \left(1\right)   =1$  的上界. 
+    \begin{proof}
+        根据这个经验 (master定理也行) 猜测这个结尾 $T \left(n\right) = O\left( n \log n \right)$ .
+        
+        根据这个 $O$ 的定义, 我们需要证明 
+        \begin{align*}
+            \exists c ,  n _{0} > 0 , \forall  n \ge n_{0} , T \left(n \right)  \le c n \log n
+        \end{align*}
+        而后, 使用归纳法证明: 
+
+        step 1.  $n = 1$ 的时候显然成立, 随后 
+
+        step 2. 设 $n  \le m   $ 的时候这个结论都成立. 
+
+        step 3. 验证 $n  = m+ 1$ 的时候
+        \begin{align*}
+            T \left(n\right) & =  2 \cdot  T \left( \frac{n}{2} \right) + n \le  \left( c \frac{n}{2}  \log  \frac{n}{2} \right) + n \le c n \log \frac{n}{2} + n\\
+            & = c n \log  n - cn \log  2  + n\\
+            & = cn \log  n - n (c \log  2 - 1) \\
+        \end{align*}
+        这个时候, 如果说 $ c \log  2 - 1$ 是大于 0 的 , 就有 
+        \begin{align*}
+            T \left(n\right) \le c n \log n
+        \end{align*}
+        得证
+    \end{proof}
+\end{example}
+\begin{corollary}
+    如果说 初始条件不成立的的话, 
+    就往后推理, 看看是否是矛盾得. 
+
+    比如说这里就有: $ \left. n \log n\right|_{n =1}  = \log 1  = 0 $ 这个和 
+    $T \left(n\right)  = 1$ 矛盾了, 于是我们找到 $ n = 2$ 得时候 
+
+    对于大多数得递归式而言, 扩展边界条件使得归纳假设对较小的 $n$ 成立 ,是一种简单直接得方法
+\end{corollary}
+\begin{example}
+    求解 $T \left(n \right)  2 \cdot  T \left( \frac{n}{2}  + 17\right) + n$ 
+    \begin{proof}
+        设 $T \left(n\right) $ 和 $ T \left(n\right)  = 2 \cdot  T \left( \frac{n}{2} \right) + n$ 只相差了一个常数 $17$ 
+        
+        啥, 为什么? 
+
+        当 $n$ 充分大的时候 ,  $T \left( \frac{n}{2} + 17    \right) $ 和 $T\left(n / 2\right) $ 之间得差别并不是很大. 
+        这个时候 我们可以猜测, $T \left(n\right)  = O \left(n \log n    \right)$ . 猜测完了之后就是使用数学归纳法的时候了
+        
+        step 1. 初始显然成立
+
+        step 2. 设 $ n \le m$ 得时候成立, viz. 
+        \begin{align*}
+            T \left(n\right) \le cn \log n
+        \end{align*}
+
+        step 3. 下面验证  $n  =  m  +1$ 得时候的情况, 并且这里有 $ n / 2 + 17 \le m$. 这里设 $\log = \log _{2}$
+        \begin{align*}
+            T \left(n \right) & = 2 T \left(  n  / 2 + 17\right) + n \le 2 c \left( \frac{n}{2}  + 17    \right) \cdot  \log  \left( \frac{n}{2} + 17   \right) + n\\
+            & = \left(c n + 34 c\right) \cdot \left( \log  \left( n + 34\right)  - 1\right) + n \\
+            & \le \left(c n  +34 c\right)  \cdot  \left( \log  \left( 1.5 n\right)  -1 \right) + n   \tag{$n + 34 < 1.5$} \\
+            & =  \left(c n + 34 c\right)  \cdot  \left( \log  n + \log 1.5  -1  \right) + n\\
+            & = cn \log  n + \left(  \left(\log 1.5  - 1\right)c + 1 \right)  n + 34 c \left( \log  1.5  -1\right)  + 34 c \log n \\
+            & \le c n \log n \tag{$(\log 1.5 - 1) c + 1 \le 0, \log  1.5 - 1 < 0$}
+        \end{align*}
+        shit ! $c \log n$ is literally ignored. 
+    \end{proof}
+    \end{example}
+    \subsection{替换方法2}
+    \textbf{
+    我们证明比较松的上下界, 然后缩小范围. 
+    }
+    \begin{example}
+        求解 $T \left(n \right) = 2 \cdot  T \left( n /2\right) + n$ 
+        \begin{proof}
+            先证明 $T \left(n\right)  = \Omega (n   ) , T \left(n \right) =  O\left(n  ^{2} \right)$ 
+            然后降低上界, 提高上界. 
+
+            $\Omega\left(n\right) $ 上一阶是 $\Omega \left( n  \log n   \right)$ 而 
+            $ O\left(n ^{2} \right)$ 的下一个阶 是 $ O \left(n \log n\right)$
+        \end{proof}
+    \end{example}
+    但是, 就算说这个猜测是正确的, 也有可能不适合使用归纳法. 于是说 我们需要从猜测中减去一个低价的玩意, 就可能解决. 
+    \begin{example}[减取低阶的玩意]
+        $ T \left(n\right)   = T \left(\lfloor  \frac{n}{2}\rfloor \right) + T \left( \lceil n  / 2 \rceil\right)   +1$
+        \begin{proof}
+            猜测 $T \left(n\right)  =  O\left(n\right)$ 
+            
+            有 
+            \begin{align*}
+                 T\left(n\right)  \le c \lfloor \frac{n}{2} \rfloor + \lceil \frac{n}{2} \rceil + 1  = c n + 1 \ne c n 
+            \end{align*}
+            就是因为这个 $1$ , 现在不能证明出来.
+
+           这个时候, 我们需要从猜测中减去一个低价的玩意, 那么 $T \left(n \right) \le cn - b $ ,
+           其中 $ b \ge 0$ $b$ 是随便一个数字,
+           就有:
+           \begin{align*}
+            T\left(n\right) &  \le c \lfloor \frac{n}{2} \rfloor + \lceil \frac{n}{2} \rceil + 1  - 2 b \\
+            & = cn  -  2b + 1 = cn -  b  -  b+ 1 \le cn - b
+           \end{align*}
+           其中我们令 $b \ge 1$, 就能够得到答案了 viz. $T \left(n\right) \le c n - b$ 
+        \end{proof}
+    \end{example} 
+\begin{corollary}
+    为什么说,是增加一个呢? 
+    并且为什么说上面是 $c m -  b$ 的形式呢? 
+    也就是说这个减去一个项并不是说 $T \left(n  \right) = O\left( n  - b \right)$ ? 
+\end{corollary}
+
+\subsection{变量替换法}
+使用变量替换把递归方程变换为熟悉的方程. 
+\begin{example}
+    $T \left(n\right) = 2 \cdot  T \left(\sqrt n\right) +\log n$ 考虑 $\sqrt n$ 为整数. 
+    \begin{proof}
+        令 $  m  =\log  n  $ 那么 $n  =2 ^{m} $ 然后, 就有 $T \left(n\right) =  T \left( 2 ^{m}\right)$ 将这个玩意视为 $m$ 的函数 就有 
+        \[
+        T\left(2 ^{m} \right)  = S\left(m\right) 
+        \]
+        并且还有 
+        \[
+        S \left( m \right) = T \left( 2 ^{ m  / 2}\right) + m = 2 S \left( \frac{m}{2}\right) + m
+        \]
+        明显这个逼登东西是我们熟悉的, 然后就有 $S\left(m\right)  = O\left( m \log m\right)$ , $T \left( 2^{m}\right) =  O\left( m \log  m \right)$
+
+        那么 就有 $T \left( n\right)  =   O \left( \log  n \log  \left( \log n\right)\right)$
+    \end{proof}
+    Very good the example
+\end{example}
+
+
+\subsection{递归数方法}
+下面是一个步骤.
+\begin{figure}[H]
+    \centering
+    \begin{align*}
+        \begin{cases}
+            1. \text{画出递归树} \\ 
+            2. \text{循环的展开方程}\\
+            3. \text{吧递归方程转化为 series} \\
+            4. \text{求解 series}
+        \end{cases}
+    \end{align*}
+\end{figure}
+
+根节点 就是 $ T\left(n\right)$. 
+
+内部的节点就是不同层次调用的那些东西产生的代价. 
+
+并且这个树的分支的数量取决于这个子问题的数量. 其中叶子节点是边界条件的那些东西. 
+
+\begin{example}
+    $T \left(n\right)   =  3 \cdot T \left(    n  /  4\right)     + \Theta \left(n ^{2} \right)$
+    能够看出这是一个 3 branching 的一棵树. 
+    
+    我们进行一个手算好吧.
+
+    先看level 0, 明显有 $c n^{2}$ , 这个是根据 $\Theta \left(n^{2}\right)$ 来的, 就一个节点, viz. 根节点. 
+
+    level 1. 有三个节点, 都是 $c \left( n / 4 \right) ^{2}$.  总和就是 $ \frac{3}{16} n^{2}$
+ 
+    level 2. 类似的, 有 $9 $ 个节点, 每一个都是 $c \left( n / 4^{2}\right) ^{2}$ , 总和就是 $\left( \frac{3}{16} \right) ^{2} c n^{2}$ 
+
+    每一个 level 都是差不多的, 于是我们要知道 level 的数目. 其实就是 $\log _{4} n $ , 这时明显的. 那么就有:
+    \begin{align*}
+        T\left(n\right) = \sum_{k=0} ^{\log _{4} n    - 1} \left( \frac{3}{16}\right) ^{k} c n^{2}   
+    \end{align*}
+    这里其实还需要特别注意那个, 叶子节点的那一层, 反正就是那层不太一样, 我们找出那层的节点个数: $3 ^{\log _{4}  n}  =  n ^{ \log _4  3}$ , 那么那一层的代价就是 $ c n ^{2 \log  _{4} 3}$
+
+    就有:
+    \begin{align*}
+        T \left(n\right) &  = \sum_{i =  0 }  ^{ \log  _{4} n - 1 } \left( \frac{3}{14}\right) ^{i} cn ^{2} + \Theta \left( n \log  _{4} 3   \right) \\
+        & = \frac{ 1 - \displaystyle \left(\frac{3}{16}\right)^{\log  _4 n   }}{1-\displaystyle  \frac{3}{16}} c n^{2} + \Theta \left( n ^{ \log _{4} 3}\right)
+    \end{align*}
+    the deduction above use $\sum_{k=0} ^{n} x ^{k} = \frac{1 - x ^{n + 1}}{1 -  x}$
+\end{example}
+\begin{example}
+    $T\left(n\right)  =  n  + 3 T \left( n  / 4\right)$
+    \begin{proof}
+        容易知道 
+        \begin{align*}
+            T \left(n\right) & \le \sum_{ i  =  0 } ^{ \log _{4} n - 1} \left( \frac{3}{4} \right)^{i} n 
+            + \Theta \left( n ^{\log _{4} 3}\right) \\
+            & \le n \sum_{i= 0} ^{\infty} \left( \frac{3}{4} \right) ^{i} \Theta \left( n^{\log _{4} 3  }\right) \\
+            & = n \times \frac{1}{1 - \frac{3}{4}} + \Theta \left( n ^{\log _{4} 3  }\right) = 4n + \Theta \left( n ^{ \log _{4} 3  }\right) = O\left(n\right)
+        \end{align*}
+    \end{proof}
+\end{example}
+
+\subsection{Master theorem}
+Master theorem is used to solve the recurrence function with the form 
+\begin{align*}
+    T \left(n\right) =  a T\left( n  / b\right) + f \left(n\right)
+\end{align*}
+where $a \ge 1$,  $b >1$ , they are 常数. $f \left(n\right)$ 渐进正函数
+
+\begin{theorem}
+    Give a recurrence function $T\left(n\right)$ then
+
+    1. if $f\left(n\right) = O \left( n ^{\log _{b} a - \varepsilon}\right)$ for some $\varepsilon > 0$ , then 
+    \begin{align*}
+        T\left(n\right) = \Theta \left(n ^{\log _{b}a}\right)
+    \end{align*}
+
+    2. if $f \left(n\right) = \Theta \left(n ^{\log _{b} a}\right)$ , then 
+    \begin{align*}
+    T\left(n\right) = \Theta \left( n ^{\log _{a }b } \log  n\right) = \Theta \left(f \left(n\right) \log n    \right)
+    \end{align*}
+
+    3. if $f \left(n \right) = \Omega \left( n ^{\log _{b} a + \varepsilon}\right)$ for some $\varepsilon > 0$, then 
+    \begin{align*}
+        T\left(n\right) = \Theta \left(f \left(n\right)\right)
+    \end{align*}
+    with additional condition $\exists c < 1$ we have $a f \left( n  / b    \right) \le cf\left(n\right)$ asymptotically
+\end{theorem}
+
+You may notice the condition $f \left(n \right) = \Omega \left( n^{\log _{a} b + \varepsilon}\right)$ 
+somehow weird. Why bother to use $\varepsilon$ ? 
+
+In fact , there are some conditions that Master can not tackle with viz. 
+\begin{align*}
+    \exists f, \text{s.t.} \forall  \varepsilon > 0 , f\left(n\right) = o \left( p \left(n\right) \cdot  n ^{\varepsilon}\right)
+\end{align*}
+while that $f = \omega \left(p \left(n\right)\right)$
+
+    $f\left(n\right) = O \left( n  ^{ \log _{b} a  - \varepsilon }\right)$  where $\varepsilon > 0$ is cons. then 
+    $T\left(n\right)  =  \Theta \left(  n^{\log _{b}a   }\right)$
+
+    if $f\left(n\right)  = \Theta \left( n ^{\log _{b} a    } \right)$ then $T\left(n\right) = \Theta \left( n ^{\log _{b} a } \log n\right)$
+
+How about this one? You can have a tr. 
+\begin{example}
+    $T\left(n \right) =   9  T\left( n / 3\right) + n$
+
+    $T\left( n\right) = T\left( 2n /3\right) + 1$
+\end{example}
+
+\begin{example}
+    $T\left(n\right)  =  3 T\left( n / 4\right) + n \log n$
+\end{example}
+\begin{example}
+    $T\left(n\right) =      2  T \left( n /2\right) +  n\log n  $
+\end{example}
+\end{document}

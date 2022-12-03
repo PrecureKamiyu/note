@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  1 NOV 2022 19:07
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  15 NOV 2022 15:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -968,6 +968,9 @@ LaTeX Info: Redefining \nameref on input line 29.
 \openout5 = `aa.out'.
 
 
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1002,30 +1005,78 @@ LaTeX Info: Redefining \nameref on input line 29.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./aa.toc)
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write6
 \openout6 = `aa.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
+Missing character: There is no 複 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Missing character: There is no 沒 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
  [1
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
- (./aa.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 34.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
-Package rerunfilecheck Info: File `aa.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
- ) 
-Here is how much of TeX's memory you used:
- 19478 strings out of 479819
- 403536 string characters out of 5895846
- 737770 words of memory out of 5000000
- 36309 multiletter control sequences out of 15000+600000
- 532980 words of font info for 48 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 56i,5n,72p,2152b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on aa.pdf (1 page).
+Missing character: There is no 為 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 儅 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 別 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 說 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 儅 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 為 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 為 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 說 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10> not
+ available
+(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on
+ input line 110.
+ [2]
+Missing character: There is no 佈 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 為 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 為 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 別 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 為 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 換 in font [FandolSong-Regular.otf]/OT:language=d
+flt;!
+Missing character: There is no 絕 in font

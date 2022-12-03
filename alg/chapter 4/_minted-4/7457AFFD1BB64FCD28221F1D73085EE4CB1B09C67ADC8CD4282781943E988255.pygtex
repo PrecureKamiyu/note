@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+   \PYG{n}{zero}\PYG{o}{\PYGZhy{}}\PYG{n}{one}\PYG{o}{\PYGZhy{}}\PYG{n}{Kaban} \PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{v}\PYG{p}{)\PYGZob{}}
+       \PYG{k+kt}{int} \PYG{n}{n} \PYG{o}{=} \PYG{n}{v}\PYG{p}{.}\PYG{n}{length} \PYG{c+c1}{// v.length 就是物品之个数}
+       \PYG{k}{for} \PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{x} \PYG{o}{\PYGZlt{}=} \PYG{n}{c} \PYG{p}{;} \PYG{n}{x}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+           \PYG{n}{k}\PYG{p}{[}\PYG{n}{x} \PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+       \PYG{p}{\PYGZcb{}}
+       \PYG{k}{for} \PYG{p}{(}\PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}=} \PYG{n}{n} \PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//这个 j 从 0 开始也不是不行, 只不过上面的已经初始化了一次了}
+           \PYG{n}{k}\PYG{p}{[}\PYG{l+m+mi}{0} \PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+       \PYG{p}{\PYGZcb{}}
+       \PYG{k}{for} \PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{x} \PYG{o}{\PYGZlt{}=} \PYG{n}{c} \PYG{p}{;} \PYG{n}{x}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+           \PYG{k}{for} \PYG{p}{(}\PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}=} \PYG{n}{n} \PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}} \PYG{c+c1}{//一个两重循环就是为了遍历这个矩阵}
+              \PYG{n}{k}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{k}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{];}
+              \PYG{k}{if} \PYG{p}{(}\PYG{n}{w\PYGZus{}j} \PYG{o}{\PYGZlt{}=} \PYG{n}{x}\PYG{p}{)}
+                  \PYG{n}{k}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{max} \PYG{p}{(}\PYG{n}{k}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{j}\PYG{p}{],} \PYG{n}{k}\PYG{p}{[}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{w\PYGZus{}j}\PYG{p}{,} \PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{n}{v\PYGZus{}j}\PYG{p}{);}
+           \PYG{p}{\PYGZcb{}}
+       \PYG{p}{\PYGZcb{}}
+       \PYG{k}{return} \PYG{n}{k}\PYG{p}{[}\PYG{n}{c}\PYG{p}{,}\PYG{n}{n}\PYG{p}{]}
+   \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

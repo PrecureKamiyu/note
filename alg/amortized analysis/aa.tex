@@ -30,5 +30,554 @@
 \tableofcontents
 In an amortized analysis, we average the time required to perform a sequence of data-structure operations over all the operations performed. With amortized analy- sis, we can show that the average cost of an operation is small, if we average over a sequence of operations, even though a single operation within the sequence might be expensive. Amortized analysis differs from average-case analysis in that prob- ability is not involved; an amortized analysis guarantees the average performance of each operation in the worst case.  The first three sections of this chapter cover the three most common techniques used in amortized analysis. Section 17.1 starts with aggregate analysis, in which we determine an upper bound T .n/ on the total cost of a sequence of n operations.  The average cost per operation is then T .n/=n. We take the average cost as the amortized cost of each operation, so that all operations have the same amortized cost.  Section 17.2 covers the accounting method, in which we determine an amortized cost of each operation. When there is more than one type of operation, each type of operation may have a different amortized cost. The accounting method overcharges some operations early in the sequence, storing the overcharge as “prepaid credit” on specific objects in the data structure. Later in the sequence, the credit pays for operations that are charged less than they actually cost.  Section 17.3 discusses the potential method, which is like the accounting method in that we determine the amortized cost of each operation and may overcharge op- erations early on to compensate for undercharges later. The potential method main- tains the credit as the “potential energy” of the data structure as a whole instead of associating the credit with individual objects within the data structure.  We shall use two examples to examine these three methods. One is a stack with the additional operation MULTIPOP, which pops several objects at once. The other is a binary counter that counts up from 0 by means of the single operation INCREMENT.  
 
-woc, 怎么tm一点都没写啊
+這是複數形式的傅里葉級數的相關概念. 
+
+
+
+首先我們從指數形式的傅里葉級數入手 (或者可以不用這個)
+
+$$f\left(t\right) = \sum_{n  = -\infty} ^{ \infty} F \left( n \omega\right) e ^{\mathrm{j} n \omega t}$$
+
+考慮這個 $F \left(n \omega t\right)$
+
+我們觀察其計算公式:
+
+$$ F \left( n \omega \right) =  \frac{1}{T} \int ^{\frac{T}{2}}_{-\frac{T}{2}} f\left(t\right) f\left(t\right) e ^{-\mathrm{j} n \omega  }\ \mathrm{d}t$$
+
+$T$ 將要趨近於無窮, 這樣才是非周期的信號是吧. 但是我們能發現, 這樣的話, RHS是趨向於零的, 這樣根本不能對這個等式的信息進行一個觀察, 我們得到 0= 0 這樣沒有意義的東西. 
+
+但是呢, 我們將 $T$ 乘過去, 就有
+
+$$ F \left( n \omega\right) T =  \frac{2\pi F \left(n \omega \right)}{n \omega} = \int ^{\frac{T}{2}}_{- \frac{T}{2}} f\left(t\right) e^{ - \mathrm{j} n \omega   }\ \mathrm{d}t$$
+
+這個時候! 我們將中間這一坨, 看為一個函數, 將其封裝起來.
+
+$$\frac{2\pi F \left(n \omega \right)}{n\omega} = \left.\frac{2 \pi F \left(\omega\right)}{\omega} \right|_{\omega = n \omega_{0}}$$
+
+這裏突然將 $\omega$ 換位了 $\omega _{0}$ , 反正我換了, 我想換就換. 
+
+於是儅 $T$ 的值越來越大, 這個 $\omega _{0}$ , 就變得特別小, 於是說, 儅 $n$ 取邊正整數的時候. 
+
+這個函數對應的圖像, 就會有變得越來越密, 當然了, 因爲自變量的 $\Delta = \omega _{0}$ , 這個 $\omega_0$ 正如上文所説, 是一直變小的. 
+
+這裏我們將 $T F \left(n \omega\right)$ 簡寫為 $F \left(\omega\right)$ , 并且 $\omega$ 作爲自變量, 雖然説這樣有點怪怪的, 兩邊都是 $F$ , 但是他們可不是齊次的.
+
+總之, 現在這個 $ F \left(\omega \right)$ 是很有意義的, 因爲他不是 $0$ 了! 
+
+這是因爲 
+
+$$\lim_{\omega_0 \to 0} \frac{2\pi F \left(n \omega_0\right)}{\omega_0}$$
+
+好像不為 $0$.
+
+隨後, $F \left(\omega\right)$ 被稱爲是函數 $f \left(t\right)$ 的頻譜密度函數. 
+
+於是我們就得到了傅里葉正變換:
+
+$$ F \left(\omega\right) = \int ^{\infty}_{-\infty} f\left(t\right) e^{ \mathrm{j} \omega t } \ \mathrm{d}t $$
+
+我們接下來可以推到傅里葉逆變換:
+
+$$ f\left(t\right) = \sum_{n = -\infty} ^{\infty} F \left(n \omega_0\right) e ^{\mathrm{j} n \omega_{0}}$$
+
+稍微改寫一下:
+
+$$f \left(t\right) = \sum_{n=-\infty} ^{\infty} \frac{F\left( n \omega_0\right)}{\omega_0} \omega _{0} $$
+
+我們可以將 $\omega_0$ 當作是微分, 因爲他很小, 這樣替換: $\sum_{} \to \int, \omega_0 \to \mathrm{d} \omega$
+
+$$ f\left(t\right) = \frac{1}{2\pi}\int ^{+\infty}_{-\infty} F \left(\omega\right) \ \mathrm{d} \omega$$
+
+你會不會覺得有一些奇怪? 爲什麽突然多了一個自變量 $\omega$ ? 我們原本的定義域不是在 $t$ 上嗎? 怎麽突然變了?
+
+可以說, 這個性質, 就是傅里葉變換對於電路分析的最大貢獻. 
+
+
+
+
+
+
+
+$$ f \in Hom_{op} (A , B) , g \in Hom_{op} \left(B , C\right)$$
+
+所以説 $$ f \in Hom \left(B, A\right) , g \in Hom \left(C, B\right)$$
+
+$$ g \circ ' f = f \circ g$$ 
+
+$f \circ g \in Hom \left(C, A\right) \implies g \circ ' f \in Hom _{op} \left(A, C\right)$
+
+
+$$f  \left(a\right) = a' , a, a ' \in A$$
+
+即, 對於每一個 $a$ , 其有 $\left| A \right| $ 個選擇. 那麽 $\left| End \left(A\right) \right|  = \left| A \right|  ^{\left| A \right|}$
+
+$$\forall  f \in hom \left(A, C\right), f \circ 1_{A}  = f$$
+
+類似的
+
+$$\forall  g \in hom \left(C, B\right) , 1_{A} \circ g = g$$
+
+定義: 設總體 $X$ 的分佈函數族 為 $\left\{ F \left(x , \theta\right), \theta \in \Theta \right\}$ 對於給定的 $\alpha \left( 0 < \alpha < 1\right)$, 如果有 $2$ 統計量 $\hat \theta _{1} =  \hat \theta _{1} \left(X_1 , X_{2} , \cdots , X_{n}\right)$ 以及 $\hat \theta _{2} = \hat \theta _{2} \left(X_1 , X_2 , \cdots , X_{n}\right)$, st. 
+
+$$ P\left(\hat \theta _{1} < \theta < \hat \theta _{2}\right) = 1  - \alpha$$
+
+$\forall  \theta \in \Theta $ 成立, 那麽稱呼隨機區間 $\left( \hat \theta _{1} , \hat \theta _{2}\right)$ 是參數 $\theta $ 置信度為 $1- \alpha$ 的置信區間. 
+
+其中 $\hat \theta _{1 }, \hat \theta _{2}$ 分別爲 置信下限和置信上限. 
+
+值得説明的是, $\theta $ 雖然是未知的, 但其為常數, 而 $\hat \theta _{1} , \hat \theta _{2}$ 是樣本 $X_{1 } , X_{2} ,\cdots  , X_{n}$ 的函數 , 是一個隨機變量, 因此 $\left( \hat \theta _{1} , \hat \theta _{2} \right)$ 是隨機區間, 置信區間的正確講法是 $\left( \hat \theta _{1 }, \hat \theta _{2} \right)$  以概率覆蓋了 $\theta $ 
+
+
+
+
+比如説 $\left(A + B\right) \left(B +C\right)$
+
+再這個表達式上面加上兩個非
+
+$$ \overline{ \overline { \left(A  B \right) +\left( B  C\right)}}$$
+
+容易得到: 
+
+$$ \overline{ \overline{A}+  \overline{B} + \overline{B} + \overline{C}}$$
+
+$$ \int  ^{\infty} _{-\infty} \delta ' \left(t\right) f(t) \ \mathrm{d}t   = - \left. f'\left(t\right) \right| _{t=0}$$
+
+$\int ^{\infty} _{-\infty} \delta ' \left(t\right) e ^{\mathrm{j} \omega t }\ \mathrm{d}t = - \left( - \mathrm{j} \omega\right)$
+
+
+
+符號函數的傅里葉變換. 
+
+符號函數記爲 
+
+$$f\left(t\right)  = \mathrm{sgn} \left(t\right) = \begin{cases} +1 & t > 0 \\ 0 & t= 0 \\ -1 & t<0 \end{cases} $$
+
+這個函數, 并不能滿足絕對可積的條件. 但是其存在傅里葉變換. 可以使用 符號函數 和 雙邊指數衰減函數 相乘, 記爲 $f_{1} \left(t\right)$. 先是求得乘積信號 $f_1\left(t\right)$ . 然後取極限, 從而得出符號函數 $f_1 \left(t\right)$ 的頻譜. 有夠離譜. 
+
+下面先求乘積函數 $f_{1} \left(t\right)$ 的傅里葉變換. 
+
+$F_{1} \left(\omega\right) = \int ^{\infty}_{-\infty} f_{1} \left(t\right) e ^{-\mathrm{j} \omega t}\ \mathrm{d}t$
+
+將兩邊的積分分開計算
+
+$$F_1 \left(\omega\right) = \int ^{0} _{\infty} \left(-e^{at}\right) e ^{\mathrm{j} \omega   t   }\ \mathrm{d}t + \int ^{\infty}_{0} e ^{-at} \cdot  e ^{-\mathrm{j} \omega t}\ \mathrm{d}t$$
+
+$a> 0$
+
+有: 
+
+$$ \begin{cases} \displaystyle  F \left(\omega\right) = \frac{ -2 \mathrm{j} }{\omega } \\ \displaystyle \left| F \left(\omega\right) \right|  = \frac{ 2 }{|\omega|}\\ \\ \displaystyle  \varphi  \left( \omega\right) = \begin{cases} \displaystyle + \frac{\pi}{2}  & \omega < 0 \\ \displaystyle  - \frac{\pi}{2} & \omega > 0 \end{cases} \end{cases} $$
+
+
+
+
+$\mathcal N \left(x\right)$ 是 $x$ 的鄰域的集合, 滿足:
+
+1) $N\in \mathcal N\left(x\right) , x \in N$
+
+2) $N \subset M, N \in \mathcal N \left(x\right)$, 那麽 $M \in \mathcal N \left(x\right)$
+
+3) $N_{1}, N_{2} \in \mathcal N \left(x\right)$ 那麽 $N_{1} \cap N_{2} \in \mathcal N \left(x\right)$
+
+4) $N \in \mathcal N \left(x\right)$, 那麽 $\exists M \in \mathcal N \left(x\right)$, 有 $M \subset N$; $\forall y \in M$, 有 $N\in \mathcal N \left(x\right)$
+
+
+定理 $3.3.1$ $X_{1}  ,X_{2}$ 独立 $\implies f_1\left(X_{1}\right) , f_{2} \left(X_{2}\right)$ 独立
+
+$X_{1} , X_{2} , \cdots  , X_{n}$ 独立  $\implies f_{1}\left(X_{1} , \cdots  , X_{n_{1}}\right) , f_{2} \left(X_{n_1 + 1} \cdots  , X_{n_1 + n_2}\right) ,\cdots $ 独立
+
+$3.3.3$ $E \left(X Y\right) = E\left(X\right) E \left(Y\right)$
+
+两种方法, 1. 从期望的定义出发 2. 使用fubini定理
+
+独立变量的构造方法
+
+1. 构造有限乘积空间
+2. m维欧式空间上的随机向量
+3. ?
+4. 一个二进制小数, 每一个位数是一个随机变量的例子
+
+thm $3.3.4$ 对于 $\left( \mathscr R, \mathscr B\right)$ 上的测度序列 $\{ \mu_{n} \}$
+
+存在一个概率空间 $\left(\Omega , \mathscr F , \mathscr P\right)$ , 以及一个随机变量序列 $\{ X_{j}\}$ 使得这些随机变量对应的概率测度和 $\mu_{j}$ 相等. 
+
+构造概率空间
+
+涉及到了 1. 无限乘积空间 2. 无限乘积空间的 sigma field 3. 验证 $\mathscr P $ 是否为概率测度. 
+4. 有限可加性 + 连续公理 = 可数可加性
+
+thm $3.3.5$ 对于 field 到 sigma field 上的概率测度. 
+
+thm $3.3.6$ 不懂. 
+
+
+
+The plan of the procedure is to start with some entry, i.e.,
+some signed proposition such as $F \left(\neg \left(A \wedge \left(B \vee C\right)\right)\right)$, and analyze it into
+its components. We will say that an entry is correct if our assumption
+about the truth value of the given proposition is correct. For our current
+example, $F \left(\neg \left(A \wedge \left(B \vee C\right)\right)\right)$, this would mean that $\neg \left(A \wedge \left(B \vee C\right)\right)$ is false.
+The guiding principle for the analysis is that, if an entry is correct, then
+(at least) one of the sets of entries into which we analyze it contains only
+correct entries. In our sample case, we would analyze $F \left(\neg \left(A \wedge \left(B \vee C\right)\right)\right)$
+first into $T \left(A \wedge \left(B \vee C\right)\right)$. (If $\neg \left(A \wedge \left(B \vee C\right)\right)$ is false, then $\left(A \wedge \left(B \vee C\right)\right)$ 
+is true.) We would then analyze $T \left(A \wedge \left(B \vee C\right)\right)$ into $T \left(A\right)$ and $T\left(B \vee C\right)$.
+(If $\left(A \wedge \left(B \vee C\right)\right)$ is true then so are both $A$ and $(B \vee C)$.) Next we would
+analyze $T(B\vee  C)$ into either $TB$ or $TC$. (If $\left(B \vee C\right)$ is true then so is one
+of $B$ or $C$.)
+
+The intent of the procedure, as a way of producing proofs of propositions,
+is to start with some signed proposition, such as Fa, as the root of our
+tree and to analyze it into its components in such a way as to see that
+any analysis leads to a contradiction. We will then conclude that we have
+refuted the original assumption that a is false and so have a proof of a.
+Suppose, for example, that we start with $F\left(\neg \left(A \wedge \neg A\right)\right)$ and proceed as
+in the above analysis (replacing $\left(B \wedge C\right)$ by $neg A$). We reach T A and T $\neg$A
+and then analyze T$\neg$A into FA. We now have entries saying both that A
+is true and that it is false. This is the desired contradiction and we would
+conclude that we have a proof of the valid proposition $\neg \left(A \wedge \neg A\right)$.
+
+
+Def. tableaux : A finite tableau is a bianry tree , labeled with signed propositions called entries, which satisfies the following inductive definition:
+
+(1) All atomic tableaux are finite tableaux.
+(2) if $\tau     $, $P$ a path on $\tau $, $E$ an entry of $\tau$ occurring on $P$ and $\tau'$ is obtained from $\tau$ by adjoining the unique atomic tableau with root entry $E$ to $\tau$ at the end of the path $P$ then $\tau'$ is also a finite tableau. 
+
+If $\tau_0 , \tau_1 , \cdots , \tau_{n}$ is a sequence of finite tableaux st. for each $n \ge 0$, $\tau _{n+1}$ is constructed from $\tau_{n}$ by an application of (2) then $\tau = \cup \tau_{n}$ is a tableau. (possibly infinite)
+
+Each tableau is a way of analyzing a proposition. The intent is that, if
+it is all right to assume that all the signs on entries on a path down to some
+entry $E$ in a tableau are correct, then one of the paths of the tableau that
+continue on through $E$ to the next level of the tree is also correct. To see
+that this intention is realized, it suffices to consider the atomic tableaux.
+Consider for example (5a). If $\alpha \to \beta$ is true then so is one of the branches
+through it: $\alpha$ is false or $\beta$ is true. Similarly for (4a), if $\alpha \vee \beta$ is true then so
+is one of $\alpha$ or $\beta$. The other atomic tableaux can be analyzed in the same
+way. This intuition will be developed formally in the next section as the
+soundness theorem for tableaux. The other major theorem about tableaux
+is the completeness theorem. It is connected with the idea that we can show
+that if $\alpha$ is valid, then all possible analyses of $\alpha$ given signed proposition
+$F\alpha$ lead to contradictions. This will constitute a proof a. In order to do
+this, we will have to develop a systematic method for generating a tableau
+with a given root which includes all possible procedures. First, however,
+some examples of tableaux.
+
+def. 4.3 let $\tau$ be a tableau, $P$ a path on $\tau$ and $E$ an entry occurring on $P$
+
+1) $E$ has been reduced on $P $ if all the entriees on one path through the atomic tableau with root $E$ occur on $P$ (For example, $T A$ and $F A$ are reduced for every propositional letter $A$, $T \neg \alpha$ and $F \neg \alpha$ are reduced if $F\alpha$ and $T \alpha$ respectively appear on $P$. $T\left(\alpha \wedge \beta\right)$ is reduced if either $T\alpha$ or $T \beta$ appears on $P$. $F \left(\alpha \wedge \beta\right)$ is reduced if both $F\alpha$  and $F\beta$ appear on $P$)
+
+2) $P$ is contradictory if , for some proposition $\alpha$ , $T\alpha$, $F\alpha$ are both entries on $P$ . $P$ is finished if it is contradictory or every entry on $P$ is reduced on $P$
+
+3) $\tau$ is finished if every path throuth $\tau$ is finished.
+
+4) $\tau$ is contradictory if every path through $\tau$ is contradictory
+
+
+
+
+Example 4.2: We wish to begin a tableau with the signed proposition
+$F \left( \left(\left(\alpha \to \beta \right) \vee \left(\gamma \vee \delta\right)\right) \wedge \left(\alpha \vee \beta\right)\right)$. There is only one atomic tableau which
+has this entry as its root -
+the appropriate instance of the atomic tableau of type (2b):
+
+
+Now this tableau has two entries other than its root either of which
+could be chosen to use in the induction clause to build a bigger tableau.
+(We could legally use the root entry again but that would not be very
+interesting.) The two possibilities are given in Figures 11 A and B below.
+We could also do each of these steps in turn to get the tableau given in
+Figure 11 c.
+In this last tableau we could (again ignoring duplications) choose either
+$F\left(\alpha \to \beta\right)$ or $F\left(\gamma \wedge \delta \right)$ as the entry to develop. $F(\left(\gamma \vee \delta \right))$ is the end of
+the only path in the tableau which contains either of these entries. Thus,
+in either case the appropriate atomic tableau would be appended to that
+path. Choosing $F\left(\alpha \to \beta \right)$ would give the tableau of Figure 12.
+
+
+极大似然估计: 
+
+总体是 $X$ 带参数的分布为 $ p \left(x  ; \theta_1 , \theta_2 , \cdots  , \theta _{k}\right)$ 
+
+我们给定一个随机样本 $X_{1 } , \cdots  ,X_{n}$ , 其观察值为 $\left(x_1 , x_2 ,\cdots  , x_{n}\right)$
+
+$$L \left(\theta _{1} , \cdots  , \theta _{k}\right) = L \left(x_1, \cdots  , x_{n} ; \theta _{1} , \cdots   , \theta _{k}\right)  = \prod _{i=1} ^{n} p \left(x_i ; \theta _{1} , \cdots  ,\theta _{k}\right)$$
+
+为参数 $\theta_1 , \cdots   , \theta _{k}$ 的似然函数. 
+
+选取 $\hat \theta  = \left(\hat \theta _{1}  , \hat \theta _{2} , \cdots  , \hat \theta _{k} \right)$ 作为 $\theta = \left(\theta _{1} , \cdots  , \theta _{k}\right)$ 的估计 .
+
+若是 $L \left(\hat \theta \right) = \max_{\theta \in \Theta}  L \left(\theta \right)$ 
+
+成为是 $\hat \theta $ 是 $\theta $ 的极大似然估计. 
+
+(1) 对于离散型的, 没什么好说的
+
+(2) 总体是连续性变量, 用密度函数来写似然函数 
+
+我们还经常使用这样的求解法
+
+$$\frac{\partial \ln L}{\partial \theta}$$
+
+若 $\hat \theta $ 是 $\theta $ 的极大似然估计, 那么 $g\left(\hat \theta \right)$ 是 $g\left(\theta \right)$ 的估计. 
+
+这是因为, 若 $g\left(\hat \ha\right)$
+
+
+如果有 $\mathscr F \left[  f_{i} \left(t\right) \right]=F_{i} \left( \omega\right)$
+
+$$\mathscr F \left[  \sum_{i=1} ^{n} a_{i} f_{i} \left(t\right) \right] = \sum_{i=1} ^{n} a_{i   } F_{i} \left(\omega\right)  $$
+
+
+
+$$ \begin{aligned} P & = \overline{f^{2} \left(t\right)} = \frac{1}{T} \int ^{t_{0} + T _{1} } f^{2} \left(t\right) \ \mathrm{d} t \\ & = a_0^{2} + \frac{1}{2} \sum_{n=1} ^{\infty} \left(a_{n}^{2} + b_{n}^{2}\right)  = c_{0} ^{2} + \frac{1}{2} \sum_{n=1} ^{\infty} c_{n} ^{2} \\ & = \sum_{n= -\infty} ^{+\infty} \left|  F_{n}  \right|  ^{2} \end{aligned} $$
+
+
+下面利用傅里叶级数的有关结论研究周期信号的功率特性. 为此, 把傅里叶级数表示式的两边平方, 并且在一个周期内进行一个积分, 利用三角函数和负指数函数的正交性, 就能够得到周期信号的 $f\left(t\right) $ 的平均功率 $P$ 与傅里叶级数有下面关系. 
+
+
+那么, 什么是矩阵脉冲信号呢? 最好重复一下, 因为我本身也没有记清楚. 
+
+$$f\left(t\right) = \begin{cases} E & - \tau /2 \le t \le \tau /2 \\ 0 & \text{otherwise} \end{cases} $$
+
+因为 
+
+$$ \begin{aligned} F\left(\omega\right)  & = \int ^{\infty} _{-\infty} f\left(t\right) e ^{\mathrm{j} \omega   t  }\ \mathrm{d} t \\ & = \int ^{\tau  /2 } _{ - \tau /2   } E e ^{-\mathrm{j} \omega t} \ \mathrm{d} t  \end{aligned} $$
+
+
+有 
+
+$$F \left(\omega\right) = \frac{2E}{\omega} \sin  \left( \frac{\omega\tau}{2}\right)$$
+
+到这里就行了, 但是设 $\displaystyle  \frac{\sin  x}{ x}  = sa \left(x\right)$ 的话, 这个 '大小' 可以看的更加清晰. 
+
+$$F \left(\omega\right) =  E \tau sa \left( \frac{ \omega \tau}{ 2}\right)$$
+
+$$ \mathscr F \left[ F\left(t\right)  \right] = 2\pi f\left( - \omega\right)$$ 
+
+因为 
+
+$$f\left(t\right) = \frac{1}{2\pi} \int ^{\infty} _{-\infty} F\left(\omega\right) e ^{\mathrm{j} \omega t} \ \mathrm{d} \omega $$
+
+将 $t$ 换为 $-t$, $2\pi$ 乘过去. 得证.
+
+雙邊指數信號:
+
+$f\left(t\right)  = e ^{ - a \left|  t \right|  } $
+
+總之, 直接積分就有
+
+
+$$ \begin{cases} \displaystyle  F\left(\omega\right)  = \frac{2a}{ a^{2} + \omega ^{2}} \\ \\ \displaystyle    \left|  F \left(\omega\right)  \right|  = \frac{ 2a }{a^{2} + \omega ^{2} } \\  \\ \varphi (\omega    ) = 0 \end{cases} $$
+
+def. 4.5 A tablau proof of a proposition $\alpha$ is a contradictory tableua with root entry $F\alpha$
+
+A proposition is tableau provable, written ? $\alpha$ , if it has a tableu proof. 
+
+A tableau refutation for a proposition $\alpha$ is a contraditory tableau starting with $T\alpha$ . A proposition is tableau refutable if its has a tableau refutation.
+
+
+$$ \left( A \vee  \left(\neg A\right)\right), \big( \left(\left(A \to B \right) \to A \right) \to A\big)$$
+
+are tautologies. 
+
+
+for subsets $A$ and $B$ of the state space, define the probability flux from the set $A$ into $B$ to be 
+
+$$\text{flux} \left(A , B\right) = \sum_{i \in A}  \sum_{ j\in B}  \pi_{i} P\left(i,  j\right) $$
+
+A fundamental balancing property occurs when we consider the probability flux between a set $A$ and its complement $A ^{c}$ , in which case 
+
+$$ \text{flux} \left(A , A^{c}\right) = \text{flux} \left(A^{c} , A\right)$$
+
+the left side of is the probability flux flowing out of A into $A ^{c} $ . the equality says that this must be the san=me as the flux from $A^{c}$ back into $A$. This has the suggestive interpretion that  the stationary probabilities describe a stable system in which all the probability is happy where it is, and does not want to flow to anywhere else, so that the net flow from $A$ to $A^{c}$ must be zero. We can say this in a less mysterious way as follows.
+
+Think of $\pi \left(i\right)$ as the long run fraction of time that the chain is in state $i$ . 
+
+Then $\pi \left(i\right) P \left(i , j\right)$ is the long run fraction of times that a transition from $i$ to $j$ takes place. But clearly the long run fraction of times occupied by transitions going from a state in $A$  to a state in $A ^{c}$ must equal the long run fraction of times occupied by transtions going the opposite way. 
+
+因爲
+
+$$\mathscr F \left[  \delta (t)   \right] = 1$$
+
+$$ \delta \left(t\right)  \frac{1}{2\pi } \int ^{\infty}_{-\infty} e ^{\mathrm{ j} \omega t} \ \mathrm{d} \omega$$
+
+兩邊進行求導 
+
+$$\mathscr D \left[ \delta \left(t\right) \right] = \frac{1}{2\pi   } \int ^{\infty}_{-\infty} \left(\mathrm{j} \omega\right)e^{\mathrm{ j}\omega t }\ \mathrm{d} \omega$$
+
+就有 $\displaystyle \mathscr \left[ \mathscr \delta \left(t\right)  \right] = \mathrm{j} \omega$
+
+日, 就這. 進一步就有:
+
+$$ \begin{cases} \mathscr F \left[  \mathscr D ^{n} \delta \left(t\right) \right] = \left(\mathrm{j} \omega\right) ^{n} \\ \mathscr F \left(t^{n} \right)  = 2 \pi \left(\mathrm{j}\right) ^{n} \mathscr D ^{n} \left[  \delta \left(\omega\right) \right] \end{cases} $$
+
+finite automata
+
+一个自动机, 是一个 5-tuple $\left( Q ,q _{0} , A, \Sigma , \delta\right)$
+
+定义如下:
+
+1) $Q$ 是一个有限的集合, 其中元素称为是state
+2) $q_{0}$ 是上面 $Q$ 的一个元素, 称为初始状态
+3) $A \subset Q$ 是一个子集, 称为accepting state 就是说, 当自动机走到这里的时候自动机就停止. 
+4) $\Sigma$ 是一个有限的集合, 其中元素称为字母, $\Sigma$ 就是字母表.
+5) $\delta$ 是一个函数: $Q \times \Sigma \to Q$ 就是说, 对于每一个state, 如果说当前的input是 $\sigma$ 那么自动机将走到什么state. 这个函数成为是状态转移函数. (额, 我们可以联想一下马尔可夫链, 虽然差别很大, 但是那边也有一个状态转移函数)
+
+$n$- branching : if $T$ have at most n successors then $T$ is $n$-branching. If $n$ is finite, call $T$ finitely branching. 
+
+node with no successors is called a leaf.
+
+$$ \delta \left(t\right) \begin{cases} \infty & , t = 0 \\ \\ 0 & , \text{otherwise} \end{cases} $$
+
+
+$\tau$ for each possible root entry $T\alpha$  or $F \alpha$
+
+wo cao 
+
+The above proof actually gives a recursivee procedure to construct a finished 
+tableau with given root. The procedure is , however , somewhat complicated and hard
+to carry out. We now define a simpler systematic way of generating tableaux that will
+always produce a finished finite tableau with any given root entry. The idea is to 
+always reduce the unreduced entry of greatest depth. We will see in the next section 
+that this procedure will always produce a tableau proof of $F\alpha$
+
+
+Def. 4.7 (Complete Systematic Tableaux):
+Let $R$ be a signed proposition. We define the complete systematic tableau with root entry $R$ by 
+induction. We begin the construction by letting $\tau_{0}$ be the unique atomic tableau with $R$ at 
+its root. Assume that $\tau_{m}$ has been defined . Let $n$ be the smallest level of $\tau _{m}$ 
+containing an entry which is unreduced on some noncontradictory path in $\tau_{m}$ and let $E$ be the leftmost such entry on 
+level $n$. We now let $\tau_{m+1}$ be the tableau gotten by adjoining the unique 
+atomic tableau with root $E$ to  the end of every noncontradictory path on $\tau_{m}$ 
+on which $E$ is unreduced. The union of the sequence $\tau_{m}$ is our desire 
+complete systematic tableau. 
+
+
+
+
+\section{Ancient Origins of the Concept of Probability}
+在古代, 柏拉图和他的学生亚里士多德曾经哲学地讨论`机会'这个词. 在公元前324年, 一个希腊人, 名曰 Antimenes , 第一次创建了保险制度, 能够对一些事件的得失保证一定金额. 
+
+我们的日常生活中的各个方面, 比如说健康, 天气, 死亡, 博弈, 都有着`机会', `随机' 这种概念. 物理上的任何测量有误差这种本质特性. 
+
+概率这个概念起源于输赢游戏的赌博之中. 最早的一个代表人物是著名的物理学家, 数学家, 赌徒: Gerolamo Cardano, 后来他成为了位于意大利的 Bologna 大学的数学学科的教授. 
+
+在十五世纪, 在意大利开始了对于掷色子赌博问题的讨论, 当时有很多对于这样概率问题的文献, 但是都没有说明如何计算概率. 
+
+Cardano 写了一本小书, 名曰 Liber de Ludo Aleae 其中包含了对于概率均值或者说是数学期望的讨论, 并且包含了一个简单的大数定理. 
+
+但是, Cardano 的这本小书并没有引起多大的重视, 并且没有对概率论的发展做出实质的贡献. 他的小书大约在一个世纪之后 (1633) 才被发行. 他将概率视为一个 $0$ 到 $1$ 之间的数, 并且说明, 如果一个事件的概率为 $p$ , 那么对于一个足够大的数 $n$
+
+事件的发生次数将会向 $np$ 靠近. 
+
+
+
+
+
+
+比如說我們要補充 $R$
+
+$$ \left(P \vee Q \right)$$
+
+$$ \begin{aligned} & \left(P \vee Q \right) \\ = & \left(P \vee Q \vee \left( R \wedge \neg R\right)\right)\\ = & \left( P \vee Q \vee R\right) \wedge \left(P \vee Q \vee \neg R\right) \end{aligned} $$
+
+Thm 4.8 Every CST is finished 
+Prf. ?
+
+Why do we require irreducibility in the 'Basic Limit Theorem' ? Here is a trivial 
+example of how the conclusion can fail if we do not assume irreducibility. Let $\mathcal S  =\left\{ 0,1 \right\}$
+and let $P = \begin{cases} 1 & 0 \\ 0 & 1 \end{cases} $. Clearly the resulting Markov chain is not irreducible. Also, clearly
+the conclusion of the Basic Limit Theorem does not hold; that is, $\pi_{n}$ does not approach 
+any limit that is independent of $\pi_{0}$. In fact, $\pi_{n} = \pi_{0}$ for all $n$
+
+Next, to discuss periodicity, let's begin with another trivial example: take $\mathcal S = \left\{ 0 ,1\right\}$
+again, and let $P  = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} $ . The conclusion of the BLT does not hold here: 
+for example, if $pu_{0} = \left(1,0\right)$ , then $\pi_{n}  = \left(1, 0\right)$ if $n $ is even and $\pi_{n} =\left( 0,1\right)$ if $n$ is odd. 
+So in this case $\pi_{n} \left(1\right)$ alternates between the two values $0$ and $1$ as $n$ increases, and hence 
+does not converge to anything. The problem in this example is not lack of irreducibility; 
+clearly this chain is irreducible. So, assuming the BLT is true, the chain must not be aperipdic! That is , the chain is periodic. The troible stems from the fact 
+that, starting from state $1$ at time $0$, the chain can visit state $1$ only at even times. 
+The same holds for state $2$. 
+
+A proposition is a literal if it is a propositional letter or its negation. 
+A proposition $\alpha$ is in conjunctive normal form if there are literals $\alpha_{1, 1} , \cdots  , \alpha_{1 , n_{1} } , \alpha_{2 , 1 }, \cdots  , \alpha _{2, n_{2}} , \cdots  , \alpha_{k , 1} , \cdots  , \alpha_{k  , n _{k}}$  
+st. $\alpha$ is 
+$$ \left(a _{1 , 1} \vee \cdots  \vee \alpha_{1 , n_{1}}\right) \wedge \left(\alpha_{2, 1} \vee \cdots  \vee \alpha_{2, n _{2}}\right) \wedge \cdots  \wedge \left(\alpha_{k , 1} \vee \cdots  \vee \alpha_{k, n_{k}} \right)$$
+
+Prove that every propostion is equivalent to one in CNF (i.e. one that has the same truth table). (Hint: Consider a DNF (of $\neg \alpha$) and use Exercise 2 (it should be de Morgan's law))  
+
+
+
+
+
+
+爲了便於討論, 我們將 $f \left(t\right)$ 的傅里葉變換, 重寫為 
+
+$F \left(\omega\right) = \mathscr F \left[  f\left(t\right) \right] = \int ^{\infty} _{- \infty} f\left(t\right) e ^{\mathrm{j} \omega t} \ \mathrm{d} t $
+
+在一般的情況之下, $F\left(\omega\right)$ 是復函數, 因此我們將其表示為 模以及相位 或者説實部和虛部兩個部分. 
+
+$F \left(\omega   \right)  = \left|  F \left(\omega\right) \right| e^{\mathrm{j}\varphi \left( \omega\right)}  = R \left(\omega\right) + \mathrm{j} X \left(\omega\right)$ 
+
+明顯有... 這個我就不列出來了, 非常明顯, 簡直脫褲子放棄
+
+
+
+
+
+$$ \begin{aligned} F\left(\omega\right) &  =  \int ^{\infty} _{- \infty} f \left(t\right) e ^{- \mathrm{ j} \omega t} \ \mathrm{d}t \\ &  = \int ^{\infty} _{- \infty   } f\left(t\right) \cos  \left(\omega t\right)  \ \mathrm{d} t -   \mathrm{ j} \int ^{\infty} _{- \infty} f\left(t\right) \sin \left(\omega t\right)  \ \mathrm{d} t \end{aligned} $$
+
+實際上就是用三角級數表示了.
+
+Comment: 傅里葉變換有沒有那個負號來著. 
+
+這個時候, 
+
+
+$$ \begin{gathered} R \left(\omega\right) = \int ^{\infty} _{- \infty} f\left(t\right) \cos  \left(\omega t\right)  \ \mathrm{d} t\\ X \left(\omega\right) = - \int ^{\infty} _{- \infty} f\left(t\right) \sin  \left(\omega t\right) \ \mathrm{d} t \end{gathered} $$
+
+這樣的話 $R$ 就是偶函數, 并且 $X$ 是奇函數. 
+
+并且, 我們能夠使用這個東西來判斷頻譜密度函數 $F \left(\omega\right)$ 相位函數 $\varphi \left(\omega\right)$ 的奇偶性. 
+
+這是因爲 
+
+$\left|  F \left(\omega \right) \right|  =\sqrt {R ^{2} + X ^{2} }$ 明顯知道 $\left|  F \left(\omega\right) \right| $ 是偶函數, 也知道 $\varphi$ 是奇函數. 
+
+并且呢, 
+
+如果説 $f \left(t\right) $ 是偶函數, 那麽 $F \left(\omega\right)$ 也是偶函數. 
+
+如果説 $ f\left(t\right)$ 是基函數, 那麽 $F \left(\omega\right)$ 也是基函數. 
+
+
+
+
+
+
+
+
+
+
+
+尺度變換特性: 
+trivial!!!
+
+$$ \mathscr F \left[  f \left(at\right) \right]  = \frac{1}{\left| a \right| } F \left( \frac{\omega}{a}\r ight)$$
+
+$$ \mathscr F \left[  u \left(t\right)  \right] = \mathscr F [ \frac{1}{2}] + \mathscr F \left[ \frac{1}{2} \text{sgn} \left(t\right) \right]$$
+
+
+對於常數信號, 我們知道其傅里葉變幻是很簡單的. 
+
+$\mathscr F \left[  \frac{1}{2}  \right] =  2\delta  (t)$ 
+
+明顯這使用了伸縮性質. 
+
+對於符號函數, 見前面的條目, 就有 
+
+
+$$ \mathscr F  \left[   u\left(t\right) \right] = 2 \delta  \left(\omega\right)  - \frac{2 \mathrm{j}}{\omega}$$
+
+
 \end{document}

@@ -1,0 +1,58 @@
+\contentsline {section}{\numberline {1}single-source shortest path algorithm}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}问题描述}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}一些性质}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}松弛}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Bellman-Ford algorithm}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}intro and prequisition}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Notation}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}some variants of single-source shortest paths}{4}{subsection.2.2}%
+\contentsline {paragraph}{Single-destination shortest-paths problems}{4}{paragraph*.1}%
+\contentsline {paragraph}{single-pair shortest-path problem}{4}{paragraph*.2}%
+\contentsline {paragraph}{All-pairs shortest-paths problem}{4}{paragraph*.3}%
+\contentsline {subsection}{\numberline {2.3}optimal structure of shortest paths}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}representation of shortest paths}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}relaxation}{5}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}initializing single source}{5}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}relaxation: code and definition}{6}{subsubsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.6}一些性质}{6}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}an outline copied from textbook}{7}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Bellman-Ford algorithm}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}an introd}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}algorithm}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}negative weighted cycles}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}the prf of algorithm}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}some blahblah}{9}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Dijkstra algorithm}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}A review}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}algorithm}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}The prf of algorithm}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}the analysis of Dijkstra algorithm}{11}{subsection.4.4}%
+\contentsline {section}{\numberline {5}all-pairs shortest-paths algorithm}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}the matrix and graph}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}前置工作}{13}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}A chapter outline copied from the book}{13}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}some conventions}{13}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}An approuch}{14}{subsection.5.3}%
+\contentsline {paragraph}{a review of dp}{14}{paragraph*.4}%
+\contentsline {paragraph}{the structure of a shortest path}{14}{paragraph*.5}%
+\contentsline {paragraph}{the recursive solution}{14}{paragraph*.6}%
+\contentsline {subsection}{\numberline {5.4}the Floyd algorithm}{14}{subsection.5.4}%
+\contentsline {paragraph}{the recursive solution in Floyd}{15}{paragraph*.7}%
+\contentsline {paragraph}{the psedu code}{15}{paragraph*.8}%
+\contentsline {subsection}{\numberline {5.5}获取构造最优解的信息, 构造最优解}{15}{subsection.5.5}%
+\contentsline {section}{\numberline {6}mf}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}some definition about flow}{16}{subsection.6.1}%
+\contentsline {paragraph}{source and sink}{16}{paragraph*.9}%
+\contentsline {paragraph}{capacity}{16}{paragraph*.10}%
+\contentsline {paragraph}{flow's property}{16}{paragraph*.11}%
+\contentsline {subsection}{\numberline {6.2}residual networks}{17}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}augmented flow}{17}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}augmenting paths}{18}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}cut of flow networks}{19}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Max flow min cut theorem}{20}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Ford-Fulkerson algorithm}{20}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}the time complexity of Ford-Fulkerson algorithm}{21}{subsection.6.8}%
+\contentsline {section}{\numberline {7}Maximum bipartite matching}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.1}some definitions}{22}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}algorithm}{22}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}application}{23}{subsection.7.3}%

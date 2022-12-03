@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+ \PYG{n}{print}\PYG{o}{\PYGZhy{}}\PYG{n}{LCS} \PYG{p}{(}\PYG{n}{b} \PYG{p}{,} \PYG{n}{X}\PYG{p}{,} \PYG{n}{i} \PYG{p}{,}\PYG{n}{j}\PYG{p}{)\PYGZob{}}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{o}{||} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{)}
+          \PYG{k}{return} \PYG{p}{;}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n}{b}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j} \PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}nearrow\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//焯, 不能用数学公式啊, 这是代码}
+          \PYG{n}{print}\PYG{o}{\PYGZhy{}}\PYG{n}{LCS} \PYG{p}{(}\PYG{n}{b} \PYG{p}{,} \PYG{n}{X} \PYG{p}{,} \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{);}
+          \PYG{n}{printf} \PYG{p}{(}\PYG{n}{x}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{b}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}uparrow\PYGZdq{}}\PYG{p}{)\PYGZob{}} \PYG{c+c1}{//就是向上移动, 那必然是行号减一}
+          \PYG{n}{print}\PYG{o}{\PYGZhy{}}\PYG{n}{LCS}  \PYG{p}{(}\PYG{n}{b} \PYG{p}{,} \PYG{n}{X} \PYG{p}{,} \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}\PYG{k}{else}
+          \PYG{n}{print}\PYG{o}{\PYGZhy{}}\PYG{n}{LCS} \PYG{p}{(}\PYG{n}{b} \PYG{p}{,}\PYG{n}{X}\PYG{p}{,} \PYG{n}{i} \PYG{p}{,} \PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{);} \PYG{c+c1}{//就是向左移动, 就是列数减一}
+  \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

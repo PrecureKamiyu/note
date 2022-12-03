@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}an intro and an outline}{2}{section.1}%
+\contentsline {section}{\numberline {2}notation and description of max flow problems}{2}{section.2}%
+\contentsline {section}{\numberline {3}Ford and Fulkerson's method}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}residual network}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}augmented paths}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}实例}{3}{subsection.3.3}%
+\contentsline {section}{\numberline {4}method with bipartie graph}{4}{section.4}%
