@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  3 DEC 2022 20:40
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  3 DEC 2022 17:10
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
-**3
-(./3.tex
+**9
+(./9.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexart.cls
@@ -401,27 +401,128 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: xetex.def on input line 147.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+\@float@every@algorithm=\toks32
+\c@algorithm=\count289
 )
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box59
-\beforetitleunit=\skip69
-\aftertitleunit=\skip70
-\ttl@plus=\dimen193
-\ttl@minus=\dimen194
-\ttl@toksa=\toks32
-\titlewidth=\dimen195
-\titlewidthlast=\dimen196
-\titlewidthfirst=\dimen197
-)
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count290
+\c@ALG@rem=\count291
+\c@ALG@nested=\count292
+\ALG@tlm=\skip69
+\ALG@thistlm=\skip70
+\c@ALG@Lnr=\count293
+\c@ALG@blocknr=\count294
+\c@ALG@storecount=\count295
+\c@ALG@tmpcounter=\count296
+\ALG@tmplength=\skip71
+) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count297
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count298
+\FV@InFile=\read2
+\FV@TabBox=\box59
+\c@FancyVerbLine=\count299
+\FV@StepNumber=\count300
+\FV@OutFile=\write3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+))
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+Invalid UTF-8 byte or sequence at line 296 replaced by U+FFFD.
+\linenopenalty=\count301
+\output=\toks33
+\linenoprevgraf=\count302
+\linenumbersep=\dimen193
+\linenumberwidth=\dimen194
+\c@linenumber=\count303
+\c@pagewiselinenumber=\count304
+\c@LN@truepage=\count305
+\c@internallinenumber=\count306
+\c@internallinenumbers=\count307
+\quotelinenumbersep=\dimen195
+\bframerule=\dimen196
+\bframesep=\dimen197
+\bframebox=\box60
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count308
+\c@FV@TrueTabCounter=\count309
+\FV@TabBox@Group=\box61
+\FV@TmpLength=\skip72
+\c@FV@HighlightLinesStart=\count310
+\c@FV@HighlightLinesStop=\count311
+\FV@LoopCount=\count312
+\FV@NCharsBox=\box62
+\FV@BreakIndent=\dimen198
+\FV@BreakIndentNChars=\count313
+\FV@BreakSymbolSepLeft=\dimen199
+\FV@BreakSymbolSepLeftNChars=\count314
+\FV@BreakSymbolSepRight=\dimen256
+\FV@BreakSymbolSepRightNChars=\count315
+\FV@BreakSymbolIndentLeft=\dimen257
+\FV@BreakSymbolIndentLeftNChars=\count316
+\FV@BreakSymbolIndentRight=\dimen258
+\FV@BreakSymbolIndentRightNChars=\count317
+\c@FancyVerbLineBreakLast=\count318
+\FV@LineBox=\box63
+\FV@LineIndentBox=\box64
+\FV@LineWidth=\dimen259
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count319
+\calc@Bcount=\count320
+\calc@Adimen=\dimen260
+\calc@Bdimen=\dimen261
+\calc@Askip=\skip73
+\calc@Bskip=\skip74
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count321
+\calc@Cskip=\skip75
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
 (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -433,9 +534,201 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
+runsystem(uname -s > "9.w18")...executed.
+
+ (./9.w18)
+runsystem(rm -- "9.w18")...executed.
+
+)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count322
+Invalid UTF-8 byte or sequence at line 35 replaced by U+FFFD.
+\decimalpart=\count323
+Invalid UTF-8 byte or sequence at line 79 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 79 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 83 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 86 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 102 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 114 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 120 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 125 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 147 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 147 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 147 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 182 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 182 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 182 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 183 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 184 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 185 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 185 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 185 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 190 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 190 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 193 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 208 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 208 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 208 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 208 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 208 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 208 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 221 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 221 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 241 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 241 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 241 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 241 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 266 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 295 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 300 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 300 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 303 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 332 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 332 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 332 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 332 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 333 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 334 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 334 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 334 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 406 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 406 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 409 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 410 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 428 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 434 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 457 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 457 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 464 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 464 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 466 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 466 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 541 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 541 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 541 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 586 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 586 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 588 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 595 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 597 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 599 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 602 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 605 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 605 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 610 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 615 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 632 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 632 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 633 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 635 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 637 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 647 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 653 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 678 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 700 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 705 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 715 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 715 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 715 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 719 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 732 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 732 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 741 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 741 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 742 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 742 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 762 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 773 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 773 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 774 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 774 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 774 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 797 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 797 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 810 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 824 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 824 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 831 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 838 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 838 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 846 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 846 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 861 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 862 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 864 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 864 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 908 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 909 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 909 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 934 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 934 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 936 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 936 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 940 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 940 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 962 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 962 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 964 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 965 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 1006 replaced by U+FFFD.
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip76
+\fb@frw=\dimen262
+\fb@frh=\dimen263
+\FrameRule=\dimen264
+\FrameSep=\dimen265
+)
+\minted@appexistsfile=\read3
+\minted@bgbox=\box65
+\minted@code=\write4
+\c@minted@FancyVerbLineTemp=\count324
+\c@minted@pygmentizecounter=\count325
+\@float@every@listing=\toks34
+\c@listing=\count326
+)
+runsystem(mkdir -p _minted-9)...executed.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box66
+\beforetitleunit=\skip77
+\aftertitleunit=\skip78
+\ttl@plus=\dimen266
+\ttl@minus=\dimen267
+\ttl@toksa=\toks35
+\titlewidth=\dimen268
+\titlewidthlast=\dimen269
+\titlewidthfirst=\dimen270
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
 (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
@@ -451,12 +744,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
-)
-\@linkdim=\dimen198
-\Hy@linkcounter=\count289
-\Hy@pagecounter=\count290
+\@linkdim=\dimen271
+\Hy@linkcounter=\count327
+\Hy@pagecounter=\count328
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
@@ -464,10 +754,7 @@ File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count291
+\Hy@SavedSpaceFactor=\count329
 Package hyperref Info: Option `unicode' set `true' on input line 4421.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
@@ -480,14 +767,14 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count292
+\c@Hy@tempcnt=\count330
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen199
+\XeTeXLinkMargin=\dimen272
 
 (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -496,9 +783,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count293
-\Field@Width=\dimen256
-\Fld@charsize=\dimen257
+\Fld@menulength=\count331
+\Field@Width=\dimen273
+\Fld@charsize=\dimen274
 Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
@@ -512,9 +799,9 @@ LaTeX Info: Redefining \pageref on input line 6504.
 (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count294
-\c@Item=\count295
-\c@Hfootnote=\count296
+\Hy@abspage=\count332
+\c@Item=\count333
+\c@Hfootnote=\count334
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -525,18 +812,17 @@ File: hxetex.def 2020/01/14 v7.00d Hyperref driver for XeTeX
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box60
-\c@Hy@AnnotLevel=\count297
-\HyField@AnnotCount=\count298
-\Fld@listcount=\count299
-\c@bookmark@seq@number=\count300
+\pdfm@box=\box67
+\c@Hy@AnnotLevel=\count335
+\HyField@AnnotCount=\count336
+\Fld@listcount=\count337
+\c@bookmark@seq@number=\count338
 
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
 (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
 )
 (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
@@ -544,18 +830,64 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip71
+\Hy@SectionHShift=\skip79
 )
-\c@theorem=\count301
-\c@example=\count302
-\c@definition=\count303
-\c@lemma=\count304
-\c@remark=\count305
-\c@corollary=\count306
-\c@proposition=\count307
 
-(./3.aux)
-\openout1 = `3.aux'.
+Package fontspec Info: Font family 'UbuntuMono(0)' created for font 'Ubuntu
+(fontspec)             Mono' with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Ubuntu
+(fontspec)             Mono/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Ubuntu
+(fontspec)             Mono/B/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Ubuntu
+(fontspec)             Mono/I/OT:script=latn;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Ubuntu
+(fontspec)             Mono/BI/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+\c@theorem=\count339
+\c@example=\count340
+\c@definition=\count341
+\c@lemma=\count342
+\c@remark=\count343
+\c@corollary=\count344
+\c@proposition=\count345
+runsystem(which pygmentize && touch 9.aex)...executed.
+
+runsystem(rm 9.aex)...executed.
+
+
+(./9.aux)
+\openout1 = `9.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
@@ -626,7 +958,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 44.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 44.
+(Font)                  OT1/cmtt/m/n --> TU/UbuntuMono(0)/m/n on input line 44.
+
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 44.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
@@ -634,7 +967,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 44.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 44.
+(Font)                  OT1/cmtt/m/n --> TU/UbuntuMono(0)/b/n on input line 44.
+
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -670,7 +1004,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box61
+\AtBeginShipoutBox=\box68
 Package hyperref Info: Link coloring OFF on input line 44.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -681,15 +1015,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count308
+\c@section@level=\count346
 )
 LaTeX Info: Redefining \ref on input line 44.
 LaTeX Info: Redefining \pageref on input line 44.
 LaTeX Info: Redefining \nameref on input line 44.
 
-(./3.out) (./3.out)
-\@outlinefile=\write3
-\openout3 = `3.out'.
+(./9.out) (./9.out)
+\@outlinefile=\write5
+\openout5 = `9.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
 
@@ -707,120 +1041,84 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 46
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) (./3.toc [1
+) (./9.toc)
+\tf@toc=\write6
+\openout6 = `9.toc'.
 
-])
-\tf@toc=\write4
-\openout4 = `3.toc'.
+ [1
 
+]
+[2]
+\openout3 = `9.pyg'.
 
-[2] [3]
+ (./_minted-9/default-pyg-prefix.pygstyle) (./_minted-9/custommanni.pygstyle)
+(./_minted-9/0045378F284A49A683AFD8E37448680985BDF735C6A4883E84FA96CC63944139.p
+ygtex
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 166.
-
-File: merge1.png Graphic file (type bmp)
-<merge1.png>
-[4]
-File: quicksort1.png Graphic file (type bmp)
-<quicksort1.png>
- [5] [6] [7] [8] [9] [10]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-File: 2.png Graphic file (type bmp)
-<2.png>
- [11]
-
-Package fontspec Warning: Font "FandolHei-Regular" does not contain requested
+Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
 
 
-Package fontspec Info: Font family 'FandolHei-Regular(0)' created for font
-(fontspec)             'FandolHei-Regular' with options
-(fontspec)             [Script={CJK},Extension={.otf},BoldFont={FandolHei-Bold}
-].
+Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Script={CJK},Extension={.otf}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[FandolHei-Regular.otf]/OT:language=dflt;"
+(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[FandolHei-Bold.otf]/OT:language=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
-File: 4.png Graphic file (type bmp)
-<4.png>
+) [3]
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--544
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 219.
 
+File: sm1.png Graphic file (type bmp)
+<sm1.png>
+[4]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 260.
+
+File: sm2.png Graphic file (type bmp)
+<sm2.png>
+
+Overfull \hbox (57.4968pt too wide) in paragraph at lines 262--263
+ [][] 
  []
 
-[12]
-File: 5.png Graphic file (type bmp)
-<5.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 545--549
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 266.
 
- []
+File: sm3.png Graphic file (type bmp)
+<sm3.png>
 
-File: 3.png Graphic file (type bmp)
-<3.png>
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 604--606
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 272.
 
- []
+File: sm4.png Graphic file (type bmp)
+<sm4.png>
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 289.
+[5] [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 289.
+ (./9.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 289.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 289.
+Package rerunfilecheck Info: File `9.out' has not changed.
+(rerunfilecheck)             Checksum: D15293A5722749E58D2919134A4BDC31;483.
+runsystem(rm 9.pyg)...executed.
 
-[15] [16]
-File: 6.png Graphic file (type bmp)
-<6.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 669--675
-
- []
-
-Missing character: There is no 𝑘 in font [lmroman10-regular]:mapping=tex-text;!
-File: 7.png Graphic file (type bmp)
-<7.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 683--693
-
- []
-
-File: 8.png Graphic file (type bmp)
-<8.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 694--699
-
- []
-
-[17]
-File: 9.png Graphic file (type bmp)
-<9.png>
-
-Overfull \hbox (29.61165pt too wide) in paragraph at lines 704--704
- [][][][][] 
- []
-
-[18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 724.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 724.
- (./3.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 724.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 724.
-Package rerunfilecheck Info: File `3.out' has not changed.
-(rerunfilecheck)             Checksum: BDD583C7F906581FD53C6BE95AB646FD;3722.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 724.
  ) 
 Here is how much of TeX's memory you used:
- 16870 strings out of 479819
- 346596 string characters out of 5895846
- 641650 words of memory out of 5000000
- 33698 multiletter control sequences out of 15000+600000
- 542136 words of font info for 101 fonts, out of 8000000 for 9000
+ 20262 strings out of 479819
+ 412512 string characters out of 5895846
+ 752843 words of memory out of 5000000
+ 37008 multiletter control sequences out of 15000+600000
+ 540465 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,16n,72p,378b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,72p,874b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 3.pdf (19 pages).
+Output written on 9.pdf (6 pages).

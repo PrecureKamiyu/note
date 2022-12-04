@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  3 DEC 2022 12:18
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  4 DEC 2022 09:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1144,14 +1144,14 @@ ygtex) [16]
 File: mf1.png Graphic file (type bmp)
 <mf1.png>
 
-Overfull \hbox (100.04378pt too wide) in paragraph at lines 958--959
+Overfull \hbox (100.04378pt too wide) in paragraph at lines 954--955
  [][] 
  []
 
 [17] [18]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1054.
+               Default added (so using `tbp') on input line 1050.
 
 File: mf2.png Graphic file (type bmp)
 <mf2.png>
@@ -1160,15 +1160,15 @@ File: mf2.png Graphic file (type bmp)
 
 
 (./_minted-8/906B5F435D568258A271435FB8A5AA3C00B955581C29FCB73CD28CEB4662E8CA.p
-ygtex [20])
+ygtex) [20]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1193.
+               Default added (so using `tbp') on input line 1189.
 
 File: mf3.png Graphic file (type bmp)
 <mf3.png>
-[21]
-Overfull \hbox (20.87154pt too wide) in paragraph at lines 1223--1224
+
+Overfull \hbox (20.87154pt too wide) in paragraph at lines 1219--1220
 [][]\TU/lmr/bx/n/10 Definition 17 \TU/lmr/m/n/10 (\TU/FandolSong-Regular(0)/m/n
 /10 匹 配\TU/lmr/m/n/10 )\TU/lmr/bx/n/10 . []\TU/FandolSong-Regular(0)/m/it/10 匹 
 配 是 图 的 子 图\TU/lmr/m/it/10 , \TU/FandolSong-Regular(0)/m/it/10 设 为 $\OML/cmm/m/
@@ -1177,21 +1177,21 @@ it/10 G[] \OT1/cmr/m/n/10 = []$\TU/lmr/m/it/10 , \TU/FandolSong-Regular(0)/m/it
 t/10 , $\OML/cmm/m/it/10 E[] \OT1/cmr/m/n/10 = []$ 
  []
 
+[21]
 
 LaTeX Font Warning: Font shape `TU/FandolSong-Regular(0)/b/it' undefined
 (Font)              using `TU/FandolSong-Regular(0)/b/n' instead on input line 
-1242.
+1238.
 
-[22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1298.
- [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1298.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1294.
+[22] [23]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1294.
  (./8.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1298.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1298.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1294.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1294.
 
 Package rerunfilecheck Info: File `8.out' has not changed.
-(rerunfilecheck)             Checksum: EF637B56C21780B168E86A7612680BA6;7554.
+(rerunfilecheck)             Checksum: DDC1F414EB3EAD5FC2408AB421FEBD48;7673.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1202,7 +1202,7 @@ runsystem(rm 8.pyg)...executed.
 Here is how much of TeX's memory you used:
  20397 strings out of 479819
  416270 string characters out of 5895846
- 762473 words of memory out of 5000000
+ 763592 words of memory out of 5000000
  37111 multiletter control sequences out of 15000+600000
  540505 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

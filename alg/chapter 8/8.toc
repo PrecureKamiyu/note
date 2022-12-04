@@ -40,19 +40,19 @@
 \contentsline {paragraph}{the recursive solution in Floyd}{15}{paragraph*.7}%
 \contentsline {paragraph}{the psedu code}{15}{paragraph*.8}%
 \contentsline {subsection}{\numberline {5.5}获取构造最优解的信息, 构造最优解}{15}{subsection.5.5}%
-\contentsline {section}{\numberline {6}mf}{16}{section.6}%
+\contentsline {section}{\numberline {6}The maximum flow problem}{16}{section.6}%
 \contentsline {subsection}{\numberline {6.1}some definition about flow}{16}{subsection.6.1}%
 \contentsline {paragraph}{source and sink}{16}{paragraph*.9}%
 \contentsline {paragraph}{capacity}{16}{paragraph*.10}%
 \contentsline {paragraph}{flow's property}{16}{paragraph*.11}%
-\contentsline {subsection}{\numberline {6.2}residual networks}{17}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}residual networks}{16}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}augmented flow}{17}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}augmenting paths}{18}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}cut of flow networks}{19}{subsection.6.5}%
 \contentsline {subsection}{\numberline {6.6}Max flow min cut theorem}{20}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.7}Ford-Fulkerson algorithm}{20}{subsection.6.7}%
 \contentsline {subsection}{\numberline {6.8}the time complexity of Ford-Fulkerson algorithm}{21}{subsection.6.8}%
-\contentsline {section}{\numberline {7}Maximum bipartite matching}{22}{section.7}%
-\contentsline {subsection}{\numberline {7.1}some definitions}{22}{subsection.7.1}%
+\contentsline {section}{\numberline {7}Maximum bipartite matching}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}some definitions}{21}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}algorithm}{22}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}application}{23}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.3}application}{22}{subsection.7.3}%

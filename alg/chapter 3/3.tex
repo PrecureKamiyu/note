@@ -108,7 +108,7 @@ And the sequence has a corresponding sequence of key
 \begin{align*}
     \left\{K_{1} , \cdots  , K_{n}\right\}
 \end{align*}
-which act as an identification, to determine the position of the order of some $R_{i}$, that is there exists a relation on those keys. (and the relation is partial order relation, and moreover is 
+which act as an identificator, to determine the position of the order of some $R_{i}$, that is there exists a relation on those keys. (and the relation is partial order relation, and moreover is 
 linearly ordered.):
 \begin{align*}
     K_{p_{1}} \le K_{p_{2}} \le \cdots  \le K_{p_{n}}
@@ -118,7 +118,6 @@ So what sort do is to reordering the sequence $\left\{R_{1} \cdots \right\}$ int
 
 \paragraph{The interior ordering and external ordering} When scale of the sequence is so big that the memory can not 
 hold it viz. the ordering can not complete within the memory. 
-
 The sort algorithms that work within the memory are called interior sort.
 
 \subsection{the classification of ordering algorithms}
@@ -135,11 +134,13 @@ There are 4 basic catergory of ordering algorithm. Let's make a list:
     \item swap: to swap the target in unordered area, and swap it with some other $R$ in unordered area, making it ordered.
     \item merge: given two or more ordered sequence, to merge them into a bigger ordered sequence.
 \end{enumerate}
+\begin{corollary}
+\textcolor{red}{note that the definitions of {\bfseries select} and {\bfseries swap} are wrong}
+\end{corollary}
 
 Base on the idea of divide and conquer, we have some prototype of the ordering algorithm. 
 
-One is to select a position basing on which we divide the problem.
-
+One is to select a position basing on which we divide the problem (the description here might be not very clear). 
 Another is to choose a member of the sequence, base on which we make a partition where
 members that are bigger than it are placed behind while the members that are smaller than it 
 are placed in the front.
@@ -156,17 +157,47 @@ subproblems.
     Then we have $A[ i, \cdots    , k  ] A \left[  k + 1 ,  \cdots  , j\right]$ ,where $k  = \displaystyle  \frac{ i  +j}{ 2}$. Then we solve  the subproblems
     recurrently and combine them afterwards. That is merge sort.
 \end{definition}
+\noindent The key is that we assume the 
+$A\left[ i , \cdots ,k \right] , A[k+1 , \cdots  ,j]$ are ordered. And we combine them to make to 
+a larger sequence that is ordered.
 \subsubsection{code}
-TODO
-
-
+Figure~\ref{fig:merge1} shows the pseudo-code of merge sort. The main idea 
+is merge, which use the idea of pointers.
+\begin{figure}[]
+    \centering
+    \includegraphics[scale = 0.5]{merge1.png}
+    \caption{code of merge sort}
+    \label{fig:merge1}
+\end{figure}
+\subsubsection{analysis}
+We can easily write out the recurrence function of the 
+algorithm: 
+\begin{align*}
+    T \left( n\right)  = 
+    \begin{cases}
+        2  T(  n / 2) + n & \\
+        O\left(1\right) & n< c
+    \end{cases}
+\end{align*}
+Because, operation that combine the two sequences need 
+$\Theta \left( n\right)$ costs. And then we use master theorem:
+\begin{align*}
+T \left( n\right)  =  \Theta \left( n \log n\right)
+\end{align*}
 \subsection{快速排序}
 the sketch of the algorithm is that 
 we choose a $x$ and parition the sequence 
 basing on it. 
 Then we have two subproblems and deal with them 
 in the same way. Then we will have the answer.
-
+\subsubsection{the code}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale = 0.5]{quicksort1.png}
+    \caption{the pseudo code of quick sort}
+    \label{fig:quicksort1}
+\end{figure}
+Figure~\ref{fig:quicksort1} shows the pseudo code of the quick sort.
 \subsubsection{the time complexity analysis}
 \paragraph{worst case}The time it takes in the worst case is :
 \begin{align*}
@@ -221,7 +252,7 @@ which leads to
 which allows us to calculate the value of $T\left(n\right) $ recurrently, viz. 
 \begin{align*}
     T \left(n\right) / n & = c \left( \frac{1}{n} + \frac{1}{n -1} \right) + c \left( \frac{1}{n-1} + \frac{1}{n-2} \right) + \cdots  + c \left(\frac{1}{2} + 1 \right) + T (1 ) \\
-    & = c \left( \frac{1}{n } + \frac{1}{n-1    } + \cdots + \frac{1}{2} \right) + c \left( \frac{1}{n-1} + \frac{1}{n-2} + \cdots   + 1\right) 
+    & = c \left( \frac{1}{n } + \frac{1}{n-1    } + \cdots + \frac{1}{2} \right) + c \left( \frac{1}{n-1} + \frac{1}{n-2} + \cdots   + 1\right)  + T\left(1\right)
 \end{align*}
 These two parts are same. There is no need to separate them like what we have done here.
 
@@ -251,7 +282,10 @@ Thus for different sequences, they have the same expectation of the time it cons
 That was great. 
 
 \paragraph{the code} % (fold)
-\label{par:the code} TODO TODO
+\label{par:the code}
+
+the code is left to the readers as exercise, because it is 
+very easy. Just a slight change.
 % paragraph the code (end)
 
 \paragraph{analysis} % (fold)
@@ -299,6 +333,7 @@ The analysis can be carried on now. Please take a notice to the next procedure o
 \begin{enumerate}
     \item Only when $S_{i} , S_{i + 1} , \cdots  , S_{j}$ is in a same class, $S_{(i)}$ and $S_{\left(j\right)}$ can be compared.
     \item Only when $S_{\left(i\right)} $ or $S_{\left(j\right)}$ is chosen as the $x$, these two can be compared.
+    \item Moreover, if we choose some $S_{\left(k\right)}$ where $k< i$ or $k > j$, $S_{(i)}, S_{(j)}$ are still possible to be compared.
     \item The probability of $S_{\left(i +k\right)}$ to be chosen as $x$ are equals. So the probability of $S_{\left(i\right)} , S_{\left(j\right)}$ to be chosen as $x$ is 
     \begin{align*}
         \frac{2}{ j   - i + 1}
@@ -385,17 +420,17 @@ which is the minimum, which is, what we want.
 \begin{enumerate}
     \item it is clear that $d = \left\lceil \log  c \right\rceil$, where $c = x_{1} + x_{2}$
     \item $x_{1}$ in level $d - 1$ and $x_{2} $ in level $d$
-    \item $x_{1} + \frac{x_2}{2} = 2^{d-1}$. $2 ^{d- 1}$ is the number of nodes in 
+    \item $x_{1} + \dfrac{x_2}{2} = 2^{d-1}$. $2 ^{d- 1}$ is the number of nodes in 
     level $d  -1$
     \item total length:
     \begin{align*}
         M & = x _{1} \left(d - 1\right)  +x_{2} d  \\ 
-        & = \left(2 ^{d} - c     \right) \left(d - 1\right) + 2 \left( c - 2 ^{d-1}\right) d\\
-        & = c \left(d - 1\right) + 2 \left( c - 2 ^{d-1}\right) \tag{$d- 1  = \left\lfloor  \log c \right\rfloor$}\\
+        & = \left(2 ^{d} - c     \right) \left(d - 1\right) + 2 \left( c - 2 ^{d-1}\right) d \\
+        & = c \left(d - 1\right) + 2 \left( c - 2 ^{d-1}\right) \tag{$d- 1  = \left\lfloor  \log c \right\rfloor$} \\
         & = c \left\lfloor \log  c \right\rfloor + 2 \left(c - 2 ^{\left\lfloor \log c \right\rfloor}\right)
     \end{align*}
     \item $c = n!$ since this is the case when the tree has lowest height. 
-    \item We claim that $c  - 2 ^{\left\lfloor \log  c \right\rfloor } \ge \frac{c}{2}$ so 
+    \item We claim that $c  - 2 ^{\left\lfloor \log  c \right\rfloor } \ge \dfrac{c}{2}$ so 
     \begin{align*}
         M / n ! & > \left\lfloor \log n ! \right\rfloor + 1 \\
         & = \Omega \left( n \log  n\right)
@@ -406,6 +441,8 @@ which is the minimum, which is, what we want.
 
 In general, the low bound of sort is $\Omega \left( n\log n\right)$ in all possible cases.
 The quick sort is optimal when the const is ignored.
+
+Oh my god! I mean, this is bad. The deduction is like shit.
 \section{MAX and MIN 问题}
 \noindent\textbf{Input}: $n$ 个互异的数组成的数组 $A$ , 以及一个正整数 $i$
 
@@ -482,10 +519,8 @@ T\left(n\right) = 2 T\left(n /2\right) + 2
 3. 不再研究最大最小值选择问题的下界和平均情况下选择的下界 
 (为什么?\footnote{这并不是留给读者思考的, 我是真不知道为什么})
 
-\newpage
 \section{选择中位数} 
 \subsection{问题描述}
-选择中位数问题, 
 
 \noindent \textbf{Input} : 一个长度为 $n$ 的数组\\
 \textbf{Output} : 这个数组的中位数\footnote{
@@ -555,6 +590,11 @@ select 吗? 搞不懂啊.
         T \displaystyle \left( \left\lfloor  \frac{n}{5} \right\rfloor \right) + T \left( \frac{7n}{10} + 6\right) + \Theta \left(n\right) & \text{otherwise}
     \end{cases}
 \end{align*}
+于是说, 时间复杂度就是 
+\begin{align*}
+    T \left( n \right) =  O \left( n \right)
+\end{align*}
+线性时间内就能够完成. 非常好算法.
 
 \section{大数乘法}
 废话不多说 
@@ -640,7 +680,7 @@ T\left(n\right) = 3 T\left( n / 2\right) + \Theta \left(n\right)
 
 3. 继续递归处理4子棋盘，直到子棋盘中只有一个特殊方格为止
 
-我们将自己得到的算法记为 {\sffamily CessBoard(tr, tc,dr,dc, k)}\\
+我们将自己得到的算法记为 {\sffamily ChessBoard(tr, tc,dr,dc, k)}\\
 其中 {\sffamily tr, tc} 棋盘起点 (最左上) 的坐标 , {\sffamily dr,dc} 是特殊点的坐标,
 {\sffamily k} 是棋盘之大小. \\
 总体思路是这样\\
@@ -651,7 +691,7 @@ T\left(n\right) = 3 T\left( n / 2\right) + \Theta \left(n\right)
     \centering
     \includegraphics[scale = 0.3]{7.png}\caption{}
 \end{figure}
-4. 将骨牌的各个点视为特殊点\\
+\noindent 4. 将骨牌的各个点视为特殊点\\
 5. 得到了四个子问题, 将参数传进递归调用的函数里\\
 \begin{figure}[H]
     \centering

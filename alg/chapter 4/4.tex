@@ -70,8 +70,8 @@ public int fib (int n) {
 }
 \end{minted}
 we can see that the time complexity of the algorithm is  $O \left( 2^{n}\right)$. 
-And why is that happening? Can we do better? Because, when we are calculate the 
-Fibonacci sequence, we don't need that much time.
+And why is that happening? Can we do better? Because, when we are calculating the 
+Fibonacci sequence, we don't seem to need that much time.
 
 \subsection{what is dynamic programming}
 动态规划的前提实际上和我们的递归解法什么的是类似的, 都需要有递归的子结构.
@@ -236,7 +236,7 @@ p\left(n\right)
 \[
     m\left[ i,j  \right]= 
     \begin{cases}
-        \min_{i\le k <j} \left\{ m[i , k] + m [k+1 ] + p_{i-1} p_k p_j\right\} & i < j\\
+        \displaystyle \min_{i\le k <j} \left\{ m[i , k] + m [k+1 ] + p_{i-1} p_k p_j\right\} & i < j\\
         0 & i = j 
     \end{cases}
 \]

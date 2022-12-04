@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Rabin}\PYG{o}{\PYGZhy{}}\PYG{n}{Karp} \PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{n}{P}\PYG{p}{,}\PYG{n}{d}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{n} \PYG{o}{=} \PYG{n}{T}\PYG{p}{.}\PYG{n}{length}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{m} \PYG{o}{=} \PYG{n}{P}\PYG{p}{.}\PYG{n}{length}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{h} \PYG{o}{=} \PYG{n}{d}\PYG{o}{\PYGZca{}}\PYG{p}{\PYGZob{}}\PYG{n}{m}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{\PYGZcb{}} \PYG{n}{mod} \PYG{n}{q}\PYG{p}{;}
+    \PYG{n}{p} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{t\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{1} \PYG{n}{to} \PYG{n}{m}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{p} \PYG{o}{=} \PYG{p}{(}\PYG{n}{dp} \PYG{o}{+} \PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{n}{mod} \PYG{n}{q}\PYG{p}{;}
+        \PYG{n}{t\PYGZus{}0} \PYG{o}{=} \PYG{p}{(}\PYG{n}{dt\PYGZus{}0} \PYG{o}{+} \PYG{n}{T}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{n}{mod} \PYG{n}{q}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}\PYG{c+c1}{// this for loop is for preprocessing}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{s}\PYG{o}{=}\PYG{l+m+mi}{0} \PYG{n}{to} \PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{n}{m}\PYG{p}{)\PYGZob{}}
+        \PYG{k}{if} \PYG{n}{p}\PYG{o}{==}\PYG{n}{t\PYGZus{}s} \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,...,}\PYG{n}{m}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{n}{T}\PYG{p}{[}\PYG{n}{s}\PYG{p}{,...,}\PYG{n}{s}\PYG{o}{+}\PYG{n}{m}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+                \PYG{n}{print} \PYG{n}{s}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{s} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{n}{m}\PYG{p}{)}
+            \PYG{n}{t\PYGZus{}s}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{=} \PYG{n}{blahblah}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}\PYG{c+c1}{// this for loop is for matching}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

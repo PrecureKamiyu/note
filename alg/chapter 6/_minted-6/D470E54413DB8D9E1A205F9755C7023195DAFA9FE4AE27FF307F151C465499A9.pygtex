@@ -4,7 +4,7 @@
       \PYG{n}{stop}
   \PYG{k}{else}
       \PYG{n+nf}{Pop} \PYG{p}{(}\PYG{n}{S}\PYG{p}{)} \PYG{p}{;}
-      \PYG{n}{Push} \PYG{p}{(}\PYG{n}{s}\PYG{p}{);} \PYG{c+c1}{// 将 x 的子节点按照给出的排列顺序压入栈.}
+      \PYG{n}{Push} \PYG{p}{(}\PYG{n}{s}\PYG{p}{);} \PYG{c+c1}{// 将 x 的子节点按照给出的排列顺序压入栈. 注意栈的性质, 我们应当将那些值比较高的最后塞进去.}
   \PYG{k}{if} \PYG{n}{S} \PYG{o}{==} \PYG{n+nb}{NULL}
       \PYG{k}{return} \PYG{n}{failed}\PYG{p}{;}
   \PYG{k}{else} \PYG{k}{goto} \PYG{l+m+mi}{2}

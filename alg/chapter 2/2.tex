@@ -48,7 +48,7 @@
 
 我们于是可以使用 $\varTheta$ 来比较某些算法的时间效率. 
 
-\paragraph*{渐进} 渐进就是考虑无穷远处附近的情况. 比如说我们有一个渐进正的函数 $f$
+\paragraph*{渐进} 渐进就是考虑无穷远处附近的情况. 比如说我们有一个{\bfseries 渐进正的函数} $f$
 那么 $\exists c$ s.t. $x > c \implies f(x) > 0$. 输入规模很大的时候, 我们就可以只考虑
 最高阶的项
 
@@ -59,7 +59,7 @@
 O \left(f \right) = \left\{ g : \exists c , n_{0}, n > n_{0} \implies g  \left(n\right) \le c f\left(n\right) \right\}
 \]
 这个符号说明 $f$ 是一个渐进上界, $O\left(f\right)$ 就表示那些, 在远处来看, 比 $f$ 小的函数. 我们在描述一些算法的复杂度的时候, 也会使用
-这个符号, 因为一个算法的最坏情况和最好情况是不一样. 描述整个算法的时候常用 $O$ , 也能用 $\Theta$ , 只不过注明 , 基本都是考虑最坏情况下的时间.
+这个符号, 因为一个算法的最坏情况和最好情况是不一样. 描述整个算法的时候常用 $O$ , 也能用 $\Theta$ , 只不过要注明是一般情况还是最坏情况.
 
 
 \paragraph*{渐进紧界 $\varTheta$} :
@@ -67,11 +67,14 @@ O \left(f \right) = \left\{ g : \exists c , n_{0}, n > n_{0} \implies g  \left(n
 \varTheta \left(f\right) = \left\{g: \exists c_{1} , c_2, n > n_{0} \implies  c_{1} f\left(n\right) \le g\left(n\right) \le c_{2} f\left(n\right)\right\}
 \]
 这个是同阶函数的意思, 我们说在远处, $f$ 和 $g$ 之间的区别就是一个常数倍的关系. 我们很容易知道 
-$ n^{2} + \frac{1}{2} n^{0.5} +  n^{0.6} \in \Theta \left(n^{2}\right)$ 
+$\displaystyle  n^{2} + \frac{1}{2} n^{0.5} +  n^{0.6} \in \Theta \left(n^{2}\right)$ 
 我们只用考虑这里面的最大项数, 其中的那些小项可以直接忽略不计. 证明需要从定义出发:
-比如说证明 $\frac{1}{2} n^{2} - 3n \in \Theta \left(n^{2}\right)$. 
+比如说证明 $\displaystyle \frac{1}{2} n^{2} - 3n \in \Theta \left(n^{2}\right)$. 
 
-取 $c_{2} = \frac{1}{2}$ , 然后 $\displaystyle  \frac{1}{2} n^{2}  - 3n = n \left(\frac{1}{2} n - 3\right) =n \left(\frac{1}{3} n+ \frac{1}{6} n - 3\right)$ 取 $n_{0} = 9$ 那么 $n >n_{0}$ 有 
+取 $c_{2} = \frac{1}{2}$ , 
+然后 
+$\displaystyle  \frac{1}{2} n^{2}  - 3n = n \left(\frac{1}{2} n - 3\right) =n \left(\frac{1}{3} n+ \frac{1}{6} n - 3\right)$ 
+取 $n_{0} = 9$ 那么 $n >n_{0}$ 有 
 $\displaystyle  \frac{1}{3} n+ \frac{1}{6} n - 3 > \frac{1}{6} n$
 
 于是取 $c_1 = \dfrac{1}{6}$,  $c_{1} ,c_{2} , n_{0}$ 都取定了, 那么就证明完了.
@@ -86,7 +89,7 @@ $O$ 用来表示渐进上界, $\Theta$ 表示的是渐进紧界, $\Omega$ 表示
 
 \paragraph*{严格渐进上界} $o$: 小o 符号, 是严格小于的意思. 实际上就是将那些同阶的函数给去掉了, 但是这种去掉的方法值得注意. 其严格的数学定义如下.
 \[
-o \left(f\right) = \left\{ g: \forall  c >  0, n_{0} , \forall n > n_{0} \implies g \left(n\right) < f \left(n\right)\right\}
+o \left(f\right) = \left\{ g: \forall  c >  0, \exists n_{0} , \forall n > n_{0} \implies g \left(n\right) < f \left(n\right)\right\}
 \]
 证明 $2 n^{2} \ne o \left(n^{2}\right)$ 即 我们要证明 存在 $c$ 使得 ``$\forall n > n_{0}, 2 n^{2} < n^{2}$'' 不成立. 注意到 $c = 1 >0 $ 则对于任意的 $n$, $ 2 n^{2} < cn^{2}$ 都不成立.\\
 证明有点乱, 勉强看把. 
@@ -201,6 +204,7 @@ c 3 ^{i} +  3 ^{i+1} = c 3^{i+1} \left( \frac{1}{3} + \frac{1}{c}\right) \le c 3
     \end{proof}
 \end{example}
 \subsubsection{裂项求和}
+裂开!
 \begin{example}
     求 $\sum_{k=1} ^{n} k   $ 的下界 
     \begin{proof}
@@ -544,28 +548,19 @@ where $a \ge 1$,  $b >1$ , they are 常数. $f \left(n\right)$ 渐进正函数
     \end{align*}
     with additional condition $\exists c < 1$ we have $a f \left( n  / b    \right) \le cf\left(n\right)$ asymptotically
 \end{theorem}
-
-You may notice the condition $f \left(n \right) = \Omega \left( n^{\log _{a} b + \varepsilon}\right)$ 
+\noindent You may notice the condition $f \left(n \right) = \Omega \left( n^{\log _{a} b + \varepsilon}\right)$ 
 somehow weird. Why bother to use $\varepsilon$ ? 
 
-In fact , there are some conditions that Master can not tackle with viz. 
+\noindent In fact , there are some conditions that Master can not tackle with viz. $f$ suit that
 \begin{align*}
-    \exists f, \text{s.t.} \forall  \varepsilon > 0 , f\left(n\right) = o \left( p \left(n\right) \cdot  n ^{\varepsilon}\right)
+    \forall  \varepsilon > 0 , f\left(n\right) = o \left( p \left(n\right) \cdot  n ^{\varepsilon}\right)
 \end{align*}
 while that $f = \omega \left(p \left(n\right)\right)$
-
-    $f\left(n\right) = O \left( n  ^{ \log _{b} a  - \varepsilon }\right)$  where $\varepsilon > 0$ is cons. then 
-    $T\left(n\right)  =  \Theta \left(  n^{\log _{b}a   }\right)$
-
-    if $f\left(n\right)  = \Theta \left( n ^{\log _{b} a    } \right)$ then $T\left(n\right) = \Theta \left( n ^{\log _{b} a } \log n\right)$
-
-How about this one? You can have a tr. 
 \begin{example}
     $T\left(n \right) =   9  T\left( n / 3\right) + n$
 
     $T\left( n\right) = T\left( 2n /3\right) + 1$
 \end{example}
-
 \begin{example}
     $T\left(n\right)  =  3 T\left( n / 4\right) + n \log n$
 \end{example}

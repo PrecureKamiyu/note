@@ -188,7 +188,7 @@ Hamiltonian 环.
         stop
     else 
         Pop (S) ; 
-        Push (s); // 将 x 的子节点按照给出的排列顺序压入栈.
+        Push (s); // 将 x 的子节点按照给出的排列顺序压入栈. 注意栈的性质, 我们应当将那些值比较高的最后塞进去.
     if S == NULL 
         return failed;
     else goto 2

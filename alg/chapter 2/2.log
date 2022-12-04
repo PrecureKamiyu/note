@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  29 NOV 2022 21:53
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  3 DEC 2022 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -742,24 +742,24 @@ LaTeX Warning: No \author given.
 
  [1
 
-] [2] [3] [4] [5] [6] [7] [8] [9] [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 575.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 575.
+] [2] [3] [4] [5] [6] [7] [8] [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 570.
+ [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 570.
  (./2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 575.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 575.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 570.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 570.
 Package rerunfilecheck Info: File `2.out' has not changed.
 (rerunfilecheck)             Checksum: ED8A1DD0E7EF4F8CA933436687BB0BE6;1245.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 575.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 570.
  ) 
 Here is how much of TeX's memory you used:
  17225 strings out of 479819
  350041 string characters out of 5895846
- 647519 words of memory out of 5000000
+ 648519 words of memory out of 5000000
  34069 multiletter control sequences out of 15000+600000
  540369 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,19n,72p,378b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,19n,72p,378b,505s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 2.pdf (11 pages).
+Output written on 2.pdf (10 pages).
