@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}小数的定点表示}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}原码, 补码, 移码}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}定点表示}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}小数的浮点表示}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}上溢和下溢}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}规格化表示}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}原码的规格化}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}补码的规格化}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}规格化的目的}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}浮点数溢出和机器0}{5}{subsection.3.4}%
+\contentsline {section}{\numberline {4}IEEE 754 标准}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}构成}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}尾数}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}指数}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}特殊值}{7}{subsection.4.4}%

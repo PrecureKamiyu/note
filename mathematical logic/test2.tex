@@ -1,0 +1,165 @@
+\documentclass[12pt, a4paper]{ctexart} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片
+\usepackage{amsfonts}           %对某一些字体之支持
+\usepackage{mathrsfs}           %mathscr e.g.
+\usepackage[]{amsmath}          %数学公式
+\usepackage{amsthm}             %定义, 定理, 证明, 例子环境的支持
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %插入图片
+\usepackage[left=1.30in,right=1.30in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage{color}            %给部分文本上色的
+\usepackage{algorithm}          %写伪代码的
+%\usepackage{algorithmic}       %同上
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+%\usepackage{minted}
+\usepackage{amssymb}            %用来加入一些数学符号, 比如说 $\varnothing$
+\usepackage{titlesec}
+\usepackage{fontspec}           %不知道用来干嘛的
+\usepackage{hyperref}           %生成可跳转的书签
+
+%\usemintedstyle{vs}    %设置minted插入代码的风格
+
+\titleformat*{\section}{\huge\bfseries}             %管理title的字体和大小
+\titleformat*{\subsection}{\Large\bfseries}         %bfseries就是默认的字体.
+\titleformat*{\subsubsection}{\large\bfseries}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{remark}{Remark}
+\newtheorem*{comment}{Comment}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{sketchoftheproof}{Sketch of the Proof}
+\newtheorem*{axiom}{Axiom}
+
+\pagestyle{plain}
+\title{ND}
+\author{Nobody}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{definition}
+\subsection{Language part}
+\begin{align*}
+    \Sigma = \left\{ (, ), \leftrightarrow , \rightarrow , \neg , \vee, \wedge , \text{Propositional letters}\right\}
+\end{align*}
+
+the definitoin of the Propositions 
+
+the definition is similar to those in the PC. 
+
+\subsection{The 推理过程}
+\begin{axiom}
+    \begin{equation}
+    \Gamma \cup  \left\{A \right\} \vdash A
+    \end{equation}
+    注意这里只有一条公理. 
+\end{axiom}
+
+\begin{definition}[推理的表示]
+我们使用类似分号的形式进行表示. 比如说这里是第一条推理规则: 引入规则. 
+\begin{equation}
+    \frac{\Gamma \vdash  B}{\Gamma \cup \left\{A\right\} \vdash B}
+\end{equation}
+上面为条件, 下面为结果.
+\end{definition}
+
+\begin{proposition}[假设引入]
+    \begin{equation}
+        \frac{\Gamma \vdash  B   }{ \Gamma \cup \left\{A\right\} \vdash  B}
+    \end{equation}
+    记为 $\left(+ \right)$
+\end{proposition}
+\begin{proposition}[假设消除]
+    \begin{equation}
+        \frac{\Gamma \cup \left\{A\right\}\vdash B \quad \Gamma \cup  \left\{\neg A\right\} \vdash B}{\Gamma \vdash B}
+    \end{equation}
+    记为 $\left(-\right)$
+    \begin{example}[证明反证法]
+        需要使用蕴含消除, 等之后就会讲了. 
+        \begin{equation}
+            \left(\neg A \to A\right) \to A 
+        \end{equation}
+    \end{example}
+\end{proposition}
+\begin{proposition}[析取引入]
+    \begin{equation}
+        \frac{\Gamma \vdash A}{\Gamma \vdash A\vee B}
+    \end{equation}
+\end{proposition}
+\begin{proposition}[析取消除]
+\begin{equation}
+    \frac{\Gamma \cup A \vdash  C \quad \Gamma \cup  B \vdash C \quad \Gamma \vdash A \vee B}{\Gamma \vdash C}
+\end{equation}
+\end{proposition}
+\begin{proposition}[合取引入]
+\begin{equation}
+    \frac{\Gamma \vdash A \quad \Gamma \vdash B}{\Gamma \vdash A \wedge B}
+\end{equation}
+比较简单. 我们使用PC中的东西可以证明这个, 我们已经证明PC的完备性了, 所以说, 可以使用PC来证明这些推理规则是否合理. 
+\end{proposition}
+\begin{proposition}[合取消除]
+\begin{equation}
+\frac{\Gamma \vdash A\wedge B   }{\Gamma \vdash  A}
+\end{equation}
+\end{proposition}
+\begin{proposition}[$\rightarrow$ 引入]
+\end{proposition}
+\begin{proposition}[$\rightarrow$ 消除]
+    \begin{equation}
+        \frac{\Gamma \vdash A \quad \Gamma \vdash A \to B}{\cdots }
+    \end{equation}
+\end{proposition}
+\begin{proposition}[$\neg$ 引入]
+    \begin{equation}
+        \frac{\Gamma \cup A \vdash B \quad \Gamma \cup  A \vdash \neg B}{\Gamma \vdash \neg A}
+    \end{equation}
+\end{proposition}
+\begin{proposition}[$\neg$ 消除 ]
+    \begin{equation}
+        \frac{\Gamma \vdash  A \quad \Gamma \vdash  \neg A}{ \Gamma \vdash B}
+    \end{equation}
+\end{proposition}
+\begin{proposition}[$\neg \neg$ +]
+    略
+\end{proposition}
+\begin{proposition}[$\neg\neg -$]
+\end{proposition}
+\begin{proposition}[$\leftrightarrow + $]
+    略
+\end{proposition}
+\begin{proposition}[$\leftrightarrow -$]
+\end{proposition}
+
+\subsection{演绎序列}
+我们说, 演绎序列是下面这样的序列: 
+\begin{equation}
+    \Gamma_1 \vdash  A_1 , \Gamma_2 \vdash A_2 , \cdots , \Gamma_{m} \vdash A_{m}
+\end{equation}
+其中 $\Gamma _{i} \vdash A_{i}$ 是 axiom, 或者是 $\Gamma _{i} \vdash A_{i} = \Gamma _{j}  \vdash A_{j}$,
+或者是 $\Gamma _{i} \vdash A_{i}$ 是一个推理结果. 
+
+\subsection{例子}
+值得注意的是, 上面几个推理规则之中, 有2 4 9 10是比较重要的. 
+
+例子1: 反证法证明 2. 
+\subsection{定理}
+记得看ppt
+
+\end{document}

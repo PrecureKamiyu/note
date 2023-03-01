@@ -1,0 +1,235 @@
+\documentclass[12pt, a4paper]{ctexart} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片
+\usepackage{amsfonts}           %对某一些字体之支持
+\usepackage{mathrsfs}           %mathscr e.g.
+\usepackage[]{amsmath}          %数学公式
+\usepackage{amsthm}             %定义, 定理, 证明, 例子环境的支持
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %插入图片
+\usepackage[left=1.60in,right=1.60in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage{color}            %给部分文本上色的
+\usepackage{algorithm}          %写伪代码的
+%\usepackage{algorithmic}       %同上
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+%\usepackage{minted}
+\usepackage{amssymb}            %用来加入一些数学符号, 比如说 $\varnothing$
+\usepackage{titlesec}
+\usepackage{fontspec}           %不知道用来干嘛的
+\usepackage{hyperref}           %生成可跳转的书签
+
+%\usemintedstyle{vs}    %设置minted插入代码的风格
+
+\titleformat*{\section}{\huge\bfseries}             %管理title的字体和大小
+\titleformat*{\subsection}{\Large\bfseries}         %bfseries就是默认的字体.
+\titleformat*{\subsubsection}{\large\bfseries}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{remark}{Remark}
+\newtheorem*{comment}{Comment}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\def\downa{\downarrow}
+\def\upa{\uparrow}
+\def\lra{\Leftrightarrow}
+\title{zuoye2}
+\author{210110531\and 毛翰翔}
+\date{\today}
+\pagestyle{plain}
+\begin{document}
+\maketitle
+\begin{problem}
+    使用 $\uparrow$ and $\downarrow$ 表示下面的 proposition.
+    \begin{enumerate}
+        \item $\neg p \lor q$
+        \item $p \wedge \neg q$
+        \item $\neg p \lor \neg q$
+        \item $p \leftrightarrow q$
+    \end{enumerate}
+\end{problem}
+\begin{solution} to 1.
+        \begin{align*}
+            \lra & \neg \neg \left( \neg p \lor q\right) \\ 
+            \lra & \neg \left( \neg p \downa q\right)\\
+            \lra & \neg \left(  \left( p \downa p\right) \downa q\right) \\
+            \lra & \left( \left( p \downa p\right) \downa q \right) \downa \left( \left( p \downa p \right) \downa q\right)
+        \end{align*}
+        而后   
+        \begin{align*}
+            \lra & \neg p \vee \neg \neg q \\
+            \lra & p \upa \left( \neg q\right)\\
+            \lra & p \upa \left( q \upa q\right)
+        \end{align*}
+\end{solution}
+\begin{solution} to 2.
+        \begin{align*}
+            & p \wedge \neg q\\
+            \lra & \neg \neg p \wedge \neg q\\
+            \lra & \neg p \downa q \\
+            \lra & \left( \left( p \downa p\right) \downa q\right)
+        \end{align*}
+        而后 
+        \begin{align*}
+            & p \wedge \neg q \\
+            \lra & \neg \neg \left( p \wedge \neg q\right) \\
+            \lra & \neg \left( p \upa  \neg q\right)\\
+            \lra & \neg \left( p \upa \left(q \upa q\right)\right)\\
+            \lra & \left(p \upa \left(q \upa q\right)\right) \upa \left( p \upa \left( q \upa q\right)\right)\\
+        \end{align*}
+\end{solution}
+\begin{solution} to 3.
+        \begin{align*}
+            & \neg p \lor \neg q\\
+            \lra & \neg \neg \left( \neg p \lor \neg q\right) \\
+            \lra & \neg \left( \neg p \downa \neg q\right) \\
+            \lra & \neg \left( \left( p \downa p\right) \downa \left( q \downa q\right) \right)\\
+            \lra & \left( \left( p \downa p \right) \downa \left(q \downa q\right) \right) \downa \left( \left( p \downa p \right) \downa \left(q \downa q\right) \right) \\
+        \end{align*}
+        而后 
+        \begin{align*}
+            & \neg p \lor \neg q \\
+            \lra & \neg \left( p \wedge q\right) \\
+            \lra & p \upa q 
+        \end{align*}
+\end{solution}
+\begin{solution} to 4. 
+        \begin{align*}
+            & p \leftrightarrow q \\
+            \lra & \left(\neg p \lor q\right) \wedge \left( \neg q \vee p\right)\\
+            \lra & \neg \neg \left(  \left( \neg p \vee q\right) \wedge \left( \neg q \vee p\right) \right) \\
+            \lra & \neg \left( \left( \neg \left( \neg p \vee q\right)\right) \vee \left( \neg \left( \neg q \vee p\right)\right)\right) \tag{de Morgan's law}\\ 
+            \lra & \neg \left( \left( \neg p \downa q\right) \vee \left( \neg q \downa p\right)\right)\\
+            \lra & \left(\neg p \downa p\right) \downa \left(\neg q \downa p\right)\\
+            \lra & \left(\left( p \downa p \right) \downa q  \right) \downa \left( \left( q\downa q\right) \downa p\right)
+        \end{align*}
+        而后
+        \begin{align*}
+            & p \leftrightarrow q \\
+            \lra & \left(\neg p \wedge  \neg q \right) \vee \left( p \wedge q\right)  \tag{经过简单的化简}\\
+            \lra & \left( \neg \left(\neg p \wedge \neg q\right)\right) \upa \left(\neg \left( p \wedge q\right)\right) \\
+            \lra & \left( \neg p \upa \neg q\right) \upa \left( p \upa q\right) \\
+            \lra & \left(\left( p \upa p \right) \upa \left( q \upa q\right)\right) \upa \left( p \upa q\right)
+        \end{align*}
+\end{solution}
+\begin{problem}
+    在 Propositonal Calculus 中证明下面这些事实.
+    \begin{enumerate}
+        \item $\vdash  \left(A \to  \left(A \to B \right)\right) \to \left(A \to B \right)$ 
+        \item $A \to B , \neg \left( B \to C \right) \to \neg  A \vdash A \to C$ 
+        \item $\vdash \left(A \to \left(B \to C\right) \right) \to ((C \to D)\to (A \to  ( B \to D   )))$
+        \item $\vdash \left( \left(A \to B \right) \to \left( B \to A\right) \right) \to \left(B \to A\right)$
+        \item $\vdash \left( \left(A \to B \right) \to A    \right) \to A $
+        \item $\vdash \left( \left(A \to B \right) \to C\right) \to \left( \left(A \to C\right) \to C    \right) $ 
+        \item $\vdash \left(A \to C\right) \to \left(\left(B \to C\right) \to \left(\left(\left(A \to B\right) \to B    \right) \to C    \right)\right)$
+    \end{enumerate}
+\end{problem}
+\begin{comment}
+    形如 $A \to  B \to C \to D$ 的式子, 默认从右往左加括号, viz. 原本这个式子应为
+    \begin{align*}
+        A \to \left(B \to \left(C \to D\right)\right) 
+    \end{align*}
+\end{comment}
+\begin{solution} to 1. 
+    \begin{align}
+        &\left(A  \to B\right) \to \left(A \to B \right)                                  \tag{thm 1} & (1) \\
+        &A \to \big(  \left(A \to B\right) \to B    \big)                                 \tag{前件互换, thm 8} & (2) \\
+        &A \to \big( \left(A \to B \right) \to B    \big) \to \big( A \to \left(A \to B\right) \big) \to \left(A \to B\right) \tag{A2}& \left(3\right) \\
+        &\left(A \to \left(A \to B\right) \right) \to \left(A \to B\right) \tag{(2) (3) thm 8} & \left(4\right)
+    \end{align}
+\end{solution}
+\begin{solution} to 2.
+    \begin{align*}
+         &\ \big( \neg \left(B \to C\right) \to \neg A \big) \to \left(A \to \left(B \to C\right) \right)&\quad \left(1\right)\tag{A3}\\
+         &\ \left( \neg \left(B \to C\right) \right)                                                     &\quad \left(2\right)        \\
+         &\ \left(A \to \left(B \to C\right) \right)                                                     &\quad \left(3\right)    \tag{(1) (2) rmp}\\
+         &\ \left(A \to B\right) \to \left(A \to C\right)                                                &\quad \left(4\right)\tag{A2, thm 8, rmp} \\
+         &\ A \to B                                                                                      &\quad \left(5\right)\\
+         &\ A \to C                                                                                      &\quad \left(5\right)\tag{(4) (5) rmp}
+    \end{align*}
+\end{solution}
+
+\begin{solution} to 3.
+    \begin{align*}
+        (1) \ &\neg A \to (A \to \left(\left(C \to D\right) \to \left(B \to D\right)\right)) \tag{thm 6}\\
+        (2) \ &\neg A \to \left(\left(C \to D\right) \to \left(A \to \left( B \to D\right)\right)\right) \tag{thm 3, rmp}\\
+        (3) \ &\left(B \to C\right) \to \left(\left( C \to D\right) \to \left(B \to D\right) \right) \tag{thm 5} \\
+        (4) \ &A \to \left(\left(B \to C\right) \to \left(\left(C \to D\right) \to \left(B \to D\right)\right)\right) \tag{thm 1, rmp}\\
+        (5) \ &\left( B \to C \right) \to \left(A \to \left(\left(C \to D\right) \to \left(B \to D\right)\right)\right)\tag{thm 3, rmp}\\
+        (6) \ &\left(B \to C\right) \to \left(\left(C \to D\right) \to \left(A \to \left(B \to D\right)\right)\right) \tag{thm 8, thm 3}\\
+        (7) \ &\left(A \to \left(B \to C\right) \right) \to \left(\left(C \to D\right) \to \left(A \to \left(B \to D\right)\right)\right) \tag{(2), (6)thm 18}
+    \end{align*}
+\end{solution}
+\begin{solution} to 4.
+    \begin{align*}
+        (1)\ & \left(B \to A\right) \to \left(B \to A  \right) \tag{thm 1}\\
+        (2)\ & \neg A \to \left(A \to B     \right) \tag{thm 6}\\
+        (3)\ & B \to \left(\neg A \to \left(A \neg \left(A \to B\right) \right)\right) \tag{thm 1, rmp}\\
+        (4)\ & B \to \left(\neg \left( A \to B  \right) \to A  \right) \tag{thm 14, thm 8}\\
+        (5)\ & \neg \left(A \to B  \right) \to \left( B \to A  \right) \tag{thm 3, rmp}\\
+        (6)\ & \left(\left(A \to B\right) \to \left(B \to A\right) \right) \to \left(B \to A\right) \tag{thm 18, (1)(6)}
+    \end{align*}
+\end{solution}
+\begin{solution} to 5. 
+    \begin{align*}
+        (1)\qquad \qquad \quad \quad \quad&A \to A \tag{thm 1}\qquad \qquad \qquad \\
+        (2)\qquad \qquad \quad \quad \quad&\neg A \to \left( A \to B\right) \tag{thm 6} \qquad \qquad \qquad \\
+        (3)\qquad \qquad \quad \quad \quad&\neg \left(A \to B\right) \to A \tag{thm 14, rmp} \qquad \qquad \qquad \\
+        (4)\qquad \qquad \quad \quad \quad&\left( \left(A \to B\right) \to A    \right)\to A \tag{thm 18, (1) (3)}\qquad \qquad
+    \end{align*}
+\end{solution}
+\begin{solution} to 6.
+    \begin{align*}
+        (1) \quad \quad & \neg C \to \left(C \to B\right) \tag{thm 6} \\
+        (2) \quad \quad & A \to \left(\neg C \to \left(C \to B\right)\right)\tag{thm 1, rmp}\\
+        (3) \quad \quad & \neg C \to \left(A \to \left(C \to B\right)\right) \tag{thm 3}\\
+        (4) \quad \quad & \neg C \to \left(\left(A \to C\right) \to \left(A \to B\right)\right) \tag{A2, thm 8} \\
+        (5) \quad \quad & \neg C \to \left(\neg \left(A \to B\right) \to \neg \left(A \to C\right)\right) \tag{thm 13, thm 8}\\
+        (6) \quad \quad & \Big(\neg C \to \left(\neg \left(A \to B\right)\right)\Big)\to \Big(\neg C \to \neg \left(A \to C\right)\Big) \tag{A2, rmp}\\
+        (7) \quad \quad & \Big( \left(A \to B\right) \to C \Big) \to \left(\neg C \to \neg \left(A \to B\right)\right) \tag{thm 13}\\
+        (8) \quad \quad & \left(\neg C \to \neg \left(A \to C\right)\right) \to \left(\left(A \to C\right) \to C  \right) \tag{A3}\\
+        (9) \quad \quad & \left( \left(A \to B \right) \to C\right) \to \left(\left(A \to C\right) \to C\right) \tag{thm 21, (7)(8)}
+    \end{align*}
+\end{solution}
+\begin{solution} to 7.
+    We shall use thm 18 to prove.
+    \begin{align*}
+        (1) & \quad \quad \neg C \to \left(C \to B\right) \tag{thm 6} \\
+        (2) & \quad \quad A \to  \left(\neg C \to \left(C \to B\right)\right)  \tag{thm 1, rmp}\\
+        (3) & \quad \quad \neg C \to A \to \left(C \to B\right) \tag{thm 3} \\
+        (4) & \quad \quad \neg C \to \left(\left(A \to C\right) \to \left(A \to B\right)\right) \tag{A2, rmp}\\
+        (5) & \quad \quad \left(A \to C\right) \to \left(\neg C \to \left(A \to B\right) \right) \tag{thm 3, rmp} \\
+        (6) & \quad \quad \left(A \to C\right) \to \left(\neg \left(A \to B\right) \to C\right) \tag{thm 14, thm 8} \\
+        (7) & \quad \quad \left(B \to C\right) \to \left(\left(A \to C\right) \to \left(\neg \left(A \to B\right) \to C\right)\right) \tag{thm 1, rmp}\\
+        (8) & \quad \quad \neg \left(A \to B\right)  \to \left(\left(A \to C\right) \to \big(\left(B \to C\right) \to C\big)\right) \tag{多用几次thm 3}\\
+    \end{align*}
+    接下来证明另一半.
+    \begin{align*}
+        (9) & \quad \quad \left(B \to C\right) \to \left(B \to C\right) \tag{thm 1} \\
+        (10) & \quad \quad \left(B \to \left(B \to C\right) \to C\right) \tag{thm 3}\\
+        (11) & \quad \quad \left(A \to C\right) \to \left(B \to \left(B \to C\right) \to C\right) \tag{thm 1, rmp} \\
+        (12) & \quad \quad B \to \left(A \to C\right) \to \left(B \to C\right) \to C \tag{thm 3, rmp} \\
+    \end{align*}
+    一上面这两部分的结果作为 thm 18 的理由: 
+    \begin{align*}
+        (13)& \quad \quad \big(\left(A \to B\right) \to B\big) \to \left((A \to C) \to \left(B \to C\right) \to C\right) \tag{thm 18 (12)(8)}\\ 
+        (14)& \quad \quad \left(A \to C\right)   \to \bigl( \left(A \to B\right) \to B     \bigr) \to \left(B \to C\right) \to C\tag{thm 3, rmp}\\
+        (15)& \quad \quad \Bigl(( \left(A \to B \right) \to B ) \to \left(B \to C\right) \to C    \Bigr) \to \Bigl( \left(B \to C\right) \to \left( \left(A \to B\right) \to B\right) \to C\Bigr)   \tag{thm 3} \\
+        (16)& \quad \quad \left(A \to C\right) \to \left(B \to C\right) \to \left(\left(A \to B\right) \to B   \right) \to C\tag{thm 8} \\
+    \end{align*}
+\end{solution}
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass[a4paper, 10pt]{ctexart} %中文支持
+\usepackage{float}              %防止浮动元素浮动
+\usepackage{rotating}           %旋转图片用的
+\usepackage{amsmath}          %数学公式
+\usepackage{amsfonts}           %加载数学字体, 比如说\mathbb, 没有这个宏包的话可能会报错
+\usepackage{amsthm}             %定义, 定理, 证明, 例子这些环境的支持
+%使用方法:
+%\newtheorem{environment name}{caption}
+%比如 \newtheorem{example}{这是例子}
+%效果 \begin{example} xxx \end{example} -> 这是例子 1 xxx
+%proof就不需要了
+\usepackage{graphicx}           %用来插入图片
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}   %用来排版的
+\usepackage{color}            %用来给部分文本上色的
+\usepackage{algorithm}          %用来写伪代码的
+\usepackage{algorithmic}        %同上
+%\usepackage{minted}
+\usepackage{extarrows}          %用来使用大箭头. 没什么用.
+%以下是宏包 amsthm 的命令, 我们使用这些环境的时候必须先对其进行一个定义
+\newtheorem{theorem}{定理}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\begin{document}
+Definition: 如果过程 $X _{0} ,\cdots $ 满足 
+$$ P \left(X _{n+1} = i_{n+1} \ | X_{n} = i_{n} , X_{n-1}= i_{n-1}, \cdots ,X_{0} = i_{0}\right)\\  =P \left(X_{n+1}= i_{n+1} \ | X_{n} = i _{n}\right)$$
+
+其中 $i_{0} , \cdots  , i_{n+1} \in \mathcal S$
+\end{document} 
