@@ -1,0 +1,72 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\pagestyle{plain}
+\theoremstyle{definition}
+\newtheorem{theorem}{Def}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{thm}[definition]{定理}
+
+\theoremstyle{plain} 
+\newtheorem{exam}[defition]{Example}
+
+\begin{document}
+\section{RISC-V 介绍}
+
+- 机器指令 
+- 指令集 IS instruction set
+- 指令集架构 ISA instruction set architecture 
+也称为处理器架构
+
+- 系列机, 基本指令系统结构相同的计算机? 
+- ? 
+
+ISA 
+讲的什么几把. 
+
+属性 
+位宽, 指定了通用寄存器的宽度. 决定了寻址范围的大小, 数据运算能力的强弱. 
+需要和 指令编码长度分开, 指令的编码长度是越小越好的. 
+
+原则:
+1. 简单性来自于规则性
+2. 越小越快
+3. 加速经常性时间.  经常使用的指令尽量短. 
+4. 需要良好的折衷.
+
+性能要求: 
+1. 完备性: 指令丰富, 功能齐全, 使用方便
+2. 高效性: 空间小, 速度快
+3. 规整性: riscv 比较规整, 但是 x86 相反. 
+4. 兼容性: 能够向上兼容
+ 
+\subsection{}
+
+content
+
+- 储存器寻址
+- 操作出的类型
+- 控制转移类指令
+- 指令格式
+
+- 大端法和小端法
+字地址, 字长度为 32 位 (riscv), 字地址为 addr.
+小端法: 将字的低位放在 addr. 次低位放在 addr + 1.
+大端法: 将字的高位放在 addr. 
+
+- 对齐问题
+
+- 寻址方式
+-- 寄存器寻址
+直接使用寄存器的名字
+立即数寻址
+间接访问, 访问寄存器的值, 根据寄存器的值访问寄存器
+
+\end{document}
