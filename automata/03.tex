@@ -1,0 +1,56 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Def}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{thm}[definition]{定理}
+
+\theoremstyle{plain} 
+\newtheorem{exam}[definition]{Example}
+
+\begin{document}
+\title{正则语言的性质}
+我们这边的题型是如何判定一个语言不是正则的. 既然他这么问了, 那么他大概率不是正则的. 
+\section{泵引理}\label{sec:beng}
+所用到的方法便是下面介绍的泵引理. 需要注意到, 符合泵引理的语言不一定是正则的, 但不满足的一定不是正则的, 也就是说, 泵引理实际上是正则的必要条件. 
+\paragraph{鸽巢原理}
+原理应该很简单, 之前在其他地方也有涉及\footnote{比如说, 线性代数之中有一题: 证明对于一个 \(n\) 阶方阵, 存在 \(k \le n\) 使得 \(r (A ^{k} )= r (A ^{k + 1} ) = r (A ^{k + 2} ) = \dots\)}, 其实是一个挺有意思的定理. 
+
+\paragraph{泵引理}
+\begin{thm}
+对于一个正则语言 \(L\), 存在 \(N\) 使得对于长度大于等于 \(N\) 的语句, i.e. \(\{ w \mid |w | \ge N\) , 可以分为三个部分 \(xyz\), i.e. \(w = xyz\), 并且满足: 
+\begin{itemize}
+\item [1.] \(y \ne \epsilon\) 
+\item [2.] \(|xy | \le N\)
+\item [3.] \(x y^{*} z \in L\) 
+\end{itemize}
+\end{thm}
+我们使用泵引理和反证法, 一般是, 给定一个 \(N\), 找出一个 \(w\), 其不满足上面的第三条. 
+\paragraph{证明}
+证明需要用到前面的定理.  考虑这个语言对应的正则表达式, 还有其对应的 DFA. 并且给 DFA 的状态编号. 
+设 \(w = a_{1} a_{2} a_{3} \dots a_{m}, m \ge N\), \(q_{i} = \hat{\delta} (q_{0} , a_{1} \dots a_{i})\). \(q_{i}\) 代表的是, DFA 接收到 \(w\) 的前 \(i\) 字母的时候所处于的状态. 这个证明的重点在于: 使用鸽巢原理知道, 当输入长度为 \(N\) 的时候, 至少存在一对 \(i, j , i \ne j\) 使得 \(q_{i} = q_{j}\). 
+若是将状态考虑为点, 将状态的转移看作边, 则输入可视为图. 由上面的讨论知道, 该图一定有圈. 卧槽, 讨论很几把麻烦. 
+\paragraph{通过泵引理证明某些语言并不是正则的. }
+证明思路上面已经讲过了: 
+我们使用泵引理和反证法, 一般是, 给定一个 \(N\), 找出一个 \(w\), 其不满足上面的第三条. 下面给出一些例题: 
+\begin{exam}
+证明 \(L_{01}  = \{ 0 ^{n } 1 ^{n} \mid n \ge 0\}\) 不是正则的. 
+\end{exam}
+\begin{exam}
+证明 \(L = \{ 0 ^{i}  1 ^{j} \mid i > j \} \) 不是正则的. 
+\end{exam}
+\begin{exam}
+证明 \(L = \{ a ^{n !} \mid n \ge 0\}\) 不是正则的. 
+\end{exam}
+
+\section{运算的封闭性}\label{sec:feng}
+\end{document}

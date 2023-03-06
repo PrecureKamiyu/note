@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}正则表达式的定义}{1}{section.1}%
+\contentsline {paragraph}{正则表达式}{1}{paragraph*.2}%
+\contentsline {subsection}{\numberline {1.1}语言之间的运算}{1}{subsection.1.1}%
+\contentsline {paragraph}{语言之间的运算}{1}{paragraph*.3}%
+\contentsline {paragraph}{运算和运算的优先级}{2}{paragraph*.4}%
+\contentsline {section}{\numberline {2}正则表达式的性质}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}正则表达式和 DFA 的等价性: 根据 DFA 构造正则表达式}{3}{subsection.2.1}%
+\contentsline {paragraph}{递归法}{3}{paragraph*.5}%
+\contentsline {paragraph}{状态消除法}{4}{paragraph*.6}%
+\contentsline {subsection}{\numberline {2.2}正则表达式和 DFA 的等价性: 根据正则表达式构造 DFA}{4}{subsection.2.2}%
