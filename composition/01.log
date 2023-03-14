@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  9 MAR 2023 22:37
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  12 MAR 2023 00:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,24 +626,24 @@ Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 (fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-[2] [3] [4] [5] [6] [7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
+[2] [3] [4] [5] [6] [7] [8] [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
+ [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
  (./01.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 202.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 205.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 205.
 Package rerunfilecheck Info: File `01.out' has not changed.
 (rerunfilecheck)             Checksum: 94BA14115EA6B3BE621DD3E26FD2F793;1927.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
  ) 
 Here is how much of TeX's memory you used:
  15792 strings out of 479819
  330053 string characters out of 5895846
- 611836 words of memory out of 5000000
+ 612836 words of memory out of 5000000
  32674 multiletter control sequences out of 15000+600000
  540949 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,9n,72p,408b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,9n,72p,408b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 01.pdf (9 pages).
+Output written on 01.pdf (10 pages).

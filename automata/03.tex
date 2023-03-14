@@ -17,6 +17,9 @@
 \theoremstyle{plain} 
 \newtheorem{exam}[definition]{Example}
 
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
 \begin{document}
 \title{正则语言的性质}
 我们这边的题型是如何判定一个语言不是正则的. 既然他这么问了, 那么他大概率不是正则的. 
@@ -53,4 +56,81 @@
 \end{exam}
 
 \section{运算的封闭性}\label{sec:feng}
+正则语言再某些运算之后的道德新语言仍然是正则的. 
+称正则语言再这些运算下封闭. 
+
+并
+补
+交
+差
+反转
+同态
+逆同态
+
+% \begin{item}
+	% \item [1] 
+	% \item [2]
+	% \item [3] 
+	% \item [] 
+	% \item [] 
+% \end{item}
+
+
+\section{判定正则语言}\label{sec:panding}
+
+三个判定问题: 
+
+\(w\) 是否属于描述的语言
+
+语言是否为空是否为无穷的. 
+
+语言的等价性问题. 
+
+对于非空的, 检查全部长度小于 \(n\) 串. 
+
+是否为无穷, 检查全部长度有 \(n\) 到 \(2 n - 1\) 的串. 
+
+
+\section{DFA 的最小化}\label{sec:}
+
+最小化
+
+将冗余的状态消除
+
+\(\hat\delta (p , w ) \in F \iff\hat\delta ( q , w ) \in F\)
+
+不等价
+
+对于两个状态 \(p, q\) , 存在一个 \(w\) 使得, \( \hat{\delta} (p , w )  , \hat\delta (q, w )\) 其中一个属于 \(F\), 而另一个不是. 
+
+\subsection{填表算法:}\label{sse:table}
+1. 基础: \( p \in F , q \notin F\) then \(p , q \) 不等价 .
+
+2. 对于 \(a \in \Sigma\)  if \( r =\delta (p , a ) , s =\delta (q , a ) \) 不等价, 那么 \(p, q \) 不等价. 
+
+和那个数字逻辑里面的差不多. 但是严谨一点.
+
+我们这里有四个步骤. 
+
+\begin{itemize}
+\item [1] 首先考虑基础, 初始化 
+\item [2] 其次考虑经过 \(0\) 到达终态和非终态的状态对. 
+	就是说, 将所有状态分为三类: 1. 输入为 \(0\) 不发生状态转移的; 2. 输入为 \(0\) 到达终态的; 3. 不能到达终态的. 
+	考虑后面两类,  \(\{ D , F \} \times \{ A, B , E , G , H \}\) , 其中 \(\times\) 是一个直积. 
+\item [3] 类似的, 考虑经过 \(1\) 到达终态和非终态的状态对. 
+\item [4] 最后进行对所有空余进行验证, 卧槽, 真几把麻烦.
+\end{itemize}
+
+\begin{remark}
+	对于状态对, 比如说 \((A , E)\), 考虑 \((\delta (A , 0) ,\delta (E, 0 ) = ( B , H) )\) 这是说, \( (A, E ) \) 不等价取决于 \((B, H) \) 是否等价. 
+
+	考虑 \(( B,  H ) \) , \((\delta (B , 0 ) ,\delta (H , 0 ) ) = (G , G) \) , \( (\delta (B , 1 )  ,\delta (H , 1 ) ) = (C, C)\)
+	终态相等, 也是等价的标志. 那么 \(B, H\) 等价. 
+
+	于是 \(A, E\) 也是等价的. 
+
+	我们进行总结, 如果说有两对, 或者以上的状态对, 其等价性相互依赖, 那么可以断言这些状态对等价.  \qed
+\end{remark}
+% TODO : 屑! 表述还需要进一步完善.
+
 \end{document}

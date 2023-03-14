@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{bookmark}
 \usepackage{hyperref}
+\usepackage{tikz-cd}
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Def}[section]
@@ -13,6 +14,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}{定义}[section]
 \newtheorem{thm}[definition]{定理}
+\newtheorem{proposition}[definition]{性质}
 
 \theoremstyle{plain} 
 \newtheorem{exam}[definition]{Example}
@@ -36,11 +38,11 @@ Algebra 是一种代称, 大部分的基础代数课程可以称为``群环模�
 可能会有人想到, ``终究是错付了人'', 也许是对的, 代数这样重要的课程, 落得这般境地, 可称可悲, 着实引人唏嘘. 错付了人呐. 
 
 \paragraph{伽罗瓦} 可否有人听闻过伽罗瓦? 伽罗瓦开创了群论, 证明了五次方程五根式解. 当我们认为数学均是与数字打交道的时候, 面对这个问题, 指定是摸不着头脑. 一般的五次方程长这个样子: \(a x^{5} + b x ^{4} + c x ^{3} + d x ^{2} + e x + f\), 没有一个数字. 更难的是: 如何证明不存在? 存在的话简单, 我们找到那个根式就行了. 可是不存在呢? 
-
+%EndOfSection
 
 \section{集合之间的运算和性质}\label{sec:set}
 虽然我们还是无法准确地说出集合定义, 但是我们有两种朴素的描述方法. 
-\begin{definition}
+\begin{definition}[Set]
 我们说一些元素放在一起便是集合; 或者是满足一些性质的元素的全体
 \begin{equation}
 A = \{ a \mid P (a) \} 
@@ -48,7 +50,7 @@ A = \{ a \mid P (a) \}
 或者是说, 我们将某些东西用 \(\{ \}\) 框起来便是集合.  我们常用大写字母来表示集合. 
 \end{definition}
 \begin{remark}
-人们常用 \(\mathbb Z\) 来表示 \(\{\dots ,  -1 ,0 , 1 , 2 , \dots \} \) --- 整数集, 这是二十世纪的布尔巴基的著作之中使用的符号, 之后得到了流传, 类似的符号还有 \(\mathbb N, \mathbb Q , \mathbb R, \mathbb C\) 分别表示自然数集, 有理数集, 实数集, 复数集. 
+人们常用 \(\mathbb Z\) 来表示 \(\{\dots ,  -1 ,0 , 1 , 2 , \dots \} \) --- 整数集, 这是二十世纪的布尔巴基的著作之中使用的符号, 之后得到了流传, 类似的符号还有 \(\mathbb N, \mathbb Q , \mathbb R, \mathbb C\) 分别表示自然数集, 有理数集, 实数集, 复数集. 总之你可以多用 \verb|\mathbb| 字体. 
 \end{remark}
 
 \begin{definition}[属于]
@@ -67,7 +69,7 @@ A \subsetneq B \iff (\forall a \in A (a \in B)) \wedge (\exists a' \in A  (a' \n
 \(A \subsetneq B\) 就是说 \(A\) 是 \(B\) 的子集, 但是 \(A \ne B \). 
 \end{definition}
 \begin{remark}
-我们现在有三种符号 \(\subseteq , \subset , \subsetneq\), 都可以说是包含于的二元运算符\footnote{运算符并不是真的指 `运算`}, \(\subsetneq\) 并没有歧义, 表示的是 ``真包含'' 的意思, \(\subset\) 既可以指 ``包含'' 也可以指 ``真包含'', 得看他怎么说的.
+我们现在有三种符号 \(\subseteq , \subset , \subsetneq\), 都可以说是包含于的二元运算符\footnote{运算符并不是真的指 `运算'}, \(\subsetneq\) 并没有歧义, 表示的是 ``真包含'' 的意思, \(\subset\) 既可以指 ``包含'' 也可以指 ``真包含'', 得看他怎么说的.
 \end{remark}
 \begin{definition}[equal]
 \(A = B \) 的定义如下: 
@@ -84,7 +86,10 @@ A \ne B \iff  \exists a \in A (a \notin B) \vee \exists b \in B (b \notin A)
 \begin{equation}
 A \cap B = \{ x \mid x \in A \wedge x \in B \} 
 \end{equation}
-并的定义就省略不说了. 
+并的定义完全类似
+\begin{equation}
+		A \cup B = \{ x \mid x \in A \vee x \in B \} 
+\end{equation}
 \end{definition}
 \begin{definition}[Power] 
 我们断言, 对于任意一个集合, 存在其幂集, 记为 \(P (A) \) 或者是 \(\mathfrak P (A) \) 或者是 \(2 ^{A}\), 其定义为
@@ -94,24 +99,145 @@ A \cap B = \{ x \mid x \in A \wedge x \in B \}
 \end{definition}
 \begin{definition}[Product]
 乘积的定义并不好说. 我们当然可以引入有序对的说法, 可是, 有序对真的是 product 的本质吗? 关注两个集合的product的势, 其为两个集合的势的乘积. 好吧, 我有点搞不懂. 
+
+我们尝试着探索一下什么是乘积. 首先我们介绍常规的乘积: 我们规定一个神奇的东西称为\textbf{有序对}, 其一般表示为 \((a, b ) \) , 有序对这个名字说明, \((a, b ) \) 和 \( (b, a)\) 不同. \(A \times B \) 定义为 : 
+\begin{equation}
+		A \times B  = \{  (a, b ) \mid a \in A , B \in b \} 
+\end{equation}
+其和 \(B \times A\) 是不同的. 我们这里引入图~\ref{fig:product}.  \(\pi_{1}\) 和 \(\pi_{2}\) 是两个投影映射, 
+其定义为
+\begin{equation}
+\pi_{1} \colon A \times B \to A , (a, b ) \mapsto a 
+\end{equation}
+我们能够看出, \(A \times B \) 是将两个集合硬搞在一起的方法. 我们还有另一种搞在一起的方法: \(A \coprod B\)\footnote{ coprod 的符号不知道为什么有点大, 不太好哦}. Coprod 也称为直和. 我们说一下这个东西的构造方法就知道这个是什么了:
+\begin{equation}
+		A \coprod B = A \times \{0\} \cup B \times \{ 1\}, \quad 0 , 1 \notin A , B 
+\end{equation}
+不管 \(A\) 和 \(B\) 之间有没有公共元素, 我们生硬地将他们\textbf{加在一起}. 我们指出,  无论是 \((a, b)\) 还是 \(A \times \{0\}\) 都是\textbf{构造方法}. 左 \(a\) 右 \(b\) 或者是上 \(a\) 下 \(b\) 都是一样的. 并且我们说不定可以断言,  \(A \times B\) 和 \(B \times A \) 说不定是差不多. 这里举例说明, 当我们平常使用乘积符号的时候, 常有 \(\mathbb R ^{n}\), 我们这个时候强调, 乘积不满足交换律, 但是我们不应该将每一个 \(\mathbb R\) 看作是同一个东西, 他们终究是不同的, 就好像我可以声明三个 \verb|int| 型变量 \(a, b ,c \) 一般, \((a, b) \in \mathbb R ^{2}\) 的本质是\textbf{编号为 \(a\)}的 \(\mathbb{R}\) 的那个量为 \(x\), \textbf{编号为 \(b\)}的那个量为 \(y\). 
+
+简单来说, 乘积的顺序其实并不重要, 可我们在写的时候为了规范就得注重乘积的顺序, 但是我们应当记住, 乘积不满足交换律, 这不是乘积的本质内容. 我们观察图~\ref{fig:coprod}, 知道 product 和 coprod 一样, 两个元素之间的结合是任意的. 
 \end{definition}
+\begin{remark}
+\(A_{1} \times A_{2} \times \dots\) 表示为 \(\prod _{i \in \mathbb{N} } A_{i}\)
+\end{remark}
+\begin{figure}
+\centering	
+\begin{tikzcd}
+                                                   & A \\
+A \times B \arrow[rd, "\pi_2"] \arrow[ru, "\pi_1"] &   \\
+                                                   & B
+\end{tikzcd}
+\caption{Commutive Diagram about Product}\label{fig:product}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{tikzcd}
+                                                   & A \arrow[rd, "p_1"] &             \\
+A \times B \arrow[rd, "\pi_2"] \arrow[ru, "\pi_1"] &                     & A \coprod B \\
+                                                   & B \arrow[ru, "p_2"] &
+\end{tikzcd}
+\caption{Commutive Diagram about Coproduct}\label{fig:coprod}
+\end{figure}
+%EndOfSection
+
 \section{映射}
 人们常说, 映射是一个对应法则. 我说, 这是什么几把. 别tm复读别人瞎几把说的定义. 我说, 一个映射, 或者说函数, 先要给定函数的值域和定义域, 函数将定义域之中的元素射到值域中的元素上. 我们这样表示: 设 \(f\) 是函数
 \begin{equation}
 f \colon X \to Y , x \mapsto f (x) 
 \end{equation}
 这就是说, \(f (x) \in Y\) \(f (x) \) 是 \(Y\) 之中的一个元素. 这便是一个函数. 你尽可以认为什么 ``允许多对一, 不允许一对多'' 完全是扯淡. 
+\begin{definition}[Image]\label{def:image}
+	函数的 image 记为 \(\mathrm{Im} (A)\), 定义为 \(\mathrm {Im} (A) = \{ f (a) \mid a \in A \} \)
+\end{definition}
 \begin{definition}[inverse]
 函数 \(f\) 的逆记为 \(f ^{-1}\), 我可以将其定义为函数, 你看就行了. 
 \begin{equation}
 f^{-1} \colon \mathfrak P (B) \to \mathfrak P(A) , \mathcal B \mapsto f ^{-1} (\mathcal B) 
 \end{equation}
-为了方便, 对于单元集, 我们将 \(\{ \}\) 省略, 也就是将 \(f ^{-1} (\{b \} ) \) 简写为 \(f ^{-1} (b)\). 逆的定义也好写: 
+为了方便, 对于单元集, 我们将 \(\{ \}\) 省略, 也就是将 \(f ^{-1} (\{b \} ) \) 简写为 \(f ^{-1} (b)\). 逆的定义也好写:
 \begin{equation}
 f ^{-1} (\mathcal B ) = \{ x \mid f(x) \in \mathcal B \} 
 \end{equation}
 \end{definition}
+\begin{remark}
+函数的逆以后会经常用到, 或者是说, 对于某些人来说会经常用到. 
+\end{remark}
+
+\begin{proposition}[逆的性质]
+逆具有良好的性质, 
+\begin{equation}
+		f^{-1} \Big(\bigcup_{i \in \Lambda}A_{i}\Big) = \bigcup_{i \in \Lambda} f^{-1} (A_{i}) \qquad
+		f^{-1} \Big(\bigcap_{i \in \Lambda}A_{i}\Big) = \bigcap_{i \in \Lambda} f^{-1} (A_{i})
+\end{equation}
+以后会用到的. 现在没什么用, 我只是显摆一下.
+\end{proposition}
+\begin{definition}[one-one, onto]
+单射(one-one), 满射(onto)是两种函数. One-one 是说, 不同元素射到不同元素上, onto 是说, 值域里的所有元素都被射了, .viz
+设 \(f \colon A \to B\) 
+\begin{equation}
+	\forall a_{1} , a_{2} ( a_{1} \ne a_{2} \implies f (a_{1} ) \ne f (a_{2}) )
+\end{equation}
+对于后者则是
+\begin{equation}
+	\forall b \in B ( f^{-1} ( \{ b\} ) \ne \varnothing )
+\end{equation}
+既是单射又是满射的函数称为双射. 
+\end{definition}
+\begin{definition}[inverse的另一个定义]
+	函数 \(f \colon A \to B \) 的逆 \(f ^{-1} \) 的定义为 \(f ^{-1} \colon B \to A , b \mapsto a\), 其中 \(f (a) = b\). 不难知道 \(f ^{-1}\) 存在当且仅当 \(f\) 是双的. 
+	这个定义的好处在于, 考虑 \(S\) 上的变换构成的集合 \(T(S)\), 对于 \(f \in T (S)\) 来说, 如果逆存在, 则 \(f ^{-1} \in T (S)\). 
+\end{definition}
+
+
+\begin{figure}
+\centering
+\begin{tikzcd}
+A \arrow[r, two heads] \arrow[rr, "f", bend left, shift left=2] & \mathrm{Im}(A) \arrow[r, hook] & B
+\end{tikzcd}
+\caption{Commutive diagram about a function}\label{fig:func}
+\end{figure}
+\begin{definition}[满射, 单射的符号]
+	如图~\ref{fig:func} 所示, 两个箭头的为满射, 有一个勾的为单射. 
+\end{definition}
+\begin{remark}
+	图~\ref{fig:func}展示了什么叫函数. \(\mathrm{Im} (A)\) 的定义请见定义~\ref{def:image}.
+\end{remark}
+
+\section{关系}\label{sec:relation}
+关系的定义乍一看比较生硬, 但\dots 我也觉得生硬, 不知道该怎么搞. 
+\begin{definition}[relation]
+	集合 \(S\) 上的二元关系是 \(R \in P (S \times S )\) . 如果说 \( (a , b) \in R\) 那么称呼 \(a, b \) 满足关系 \(R\), 记为 \(a \mathrm{R} b\). 
+\end{definition}
+
+关系有许多性质, 据此我们进行关系的分类. 但是我们只需要关注一个, 等价关系. 我们有一种比较自然但是有些局限的定义法.
+
+\begin{definition}[equivalent relation]
+对于一个 \(X\) 上的等价关系 \(\mathrm R\) 来说, 存在一个函数 \(f \colon X \to Y\), 有\(a \mathrm R b \iff f (a) = f (b)\).  \(a ,b \) 等价也可以记为 \(a \sim b\).
+\end{definition}
+\begin{definition}[equivalent class]
+我知道定义. 这里就不说了. 
+\end{definition}
+\begin{exam}
+设 \(R\) 是 \(\mathbb Z\) 上的关系, 定义为
+\begin{equation}
+	a\mathrm R b \iff  a \equiv b \pmod{n} 
+\end{equation}
+那么 \(R\) 是等价关系. 由我们的定义, 这是显然的, 设函数 \(f \colon \mathbb Z \to \mathbb Z, x \mapsto x  \bmod {n}\), 那么 \(a \mathrm R b \iff f (a) = f(b)\)
+\end{exam}
+
+\begin{definition}[classification]
+对于一个集合 \(S\), 其一个划分为 \(\{ S_{i}  \}_{i \in \Lambda}\). 
+有 
+\begin{equation}
+\bigcup_{i \in \Lambda} S_{i} = S 
+\end{equation}
+其中 \(S_{i}\) 两两不相交.
+\end{definition}
+
+我们设 \([b] = \{ a \mid a \sim b \}\), 能够知道 \(\{ [b] \mid b \in X\}\) 是一个划分. 这是一个定理来着, 但实际上挺简单. 稍微验证一下就行. 
+
+或者, 根据定义, 我们有 \(\{ f ^{-1} ( \{b \} ) \mid b \in Y \}\) 是一个划分. 能够知道, 如果说 \(f\) 是一个满射, 那么划分之内的非空集合的个数为 \(|Y|\). 
 
 
 \end{document}
-

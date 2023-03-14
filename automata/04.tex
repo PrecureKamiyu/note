@@ -1,0 +1,163 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{bookmark}
+% \usepackage{hyperref}
+\usepackage{tikz-cd}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Def}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{thm}[definition]{定理}
+\newtheorem{proposition}[definition]{性质}
+
+\theoremstyle{plain} 
+\newtheorem{exam}[definition]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
+\pagestyle{plain}
+
+\begin{document}
+Contents: 
+\begin{itemize}
+\item [1] 无关文法 
+\item [2] 语法分析树
+\item [3]  歧义
+\item [4] 文法的化简和范式
+\end{itemize}
+
+\section{上下文无关文法}\label{sec:def}
+考虑前面学过的, \(\{  0 ^{n} 1 ^{n} \mid n \in \mathbb{N}\}\) 不是正则表达式的语言. 
+
+
+% TODO 根据 ppt 描述上下文无关文法
+
+\begin{exam}[回文]
+if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
+\end{exam}
+
+\begin{exam}[回文语言]
+	if \( L =  \{ w \in \Sigma ^{* } \mid w = w ^{R} \}\)
+	then L 是回文语言. 
+\end{exam}
+运用前面的知识, 可以使用 Pump lemma 证明 \(L\) 不是正则的. 可是那么我们该如何表示该语言呢? 
+
+可以使用递归方法定义: 
+\begin{itemize}
+\item [\textbf{1.}] 首先 \(\epsilon, 0 , 1\) 都是回文.
+\item [\textbf{2.}] if \(w\) 是回文, 那么 \( 0  w 0 , 1 w 1 \) 都是回文. 
+\end{itemize}
+数理逻辑之中, 命题的递归定义也是类似的, 这种生成语句的规则就是上下文无关文法. 
+
+
+
+
+\begin{equation}
+\left.
+\begin{aligned}
+&1. A \to\epsilon \\ 
+&2. A \to 0 \\ 
+&3. A \to 1 \\ 
+&4. A \to 0 A 0 \\ 
+&5. A \to 1A1
+\end{aligned}
+\right\}
+\end{equation}
+
+\begin{definition}[文法]
+	文法 \(G\) 是一个 \(4p\) 结构, \(G = (V , T , P , S ) \).
+	其中 \(V \) for variable, \(T\) for terminator, \(P\) for Production, \(S\) for start.
+	\begin{itemize}
+	\item [1]  \(V\) 是变量的集合. 
+	\item [2]  \(T\) 称为 terminators. 
+	\item [3]  \(P\) 是生产规则, 形式为 \(A \to\alpha \mid\beta\), 其中 \(\alpha\) 是 \( \epsilon \) 或者是 \(\alpha \in T \), 或者是 \(\alpha \in E \), 或者是 \(\alpha \in (V\cup T )^{*} \), \(\beta \) 也是如此. 
+	\item [4]  \( S \in V\), 表示的是开始的变量, 所有句型, 语句都是从 \( S\) 开始派生的. 
+	\end{itemize}
+\end{definition}
+
+\begin{exam}[\(0,1\) 组成的回文]
+	\(G = (V , T , P , S ) \) , 其中 \(V = \{ A \} \), \(T = \{ 0 , 1 \} \), \(P = A \to \epsilon \mid 0 \mid 1\mid  0A 0 \mid 1 A1\) , \(S = A\)
+\end{exam}
+\begin{exam}[\(0 ^{n}1 ^{n}\)]
+	\(L = \{  0 ^{ n} 1 ^{n} \mid n \in \mathbb{N} \} \)
+	和上面一个完全类似, 这里就懒得说了
+\end{exam}
+
+\subsection{归约和派生}
+\begin{definition}[文法派生的句型]
+\(\alpha \in (V \cup T ) ^{*} \) , \(\alpha\) 可能是派生出的语句. 
+因为考虑到 \(A \to t\), \(t \in T\), 或者是 \(A \to A t \) . 也就是说, 这个语句里面只会有 variable or terminator.
+\end{definition}
+
+\begin{definition}[归约]
+\end{definition}
+
+\begin{definition}[派生]
+	\(\alpha ,\beta , \gamma \in (V \cup T ) ^{*}\) , if \(A \to \gamma\), then \( \alpha A\beta \underset{G}{\Rightarrow}\alpha \gamma\beta\). 
+\end{definition}
+
+\begin{definition}[多步派生]
+	\begin{equation}
+		\alpha_{1} \overset{i}{\underset{G}{\Rightarrow}} \alpha _{1 + i}
+	\end{equation}
+	对于一般的多步派生, 记为 \(\overset{*}{\underset{G}{\Rightarrow}}\)
+\end{definition}
+
+\begin{definition}[最左派生, 最右派生]
+	对于一个句型 \(\alpha\), 我们考虑只对最左(右)的变量进行派生, 这就是最左(右)派生. 记为 \(\underset{lm}{\Rightarrow}\) (\(\underset{rm}{\Rightarrow}\))
+\end{definition}
+\begin{thm}[派生的等价性]
+对于任意一个派生, 都存在一个最左 (右) 派生与其对应
+\end{thm}
+
+\subsection{文法的语言}
+
+\begin{definition}[语言]
+\begin{equation}
+	L (G) =  \{ w \mid w \in T ^{*} , S \overset{*}{\underset{G}{\Rightarrow}} w \}
+\end{equation}
+\end{definition}
+
+\begin{remark}[为什么称为是上下文无关文法]
+	我们参考 \(\alpha A\beta \underset{G}{\Rightarrow}\alpha\gamma\beta\), 这个派生是否成立, 是跟 \(\alpha ,\beta\) 无关的, 于是称为上下文无关文法.
+\end{remark}
+
+\begin{definition}[等价性]
+	\(G_{1} , G_{2}\) 满足 \(L (G _{1} )  =  L (G _{2} ) \) , 则 \(G_{1} \) 等价于 \(G_{2}\)
+\end{definition}
+
+\begin{definition}[句型, 左句型, 右句型]
+	\(G\) 生成的句型定义如下: 
+	\begin{equation}
+		\{ w \mid w \in (V \cup T ) ^{*} , S \overset{*}{\underset{G}{\Rightarrow}} w \}
+	\end{equation}
+	也定义了左句型, 右句型.
+\end{definition}
+
+
+\begin{exam}
+	\(L  = \{ a ^{n} b ^{n}\mid n \ge 1 \}\)
+\end{exam}
+\begin{exam}
+	\(G = \{ \}\)
+\end{exam}
+\begin{exam}
+	\(L = \{  w \mid 0,  1 \text{ 数量相等}\}\), G = \((V, T , P , S)\), 其中 \(V = \{ S \}, T = \{ 0 ,1 \}\), \(P \) 是下面这个:
+	\[
+	S \to 0S_{1} 1 S_{2} \mid 1 S_{1} 0 S_{2}  \mid \epsilon 
+\]
+\end{exam}
+
+\begin{exam}[算术表达式]
+\end{exam}
+
+
+\section{语法分析树}\label{sec:tree}
+
+\end{document}

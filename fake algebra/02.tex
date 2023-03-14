@@ -1,0 +1,161 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{bookmark}
+% \usepackage{hyperref}
+\usepackage{tikz-cd}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\pagestyle{plain}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Def}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{thm}[definition]{定理}
+\newtheorem{proposition}[definition]{性质}
+
+\theoremstyle{plain} 
+\newtheorem{exam}[definition]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
+\begin{document}
+
+
+\section{半群和幺半群}\label{sec:1}
+先介绍半群, 再介绍幺半群, 再介绍群. 半群是最秃的, 群没那么秃. 
+\subsection{半群}
+
+
+
+\begin{definition}[代数运算]
+\(S\) 上的代数运算 \(f\) 的定义为
+\begin{equation}
+f \colon S \times S \to S
+\end{equation}
+仅此而已. \(f (a, b ) \) 记为 \(a b\), 如果不引起歧义的话.
+\end{definition}
+
+\begin{definition}[Semigroup]
+如果 \(S\) 上有一个运算 \(f\), 其满足结合律:
+\begin{equation}
+	(ab)c = a (b c)
+\end{equation}
+那么 \(S\) 并上这个运算 \(f\) .viz \(\{ S ; f \}\) \footnote{写为 \((S , f )\) 也行}, 称为半群. 
+\end{definition}
+\subsection{幺半群}
+
+\begin{definition}[identity, monoid]
+存在一个 \(e\) 使得 \(\forall a \in A (e a = a)\), 则称 \(e\) 为左幺元, 如果满足的是 \(\forall a \in A (a e = a ) \), 那么 \(e\) 称为 右幺元. \(e\) 既是左幺元又是右幺元的话, \(e\) 是幺元. 存在幺元的半群称为幺半群.\footnote{幺半群的集合常用符号 \(M\)来表示. M for momoid}
+\end{definition}
+\begin{exam}
+对于 \(A\) 集合上的变换, 其天然是一个幺半群. 
+\end{exam}
+\begin{exam}\label{eg:zuoyou}
+存在只有左幺元而没有右幺元的半群. 考虑运算为右投影映射的半群, 不难验证其只有左幺元而没有右幺元.
+\end{exam}
+
+\section{群}
+
+\begin{definition}[逆]
+对于一个幺半群, 对于 \(a\) 若是存在\(b\) 使得 \(ab = e\), 则称 \(b\) 为 \(a\) 的左逆. 类似的, 也有右逆的定义. 如果左逆等于右逆, 则称 \(b\) 为 \(a\) 的逆. 
+\end{definition}
+\begin{definition}[群]
+若是每一个元素都有逆, 那么这个幺半群称为群.
+\end{definition}
+
+\begin{exam}
+	集合 \(A\) 上的双射自然构成了一个群. 进一步讨论见 Example~\ref{eg:sym}.
+\end{exam}
+\begin{remark}
+若是一个幺半群元素既有左逆又有右逆, 那么他有逆.
+\end{remark}
+\begin{proof}
+\begin{equation*}
+b_{l} = b_{l} e = b_{l} (a b_{r}) = (b_{l} a) b_{r} = e b_{r} = b_{r}\qedhere
+\end{equation*}
+\end{proof}
+\begin{remark}
+逆元唯一.  
+\end{remark}
+\begin{proof}
+设 \(b, b'\) 均为逆元. 证明过程同上.
+\end{proof}
+
+\begin{thm}[群的等价条件]\label{thm:dengjia}
+半群若是 1. 有左幺元, 2. 每个元素有左逆, 则其为群.
+\end{thm}
+\begin{proof}
+设 \(a\) 的左逆为 \(b\), \(b\) 的左逆为 \(c\). 
+\begin{equation}
+a = ea = c b a  = c ( ba) = c e
+\end{equation}
+\begin{equation}
+ab =  (ce) b = c(eb) =  cb  = e 
+\end{equation}
+\(ab  = e\) 说明 \(b\) 是 \(a \) 的逆. 于是有\(c = a\) , 带入 \(a = ce\) 有 \(a =  a e \) , 说明 \(e\) 是幺元. 于是该半群为群.
+\end{proof}
+\begin{remark}
+有些书上, 采用这种描述来定义群.
+\end{remark}
+
+\begin{thm}
+半群满足形如 \(a x = b , y c = d\)  (其中 \(x, y\) 为变量) 的方程均有解, 则其为群.
+\end{thm}
+\begin{proof}
+	验证定理~\ref{thm:dengjia} 的条件. 因为
+	\(a \in G \), \(x a = a\)  有解, 设解为 \(e\) .viz \(e a = a\), 对于任意的 \(b\), \(a x = b\) 有解, 设解为 \(c\) .viz \(a c =b\). 
+	那么
+	\begin{equation}
+	e b = e (ac ) = (e a) c = ac = b 
+	\end{equation}
+	则 \(e\) 为左幺元. 并且显然, 每个元素都有左逆, 根据定理~\ref{thm:dengjia}, 该半群为群.
+\end{proof}
+
+\begin{thm}[满足消去律的半群]
+有限半群若满足消去律(左右消去律), 则其为群.
+\end{thm}
+
+\begin{exam}
+	存在半群使得其有左幺元且有右逆, 但不是群, 甚至不是幺半群. 见Example~\ref{eg:zuoyou}
+\end{exam}
+\begin{exam}
+	数域 \(\mathbb{R}\) 或者 \(\mathbb{C}\)上的 \(n\) 阶可逆矩阵的全体和矩阵乘法构成了一个群, 记为 \(\text{GL}_{n} (\mathbb{R})\), 读作一般线性群. 同时还有特殊线性群 \(\text{SL}_{n} (\mathbb{R})\) 表示的是行列式为 \(1\) 的可逆矩阵群, \(\mathbb{R}\) 上的 \(\text{SL} _{n}\) 群也可写为 \(O(n)\), 读作正交矩阵群. 
+\end{exam}
+\begin{exam}
+	设幺半群为 \( (M , \cdot )\), 设 \(U (M) = \{ a \mid a \text{ 可逆}\}\)\footnote{U for uniform, I guess.}, 则 \(( U (M), \cdot)\) 为群\footnote{这里对于数域的强调很可能是没有必要的}
+\end{exam}
+\begin{exam}[置换群, 对称群]\label{eg:sym}
+	对于双射变换, 其构成一个群, 称为置换群或者是对称群. 当我们考虑有限集合上的双射变换的时候, 能够看出为什么称为置换群. 每一个双射变换都是一个置换. 写作 \(\varphi\), 比如说, 对于集合 \(M = \{ 1, 2 ,3 \}\) , 一个置换可以写为: 
+	\begin{equation}
+	\varphi = 
+	\begin{pmatrix}
+		1 & 2 & 3 \\ 
+		2 & 3 & 1 
+	\end{pmatrix}
+	\qquad \varphi' = 
+	\begin{pmatrix}
+		1 & 2 & 3 \\ 
+		3 & 1 & 2 
+	\end{pmatrix}
+	\end{equation}
+\end{exam}
+
+\begin{exam}[模 \(n\) 群]
+	不知道叫什么名字姑且这么叫了. 
+	设 \(\bar a = \{ b \mid b \equiv a \pmod{n}\}\) , 定义运算 \(* \colon \bar a * \bar b = \overline{a + b}\), 设 \(\mathbb{Z} _{n} = \{\bar a \mid a \in Z \}\), 则 \((\mathbb{Z}_{n} , *)\) 是一个群, 且是交换群. 
+\end{exam}
+
+\begin{exam}[\(n\) 次单位根]
+	\(\mathbb{C} _{n} = \{ e ^{\frac{2\pi \mathrm i a}{n}} \mid  0 \le a \le n-1\}\). 
+	对于任意的 \(c \in \mathbb{C}_{n}\) , 满足 \(c ^{n} = 1\), 因此称为 \(n\) 次单位根. 
+\end{exam}
+
+\section{同态}\label{sec:hom}
+
+\end{document}
