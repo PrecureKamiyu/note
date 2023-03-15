@@ -72,6 +72,10 @@ f \colon S \times S \to S
 \begin{exam}
 	集合 \(A\) 上的双射自然构成了一个群. 进一步讨论见 Example~\ref{eg:sym}.
 \end{exam}
+
+\begin{exam}[四元数] \label{eg:四元数}
+\end{exam}
+
 \begin{remark}
 若是一个幺半群元素既有左逆又有右逆, 那么他有逆.
 \end{remark}
@@ -107,6 +111,7 @@ ab =  (ce) b = c(eb) =  cb  = e
 \begin{thm}
 半群满足形如 \(a x = b , y c = d\)  (其中 \(x, y\) 为变量) 的方程均有解, 则其为群.
 \end{thm}
+% TODO important thm
 \begin{proof}
 	验证定理~\ref{thm:dengjia} 的条件. 因为
 	\(a \in G \), \(x a = a\)  有解, 设解为 \(e\) .viz \(e a = a\), 对于任意的 \(b\), \(a x = b\) 有解, 设解为 \(c\) .viz \(a c =b\). 
@@ -117,13 +122,18 @@ ab =  (ce) b = c(eb) =  cb  = e
 	则 \(e\) 为左幺元. 并且显然, 每个元素都有左逆, 根据定理~\ref{thm:dengjia}, 该半群为群.
 \end{proof}
 
-\begin{thm}[满足消去律的半群]
+\begin{thm}[满足消去律的半群] 
 有限半群若满足消去律(左右消去律), 则其为群.
 \end{thm}
+% TODO this is an important thm
 
 \begin{exam}
 	存在半群使得其有左幺元且有右逆, 但不是群, 甚至不是幺半群. 见Example~\ref{eg:zuoyou}
 \end{exam}
+\begin{proof}
+% TODO very important
+\end{proof}
+
 \begin{exam}
 	数域 \(\mathbb{R}\) 或者 \(\mathbb{C}\)上的 \(n\) 阶可逆矩阵的全体和矩阵乘法构成了一个群, 记为 \(\text{GL}_{n} (\mathbb{R})\), 读作一般线性群. 同时还有特殊线性群 \(\text{SL}_{n} (\mathbb{R})\) 表示的是行列式为 \(1\) 的可逆矩阵群, \(\mathbb{R}\) 上的 \(\text{SL} _{n}\) 群也可写为 \(O(n)\), 读作正交矩阵群. 
 \end{exam}
@@ -156,6 +166,9 @@ ab =  (ce) b = c(eb) =  cb  = e
 	对于任意的 \(c \in \mathbb{C}_{n}\) , 满足 \(c ^{n} = 1\), 因此称为 \(n\) 次单位根. 
 \end{exam}
 
+
 \section{同态}\label{sec:hom}
+
+
 
 \end{document}

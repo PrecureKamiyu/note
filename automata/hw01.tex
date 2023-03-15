@@ -23,20 +23,30 @@
 \newtheorem{remark}[definition]{Remark}
 
 \begin{document}
+\title{作业}
+\maketitle
 \paragraph{1. } \(\{ \epsilon , \varnothing, \{ \varnothing \}\}\) 的幂集. 
-\begin{proof}
 \[
 \{ 
 	\{ \epsilon \} , \{ \varnothing \} , \{ \{ \varnothing \}\} ,
 	\{ \epsilon , \varnothing  \},  \{ \epsilon , \{ \varnothing  \} \} , \{ \varnothing  , \{ \varnothing  \}\} , 
 	\varnothing  , \{ \epsilon , \varnothing , \{ \varnothing  \} \} 
-\} \qedhere
+\}
 \]
-\end{proof}
 
-\paragraph{2. } 
+\paragraph{2. } 见图~\ref{fig:2}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{hw01_2.jpg}
+	\caption{题2}\label{fig:2}
+\end{figure}
 
-\paragraph{3. }
+\paragraph{3. } 见图~\ref{fig:3}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{hw01_3.jpg}
+	\caption{题3}\label{fig:3}
+\end{figure}
 
 \paragraph{4. (a)}
 % \begin{equation*}
@@ -55,10 +65,15 @@
 
 
 \paragraph{4. (b)}
-
-\[
-	(0^{*} 1 1 ^{*} ) ^{*} (1 1 ^{*} 00 ) ^{*}
-\]
+见图~\ref{fig:42}. 答案为
+\(
+	0^{*}(1 1 ^{*} 00 ) ^{*}
+\).
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{hw01_42.jpg}
+	\caption{题4.(b)}\label{fig:42}
+\end{figure}
 
 
 % \begin{figure}
@@ -75,10 +90,10 @@
 \centering
 \begin{tabular}{c|c|c|c} \hline 
 	 &0&1&2\\\hline
-	0&1*&0& \\\hline
-	1& &0*&1\\\hline
+	0&1&0& \\\hline
+	1& &0&1\\\hline
 	2&1&0 & \\\hline  
-\end{tabular}\caption{k=\(-1\)}
+\end{tabular}\caption{k=\(-1\)}\label{tab:k=-1}
 \end{figure}
 
 \begin{figure}
@@ -86,30 +101,24 @@
 \begin{tabular}{c|c|c|c} \hline 
 	 &0&1&2\\\hline
 	0&1*&1*0& \\\hline
-	1& &0*&1\\\hline
-	2&1*&1*0&\\\hline  
-\end{tabular}\caption{k=0}
+	1&&0&1\\\hline
+	2&11*&0+11*0&\\\hline  
+\end{tabular}\caption{k=0}\label{tab:k=0}
 \end{figure}
 \begin{figure}
 \centering
 \begin{tabular}{c|c|c|c} \hline 
 	 &0&1&2\\\hline
-	0&1*&1*0* &1*0*1\\\hline
+	0&1*&1*00*&1*00*1\\\hline
 	1&&0*&0*1 \\\hline
-	2&1*&1*0*&1*0*1\\\hline  
-\end{tabular}\caption{k=1}
+	2&11*&(0+11*0)0*&(0+11*0)0*1\\\hline  
+\end{tabular}\caption{k=1}\label{tab:k=1}
 \end{figure}
 
-\begin{figure}
-\centering
-\begin{tabular}{c|c|c|c} \hline 
-	 &0&1&2\\\hline
-	0&(1*0*1)*1*&(1*0*1)*1*0*&(1*0*1)* \\\hline
-	1&0*1 (1*0*1)*1*&0*1(1*0*1)*1*0*&0*1(1*0*1)* \\\hline
-	2&(1*0*1)*1*&(1*0*1)*1*0*&(1*0*1)* \\\hline  
-\end{tabular}\caption{k=2}
-\end{figure}
-\paragraph{5.} 故对应的正则语言应该为 \( (1 ^{*} 0 ^{*} 1 ) ^*\)
+\paragraph{5.} 
+递归的过程见图~\ref{tab:k=-1}, 图~\ref{tab:k=0}, 图~\ref{tab:k=1},
+\(0+ 11 * 0 \) 化简为 \(1 ^{*}0\). 
+故对应的正则语言应该为 \(1 ^{*} 0 0 ^{*} 1(1^{*}0 0 ^{*} 1 )^{*}\)
 
 
 \end{document}
