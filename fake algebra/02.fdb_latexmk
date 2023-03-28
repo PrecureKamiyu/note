@@ -1,10 +1,10 @@
 # Fdb version 3
-["xdvipdfmx"] 1678760038 "02.xdv" "02.pdf" "02" 1678760046
-  "02.xdv" 1678760038 33280 6a9252a7fa25e14e2bc78e8d84df8a27 "xelatex"
+["xdvipdfmx"] 1678937767 "02.xdv" "02.pdf" "02" 1678937767
+  "02.xdv" 1678937767 42776 10757cda5b47d856ac3c0cfc25d12f74 "xelatex"
   (generated)
   "02.pdf"
-["xelatex"] 1678760037 "02.tex" "02.xdv" "02" 1678760046
-  "/dev/null" 1678759113 0 d41d8cd98f00b204e9800998ecf8427e ""
+["xelatex"] 1678937766 "02.tex" "02.xdv" "02" 1678937767
+  "/dev/null" 1678935957 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1664369985 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -27,6 +27,9 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136768653 520 4889cce2180234b97cad636b6039c722 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1229303445 684 3a51bd4fd9600428d5264cf25f04bb9a ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1229303445 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
   "/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty" 1576016050 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
@@ -147,6 +150,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty" 1579642962 13244 0070bcab7b5a88187847128d22faf4d8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def" 1579642962 14134 32b36577d311ddb6522413c7581ee968 ""
   "/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def" 1579642962 122447 2f3bff59bea0a0fa94e11cc69e0f3066 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty" 1137110241 300 12fa6f636b617656f2810ee82cb05015 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd" 1137110241 548 cc4e3557704bfed27c7002773fad6c90 ""
   "/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty" 1575152344 22520 c4c2dab203104295e1e618be7e5c0f5b ""
   "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def" 1580854751 24128 c4ebbe7ec59ef4686329b8f63a49f10b ""
   "/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty" 1581719662 4381 04628f3002bdd1d9c43ef984fd60ae18 ""
@@ -180,9 +185,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1664370051 4649353 1d29aeaf7dbc2be3af0ff1e9ef63482f ""
-  "02.aux" 1678760038 1536 cf8b0f0dd589a5be3617bf91054622d0 "xelatex"
-  "02.tex" 1678759955 6133 171f5183ed28ff7ccc4a281b7b527be5 ""
+  "02.aux" 1678937767 1734 91c202b9f87ecaf576e883bf76331bd9 "xelatex"
+  "02.tex" 1678937765 8200 f9b6e60b960d11e263c87486ce30ff54 ""
   (generated)
-  "02.aux"
   "02.log"
+  "02.aux"
   "02.xdv"

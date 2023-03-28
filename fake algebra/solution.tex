@@ -1,0 +1,87 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{geometry}
+% \usepackage{graphicx}
+\usepackage{bookmark}
+\usepackage{tikz-cd}
+% \usepackage{hyperref}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Def}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{thm}[definition]{定理}
+\newtheorem{proposition}[definition]{性质}
+
+\theoremstyle{plain} 
+\newtheorem{exam}[definition]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
+\begin{document}
+\subsection{Group}
+\paragraph{10.} Given a monoid \(G\), \(b\) is the inverse of an element \(a\) in \(G\) iff the equations below hold:
+\begin{equation}
+a b a = a \qquad a b^{2} a = 1
+\end{equation}
+\begin{proof}[proof]
+It is clear that \(a\) is a bijective if you view an element of the monoid as a function. 
+
+Therefore there exists the inverse of \(a\). Then \(ba = 1\) holds.We have 
+\[
+ab \cdot ba = ab \cdot 1 = 1
+\]
+which indicates \(ab = 1\) as well. 
+\end{proof}
+\paragraph{11.} Let \(G\) be a finite group, and \(|G| = n\). 
+\(a_{1}, a_{2} , \dots, a_{n}\) are \(n\) random elements in \(G\), which does not necessarily differ pairwise. Proof that exists \(p , q\) suit that \(1 \le p \le q \le n\) s.t. 
+\[
+a _{p} a _{p+1} \dots a _{q} = 1
+\]
+\begin{proof}[proof]
+Consider \(b _{j} = \prod _{i = 1} ^{j} a _{i}, j = 1, \dots , n\).
+Either \(b_{j}\)s differ pairwise, or there exists \(j_{1}, j_{2}\) s.t. \(b_{j_{1}} = b_{j_{2}}\)
+\end{proof}
+
+\paragraph{12.} Proof that \(x^{2} = 1\) has even number of roots in a group of \(n\) order.
+\begin{proof}
+	考虑一个等价关系: \(x \sim y \iff x = y \text{ or } y = x ^{-1} \). 可以证明出 \(2\) 阶群元的个数只有奇数个. 
+\end{proof}
+
+\paragraph{13.} \(G\) 是 \(n\) 阶有限群, \(S\) 是 \(G\) 的子集, 若 \(|S| > n / 2\) 则 \(\forall g\in G (\exists a, b \in S (g = ab))\)
+\begin{proof}
+可以证明 \(|S| > n/2 \to 1 \in S\), 之后用得到. 
+	随后使用反证法, 设存在 \(g\in G\) , 不存在 \(a , b \in S\) 使得 \(ab = g\). 
+	
+	如果说 \(g \in S\) 则和 \(1 \in S\) 矛盾. 
+
+	如果说 \(g \notin S\), 那么下面命题成立
+	\[
+		c \in S \to g c ^{-1} \notin S
+	\]
+	这足够说明 \(|S| \le n / 2\) 了. 
+\end{proof}
+
+\paragraph{18.} 证明 \((\mathbb{Q} , + )\) 和 \((\mathbb{Q}^{+}, * )\) 不同构, 而 \((\mathbb{R}, + ) \) 和 \((\mathbb{R} ^{+} , * )\) 同构. 
+\begin{proof}
+设同构存在, 记为 \(\varphi: (\mathbb{Q} , + ) \to (\mathbb{Q} ^{+}, *)\). 
+存在 \(x\) s.t. \( \varphi (x) = 2\). 此时, \(x = x / 2 + x / 2\), 那么 \( \varphi (x) = \varphi (x / 2 + x /2) = \varphi (x/ 2) * \varphi(x /2 ) = 2\), 可是有理数之中并不存在 \(y \) s.t. \(y * y = 2\). 
+\end{proof}
+
+\paragraph{19.} \(G\) 是有限群. \(\alpha \in \text{Aut} (G)\) 除了幺元之外没有不动点, 即, \(\alpha (x) = x \implies x = 1\), 证明 \(G\) 是奇数阶的阿贝尔群.  
+\begin{proof}
+	考虑 \(x \sim y \iff x =\alpha (y) \text{ or } x = y\). 能够证明 \(|G|\) 是奇数. 
+
+其次, 我们需要证明 \(\alpha (x) = x ^{-1}\). 该条件等价于 对于任意的 \(g \in G, \exists h \in G\) s.t. \(g = h ^{-1} \varphi (h)\).
+\[
+g = h ^{-1} \varphi (h ) \qquad \varphi (g) = \varphi (h ) ^{-1} h  = g ^{-1}
+\]
+随后, 为了证明 \(\forall g \in G ,\exists h \in G  (g = h^{-1} \varphi (h))\) 成立, 我们需要证明 \(\sigma \colon G \to G , k \mapsto k ^{-1} \varphi (k )\) 是一个满射. 
+\end{proof}
+
+% subsection:Group 
+\end{document}

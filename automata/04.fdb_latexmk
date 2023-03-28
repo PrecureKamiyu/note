@@ -1,10 +1,10 @@
 # Fdb version 3
-["xdvipdfmx"] 1678704295 "04.xdv" "04.pdf" "04" 1678704295
-  "04.xdv" 1678704295 24172 dc417d06482e18161fb609d7968eec6f "xelatex"
+["xdvipdfmx"] 1679292858 "04.xdv" "04.pdf" "04" 1679292858
+  "04.xdv" 1679292858 59120 2ea3562c81bcafd55b45aaf830eed589 "xelatex"
   (generated)
   "04.pdf"
-["xelatex"] 1678704294 "04.tex" "04.xdv" "04" 1678704295
-  "/dev/null" 1678704277 0 d41d8cd98f00b204e9800998ecf8427e ""
+["xelatex"] 1679292857 "04.tex" "04.xdv" "04" 1679292858
+  "/dev/null" 1679292277 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1664369985 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -176,9 +176,11 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1664370051 4649353 1d29aeaf7dbc2be3af0ff1e9ef63482f ""
-  "04.aux" 1678704295 1223 0beca108c4dc468d1d90a158a833b24b "xelatex"
-  "04.tex" 1678700686 5178 80cf87de48a3cce6393f3bf8a9b29990 ""
+  "04.aux" 1679292858 2631 e0c234c05f251c999e23f382664d783b "xelatex"
+  "04.tex" 1679292856 10907 8d50965fbdc2a3de2c8a28538d98fc33 ""
+  "04.toc" 1679292858 929 cb80ad16a1f284d1b6d1b9928361ea8e "xelatex"
   (generated)
+  "04.toc"
+  "04.aux"
   "04.xdv"
   "04.log"
-  "04.aux"

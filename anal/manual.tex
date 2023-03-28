@@ -1,0 +1,90 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[width = 15cm,right = 4cm]{geometry}
+\usepackage{graphicx}
+\usepackage{bookmark}
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{thm}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Lemma}
+\newtheorem{lemma}[definition]{Corollary}
+
+\theoremstyle{plain} 
+\newtheorem{exam}[definition]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
+\pagestyle{plain}
+
+
+\begin{document}
+\section{CHAPTER ONE}
+\label{sec:CHAPTER ONE}
+\subsection{INTRODUCTION(pp1-3)}
+Relevant exercise in Rudin: \marginpar{Test in margin}
+
+1:R2. There is no rational square root of 12 . (d: 1\()\)
+
+\noindent Exercise not in Rudin:
+
+\noindent 1.1:1. Motivating Rudin's algorithm for approximating \(\sqrt{2}\). (d: 1\()\) \\
+On p.2, Rudin pulls out of a hat a formula which, given a rational number \(p\), produces another rational number \(q\) such that \(q^2\) is closer to 2 than \(p^2\) is. This exercise points to a way one could come up with that formula. It is not an exercise in the usual sense of testing one's grasp of the material in the section, but is given, rather, as an aid to students puzzled as to where Rudin could have gotten that formula. We will assume here familiar computational facts about the real numbers, including the existence of a real number \(\sqrt{2}\), though Rudin does not formally introduce the real numbers till several sections later. \\
+(a) By rationalizing denominators, get a non-fractional formula for \(1 /(\sqrt{2}+1)\). Deduce that if \(x=\sqrt{2}+1\), then \(x=(1 / x)+2\). \\ 
+(b) Suppose \(y>1\) is some approximation to \(x=\sqrt{2}+1\). Give a brief reason why one should expect \((1 / y)+2\) to be a closer approximation to \(x\) than \(y\) is. (I don't ask for a proof, because we are only seeking to motivate Rudin's computation, for which he gives an exact proof.)\\
+(c) Now let \(p>0\) be an approximation to \(\sqrt{2}\) (rather than to \(\sqrt{2}+1\) ). Obtain from the result of (b) an expression \(f(p)\) that should give a closer approximation to \(\sqrt{2}\) than \(p\) is. (Note: To make the input \(p\) of your formula an approximation of \(\sqrt{2}\), substitute \(y=p+1\) in the expression discussed in (b); to make the output an approximation of \(\sqrt{2}\), subtract 1.) \\ 
+(d) If \(p<\sqrt{2}\), will the value \(f(p)\) found in part (c) be greater or less than \(\sqrt{2}\) ? You will find the result different from what Rudin wants on p.2. There are various ways to correct this. One would be to use \(f(f(p))\), but this would give a somewhat more complicated expression. A simpler way is to use \(2 / f(p)\). Show that this gives precisely \((2 p+2) /(p+2)\), Rudin's formula (3). \\
+(e) Why do you think Rudin begins formula (3) by expressing \(q\) as \(p-\left(p^2-2\right) /(p+2)\)?
+\medskip
+
+\noindent 1.1:2. Another approach to the rational numbers near \(\sqrt{2}\). (d:2)
+Let sets \(A\) and \(B\) be the sets of rational numbers defined in the middle of p.2. We give below a quicker way to see that \(A\) has no largest and \(B\) no smallest member. Strictly speaking, this exercise belongs under \(\S 1.3\), since one needs the tools in that section to do it. (Thus, it should not be assigned to be done before students have read \(\S 1.3\), and students working it may assume that \(Q\) has the properties of an ordered field as described in that section.) But I am listing it here because it simplifies an argument Rudin gives on p.2. \\ 
+Suppose \(A\) has a largest member \(p\). \\
+(a) Show that the rational number \(p^{\prime}=2 / p\) will be a smallest member of \(B\). \\
+(b) Show that \(p^{\prime}>p\). \\
+(c) Let \(q=\left(p+p^{\prime}\right) / 2\), consider the two possibilities \(q \in A\) and \(q \in B\), and in each case obtain a contradiction. (Hint: Either the condition that \(p\) is the greatest element of \(A\) or that \(p^{\prime}\) is the smallest element of \(B\) will be contradicted.) \\ 
+This contradiction disproves the assumption that \(A\) had a largest element. \\
+(d) Show that if \(B\) had a smallest element, then one could find a largest element of \(A\). Deduce from the result of (c) that \(B\) cannot have a smallest element.
+
+
+\subsection{Ordered Sets(pp.3-5)}
+\noindent Relevant exercise in Rudin:   
+\\ 1:R4. Lower bound \(\leq\) upper bound. (\(\mathbf{d}\, \):1)
+\\[7pt]
+ Exercises not in Rudin:
+\\ 1.2:0. Say whether each of the following statements is true or false.
+\\ (a) If \(x\) and \(y\) are elements of an ordered set, then either \(x \geq y\) or \(y>x\).
+\\ (b) An ordered set is said to have the ``least upper bound property'' if the set has a least upper bound.
+\\ 1.2:1. Finite sets always have suprema. (d: 1\()\)
+\\ Let \(S\) be an ordered set (not assumed to have the least-upper-bound property).
+\\ (a) Show that every two-element subset \(\{x, y\} \subseteq S\) has a supremum. (Hint: Use part (a) of Definition 1.5.)
+\\ (b) Deduce (using induction) that every finite subset of \(S\) has a supremum.
+\\ 1.2:2. If one set lies above another. (d: 1)
+\\ Suppose \(S\) is a set with the least-upper-bound property and the greatest-lower-bound property, and suppose \(X\) and \(Y\) are nonempty subsets of \(S\).
+\\ (a) If every element of \(X\) is \(\leq\) every element of \(Y\), show that \(\sup X \leq \inf Y\).
+\\ (b) If every element of \(X\) is \(<\) every element of \(Y\), does it follow that sup \(X<\) inf \(Y\) ? (Give a proof or a counterexample.)
+\\ 1.2:3. Least upper bounds of least upper bounds, etc. (d:2)
+\\ Let \(S\) be an ordered set with the least upper bound property, and let \(A_i(i \in I)\) be a nonempty family of nonempty subsets of \(S\). (This means that \(I\) is a nonempty index set, and for each \(i \in I, A_i\) is a nonempty subset of \(S\).)
+\\ (a) Suppose each set \(A_i\) is bounded above, let \(\alpha_i=\sup A_i\), and suppose further that \(\left\{\alpha_i \mid i \in I\right\}\) is bounded above. Then show that \(\cup_{i \in I} A_i\) is bounded above, and that \(\sup \left(\cup_{i \in I} A_i\right)=\sup \left\{\alpha_i \mid i \in I\right\}\).
+\\ (b) On the other hand, suppose that either (i) not all of the sets \(A_i\) are bounded above, or (ii) they are all bounded above, but writing \(\alpha_i=\sup A_i\) for each \(i\), the set \(\left\{\alpha_i \mid i \in I\right\}\) is unbounded above. Show in each of these cases that \(\cup_{i \in I} A_i\) is unbounded above.
+\\ (c) Again suppose each set \(A_i\) is bounded above, with \(\alpha_i=\sup A_i\). Show that \(\cap _{i \in I} A_i\) is also bounded above. Must it be nonempty? If it is nonempty, what can be said about the relationship between \(\sup \left(\cap_{i \in I} A_i\right)\) and the numbers \(\alpha_i(i \in I) ?\)
+%%% 
+\\1.2:4. Fixed points for increasing functions. (d:3)
+\\Let \(S\) be a nonempty ordered set such that every nonempty subset \(E \subseteq S\) has both a least upper bound and a greatest lower bound. (A closed interval \([a, b]\) in \(R\) is an example of such an \(S\).) Suppose \(f: S \rightarrow S\) is a monotonically increasing function; i.e., has the property that for all \(x, y \in S, x \leq y \Rightarrow\) \(f(x) \leq f(y)\)
+\\Show that there exists an \(x \in S\) such that \(f(x)=x\).
+\\1.2:5. If everything that is \(>\alpha\) is \(\geq \beta \quad \ldots \quad(\mathbf{d}: 2)\)
+\\(a) Let \(S\) be an ordered set such that for any two elements \(p<r\) in \(S\), there is an element \(q \in S\) with \(p<q<r\). Suppose \(\alpha\) and \(\beta\) are elements of \(S\) such that for every \(x \in S\) with \(x>\alpha\), one has \(x \geq \beta\). Show that \(\beta \leq \alpha\).
+\\(b) Show by example that this does not remain true if we drop the assumption that whenever \(p<r\) there is a \(q\) with \(p<q<r\).
+\\1.2:6. L.u.b. 's can depend on where you take them. (d:3)
+(a) Find subsets \(E \subseteq S_1 \subseteq S_2 \subseteq S_3 \subseteq Q\) such that \(E\) has a least upper bound in \(S_1\), but does not have any least upper bound in \(S_2\), yet does have a least upper bound in \(S_3\). 
+\marginpar{test}
+
+
+% section CHAPTER ONE 
+\end{document}

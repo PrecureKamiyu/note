@@ -3,6 +3,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{mathrsfs} % support fonts like mathscr 
 \usepackage{graphicx}
 \usepackage{bookmark}
 % \usepackage{hyperref}
@@ -156,19 +157,53 @@ ab =  (ce) b = c(eb) =  cb  = e
 	\end{equation}
 \end{exam}
 
-\begin{exam}[模 \(n\) 群]
+\begin{exam}[模 \(n\) 群]\label{eg:modn}
 	不知道叫什么名字姑且这么叫了. 
 	设 \(\bar a = \{ b \mid b \equiv a \pmod{n}\}\) , 定义运算 \(* \colon \bar a * \bar b = \overline{a + b}\), 设 \(\mathbb{Z} _{n} = \{\bar a \mid a \in Z \}\), 则 \((\mathbb{Z}_{n} , *)\) 是一个群, 且是交换群. 
 \end{exam}
 
-\begin{exam}[\(n\) 次单位根]
+\begin{exam}[\(n\) 次单位根]\label{eg:rootn}
 	\(\mathbb{C} _{n} = \{ e ^{\frac{2\pi \mathrm i a}{n}} \mid  0 \le a \le n-1\}\). 
-	对于任意的 \(c \in \mathbb{C}_{n}\) , 满足 \(c ^{n} = 1\), 因此称为 \(n\) 次单位根. 
+	对于任意的 \(c \in \mathbb{C}_{n}\) , 满足 \(c ^{n} = 1\), 因此称为 \(n\) 次单位根. 我们将其 \(\mathbb{C}_{n}\) 之中角度最小的, 且是正数的, 称为 \(c_{1}\), 将角度第二大的称为 \(c_{2}\), 将 \(1\) 称为 \(c_{0}\). 我们有 \(c_{0}\) 是单位根, 并且, \(c_{i} \cdot c _{j} = c _{(i+j) \bmod{n}}\)
 \end{exam}
 
 
 \section{同态}\label{sec:hom}
+\begin{definition}[Hom]
+给定两个群 \( (G , \cdot ) , ( G' , \circ )\), 一个映射 \(f \colon G \to G '\) 是同态, 如果
+\begin{equation}
+\forall a , b \in G, f (a \cdot b ) = f(a) \circ f(b)
+\end{equation}
+成立. 特别地, 如果说一个同态还是双射, 称这个同态为同构. 
+\end{definition}
+% definition: Hom
 
+\begin{remark}
+同态是一个保持群乘法的映射. 并且对于两个同构的群, 我们将他们看作是同一个东西. 
+\end{remark}
+\begin{exam}
+	\(V_{1} ,V_{2} \) 是 \(F\) 上的两个线性空间, 线性映射 \(\mathscr {A} \colon V_{1} \to V_{2}\) 是一个 \(V_{1} \) 到 \(V_{2} \) 的同态. 这出于线性映射的定义: \(\mathscr  A\)
+\end{exam}
+\begin{exam}
+	数域 \(F\) 上的两个线性空间 \(V _{1} , V_{2}\) 同构当且仅当 \(\text{dim}\ V_{1} = \text{dim} \ V_{2}\)
+\end{exam}
+\begin{exam}[同构]
+	eg~\ref{eg:modn}, eg~\ref{eg:rootn}之中两个群 \(\mathbb{Z}_{n_{1}} \) 和 \(\mathbb{C}_{n_{2}}\), 如果说 \(n_{1} = n_{2}\) 那么 \(\mathbb{Z} _{n_{1}} , \mathbb{C} _{n_{2}}\) 同构. 
+\end{exam}
+
+\begin{definition}[自同态]\label{def:自同态}
+	群 \(G\) 到自身的同态(构)称为自同态(构), 记为 \(\text{End} (G)\) ( \(\text{Aut} (G)\) ). 实际上 \(\text{Aut} (G)\) 也是一个群, 称为自同构群. 
+\end{definition}
+% definition: 自同态
+
+\begin{exam}[\(\mathbb{Z}\) 上的自同态]
+考虑 \(\mathbb{Z}\) 上的自同态, 则有 \(f (0) = 0 \), \(\forall n\in \mathbb{Z} (f (n ) = - n) \).
+\end{exam}
+
+\begin{exam}
+\(G\) 是群, \(\Omega ^{G}\) 是 \(\Omega\) 到 \(G\) 所有映射的集合. 
+对于任意两个映射 \(f , g \in \Omega ^{G}\), \(fg ( \alpha ) = f (\alpha ) g (\alpha ) \), 可以验证 \(\Omega ^{G}\) 为群.
+\end{exam}
 
 
 \end{document}

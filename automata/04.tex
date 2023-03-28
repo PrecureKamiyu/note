@@ -5,7 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{bookmark}
-% \usepackage{hyperref}
+\usepackage{hyperref}
 \usepackage{tikz-cd}
 
 \theoremstyle{definition}
@@ -24,6 +24,7 @@
 \pagestyle{plain}
 
 \begin{document}
+\tableofcontents
 Contents: 
 \begin{itemize}
 \item [1] 无关文法 
@@ -36,7 +37,6 @@ Contents:
 考虑前面学过的, \(\{  0 ^{n} 1 ^{n} \mid n \in \mathbb{N}\}\) 不是正则表达式的语言. 
 
 
-% TODO 根据 ppt 描述上下文无关文法
 
 \begin{exam}[回文]
 if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
@@ -101,6 +101,9 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 \begin{definition}[派生]
 	\(\alpha ,\beta , \gamma \in (V \cup T ) ^{*}\) , if \(A \to \gamma\), then \( \alpha A\beta \underset{G}{\Rightarrow}\alpha \gamma\beta\). 
 \end{definition}
+\begin{exam}[派生的例子]
+% TODO 派生的例子, 见 ppt
+\end{exam}
 
 \begin{definition}[多步派生]
 	\begin{equation}
@@ -112,7 +115,7 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 \begin{definition}[最左派生, 最右派生]
 	对于一个句型 \(\alpha\), 我们考虑只对最左(右)的变量进行派生, 这就是最左(右)派生. 记为 \(\underset{lm}{\Rightarrow}\) (\(\underset{rm}{\Rightarrow}\))
 \end{definition}
-\begin{thm}[派生的等价性]
+\begin{thm}[派生的\textbf{等价性}]
 对于任意一个派生, 都存在一个最左 (右) 派生与其对应
 \end{thm}
 
@@ -160,4 +163,175 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 
 \section{语法分析树}\label{sec:tree}
 
+语法分析树是表示派生过程的一个树
+
+\begin{definition}[分析树]\label{def:分析树}
+定义为 
+\begin{itemize}
+\item [1] 
+ 每个内节点是边缘符号
+\item [2] 
+叶子节点是 \(V \cup T \cup \{ \epsilon \} \) 之中的符号 
+\item [3] 
+如果说内节点的标记是 \(A\), 那么其子节点从左到右分别为
+\[
+X_{1} , X _{2}, \dots , X _{n}
+\]
+那么 \(A \to X _{1} X _{2}\dots  X_{n}\) 是一个产生式. 
+\end{itemize}
+注意到空船. 
+\end{definition}
+% definition: 分析树
+
+如果说, 根节点是初始符号 \(s\), 叶子节点是终结符, 那么该树是完成的, 该树的产物属于 \(L (G) \). 
+\begin{definition}[subtree]\label{def:subtree}
+在树 \(T\) 之中以内节点 \(A\) 为根节点的 subtree 为 \(T\) 的 subtree
+\end{definition}
+% definition: subtree
+
+\begin{thm}[the equivalence of tree]
+	一棵树和 \(L (G)\)之中的一个语句等价. 
+
+	1. \(G\) 存在 \(A\) 为根节点的树, 其产物为 \(\alpha\), then \(A \overset{*}{\Rightarrow}\alpha\)
+
+	2. 如果说 \(A \overset{*}{\Rightarrow}\alpha\) then 存在 \(A\) 为根的树, 其产物为 \(\alpha\)
+\end{thm}
+\begin{proof}
+% TODO 我觉得有问题, 充分有问题
+\end{proof}
+
+% sec:tree
+
+\section{文法和语言的歧义性}\label{sec:文法和语言的歧义性}
+
+对于 \(G\) 之中某些语句有不同的语法分析树, 则 \(G\) 是有歧义的.
+
+比如说对于算术表达式的文法 \(G_{exp}\) 之中 \(a \cdot a  +  a\) 之中, \textbf{有多种的阅读顺序}, 这就导致了歧义. 
+
+\begin{exam}[表示加法乘法的优先级]
+我们考虑 \(P\)
+\begin{equation}
+\begin{aligned}
+	P  = \{  &E \to E + T \mid T ,\\ 
+	  &T \to T \cdot F \mid F , \\
+	  &F \to (E) \mid I \}
+\end{aligned}
+\end{equation}
+% TODO
+\end{exam}
+
+\begin{definition}[固有歧义]\label{def:固有歧义}
+	对于一些语言, 其对应的文法都是有歧义的.
+\end{definition}
+% definition: 固有歧义
+
+\begin{exam}
+	对于 \(L = \{ a ^{i }  b ^{j} c ^{k} \mid i =  j \text{ or } j = k \} \), \(L\) 是固有歧义的. 
+\end{exam}
+
+% section 文法和语言的歧义性
+
+\section{文法的化简和设计}
+\label{sec:文法的化简和设计}
+% TODO 引入
+\subsection{化简}
+
+\begin{itemize}
+\item [1] 
+消除无用符号
+\item [2] 
+消除 \( \epsilon\) 产生式 (\( \epsilon\) production)
+\item [3] 
+消除单元产生式 (unit production) :\(A \to B\)
+\end{itemize}
+
+\subsubsection{无用符号的消除}
+我们将一些无用的符号进行化简, 分为两类, 一类是不可达的, 一类是不可产生的, 这两种符号都是没有用的, 这是说, 对于一个语句的派生过程, 这些符号是不会出现的. 所以说是无用符号. 下面给出定义. 
+\begin{definition}[Useful]\label{def:Useful}
+对于 \(G = (V , T , P , S)\) , 符号 \(X \in (V \cup T )\). 
+\begin{enumerate}
+\item  如果 \(G \overset{*}{\Rightarrow}\alpha X\beta\) then \(X\) is \textbf{reachable}. 
+\item  if \(\alpha X\beta \overset{*}{\Rightarrow} w \in T ^{*}\)  then \(X\) is \textbf{generating}. 
+\item  If \(X\) is reachable and generating, then \(X\) is \textbf{useful}. \(X\) is useless otherwise. 
+\end{enumerate}
+\end{definition}
+% definition: Useful
+\begin{remark}
+\(T\) is generating, while \(S\) is reachable. You can easily prove it.
+\end{remark}
+
+\begin{exam}
+	对于 \(P =\{ S \to A B \mid a , A \to b\} \)
+	可达的符号机和产生的符号分别为什么? 
+\end{exam}
+\begin{proof}
+	\(T = \{ a, b \} , A, S\) 是产生的, \(S , A , B , a, b\) 是可达的, 
+\end{proof}
+\begin{remark}
+能够看出, 我们要找到产生的, 则需要\textbf{从后往前找}, 若是要找到可达的, 则需要\textbf{从前往后找}. 
+\end{remark}
+%subsubsection:无用符号的消除
+
+\subsubsection{\(\epsilon\) 产生式}
+如果说 \(A \Rightarrow \epsilon\), 称 \(A\) 是可空的. \( \epsilon\) 产生式除了贡献 \(L\) 中的 \( \epsilon\) 之外没有任何作用, 于是说, 当 \(L \) 之中没有 \( \epsilon\) 的时候, 我们就可以将 \(G\) 之中的 \( \epsilon\) 产生式消除掉. 这 (大概) 就是原理. 
+\begin{definition}[可空变元]\label{def:可空变元}
+% TODO 可空变元
+\end{definition}
+% definition: 可空变元
+
+\begin{exam}
+	消除 \(G = ( \{ S ,A , B \} , \{ a, b \} , P , S )\) 的 \( \epsilon\) 产生式. 
+	\begin{equation}
+	\begin{aligned}
+		P = \{ & S \to A B  , \\ 
+		       & A \to A a A \mid \epsilon \\
+		       & B \to B b B \mid \epsilon \}
+	\end{aligned}
+	\end{equation}
+\end{exam}
+
+\begin{exam}
+	\(G_{2} = ( \{ S , A  , B , C \} , \{ a, b \} , P , S )\) 
+	\begin{equation}
+	\begin{aligned}
+		P = \{ & S \to A B C , \\ 
+		       & A \to a A \mid \epsilon , \\ 
+		       & B \to b B \mid \epsilon , \\
+		       & C \to \epsilon \}
+	\end{aligned}
+	\end{equation}
+\end{exam}
+
+% subsubsection: \( \epsilon\) 产生式
+
+\subsubsection{单元产生式的消除}
+If \(A \Rightarrow B\) then \(A, B\) are equivalent. You may view \(A, B\) as a same variable and merge the relative productions.
+
+\begin{exam}
+	\begin{equation}
+	\begin{aligned}
+		P = \{ & S \to A \mid B \mid 0S 1 , \\ 
+		       & A \to 0 A \mid 0 ,  \\ 
+		       & B \to 1 B \mid 1 \}
+	\end{aligned}
+	\end{equation}
+\end{exam}
+\begin{proof}
+It is easy to note that \(S, A , B \) are equivalent. Then 
+\(P = \{ S \to 0S1 \mid 0 S \mid 0 \mid 1 S \mid 1\}\)
+\end{proof}
+% subsubsection:单元产生式的消除
+
+\subsubsection{化简步骤}
+
+\begin{enumerate}
+\item [1]  消除\(\epsilon\)产生式
+\item [2]  reduce the unit productions
+\item [3] Reduce the not generating productions
+\item [4] Reduce the not reachable productions
+\end{enumerate}
+% subsubsection:化简步骤 
+
+% subsection:化简
+% section 文法的化简和设计 
 \end{document}

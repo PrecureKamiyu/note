@@ -5,6 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage[width=18cm,top=3cm,bottom=3cm]{geometry}
 
 \pagestyle{plain}
 \theoremstyle{definition}
@@ -223,51 +224,83 @@ e.g. 传输数据的举例. 见 ppt 实际上不是很难.
 %EndOfParagraph 
 
 \subsubsection{imm}
-\subsubsection{add 指令}
+imm 是立即数的意思. 
+\subsubsection{add}
+add 指令的表示为 
+add rd, rst1, rst2
+
+rd is register of destination
+
+The command tell computer to do the computation---\texttt{rd = rst1 + rst2}. Note that rst1 rst2 are treated as signed number. 
+
+Additionally, \texttt{addi} tells computer to do \texttt{rd = rst1 + imm}, where \texttt{rst2} is replaced by an immediate number.
 \subsubsection{sub}
+\centerline{\texttt{sub, rd, rst1, rst2}}
+is the form of the instruction, telling that \texttt{rd = rst1 - rst2}. 
+
+It is worth noting that there is no such thing as \texttt{subi}, cause \texttt{addi} can do the same thing.
 \subsubsection{mul}
 \subsubsection{div rem}
-\subsubsection{and or xor}
+\subsubsection{and, or, xor}
+Logical operations can do thing likes 掩码. To achieve this we can use \texttt{and} and \texttt{0xFFFFFFFF}. Let us assume that the length of register is 32. A number \texttt{and} \texttt{0xFFFFFFFF} is the number itself. But when it \texttt{and} \texttt{0x0FFFFFFF}, the number loose it first four bits.
 \subsubsection{shift left (right): sl(r)}
-s + l/r + a/l + [i]
+\centerline{\texttt{s + l/r + a/l + [i]}}
+is the decompostion of an instruction,
+where \texttt{s} for shift, \texttt{l,r} for \textbf{left} or \textbf{right}, \texttt{a,l} for \textbf{arithmetic} or \textbf{logical}. \texttt{[i]} is optional, which stands for \texttt{imm}.
+
+About the arithmetic shift, you check 01.pdf out.
 \subsubsection{shamt}
+Indeed, for a 64-bits data store in a register. It would be of no use to shift of 64-bits, which resulting that in \texttt{slai} or other shifting command ending with \texttt{i}, only the lowest 6-bits of immediate number are useful. Other bits are abandoned. The remaining part is called shamt. 
 \subsubsection{arithmetic shift}
-没有 sla
-\subsubsection{s l}
+There is not such thing as \texttt{sla[i]}. We already know when the shift cause ailment. Exactly when the number is starting with \texttt{10} or \texttt{01} the result of \texttt{sla} is not what we want. 
+
+However, you may check that when there is no ailment, \texttt{sla} works just like \texttt{sll}. So \texttt{sla} become less needed. 
+\subsubsection{s, l}
+\centerline{\texttt{s/l r, offset(AddR)}}
+where \texttt{AddR} is a register. The command tells computer to load data from address \texttt{offset + AddR} to \texttt{r}, or to save the data in \texttt{r} to address \texttt{offset + AddR}.
 \subsubsection{address and word and byte}
+A \textbf{word} in risc-v has \textbf{32} bits. There arouses an interesting question: how to load 32-bit data to a 64-bit register? 
+
+No, what I am saying is that you need to care for whether the data is unsigned type or not. You need to expand a number when it is treated as a negative number. 
 \subsubsection{slt}
-slt for set less than
+slt for set less than. \texttt{slt} is an instruction to compare the value of some data. 
+
+\centerline{\texttt{slt rd, rst1, rst2}} 
+means that \texttt{rd = rst1 and rst2}
 \subsubsection{beq bne blt bge}
-eq for equal 
-ne for not equal 
-lt for less then 
-ge for greater or equal 
+\begin{enumerate}
+\item b for break
+\item eq for equal.
+\item ne for not equal. 
+\item lt for less then.
+\item ge for greater or equal.
+\end{enumerate}
+Use this set of command to jump which is used to achieve if-else structure. Note that for blt and bge, there exists unsigned type of commands. 
+\subsubsection{jump 指令}
+\centerline{jal rd, Label}
+称为无条件跳转. PC+4 存贮在 rd 之中. 并且 PC 赋值为 \texttt{Label}. 
 
-Use this set of command to jump which is used to achieve if-else structure. 
+\texttt{Label} 是一个写在程序行首的标签, 比如说 \texttt{Exit} 或者 \texttt{Loop} 等. 程序运行的时候此标签会翻译为一个指令的地址. 
 
-Note that for blt and bge, there exists unsigned type of commands. 
+The actual operation it takes is PC = PC + \texttt{offSet}, where \texttt{offSet} is translated from \texttt{Label}. 
 
-\subsubsection{jal}
-jal rd, Label
+\centerline{jalr rd, offSet(AddR)}
+是 \texttt{jalr} 的格式. 其表示, \texttt{rd} = PC + 4. 将 PC 的值赋为 \texttt{offset + AddR}. 
 
-没听懂
+\subsubsection{la command}
+\centerline{la rd, Label}
+意思是将 \texttt{Label} 所在的指令的地址传输到 \texttt{rd} 上. 其中 \texttt{Label} 表示的是当前 PC 的值和目标指令的差值, 记为 \texttt{delta}, 长度为 32 位. 
+% subsubsection:la command 
 \subsubsection{How to write a loop}
 % subsubsection: How to write a loop
-
 \subsubsection{Basic Block}
-
-
-
 % subsubsection: Basic Block
+\subsubsection{Function and stack}
+% subsubsection:Function and stack 
 
-\subsubsection{} 
+\subsection{指令的表示}
 
+对于
 
-% subsubsection: 
-
-\subsection{Function and stack}
-
-
-
-
+% subsection:指令的表示 
 \end{document}
