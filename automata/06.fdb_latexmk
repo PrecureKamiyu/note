@@ -1,19 +1,22 @@
 # Fdb version 3
-["xdvipdfmx"] 1679931249 "06.xdv" "06.pdf" "06" 1679931249
-  "06.xdv" 1679931249 50484 8d82810d888c917093dffeb3f5a5a16f "xelatex"
+["xdvipdfmx"] 1680071177 "06.xdv" "06.pdf" "06" 1680071177
+  "06.xdv" 1680071177 81908 f0996a1c5726440cf6621cd00e27378c "xelatex"
   (generated)
   "06.pdf"
-["xelatex"] 1679931249 "06.tex" "06.xdv" "06" 1679931249
+["xelatex"] 1680071177 "06.tex" "06.xdv" "06" 1680071177
   "/etc/texmf/web2c/texmf.cnf" 1664369985 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1246382020 1040 b84415f97d114011685943ade933dc71 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm" 1246382020 1040 a9d2074f3fa062d4d9046b92e2334d8c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm" 1246382020 1040 82eb6630b094bff824fccca83ff507f9 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -159,9 +162,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1664370051 4649353 1d29aeaf7dbc2be3af0ff1e9ef63482f ""
-  "06.aux" 1679931249 1217 9cae2716026f981efb411c2ba35d5d7a "xelatex"
-  "06.tex" 1679931247 6559 28d9f7b3865aac1ced9cb36f60900223 ""
+  "06.aux" 1680071177 1743 041b31e70556007b3276848018ee9aa3 "xelatex"
+  "06.tex" 1680071176 10702 6134852b970532f500f5375175c909a5 ""
   (generated)
-  "06.xdv"
   "06.log"
   "06.aux"
+  "06.xdv"
