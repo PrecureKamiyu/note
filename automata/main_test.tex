@@ -1,0 +1,37 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[width=14cm,left=2cm,top=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{bookmark}
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\setlength{\marginparwidth}{2in}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{thm}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Lemma}
+\newtheorem{lemma}[definition]{Corollary}
+\newtheorem{exam}[definition]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
+\newcommand{\ip}[2]{(#1,#2)}
+\font\ninerm=cmr9
+\begin{document}
+\title{Automata}
+\maketitle
+\tableofcontents
+\chapter{Pushdown automata}
+\input 06_test.tex
+\chapter{The properties of context free grammar}
+\input 07_test.tex
+\end{document}

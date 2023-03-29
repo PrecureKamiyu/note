@@ -1,39 +1,3 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage[width=12cm,left=2cm,top=3cm]{geometry}
-\usepackage{graphicx}
-\usepackage{bookmark}
-\usepackage{tikz-cd}
-\usepackage{hyperref}
-
-\usepackage{tikz}
-\usetikzlibrary{automata,positioning}
-
-\setlength{\marginparwidth}{2in}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{thm}[definition]{Theorem}
-\newtheorem{proposition}[definition]{Proposition}
-\newtheorem{corollary}[definition]{Lemma}
-\newtheorem{lemma}[definition]{Corollary}
-
-% \theoremstyle{plain}
-\newtheorem{exam}[definition]{Example}
-\theoremstyle{remark}
-\newtheorem{remark}[definition]{Remark}
-
-\newcommand{\ip}[2]{(#1,#2)}
-\font\ninerm=cmr9
-
-\begin{document}
-\title{Pushdown automata}
-\maketitle
-\tableofcontents
-\newpage
 A pushdown automata is a type of automation that use a stack structure, with the remaining part the same as the NFA (non-definite finte state automata). With the repect to the stack the pushdown automata has gained a more greater ability to describe the language. We will in the further section prove that pushdown automata has just the same ability describing as Context free grammar.
 
 \section{The definition of PDA}
@@ -255,4 +219,3 @@ Let the original automaton be \(P\), and let the grammar constructed here be \(G
 \end{exam}
 % subsection:From automaton to grammar 
 % section Pushdown automata and Context Free Grammar 
-\end{document}

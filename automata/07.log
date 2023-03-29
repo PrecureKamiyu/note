@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  29 MAR 2023 23:25
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  30 MAR 2023 00:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**06.tex
-(./06.tex
+**07.tex
+(./07.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -452,69 +452,41 @@ File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfarrowlength=\dimen265
 \pgfarrowwidth=\dimen266
 \pgfarrowlinewidth=\dimen267
-))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
-File: tikzlibraryautomata.code.tex 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
-File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box59
-\pgfnodeparttwobox=\box60
-\pgfnodepartthreebox=\box61
-\pgfnodepartfourbox=\box62
-\pgfnodeparttwentybox=\box63
-\pgfnodepartnineteenbox=\box64
-\pgfnodeparteighteenbox=\box65
-\pgfnodepartseventeenbox=\box66
-\pgfnodepartsixteenbox=\box67
-\pgfnodepartfifteenbox=\box68
-\pgfnodepartfourteenbox=\box69
-\pgfnodepartthirteenbox=\box70
-\pgfnodeparttwelvebox=\box71
-\pgfnodepartelevenbox=\box72
-\pgfnodeparttenbox=\box73
-\pgfnodepartninebox=\box74
-\pgfnodeparteightbox=\box75
-\pgfnodepartsevenbox=\box76
-\pgfnodepartsixbox=\box77
-\pgfnodepartfivebox=\box78
-))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
+)))
 \c@definition=\count287
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-02-03 L3 backend support: xdvipdfmx
 \g__graphics_track_int=\count288
-\l__pdf_internal_box=\box79
+\l__pdf_internal_box=\box59
 \g__pdf_backend_object_int=\count289
 \g__pdf_backend_annotation_int=\count290
-) (./06.aux)
-\openout1 = `06.aux'.
+) (./07.aux)
+\openout1 = `07.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -537,7 +509,7 @@ LaTeX Font Info:    ... okay on input line 32.
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=144.54pt
+* \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -550,8 +522,8 @@ LaTeX Font Info:    ... okay on input line 32.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring OFF on input line 32.
+\AtBeginShipoutBox=\box60
+Package hyperref Info: Link coloring OFF on input line 25.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -561,58 +533,49 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count291
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Warning: No \author given.
 
-(./06.toc)
+(./07.toc)
 \tf@toc=\write4
-\openout4 = `06.toc'.
+\openout4 = `07.toc'.
 
  (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 ) [1
 
-] [2]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 84.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [3]
-Overfull \hbox (6.1196pt too wide) in paragraph at lines 162--162
-[]\TU/lmr/bx/n/17.28 Pushdown automata and Context Free
+]
+Overfull \hbox (7.25073pt too wide) detected at line 77
+\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 N; \OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L; \OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 uvwxy \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^K\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 :\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 vwx\OMS/cmsy/m/n/12 j ^^T \OML/cmm/m/it/12 n; vx \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^O \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 uv[]wx[]y \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L\OT1/cmr/m/n/12 ))
  []
 
-[4] [5]
-Overfull \hbox (6.94318pt too wide) in paragraph at lines 232--233
-[]\TU/lmr/m/n/12 2. From $\OML/cmm/m/it/12 ^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q; i; Z\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 q; ZZ\OT1/cmr/m/n/12 )$\TU/lmr/m/n/12 , we know that $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 qZq\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 i\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 qZq\OT1/cmr/m/n/12 ][\OML/cmm/m/it/12 qZq\OT1/cmr/m/n/12 ]$\TU/lmr/m/n/12 .
- []
-
-[6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 258.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 258.
- (./06.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 258.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 258.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 258.
+[2] [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
+ (./07.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 119.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 119.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
  ) 
 Here is how much of TeX's memory you used:
- 22042 strings out of 479819
- 416453 string characters out of 5895846
- 659720 words of memory out of 5000000
- 38770 multiletter control sequences out of 15000+600000
- 542398 words of font info for 76 fonts, out of 8000000 for 9000
+ 21297 strings out of 479819
+ 392016 string characters out of 5895846
+ 627809 words of memory out of 5000000
+ 38045 multiletter control sequences out of 15000+600000
+ 540683 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 67i,15n,86p,476b,1087s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,8n,86p,476b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 06.xdv (6 pages, 92864 bytes).
+Output written on 07.xdv (3 pages, 39080 bytes).

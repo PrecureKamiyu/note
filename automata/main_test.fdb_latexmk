@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1680103501 "06.xdv" "06.pdf" "06" 1680103501
-  "06.xdv" 1680103501 92864 36514cd394f665b68c294df5627e02dd "xelatex"
+["xdvipdfmx"] 1680106111 "main_test.xdv" "main_test.pdf" "main_test" 1680106111
+  "main_test.xdv" 1680106111 138216 a6c6312e6e8d3bcfc6d038f881e16b2d "xelatex"
   (generated)
-  "06.pdf"
-["xelatex"] 1680103500 "06.tex" "06.xdv" "06" 1680103501
+  "main_test.pdf"
+["xelatex"] 1680106111 "main_test.tex" "main_test.xdv" "main_test" 1680106111
   "/etc/texmf/web2c/texmf.cnf" 1664369985 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -120,8 +120,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty" 1523134290 2432 8ff93b1137020e8f21930562a874ae66 ""
   "/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty" 1576191570 19336 ce7ae9438967282886b3b036cfad1e4d ""
   "/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty" 1576625391 3935 57aa3c3e203a5c2effb4d2bd2efbc323 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1580683321 20023 e427dd9e17e239bf926ef3aab67fe35e ""
-  "/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo" 1580683321 8447 5c4b8ee712f8e349df2722115bc8c513 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo" 1580683321 8283 e1a5378f1428da595f40ba12daa0da23 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/book.cls" 1580683321 23147 87043b6c3ff70b5e5185aee55d462dd7 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd" 1580683321 2431 b6cead9f069ed55f4fba0c637aa047b6 ""
   "/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def" 1575499854 5349 3ff642702d5f1d090f22b16e1722b13a ""
   "/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty" 1575499854 18590 51a481005a825fb76c38c1318a7d213d ""
@@ -162,11 +162,13 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1664370051 4649353 1d29aeaf7dbc2be3af0ff1e9ef63482f ""
-  "06.aux" 1680103501 1743 8aee82650d6262cf24eb7bf96bd88283 "xelatex"
-  "06.tex" 1680103496 12068 14a3b21603680014442388daed1ebce9 ""
-  "06.toc" 1680103501 585 5aeec7c72aa40b41b919a2cab3ce54a4 "xelatex"
+  "06_test.tex" 1680105809 11212 bf29443c9b5aa7b485ba91d7370d40e4 ""
+  "07_test.tex" 1680105768 4889 44f35fc2316cdb75fa0a9ea9e3f06869 ""
+  "main_test.aux" 1680106111 3204 adf4f020ec8e443961bbcaad039f8b51 "xelatex"
+  "main_test.tex" 1680106108 925 453c04357efc11af1facda6ca81e8225 ""
+  "main_test.toc" 1680106111 1236 11a6afbe45ff1d00f65f616298bfbf19 "xelatex"
   (generated)
-  "06.toc"
-  "06.aux"
-  "06.log"
-  "06.xdv"
+  "main_test.aux"
+  "main_test.toc"
+  "main_test.xdv"
+  "main_test.log"
