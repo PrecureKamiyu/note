@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  30 MAR 2023 00:44
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  30 MAR 2023 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**main_test.tex
-(./main_test.tex
+**main.tex
+(./main.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
@@ -457,7 +457,10 @@ File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 Package: subfiles 2020/02/14 v1.6 Multi-file projects (package)
  (/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2009/03/23  v 5.1
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
 File: tikzlibraryautomata.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
 File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -493,33 +496,33 @@ File: l3backend-xdvipdfmx.def 2020-02-03 L3 backend support: xdvipdfmx
 \l__pdf_internal_box=\box79
 \g__pdf_backend_object_int=\count290
 \g__pdf_backend_annotation_int=\count291
-) (./main_test.aux)
-\openout1 = `main_test.aux'.
+) (./main.aux)
+\openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -529,14 +532,14 @@ LaTeX Font Info:    ... okay on input line 30.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(56.9055pt, 398.33858pt, 159.05092pt)
+* h-part:(L,W,R)=(56.9055pt, 341.43306pt, 215.95644pt)
 * v-part:(T,H,B)=(85.35826pt, 614.21436pt, 95.39737pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=398.33858pt
+* \textwidth=341.43306pt
 * \textheight=614.21436pt
 * \oddsidemargin=-15.36449pt
-* \evensidemargin=86.78093pt
+* \evensidemargin=143.68645pt
 * \topmargin=-18.78552pt
 * \headheight=12.0pt
 * \headsep=19.8738pt
@@ -556,7 +559,7 @@ LaTeX Font Info:    ... okay on input line 30.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring OFF on input line 30.
+Package hyperref Info: Link coloring OFF on input line 33.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -566,74 +569,52 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count292
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
- ABD: EveryShipout initializing macros
-LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
+ ABD: EveryShipout initializing macros (./0.tex
+Chapter 1.
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
+File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: No \author given.
-
-(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
-File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
-) [1
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10.
+ (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)) (./1.5.tex [1
 
 
 ] [2
 
-] (./main_test.toc)
-\tf@toc=\write4
-\openout4 = `main_test.toc'.
-
- [3] [4
-
-]
-Chapter 1.
-(./06_test.tex [5]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 50.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Overfull \hbox (14.1061pt too wide) in paragraph at lines 80--80
-[]\TU/lmr/bx/n/14.4 Instantaneous Descriptions of a Pushdown automata 
- []
-
-[6]
-Overfull \hbox (24.03648pt too wide) in paragraph at lines 128--128
-[]\TU/lmr/bx/n/17.28 Pushdown automata and Context Free Gram-
- []
-
-[7]
-Overfull \hbox (24.498pt too wide) in paragraph at lines 162--169
-\TU/lmr/bx/n/12 Greibach Normal Form\TU/lmr/m/n/12 . For example, given an automaton $\OML/cmm/m/it/12 P$\TU/lmr/m/n/12 , let $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]; Y[]Y[] [] Y[]\OT1/cmr/m/n/12 )$
- []
-
-[8]) [9] [10
-
 ]
 Chapter 2.
-(./07_test.tex [11] [12]) [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 38.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 38.
- (./main_test.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 38.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 38.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 38.
+[3])
+Overfull \hbox (22.13112pt too wide) has occurred while \output is active
+\TU/lmr/m/n/12 4 \TU/lmr/m/sl/12 CHAPTER 2.  NORMAL SUBGROUPS AND QUOTIENT GROUPS
+ []
+
+[4] [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 37.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 37.
+ (./main.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 37.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 37.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 37.
  ) 
 Here is how much of TeX's memory you used:
- 22133 strings out of 479819
- 418045 string characters out of 5895846
- 661970 words of memory out of 5000000
- 38843 multiletter control sequences out of 15000+600000
- 542422 words of font info for 79 fonts, out of 8000000 for 9000
+ 21996 strings out of 479819
+ 415113 string characters out of 5895846
+ 660130 words of memory out of 5000000
+ 38713 multiletter control sequences out of 15000+600000
+ 538224 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 67i,15n,86p,483b,1171s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,6n,86p,478b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main_test.xdv (13 pages, 138216 bytes).
+Output written on main.xdv (5 pages, 39840 bytes).
