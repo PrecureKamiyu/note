@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  30 MAR 2023 15:44
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  1 APR 2023 01:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -588,14 +588,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10.
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)) (./1.5.tex [1
+) [1
 
 
-] [2
-
-]
+]) (./1.5.tex [2]
 Chapter 2.
-[3])
+[3
+
+])
 Overfull \hbox (22.13112pt too wide) has occurred while \output is active
 \TU/lmr/m/n/12 4 \TU/lmr/m/sl/12 CHAPTER 2.  NORMAL SUBGROUPS AND QUOTIENT GROUPS
  []
@@ -609,12 +609,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 37.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 37.
  ) 
 Here is how much of TeX's memory you used:
- 21996 strings out of 479819
- 415113 string characters out of 5895846
- 660130 words of memory out of 5000000
- 38713 multiletter control sequences out of 15000+600000
+ 21997 strings out of 479819
+ 415128 string characters out of 5895846
+ 660176 words of memory out of 5000000
+ 38714 multiletter control sequences out of 15000+600000
  538224 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  67i,6n,86p,478b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (5 pages, 39840 bytes).
+Output written on main.xdv (5 pages, 49704 bytes).

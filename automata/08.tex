@@ -99,7 +99,91 @@ regular language.
 
 exam of \(\{ \, 0 ^{n} 1 ^{n} 2 ^{n} \,\}\) shows not close.
 
-A theorem says that 
+\begin{exam}
+	We already know that \( L  = \{ \,  0  ^{n} 1 ^{n} 2 ^{n} \,\}\) is not a context free language, for that it does not suit the 
+	pump theorem. However, \( L_1 = \{ \, 0 ^{i}  1 ^{n} 2 ^{n} \,\}\)  , \( L_2 = \{ \, 0 ^{n} 1 ^{n} 2^{i} \, \}\) are context
+	free languages, \textbf{and} \(L  = L_1 \cap L_2\). Consequently, we show that context free language is not closed under intersection.
+\end{exam}
+%
+It is true that for two context free languages \(L_1 , L_2\), \(L_1 \cap L_2\) could be a language that is not context free language. 
+But we have a theorem to prove that if \(L\) is context free, and \(R\) is regular, then \(L \cap R\) is context free. The proof of the 
+theorem provide a insight into what the nature of intersection is. 
+\begin{thm}[Closure property with regular language]
+\label{Closure property with regular language}
+If \(L\) is a context free language, and \(R\) is a regular language, then \(L \cap R\) is a context free language.
+\end{thm}
+% theorem Closure property with regular language 
+\begin{proof}
+The idea is to construct a pushdown automata to accept the language \( L \cap R\). The construction is 
+to parrellel a finite state automaton and a pushdown automaton. 
+
+Let us say that the finite automaton accept language \(R\) is 
+\[
+	A  = ( Q _{A}, \Sigma ,\delta _{A} , q _{A},  F_{A})
+\]
+Let us remind what a finite automaton is. \(Q _{A}\) is the states. \( \Sigma\) is the alphabet, \(\delta _{A}\) is the transition function, 
+\(q _{A}\) is the initial state, and \(F _{A}\) is the accepting state. And let us say that the pushdown automaton is 
+\[
+	P = ( Q _{P} , \Sigma , \Gamma ,\delta_{P}, q _{P}, Z _{0}, F _{P})
+\]
+where \(Q _{P}\) is the family of the states of pushdown 
+automaton, \( \Sigma\) is the alphabet, \( \Gamma\) is the alphabet
+in the stack, \(\delta _{P}\) is the transiton function, \(q _{P}\)
+is the initial state of \(P\), \(Z _{0}\) is the initial character 
+in the stack, \( F_{P}\) is the accepting state.
+
+We construct a new pushdown automaton. 
+\[
+	( \, Q _{A} \times Q _{P}, \Sigma, \Gamma,\delta ' , ( q _{A},  q _{P}) Z_{0} , F' \, )
+\]
+	if \(\delta _{A} ( q_1 , a) =  p_1\), \(\delta _{P} (q_2 , a , X\kern 1pt) = (p_2 ,\gamma)\), then 
+	\[
+		\delta ' (  \{ \, q_1 , q_2 \, \} , a ,X ) = 
+		( \{ \, p_1 , p_2  \, \} ,\gamma)
+	\] 
+	And \( \{ \,  p , q \, \} \in F'\) if and only if 
+	\(p\), \(q\) are seperately the accepting state in \(A, P\).
+	We can then prove that \(w \in L '\)  if and only if 
+	\( w \in L\) and \(w \in R\).
+\end{proof}
+
+\begin{exam}
+	We already know that \(L  =  \{   i ^{n}  e ^{n}  \}\) is context free language, and that \( R  = \{  i ^{*}  e ^{*}\}\) is 
+	regular language. 
+
+	Consequently, \( L \cap R  \) is context free language. We can construct the pushdown automaton that accepting \(L \cap R\). 
+\end{exam}
+
+\begin{thm}[Other closure properties]
+\label{Other closure properties}
+Let \(L \) be a context free language, \(R\) be a regular language. 
+
+\medskip
+	\setlength{\hangindent}{33pt}
+	1. \( L - R\) is context free language. 
+	\smallskip
+
+	2. \( \bar L \) could be a language other than context free language. 
+	\smallskip
+
+	3. \(L_1 - L_2\) could be a language other than context free 
+language. 
+\end{thm}
+% theorem Other closure properties 
+
+\begin{proof}
+1. \(L - R = L \cap \bar R\)
+\smallskip
+
+	2. Use contradiction. If \(\bar L \) is always a context free language. 
+	Consider \( L_1 \cap  L_2 = \overline{\bar L_1 \cup \bar L_2}\). Since \(L_1 \cap L_2\) may be not a context free language, 
+	then either \(\bar L_1\) is not context free language, or 
+	\(\bar L_1 \cup \bar L_2\) is context free language while 
+	\( \overline {\bar L_1 \cap \bar L_2}\) is not context free 
+	language. 
+	Consequently, the statement is not true.
+\end{proof}
 % subsection:Intersection with a regular language 
+
 % section Subsitution 
 \end{document}

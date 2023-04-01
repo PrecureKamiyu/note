@@ -32,11 +32,57 @@ the proof is easy, given a  number \( q\) , \(q \) is relative prime to \(n\), t
 \(G\) is a finite cyclic group, given a positive factor \(k\), there is one and only one subgroup that is \( \langle a ^{n / k} \rangle\).
 % section cyclic group 
 
-\section{Transformation}
-\label{sec:Transformation}
+\section{Transformation groups}
+\label{sec:Transformation groups}
 
 \(M\) is a set. The transformation over a \(M\) is a monoid.
 
 \(S (M)\) is the set of the bijective transformation on \(M\). \(S (M)\) is a group and is called symmetric group.
+
+If \(|M| = n\), then \(S (M)\) is sometimes denoted as \( S_{n}\). 
+
+And \(|S _{n}|  = n !\).  
+
+Transformation group \(G\) on \(M\), 
+
+\begin{thm}
+	Transformation group \(G\) on \(M\), if there is onto function or one-one function in \(G\) then \(G = S(M)\)
+\end{thm}
+% theorem  
+
+\begin{proof}
+	If \(\tau \) is onto, consider \( \epsilon \tau(a) =  \tau (a)\) then \(\epsilon\) is \( \text{id}\). 
+
+	If \( \tau\) is one-one, consider \(\tau\epsilon (a) =\tau (a)\), then \(\epsilon\) is \( \text{id}\), because \(\epsilon (a) = a\) forall \(a\) in \(G\). 
+
+	\(\forall a \in G\), \( \exists b \in G , b = a ^{-1}\), viz., \( a b =\epsilon\). So \(a\), \(b\) are inversible and thus are
+	bijectives. Then every \(a\) in \(G\) is bijective then 
+	\(G  = S (M)\). 
+\end{proof} 
+
+If a bijective is in a group on \(M\) then the group is 
+bijective group, that is a group whose elements are 
+bijectives. 
+
+If a group is not a bijective group then the group 
+has no bijective or subjective or injective. 
+
+\begin{exam}
+	\(M = \{ \, \ip xy \mid x, y \in \mathbb{R} \, \}\), \(\forall a \in \mathbb{R}\):  
+	\[
+		\tau_{a} \colon M \to M , \ip xy \mapsto (x + a, 0)
+	\]
+	Prove that \(G = \{ \,\tau _{a} \mid a \in \mathbb{R} \, \}\) is a group. 
+\end{exam}
+
+\begin{thm}[Cayley]
+\label{Cayley}
+Given a \(G\), there exists a bijective group that is isomorphic to \(G\). 
+\end{thm}
+% theorem Cayley 
+\begin{proof}
+Treat the elements in \(G\) as functions which is absolutely a  
+bijective.
+\end{proof}
 % section Transformation 
 \end{document}
