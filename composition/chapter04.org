@@ -89,12 +89,33 @@ MUO. https://www.makeuseof.com/tag/what-is-cpu-cache/ 访问时间
 4. 判断结果是否为 0, 接出线: Zero, 其值为 1 当且仅当结果为 0
 5. 接出一根线, Carry Out. 用于串联的进位
 ***** ALUop 和 ALU control 
+
 ALUop 是一个二位的信号, 其和 funct field 结合在一起, 通过 ALU 
 control 单元, 生成一个 ALU control 信号. 
 
-这里使用的是多级的控制信号生成器. 多级, 但是每一级的规模很小, 这使得信
-号生成的延迟降低了. 控制信号的延迟是非常重要的参数. CPU 的时钟周期就取
-决于这个参数. 
+这里使用的是多级[fn:1]的控制信号生成器. 多级, 但是每一级的规模很小, 这使得信号生成的延迟降低了. 控制信号的延迟是非常重要的参数. CPU 的时钟周期就取决于这个参数. 
+
+但是出于不明原因, 我们这里居然没有提及 ALU control 信号, 将其和 ALUop
+混为一谈, 着实离谱. 下面有一些 ALUop 的出现, 他们实际上指的是 ALU
+control 信号
+
+[fn:1] 这种多级译码的方式---主控制单元生成 ALUop 位作用 ALU 的输入控制
+信号, 在生成实际信号来控制 ALU---是一种常见的方式. 多级控制可以减小主
+控制单元的规模. 多个小的控制单元可以潜在地减小控制单元的延迟. 
+
+
+ALUop 是指令码的一个字段, 其和 funct 字段经过 ALU 控制单元生成实际的控
+制信号. 见下表:
+
+| ALUop |  funct7 | funct3 | 操作 |
+|    00 | XXXXXXX |    XXX | 0010 |
+|    X1 | XXXXXXX |    XXX | 0110 |
+|    1X | 0000000 |    000 | 0010 |
+|    1X | 0100000 |    000 | 0110 |
+|    1X | 0000000 |    111 | 0000 |
+|    1X | 0000000 |    110 | 0001 |
+
+能够看出, 实际上控制单元的输入可以简化, 比如说
 ***** ALU control 信号的功能
 
 | ALU con | 操作 |                  |
@@ -111,7 +132,7 @@ control 单元, 生成一个 ALU control 信号.
 and 使用 and 门, or 使用 or 门, add 使用一个一位 Full adder. 
 构建是简单的.
 
-ALUop 的后两位是用于 Multiplexer 的
+ALU con 的后两位是用于 Multiplexer 的
 - 00 代表 Multiplexer 的第 0 个输入: A and B
 - 01 代表 Multiplexer 的第 1 个输入: A or  B
 - 10 代表 Multiplexer 的第 2 个输入: A + (B)
@@ -140,6 +161,12 @@ ALUop 的后两位是用于 Multiplexer 的
 
 ****** slt 操作
 
+我们接入 Less 信号, 作为 ALU 的输入, 这是当然的. Less 信号很特殊, 他在
+one bit ALU 之中直接输出, 并且整体作为 Mux 的最后一个输入. 因为 slt 的
+结果 R 比较特殊, 只有两个取值: 1 和 0; 即, 说除了末位, 所有位的值
+为 0. Less 也是如此. 而对于末位, 只需要将 A - B 的结果的符号位塞进去就
+行了. 设结果为 R 
+
 R = (A < B) 
 
 true 代表 1, false 代表 0. 我们用 Less 作为 one bit ALU 的输入信号. 
@@ -149,8 +176,8 @@ true 代表 1, false 代表 0. 我们用 Less 作为 one bit ALU 的输入信号
 ****** nor 操作 
 
 ALUop = 1100 的时候, 其为 ALU 为 nor 操作. 观察后两位, 这个时候
-Multiplexer 选择第 0 位数据, 只需要让 ALUop 的最高位为 Ainvert. 其为 1
-的时候, A 的数据反相. 由
+Multiplexer 选择第 0 位数据理论上进行的是 and 操作, 只需要让 ALUop 的
+最高位为 Ainvert. 其为 1 的时候, A 的数据反相. 由于
 
 $$
 \overline {A + B} = \overline A * \overline B
@@ -172,19 +199,41 @@ Overflow = (s1 and s2) xor s3
 
 **** PC
 ***** PC 的功能
+
+PC 是一个寄存器, 存储着当前指令的地址. 当当前指令执行完毕之后, 
+PC = PC + 4, 其值指向下一条指令. 
+
+并且, 在 SB 型指令, viz., 分支跳转的指令 (比如说 bne) 执行的过程之中, 
+PC 还有可能变为 PC + offset. 
+
+那么 PC 应
+1. PC 能够变为 PC + 4
+2. PC 能够变为 PC + offset, 其中 offset 是来自立即数产生器的. 
+
+那么 PC 应该有一个控制信号, 来表明是情况1. 还是情况2. 一般来说, 我们将
+这个信号称为 PCsrc. 他表明着 PC 的输入来源. 
+
 **** Register 
+
 我们应该有这些功能:
 1. 根据 Register 编号 Rw 将 busW 写入到寄存器之中
 2. 根据 Register 编号 Ra Rb 将寄存器的值输出到 busA, busB 上
 
-并且读操作不应收到时钟控制. 
+并且读操作不应收到时钟控制. 其也有控制信号: RegWrite 信号, 表明其是否
+要写入. src 有两种可能, 其有可能是来自于内存, 也有可能来自于 ALU. 前者
+对应的便是 L 型指令, 后者对应的指令有 I 型指令等. 这种条件的选择也由一
+个控制信号来控制, 称为 MemtoReg 
+
 *** Memory 的简单构成
 **** 数据存储器
+
 应当采用时序逻辑设计. 
 其应做到, 将指定的数据 DataIn 写入到 Addr 指定的内存位置里, 并且能够根
 据指定的 Addr 将内存中对应的数据写到输出 DataOut 上. 这就是读写操作,
 但其中读的操作不应该受到时钟的控制 (至少是可以不受到时钟的控制) 
+
 **** 指令存储器
+
 一个程序运行的之前, 程序装载器将程序装载起来, 在程序运行过程中, 不能对
 指令存储器进行写入的操作. 
 

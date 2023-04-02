@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}第四章 cpu 的组成}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}概述}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}cpu 的构造法}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}PC}{1}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}ALU}{2}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}CACHE}{2}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}{\bfseries \sffamily TODO} Memory}{3}{subsubsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.2}interlude}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Havard architecture and Princeton architecture}{3}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}组件的硬件构成}{3}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Processor 的构成}{3}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Memory 的简单构成}{7}{subsubsection.1.3.2}%

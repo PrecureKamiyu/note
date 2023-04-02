@@ -1,8 +1,8 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  2 APR 2023 18:21
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  2 APR 2023 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**chapter04.tex
+**chapter04.te
 (./chapter04.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
@@ -244,12 +244,28 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 )) (/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2019/05/29 v2.4.16 Configuration file (CTEX)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
+\KV@toks@=\toks17
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
@@ -290,14 +306,14 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LT@rows=\count274
 \c@LT@tables=\count275
 \c@LT@chunks=\count276
-\LT@p@ftn=\toks16
+\LT@p@ftn=\toks18
 )
 (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen177
 \WF@size=\dimen178
 \c@WF@wrappedlines=\count277
 \WF@box=\box58
-\WF@everypar=\toks17
+\WF@everypar=\toks19
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
@@ -310,7 +326,7 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \rotFPtop=\skip65
 \rotFPbot=\skip66
 \rot@float@box=\box59
-\rot@mess@toks=\toks18
+\rot@mess@toks=\toks20
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
@@ -322,7 +338,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
+\@emptytoks=\toks21
 \ex@=\dimen179
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -352,21 +368,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \dotsspace@=\muskip17
 \c@parentequation=\count286
 \dspbrk@lvl=\count287
-\tag@help=\toks20
+\tag@help=\toks22
 \row@=\count288
 \column@=\count289
 \maxfields@=\count290
-\andhelp@=\toks21
+\andhelp@=\toks23
 \eqnshift@=\dimen182
 \alignsep@=\dimen183
 \tagshift@=\dimen184
 \tagwidth@=\dimen185
 \totwidth@=\dimen186
 \lineht@=\dimen187
-\@envbody=\toks22
+\@envbody=\toks24
 \multlinegap=\skip68
 \multlinetaggap=\skip69
-\mathdisplay@stack=\toks23
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
@@ -624,15 +640,21 @@ LaTeX Info: Redefining \nameref on input line 26.
 \openout3 = `chapter04.out'.
 
  (./chapter04.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 7
+.
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 Package fontspec Warning: Font "FandolHei-Regular" does not contain requested
@@ -661,10 +683,15 @@ Package fontspec Info: Font family 'FandolHei-Regular(0)' created for font
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10.95> 
 not available
 (Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on
- input line 41.
+ input line 49.
  [1
 
 ] [2]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
+6.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 
 Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
@@ -682,41 +709,33 @@ Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
-Overfull \hbox (4.03487pt too wide) in paragraph at lines 93--95
-[]\TU/lmr/m/n/10.95 Computers, Explained -SearchStorage. []$[][][][][] [] [] []
- [][][] [] [][][][][][][][][][] [] [][][] []
+Overfull \hbox (24.07622pt too wide) in paragraph at lines 99--102
+\T1/lmtt/m/n/10.95 techspot . com / article / 2066-[]cpu-[]l1-[]l2-[]l3-[]cache
+/$[] \TU/FandolSong-Regular(0)/m/n/10.95 访 问 时 间 \T1/lmr/m/n/10.95 2023/4/1. 
  []
 
-[3] [4] [5] [6])
-Runaway argument?
-{enumera 
-! File ended while scanning use of \end .
-<inserted text> 
-                \par 
-<*> chapter04.tex
-                 
-? 
+[3] [4] [5] [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 311.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 311.
+ (./chapter04.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 311.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 311.
+Package rerunfilecheck Info: File `chapter04.out' has not changed.
+(rerunfilecheck)             Checksum: C2BD3A3B2A55C95CD980AE45C95EC3D5;1509.
 
-*
-(Please type a command or say `\end')
-*\end
 
-*\end
-! TeX capacity exceeded, sorry [input stack size=5000].
-<to be read again> 
-                   \expandafter 
-<*> \end
-        
-If you really absolutely need more capacity,
-you can ask a wizard to enlarge me.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
- 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 311.
+ ) 
 Here is how much of TeX's memory you used:
- 15965 strings out of 479819
- 332610 string characters out of 5895846
- 613784 words of memory out of 5000000
- 32837 multiletter control sequences out of 15000+600000
- 537684 words of font info for 73 fonts, out of 8000000 for 9000
+ 16097 strings out of 479819
+ 334840 string characters out of 5895846
+ 614835 words of memory out of 5000000
+ 32944 multiletter control sequences out of 15000+600000
+ 573267 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 5000i,6n,4996p,370b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
-Output written on chapter04.pdf (6 pages).
+ 56i,8n,75p,375b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on chapter04.pdf (7 pages).

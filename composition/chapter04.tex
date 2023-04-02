@@ -1,14 +1,14 @@
-% Created 2023-04-02 Sun 18:09
+% Created 2023-04-02 Sun 21:10
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{ctexart}
-% \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{grffile}
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage{rotating}
-% \usepackage[normalem]{ulem}
+\usepackage[normalem]{ulem}
 \usepackage{amsmath}
 \usepackage{textcomp}
 \usepackage{amssymb}
@@ -16,77 +16,80 @@
 \usepackage{hyperref}
 \date{\today}
 \title{}
-% \hypersetup{
-%  pdfauthor={},
-%  pdftitle={},
-%  pdfkeywords={},
-%  pdfsubject={},
-%  pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
-%  pdflang={English}}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
+ pdflang={English}}
 \begin{document}
 
 \tableofcontents
 
 \section{第四章 cpu 的组成}
-\label{sec:orgb5e09e0}
-\section{}
-\label{sec:org1c26d2f}
-\section{概述}
-\label{sec:orgdf6001f}
-\subsection{cpu 的构造法}
-\label{sec:org185961f}
+\label{sec:orgaace655}
+\subsection{概述}
+\label{sec:orgaae309b}
+\subsubsection{cpu 的构造法}
+\label{sec:org4db401e}
 对于一个 cpu , 其中分为三个部分. 第一个部分是处理器, 第二部分是内存,
-第三部分是总线. 
-
-处理器, 里面由 ALU, 寄存器, PC
-
-内存, 就是内存相关的, Cache 缓存, memory 内存. 
-
-总线, 就是 IO 相关的
-\subsection{PC}
-\label{sec:org5ce69cb}
+第三部分是总线.  
+\begin{enumerate}
+\item 处理器, 里面由 ALU, 寄存器, PC
+\item 内存, 就是内存相关的, Cache 缓存, memory 内存.
+\item 总线, 就是 IO 相关的
+\end{enumerate}
+\subsubsection{PC}
+\label{sec:org59764f9}
 PC 就是存储着指令, 其告诉 ALU 该如何处理寄存器. 
-
-\subsection{ALU}
-\label{sec:org656e6b3}
+\subsubsection{ALU}
+\label{sec:org5edaf5c}
 ALU 就是运算单元, 其能够执行 add sub 等指令, 对寄存器进行操作. 
-\subsection{CACHE}
-\label{sec:org56d4614}
-\subsubsection{Cache 简介}
-\label{sec:orgf9c85c1}
-Cache 是缓存, 是一种更为快速的内存
+\subsubsection{CACHE}
+\label{sec:orge78d798}
+\begin{enumerate}
+\item Cache 简介
+\label{sec:org1b9ff4c}
+Cache 是缓存, 是一种更为快速的内存. 速度和数量介于内存和寄存器之间. 
 
-对于这个存储单元的层级, 我们可以回想一下, 寄存器是稀少而快速, 内存是数
-量多而没那么快速, 缓存应该是介于这两者之间. 价格也是介于两者之间. 
-
-Cache 的构想应该和 register 的构想很类似, 内存之中数据暂存在 cache 之
-中, 以此达成加速的目的. 
-\subsubsection{SRAM}
-\label{sec:org829d305}
+Cache 用于提高效率. 我们有三种不同效率的存储单元, 将适合的任务分配给它
+们, 以此提高效率 (当然也是成本效率)
+\item SRAM
+\label{sec:orgc836fc4}
 Cache memory operates between 10 to 100 times faster than RAM,
 requiring only a few nanoseconds to respond to a CPU request. The name
 of the actual hardware that is used for cache memory is high-speed
 static random access memory (SRAM).
 
-实现的 Cache 的硬件为 SRAM, 全称为 high-speed static random access 
-memory. 于 SRAM 对应的便是 DRAM 后者用于 memory 的构造之中. S for
-static , SRAM 之中的数据, 只要 power 没有断开, 不同于 DRAM 的数据那样,
-就能够已知保存, 但是 DRAM 之中的数据, 几秒钟后就会消失, 需要周期性地
-refresh 一下. 这就是为什么其称为 static 的. SRAM use latches and transistor to store data. 
-\subsubsection{Cache 的多级建构}
-\label{sec:org5cbc3c6}
-Cache 的构造实际上更为复杂, Cache 分为了三个 Level, L3 速度最慢, 是用
-来辅助 L1, L2 的. 
+实现的 Cache 的硬件为 SRAM, (high-speed static random access
+memory). 而 DRAM (dynamic random access memory) 用于构建 memory.SRAM
+之中的数据, 只要没有断电 (power), 就能够一直保存, 不同于 DRAM 的数据那
+样, DRAM 之中的数据, 一把来说几秒钟后就会消失, 需要周期性地 refresh 一
+下. SRAM use latches and transistor to store data.  
+\item Cache 的多级建构
+\label{sec:orgf099a95}
+Cache 分为了三个 Level, 有 L1, L2, L3, 其中 L3 速度最慢, 是用来辅助
+L1, L2 的.
 
-Cache memory is a small amount of fast memory that is used to store frequently accessed data. It is located close to the CPU and is used to reduce the average time it takes to access data from the main memory.
+Cache memory is a small amount of fast memory that is used to store
+frequently accessed data. It is located close to the CPU and is used
+to reduce the average time it takes to access data from the main
+memory. 
 
-There are three general levels of cache: L1 cache, L2 cache, and L3 cache. Each level is differentiated by its speed, size, and proximity to the CPU.
+There are three general levels of cache: L1 cache, L2 cache, and L3
+cache. Each level is differentiated by its speed, size, and proximity
+to the CPU. 
 
-L1 cache, or primary cache, is extremely fast but relatively small. It is usually embedded in the processor chip as CPU cache³.
+L1 cache, or primary cache, is extremely fast but relatively small. It
+is usually embedded in the processor chip as CPU cache³. 
 
-L2 cache, or secondary cache, is often more capacious than L1 but slower. It is usually located on the processor chip or on a separate chip on the motherboard³.
+L2 cache, or secondary cache, is often more capacious than L1 but
+slower. It is usually located on the processor chip or on a separate
+chip on the motherboard³. 
 
-L3 cache, or tertiary cache, is larger than L2 but slower. It is usually located on a separate chip on the motherboard³.
+L3 cache, or tertiary cache, is larger than L2 but slower. It is
+usually located on a separate chip on the motherboard³. 
 
 Is there anything else you would like to know about cache memory?
 
@@ -99,29 +102,26 @@ TechSpot. \url{https://www.techspot.com/article/2066-cpu-l1-l2-l3-cache/} 访
 
 (3) How Does CPU Cache Work and What Are L1, L2, and L3 Cache? -
 MUO. \url{https://www.makeuseof.com/tag/what-is-cpu-cache/} 访问时间
-2023/4/1.                                               
-
-
-\subsection{Memory}
-\label{sec:org3213d5b}
-\subsubsection{{\bfseries\sffamily TODO} describe the memory}
-\label{sec:orgd1afd63}
-\section{interlude}
-\label{sec:orgdc2b27a}
-\subsection{Havard architecture and Princeton architecture}
-\label{sec:orgcb678b7}
+2023/4/1.
+\end{enumerate}
+\subsubsection{{\bfseries\sffamily TODO} Memory}
+\label{sec:orgce7636c}
+\subsection{interlude}
+\label{sec:orgfac225b}
+\subsubsection{Havard architecture and Princeton architecture}
+\label{sec:org392c0b1}
 程序有存储的地方, 数据也有存储的地方, 我们常将其抽象出来, 认为这两个部
 分是存在一个地方里的. 但实际上有区别. 
 
 数据的存储单元, 程序的存储单元, 在哈佛架构之中是分开的. 
 也就是说, 在哈佛架构中, 存在两个单元, 分别由两个总线进行单元和处理器之间的数据传输
-\section{组件的硬件构成}
-\label{sec:org2ff8b8e}
-
-\subsection{Processor 的构成}
-\label{sec:org4730050}
-\subsubsection{ALU Register PC Extender}
-\label{sec:orgb33b84a}
+\subsection{组件的硬件构成}
+\label{sec:orgfcf623a}
+\subsubsection{Processor 的构成}
+\label{sec:org36075f9}
+\begin{enumerate}
+\item ALU Register PC Extender
+\label{sec:org7496264}
 \begin{enumerate}
 \item ALU 是算术运算单元, 即, 进行 and or add sub 运算的单元.
 \item Register 我们很熟了, 支持读写操作. PC 我们也很熟了, 支持 +4 , + imm
@@ -129,113 +129,176 @@ MUO. \url{https://www.makeuseof.com/tag/what-is-cpu-cache/} 访问时间
 \item Extender 是 imm 生成单元也是扩展单元,我们有的时候需要进行一些数据的
 符号扩展.
 \end{enumerate}
-\subsubsection{ALU}
-\label{sec:orga1b772e}
+\item ALU (算术逻辑运算单元) [\%]
+\label{sec:org60e55dd}
+\begin{itemize}
+\item[{$\square$}] 完善该标题
+\end{itemize}
 输入两个 32 位数据, 输出一个 32 位的数据. 进行位运算或者加减运算. 
-
 \begin{enumerate}
 \item ALU 的接线
-\label{sec:orgf9638ae}
-一个一位 ALU 应
+\label{sec:org3c38832}
+一个一位 ALU 单元应该
 \begin{enumerate}
-\item 根据 ALUop 的值, 决定操作
-\item 根据输入 A B 给出结果
-\item 判断是否溢出, Overflow 为 1 如果其溢出
-\item 判断结果是否为 0, Zero 为 1 如果其为 0
-\item 有一个用于串联的进位 Carry Out.
+\item 根据 ALU control 的值, 决定 ALU 该执行什么运算
+\item 根据输入 A B 给出结果 R
+\item 判断是否溢出, 接出一根线: Overflow, 其值为 1 当且仅当发生溢出
+\item 判断结果是否为 0, 接出线: Zero, 其值为 1 当且仅当结果为 0
+\item 接出一根线, Carry Out. 用于串联的进位
 \end{enumerate}
-\item ALUop 的功能
-\label{sec:org4b0ff1c}
+\item ALUop 和 ALU control
+\label{sec:org6c9fed4}
+
+ALUop 是一个二位的信号, 其和 funct field 结合在一起, 通过 ALU 
+control 单元, 生成一个 ALU control 信号. 
+
+这里使用的是多级\footnote{这种多级译码的方式---主控制单元生成 ALUop 位作用 ALU 的输入控制
+信号, 在生成实际信号来控制 ALU---是一种常见的方式. 多级控制可以减小主
+控制单元的规模. 多个小的控制单元可以潜在地减小控制单元的延迟.}的控制信号生成器. 多级, 但是每一级的规模很小, 这使得信号生成的延迟降低了. 控制信号的延迟是非常重要的参数. CPU 的时钟周期就取决于这个参数. 
+
+但是出于不明原因, 我们这里居然没有提及 ALU control 信号, 将其和 ALUop
+混为一谈, 着实离谱. 下面有一些 ALUop 的出现, 他们实际上指的是 ALU
+control 信号
+
+ALUop 是指令码的一个字段, 其和 funct 字段经过 ALU 控制单元生成实际的控
+制信号. 见下表:
+
+\begin{center}
+\begin{tabular}{rrrr}
+ALUop & funct7 & funct3 & 操作\\
+00 & XXXXXXX & XXX & 0010\\
+X1 & XXXXXXX & XXX & 0110\\
+1X & 0000000 & 000 & 0010\\
+1X & 0100000 & 000 & 0110\\
+1X & 0000000 & 111 & 0000\\
+1X & 0000000 & 110 & 0001\\
+\end{tabular}
+\end{center}
+
+能够看出, 实际上控制单元的输入可以简化, 比如说
+\item ALU control 信号的功能
+\label{sec:org100c710}
 
 \begin{center}
 \begin{tabular}{rll}
-ALUop & 操作 & \\
+ALU con & 操作 & \\
 0000 & and & \\
 0001 & or & \\
 0010 & add & \\
-0110 & sub & \\
+0110 & sub & substraction\\
 0111 & slt & set on less than\\
-1100 & nor & nor\\
+1100 & nor & \\
 \end{tabular}
 \end{center}
 
 \item 构建简单的 ALU
-\label{sec:org438b86c}
-以 Mutiplexer 为基础, 而后构建 and or add 操作
-and 使用 and 门, or 使用 or 门, add 使用一个一位 Full adder. 
-构建是简单的. 
+\label{sec:org2c8ecce}
 
-\item one bit ALUs 的串联 [4/5]
-\label{sec:org3abd5be}
+以 Multiplexer 为基础, 而后构建 and or add 操作
+and 使用 and 门, or 使用 or 门, add 使用一个一位 Full adder. 
+构建是简单的.
+
+ALU con 的后两位是用于 Multiplexer 的
+\begin{itemize}
+\item 00 代表 Multiplexer 的第 0 个输入: A and B
+\item 01 代表 Multiplexer 的第 1 个输入: A or  B
+\item 10 代表 Multiplexer 的第 2 个输入: A + (B)
+\item 11 代表 Multiplexer 的第 3 个输入: Less
+\end{itemize}
+
+其中 (B) 代表对 B 进行一定处理之后的数据. Less 是 slt 的实现之中会稍微
+提及的一个信号. 
+
+\item one bit ALUs 的串联 [5/5]
+\label{sec:org23195f6}
+
 在串联之中我们要实现
 \begin{itemize}
 \item[{$\boxtimes$}] sub 操作
 \item[{$\boxtimes$}] slt 操作
-\item[{$\square$}] nor 操作
+\item[{$\boxtimes$}] nor 操作
 \item[{$\boxtimes$}] Overflow 判断
 \item[{$\boxtimes$}] Zero 判断
 \end{itemize}
 
 \begin{enumerate}
 \item sub 操作
-\label{sec:org2f4d1d2}
-引入 Binvert 后更名为 Bnegate, 其有两个操作
+\label{sec:org5f9a8a0}
+
+设 ALUop 的第三位为 Binvert. 通过等式 R = A - B = A + B'来实现减法.
+
 \begin{enumerate}
-\item 在 one bit ALU 之中, 使 B 取反
-\item 接入末位 ALU 也就是 ALU0 的 CarryIn 也就是进位之中
+\item 在 one bit ALU 之中, 通过一个 Mux 和反相器, 使 B 取反
+\item 接入末位 ALU viz., ALU0 的 CarryIn. 使得结果 +1
 \end{enumerate}
-因为 Binvert 是一个信号来的, 高电平使能, 那么其要触发的时候, 值为1, 并
-且还是一个一位的信号. 
 
-这就有 R = A+B'+1. 也就有 R = A-B
+这就有 R = A+B'+1. 也就有 R = A-B. 
+
 \item slt 操作
-\label{sec:org92fde36}
-If A<B then result equates 1 
-else result equates 0.
+\label{sec:org344e795}
 
-我们用 Less 作为 one bit ALU 的输入信号. 
+R = (A < B) 
 
-我们只需要计算出 A - B 的值, 让后将这个值的符号传回末位 (Less 在其他位
-的值均为0), 最后 result 直接等于 Less 就行了. 
+true 代表 1, false 代表 0. 我们用 Less 作为 one bit ALU 的输入信号. 
+我们只需要计算出 A - B 的值, 然后 A - B 的符号传回 Less 的末位 (Less
+在其他位的值均为0), 最后 result 直接等于 Less.  
+
 \item nor 操作
-\label{sec:orga44045e}
+\label{sec:org0499db3}
+
+ALUop = 1100 的时候, 其为 ALU 为 nor 操作. 观察后两位, 这个时候
+Multiplexer 选择第 0 位数据, 只需要让 ALUop 的最高位为 Ainvert. 其为 1
+的时候, A 的数据反相. 由
+
+$$
+\overline {A + B} = \overline A * \overline B
+$$
+
+就有 $ R = \overline{A + B} $
+
 \item Overflow 判断
-\label{sec:org72dfacc}
+\label{sec:org5aabda3}
+
 设输入的两个符号位为 s1 s2 , 结果的符号位为 s3, 那么有
 
 Overflow = (s1 and s2) xor s3
 
 就有, 当溢出发生的时候, Overflow 为 1.
+
 \item Zero 判断
-\label{sec:orgb678b1a}
-每一位结果取 not-or 就行了.
+\label{sec:orgc5ca7ee}
+
+每一位结果取 nor 即为结果.
 \end{enumerate}
 \end{enumerate}
-\subsubsection{PC}
-\label{sec:orgef12889}
+
+\item PC
+\label{sec:org1062201}
 \begin{enumerate}
-\item 
-\label{sec:org259fa5b}
+\item PC 的功能
+\label{sec:org0e9e639}
 \end{enumerate}
-\subsubsection{Register}
-\label{sec:org2b4a6b0}
+\item Register
+\label{sec:org0f34851}
 我们应该有这些功能:
 \begin{enumerate}
 \item 根据 Register 编号 Rw 将 busW 写入到寄存器之中
 \item 根据 Register 编号 Ra Rb 将寄存器的值输出到 busA, busB 上
 \end{enumerate}
 
-并且读操作不应收到时钟控制. 
-\subsection{Memory 的简单构成}
-\label{sec:org35418a7}
-\subsubsection{数据存储器}
-\label{sec:org76f0522}
+并且读操作不应收到时钟控制.
+\end{enumerate}
+\subsubsection{Memory 的简单构成}
+\label{sec:org6354cb6}
+\begin{enumerate}
+\item 数据存储器
+\label{sec:orgba377fa}
 应当采用时序逻辑设计. 
 其应做到, 将指定的数据 DataIn 写入到 Addr 指定的内存位置里, 并且能够根
 据指定的 Addr 将内存中对应的数据写到输出 DataOut 上. 这就是读写操作,
 但其中读的操作不应该受到时钟的控制 (至少是可以不受到时钟的控制) 
-\subsubsection{指令存储器}
-\label{sec:org64cbffe}
+\item 指令存储器
+\label{sec:orgdc9edd6}
 一个程序运行的之前, 程序装载器将程序装载起来, 在程序运行过程中, 不能对
 指令存储器进行写入的操作. 
 
@@ -243,7 +306,6 @@ Overflow = (s1 and s2) xor s3
 \begin{enumerate}
 \item 根据对应的 Addr 给出对应位置存储的指令.
 \item 不能在程序运行过程对其进行写操作.
-\end{enumera}
-
-
+\end{enumerate}
+\end{enumerate}
 \end{document}
