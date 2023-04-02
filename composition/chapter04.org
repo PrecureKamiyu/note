@@ -79,7 +79,7 @@ MUO. https://www.makeuseof.com/tag/what-is-cpu-cache/ 访问时间
 3. Extender 是 imm 生成单元也是扩展单元,我们有的时候需要进行一些数据的
    符号扩展.  
 **** ALU (算术逻辑运算单元) [%]
-
+- [ ] 完善该标题
 输入两个 32 位数据, 输出一个 32 位的数据. 进行位运算或者加减运算. 
 ***** ALU 的接线
 一个一位 ALU 应
