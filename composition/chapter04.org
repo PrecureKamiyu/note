@@ -82,21 +82,28 @@ MUO. https://www.makeuseof.com/tag/what-is-cpu-cache/ 访问时间
 - [ ] 完善该标题
 输入两个 32 位数据, 输出一个 32 位的数据. 进行位运算或者加减运算. 
 ***** ALU 的接线
-一个一位 ALU 应
-1. 根据 ALUop 的值, 决定 ALU 该执行什么运算
+一个一位 ALU 单元应该
+1. 根据 ALU control 的值, 决定 ALU 该执行什么运算
 2. 根据输入 A B 给出结果 R
 3. 判断是否溢出, 接出一根线: Overflow, 其值为 1 当且仅当发生溢出
 4. 判断结果是否为 0, 接出线: Zero, 其值为 1 当且仅当结果为 0
 5. 接出一根线, Carry Out. 用于串联的进位
-***** ALUop 的功能
+***** ALUop 和 ALU control 
+ALUop 是一个二位的信号, 其和 funct field 结合在一起, 通过 ALU 
+control 单元, 生成一个 ALU control 信号. 
 
-| ALUop | 操作 |                  |
-|  0000 | and  |                  |
-|  0001 | or   |                  |
-|  0010 | add  |                  |
-|  0110 | sub  | substraction     |
-|  0111 | slt  | set on less than |
-|  1100 | nor  |                  |
+这里使用的是多级的控制信号生成器. 多级, 但是每一级的规模很小, 这使得信
+号生成的延迟降低了. 控制信号的延迟是非常重要的参数. CPU 的时钟周期就取
+决于这个参数. 
+***** ALU control 信号的功能
+
+| ALU con | 操作 |                  |
+|    0000 | and  |                  |
+|    0001 | or   |                  |
+|    0010 | add  |                  |
+|    0110 | sub  | substraction     |
+|    0111 | slt  | set on less than |
+|    1100 | nor  |                  |
 
 ***** 构建简单的 ALU
 
