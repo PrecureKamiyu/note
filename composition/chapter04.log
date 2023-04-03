@@ -1,8 +1,8 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  2 APR 2023 21:12
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.9.28)  3 APR 2023 00:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**chapter04.te
+**chapter04.tex
 (./chapter04.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
@@ -649,47 +649,21 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 7
-.
-
-(/usr/share/texmf/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-Package fontspec Warning: Font "FandolHei-Regular" does not contain requested
-(fontspec)                Script "CJK".
-
-
-Package fontspec Info: Font family 'FandolHei-Regular(0)' created for font
-(fontspec)             'FandolHei-Regular' with options
-(fontspec)             [Script={CJK},Extension={.otf},BoldFont={FandolHei-Bold}
-].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[FandolHei-Regular.otf]/OT:language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[FandolHei-Bold.otf]/OT:language=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-
-)
+))
 \tf@toc=\write4
 \openout4 = `chapter04.toc'.
 
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10.95> 
 not available
 (Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on
- input line 49.
+ input line 42.
  [1
 
 ] [2]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
-6.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+8.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
@@ -709,33 +683,46 @@ Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
-Overfull \hbox (24.07622pt too wide) in paragraph at lines 99--102
+Overfull \hbox (24.07622pt too wide) in paragraph at lines 101--104
 \T1/lmtt/m/n/10.95 techspot . com / article / 2066-[]cpu-[]l1-[]l2-[]l3-[]cache
 /$[] \TU/FandolSong-Regular(0)/m/n/10.95 访 问 时 间 \T1/lmr/m/n/10.95 2023/4/1. 
  []
 
-[3] [4] [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 311.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 311.
+[3] [4] [5] [6] [7] [8] [9]
+Overfull \hbox (6.17523pt too wide) in paragraph at lines 398--399
+[]\TU/FandolSong-Regular(0)/m/n/10.95 随 后 是 \T1/lmr/m/n/10.95 in-struc-tion mem
+-ory. \TU/FandolSong-Regular(0)/m/n/10.95 输 入\T1/lmr/m/n/10.95 ---PC, \TU/Fando
+lSong-Regular(0)/m/n/10.95 输 出\T1/lmr/m/n/10.95 ---32 \TU/FandolSong-Regular(0)
+/m/n/10.95 位 的 指 令\T1/lmr/m/n/10.95 ---instruction. 
+ []
+
+[10]
+Overfull \hbox (24.63788pt too wide) in paragraph at lines 451--455
+ [] 
+ []
+
+[11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 515.
+ [12] [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 515.
  (./chapter04.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 311.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 311.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 515.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 515.
 Package rerunfilecheck Info: File `chapter04.out' has not changed.
-(rerunfilecheck)             Checksum: C2BD3A3B2A55C95CD980AE45C95EC3D5;1509.
+(rerunfilecheck)             Checksum: 1C8AAEB644838F3462A443CC18B85671;2010.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 311.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 515.
  ) 
 Here is how much of TeX's memory you used:
- 16097 strings out of 479819
- 334840 string characters out of 5895846
- 614835 words of memory out of 5000000
- 32944 multiletter control sequences out of 15000+600000
- 573267 words of font info for 90 fonts, out of 8000000 for 9000
+ 16063 strings out of 479819
+ 334017 string characters out of 5895846
+ 615687 words of memory out of 5000000
+ 32921 multiletter control sequences out of 15000+600000
+ 570467 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,8n,75p,375b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,8n,72p,376b,601s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on chapter04.pdf (7 pages).
+Output written on chapter04.pdf (13 pages).

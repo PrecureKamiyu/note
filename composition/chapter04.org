@@ -65,7 +65,8 @@ TechSpot. https://www.techspot.com/article/2066-cpu-l1-l2-l3-cache/ 访
 MUO. https://www.makeuseof.com/tag/what-is-cpu-cache/ 访问时间
 2023/4/1.                                               
 ** interlude
-*** Havard architecture and Princeton architecture
+
+Havard architecture and Princeton architecture
 
 程序有存储的地方, 数据也有存储的地方, 我们常将其抽象出来, 认为这两个部
 分是存在一个地方里的. 但实际上有区别. 
@@ -81,9 +82,9 @@ MUO. https://www.makeuseof.com/tag/what-is-cpu-cache/ 访问时间
    操作.
 3. Extender 是 imm 生成单元也是扩展单元,我们有的时候需要进行一些数据的
    符号扩展.  
-**** ALU (算术逻辑运算单元) [%]
+**** ALU (算术逻辑运算单元) 的功能和硬件实现 [100%]
 
-- [ ] 完善该标题
+- [X] 完善该标题
 输入两个 32 位数据, 输出一个 32 位的数据. 进行位运算或者加减运算. 
 
 ***** ALU 的接线
@@ -204,7 +205,6 @@ Overflow = (s1 and s2) xor s3
 每一位结果取 nor 即为结果. 
 
 **** PC
-***** PC 的功能
 
 PC 是一个寄存器, 存储着当前指令的地址. 当当前指令执行完毕之后, 
 PC = PC + 4, 其值指向下一条指令. 
@@ -365,12 +365,28 @@ ALU 的 sauce 为 rst2; 不设计内存操作; 结果写入 rd; 不是分支判�
 
 ----------------------------------------------------------------------
 
-以 bne rst1, rst2, offset 为例:
+以 beq rst1, rst2, offset 为例:
 
    1. PC 取指令 
    2. 取出 rst1, rst2 的值
-   3. 取出 offset 的值, 符号扩展, 左移一位
-   4. ALU 进行 rst1 - rst2 的运算, 输出 Zero
-   5. PCSrc = branch and Zero. 其为 1 的话, PC = offset + PC
+   3. 取出 offset 的值, 符号扩展, 左移一位, 和 PC 的值进行相加; ALU 进
+      行 rst1 - rst2 的运算, 输出 Zero
+   4. 根据 branch 和 zero 的值决定 PC 的值. 
 
 可以看见 branch 用上了, 对于控制信号的验证我就不说了. 
+** 更多的指令 
+
+对于 I 型指令的 jalr 
+     J 型指令的 jar 等
+     U 型指令的 auipc 等, 
+     B 型指令(SB型指令)的 blt, bne 等指令
+我们目前没能实现. 比如说 jalr 会将 PC 之中的值存入寄存器中, 我们还没有
+     实现这点, auipc 也是同理. blt 则是控制信号还不够, 目前只能有 beq
+     的实现. 
+
+实际上这些细节能够自己补全. 我大概想出了两种方法: 1. 接一条线到
+ALU上;2.PC + offset 的加法器接出一条线, 接到寄存器上面. 稍微考虑一下,
+两种方法都有问题: 1. 接到 ALU 上, 那么我们在 beq 之中就用不上 ALU 的
+Zero 值了, 然后 PC +offset 的部分都稍微重构一下; 2. 如果说 PC + offset
+再接到寄存器单元上, 那么寄存器的输入就有三种情况了, imm, 内存数据, pc
+值.
