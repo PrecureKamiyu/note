@@ -157,6 +157,7 @@ for (int i = 0 ; i < 2 ; i++) {
     3. i++
     4. 分支跳转的判断
 
+#+begin code
 有: 
     add t0, x0, x0
     add t1, x0, x0
@@ -165,34 +166,70 @@ Loop:
     add t1, t1, t0
     addi t0, t0, 1
     bne t0, t2, Loop
+#+end
 
 大概这样, t0 是 i; t1 是 ans; t2 是 2. 当然啦, bne 换为 bge 或许更好.
 总是上面就是一个简单的 Loop. 
 
 *** the concept of basic block
 
+一段经常性执行的代码便是一个 basic block. 由于加速经常性时间的构想, 这
+段代码实际上会被特地的优化, 使得其运行速度变得更快. 
+
 *** Function and stack
+
+我们有的时候要将数据存入 stack, 而 stack 是位于内存里面的. 我们在手动
+进行汇编程序的编写的时候, 要初始化数据, 这个时候我们可以手动地为这些数
+据分配空间, 放在 stack 里面. 我们接下来给出一个 bing 的例子:
+
+
+factorial:
+    addi sp, sp, -16  # Allocate space on stack
+    sw ra, 12(sp)     # Save return address
+    sw a0, 8(sp)      # Save argument n
+    addi a1, x0, 1    # Initialize result to 1
+    beq a0, x0, end   # If n == 0, jump to end
+loop:
+    mul a1, a1, a0    # result *= n
+    addi a0, a0, -1   # n--
+    bne a0, x0, loop  # If n != 0, jump to loop
+end:
+    mv a0, a1         # Return result in a0
+    lw ra, 12(sp)     # Restore return address
+    addi sp, sp, 16   # Deallocate space on stack
+    ret               # Return from function
 
 ** The expression of an instruction
 
 *** the field of an instruction code
 
+一个 instruction code 是32位. 一般来说会划分出大约5到6个field, 这些
+field有它们自己的功能. 对于不同类型的指令码, 这些field各有不同. 我们这
+里用 add 指令为例子.
+
+|-------+--------+------+------+--------+----+--------|
+| field | funct7 | rst2 | rst1 | funct3 | rd | opcode |
+|-------+--------+------+------+--------+----+--------|
+| bits  |      7 |    5 |    5 |      3 |  5 |      7 |
+|-------+--------+------+------+--------+----+--------|
+
+这是 R-type 指令. 
+
 *** the type of the instruction code
+
+共有很多类型, 常见的有 R, I, J, S, SB, U 型指令. 
+
+|   |   |   |   |   |
+|---+---+---+---+---|
+|   |   |   |   |   |
 
 [fn:1] 在 x86 之中并非如此, 大部分指令都可以对内存之中的数据进行操作.
 比如说我们有一个 add 指令. 写为 
 
     add x1, x1, Imm(x2)
 
-这是说, 我们找到 Imm + x2 为地址的内存数据, 加上 x1 之后再加到 x1 上.
-
-
-
-
-
-
-
-
+(当然了, x1 并不是 x86 之中寄存器的名字)这是说, 我们找到 Imm + x2 为地
+址的内存数据, 加上 x1 之后再加到 x1 上.
 
 
 
