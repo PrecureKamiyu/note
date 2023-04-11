@@ -1,0 +1,104 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[width=12cm,left=2cm,top=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{bookmark}
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\setlength{\marginparwidth}{2in}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{thm}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Lemma}
+\newtheorem{lemma}[definition]{Corollary}
+
+\newtheorem{exam}[definition]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
+\newcommand{\ip}[2]{(#1,#2)}
+\font\ninerm=cmr9
+\begin{document}
+\noindent
+1. \(G\) 是有限的, 设 \(\vert G\vert  = n\), 证明对于任意的 \(G\) 的群元素 \(x\), 都有
+\[
+x ^{n} = 1
+\]
+\begin{proof}
+	因为群元 \(g\) 的生成子群的阶数为 \(g\) 的阶数, \(g\) 的阶数, 因此为 \(n\) 的因子. 这是说 \(n = k * \hbox{ord}\, g\), 
+	\(k \in \mathbb{N}\). 则 \(g ^{n} = (g ^{\text{ord}\, g})^{k} = 1 ^{k}  = 1\) 
+\end{proof}
+
+\noindent
+2. \(H, K \) 是 \(G\) 的两个子群, \(\vert H \vert = n\), \(\vert K \vert = m\). 证明, 如果说 \( (m , n) = 1\), 则 \(H \cap K = \{1 \}\) 
+\begin{proof}
+\(H \cap K\) 也是子群, 因此, 其阶数为 \(\vert H \vert\), \(\vert K\vert\) 的因子. 因为 \( (m , n) = 1\), 也就是说, 其公共的因子只有 \(1\). 那么 \(\vert H \cap K \vert = 1\), 那么 \(H \cap K = \{e \}\)
+\end{proof}
+
+
+
+\noindent 
+3. (1) \(\tau _{1}\) 的阶数为 \(4\), 因为当 \(\alpha ,\beta \) 是交换的时候 \(\alpha\beta \) 的阶数为 \(  \text{lcm}\, (\text{ord}(\alpha ) , \text{ord}(\beta))\), 而 \( ( i _{1} i_2 \dots  i _{k})\) 的阶数为 \(k\).
+
+(2) \(\tau_{2}\) 的阶数为 \(12\). 
+
+(3) \(\tau _{3} = (163) (245)\), 所以阶数为 \(3\). 
+
+(4)  \(\tau _{4} = (15) ( 27) (346)\), 所以阶数为 \(6\).
+
+
+\noindent 4. 我们有: 
+\[
+\sigma = 
+\begin{pmatrix}
+ 1 & 2 & 3& 4 & 5 & 6 & 7 \\ 
+ 4 & 2 & 1 & 3 & 7 & 6 & 5 
+\end{pmatrix}
+\]
+
+所以说 \(\sigma \tau\sigma ^{-1} =  ( 125) (26) ( 43)\). 并且我们有: 
+\[
+\sigma ^{-1} = 
+\left( 
+	{ 1 \atop 3}
+	{ 2 \atop 2}
+	{ 3 \atop 4}
+	{ 4 \atop 1}
+	{ 5 \atop 7}
+	{ 6 \atop 6}
+	{ 7 \atop 5}
+\right)
+\]
+那么 \(\sigma ^{-1}\tau\sigma =  ( 42 5) (26) ( 31)\)
+
+\centerline{\large introduction} 
+
+
+
+\begin{itemize}
+\item 什么是置换? 置换群之中的元素就是置换. 
+\item 什么是对称群? 集合 \(M\) 上的\textbf{所有}双射构成的群
+\item 什么是置换群? 集合 \(M\) 上的\textbf{部分}双射构成的群
+\item 置换长什么样? 使用一种不太高明的方法, 可能导致歧义的方法: 
+	\[
+		\tau = \left( { 1 \atop 1}{ 2 \atop 2}{ 3 \atop 3}{ 4 \atop 4}{ 5 \atop 5}  \right)
+	\]
+	\(\tau \) 是 \(1\).
+\item 还有什么表示方法? \((12)\) 表示 \(1\), \(2\) 位置上的元素互换. \((123)\) 表示 \(1\) 的值赋给 \(2\), \(2\) 的值赋给 \(3\), \(3\) 的值赋给 \(1\). 
+\item 为什么要这样表示? 因为简洁一点. 
+\item 置换有什么性质? 如果说两个置换 \((ijk), (abc)\), 之中没有相互相等的, 那么 \( (ijk), (abc)\) 是可交换的. 
+\item 还有什么性质? \((ijk)\) 的阶为 \(3\), 和其内部的数字个数相等. 
+\item 还还有什么性质? \( (i j k)\) 可以进行分解, 分解为两个对换. \((ij)(ik)\), 阅读顺序为左向右.
+\item 分解有什么性质? 设标准分解为, 将一个置换分解为对换的复合, 那么一个内部有奇数个数字的置换, 将会生成偶数个对换. 
+\item 分解还还有什么性质? 关于 \( \sigma  \tau\sigma ^{-1}\) 的值, 我们有简单计算. 
+\end{itemize}
+\end{document}

@@ -1,6 +1,6 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../main_part1.tex]{subfiles}
 \begin{document}
-\tableofcontents
+
 Contents: 
 \begin{itemize}
 \item [1] 无关文法 
@@ -10,41 +10,34 @@ Contents:
 \end{itemize}
 
 \section{上下文无关文法}\label{sec:def}
-考虑前面学过的, \(\{  0 ^{n} 1 ^{n} \mid n \in \mathbb{N}\}\) 不是正则表达式的语言. 
+\noindent 例~\ref{eg:ifelse} 告诉我们 \(L = \{ \, 0^{n}1^{n}\mid n \in \mathbb{N} \, \}\) 并不是一个正则语言. 但其为一个\textbf{上下文无关语言}. 并且很有意思的是 \(L = \{ \,  w \mid w \text{ 是正则表达式} \, \}\) 并不是一个正则语言, 也就是说, 正则语言, 并不能描述所有的正则语言.
 
 
 
 \begin{exam}[回文]
 if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 \end{exam}
-
 \begin{exam}[回文语言]
 	if \( L =  \{ w \in \Sigma ^{* } \mid w = w ^{R} \}\)
 	then L 是回文语言. 
 \end{exam}
-运用前面的知识, 可以使用 Pump lemma 证明 \(L\) 不是正则的. 可是那么我们该如何表示该语言呢? 
-
-可以使用递归方法定义: 
+我们可以使用递归方法定义回文语言, 正如我们定义一阶逻辑之中的命题一样: 
 \begin{itemize}
 \item [\textbf{1.}] 首先 \(\epsilon, 0 , 1\) 都是回文.
 \item [\textbf{2.}] if \(w\) 是回文, 那么 \( 0  w 0 , 1 w 1 \) 都是回文. 
 \end{itemize}
-数理逻辑之中, 命题的递归定义也是类似的, 这种生成语句的规则就是上下文无关文法. 
 
-
-
-
-\begin{equation}
-\left.
-\begin{aligned}
-&1. A \to\epsilon \\ 
-&2. A \to 0 \\ 
-&3. A \to 1 \\ 
-&4. A \to 0 A 0 \\ 
-&5. A \to 1A1
-\end{aligned}
-\right\}
-\end{equation}
+\begin{figure}
+	\centering
+	\begin{tabular}{cccl}
+		1. & \(P \) & \(\to\) & \(\epsilon\) \\ 
+		2. & \(P\) & \(\to\) & \(0\)\\
+		3. & \(P\) & \(\to\) & \(1\)\\
+		4. & \(P\) & \(\to\) & \(0P0\)\\
+		5. & \(P\) & \(\to\) & \(1P1\)\\
+	\end{tabular}
+	\caption{A context free grammar for palindromes}
+\end{figure}
 
 \begin{definition}[文法]
 	文法 \(G\) 是一个 \(4p\) 结构, \(G = (V , T , P , S ) \).
@@ -52,8 +45,8 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 	\begin{itemize}
 	\item [1]  \(V\) 是变量的集合. 
 	\item [2]  \(T\) 称为 terminators. 
-	\item [3]  \(P\) 是生产规则, 形式为 \(A \to\alpha \mid\beta\), 其中 \(\alpha\) 是 \( \epsilon \) 或者是 \(\alpha \in T \), 或者是 \(\alpha \in E \), 或者是 \(\alpha \in (V\cup T )^{*} \), \(\beta \) 也是如此. 
-	\item [4]  \( S \in V\), 表示的是开始的变量, 所有句型, 语句都是从 \( S\) 开始派生的. 
+	\item [3]  \(P\) 是生产规则, 形式为 \(A \to\alpha \mid\beta\), 其中 \(\alpha ,\beta \in (V \cup T ) ^{*}\) 
+	\item [4]  \( S \in V\), 表示的是初始变量.
 	\end{itemize}
 \end{definition}
 
@@ -64,19 +57,33 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 	\(L = \{  0 ^{ n} 1 ^{n} \mid n \in \mathbb{N} \} \)
 	和上面一个完全类似, 这里就懒得说了
 \end{exam}
+\begin{exam}
+	算术表达式, 比如说 \( a + b \), \( a * b + a\), 或者是有 \(0\) 或者 \(1\) 的式子, 比如说 \( 1 + a * 0\) 等等. 这些式子的语言就不是正则的. 在文法的构造之中用到了两个变量 \(E\), \(I\). 其中 \(E\) for Expression; \(I\).
+\end{exam}
 
 \subsection{归约和派生}
-\begin{definition}[文法派生的句型]
-\(\alpha \in (V \cup T ) ^{*} \) , \(\alpha\) 可能是派生出的语句. 
-因为考虑到 \(A \to t\), \(t \in T\), 或者是 \(A \to A t \) . 也就是说, 这个语句里面只会有 variable or terminator.
-\end{definition}
+\marginpar{inference 规约\\ 
+derivation 派生\\
+多步派生\\
+左派生和右派生}
+\begin{quotation}
+Inference is the construction of a string using productions of the grammar. It is a construction \textbf{from body to head}. Which is to say that we are given some strings that are known to be the string in the grammar, and then use them to construct 
+another string that is in the grammar. 
 
-\begin{definition}[归约]
-\end{definition}
-
+	Meanwhile, derivation is the construction \textbf{from head to body}, from the initial variable, we use productions in the grammar to substitute the variable with strings in \( (V\cup T) ^{*}\). 
+\end{quotation}
 \begin{definition}[派生]
 	\(\alpha ,\beta , \gamma \in (V \cup T ) ^{*}\) , if \(A \to \gamma\), then \( \alpha A\beta \underset{G}{\Rightarrow}\alpha \gamma\beta\). 
 \end{definition}
+
+\begin{definition}[文法派生的句型]
+\(\alpha \in (V \cup T ) ^{*} \) , \(\alpha\) 是变元可能派生出的语句. 比如说 \(A \to\alpha\), 那么 \(\alpha\) 就是一个句型, 而后如果 \(\alpha\) 继续派生的得到了 \(\beta\), 那么 \(\beta\) 也是一个句型. 
+\end{definition}
+
+\begin{definition}[归约]
+	以算术表达式为例, 如果说 \(w \) 是 \(I\), 那么 \(aw\), \(bw\), \(0w\), \(1w\) 也是 \(I\), 如果说 \(w' , w''\) 是 \(E\), 那么 \( w' \cdot w''\), \( w' + w''\), \( (w')\) 都是 \(E\). 这种自底向上的构造法就是归约. 
+\end{definition}
+
 \begin{exam}[派生的例子]
 % TODO 派生的例子, 见 ppt
 \end{exam}
@@ -85,18 +92,19 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 	\begin{equation}
 		\alpha_{1} \overset{i}{\underset{G}{\Rightarrow}} \alpha _{1 + i}
 	\end{equation}
-	对于一般的多步派生, 记为 \(\overset{*}{\underset{G}{\Rightarrow}}\)
+	对于一般的多步派生, 记为 \(\overset{*}{\underset{G}{\Rightarrow}}\). 特别地, 还有零步派生 \(\alpha \overset{*}{\Rightarrow}\alpha\).
 \end{definition}
 
 \begin{definition}[最左派生, 最右派生]
-	对于一个句型 \(\alpha\), 我们考虑只对最左(右)的变量进行派生, 这就是最左(右)派生. 记为 \(\underset{lm}{\Rightarrow}\) (\(\underset{rm}{\Rightarrow}\))
+	对于一个句型 \(\alpha\), 我们考虑只对最左(右)的变量进行派生, 这就是最左(右)派生. 记为 \(\underset{lm}{\Rightarrow}\) (\(\underset{rm}{\Rightarrow}\)). 为了取消歧义. 
 \end{definition}
 \begin{thm}[派生的\textbf{等价性}]
 对于任意一个派生, 都存在一个最左 (右) 派生与其对应
 \end{thm}
 
 \subsection{文法的语言}
-
+\marginpar{\(L = \{ \, w\mid 0,1 \text{ 数量相等} \, \}\)\\
+\(L = \{ \, a^{n}, b^{n} \mid n \in \mathbb{N} \, \}\)}
 \begin{definition}[语言]
 \begin{equation}
 	L (G) =  \{ w \mid w \in T ^{*} , S \overset{*}{\underset{G}{\Rightarrow}} w \}
@@ -129,8 +137,9 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 \begin{exam}
 	\(L = \{  w \mid 0,  1 \text{ 数量相等}\}\), G = \((V, T , P , S)\), 其中 \(V = \{ S \}, T = \{ 0 ,1 \}\), \(P \) 是下面这个:
 	\[
-	S \to 0S_{1} 1 S_{2} \mid 1 S_{1} 0 S_{2}  \mid \epsilon 
+	S \to 0S 1 S \mid 1 S 0 S  \mid \epsilon 
 \]
+如何证明其对应的语言确实是 \(L\)? 我们需要验证, 对于 \(L\) 之中的任意一个字符串 \(w\) 确实能够如此划分, 使得 \(w = 0 w' 1 w''\), 其中 \(w '\), \(w ''\) 都是 \(L\) 的. 使用分类讨论即可证明这一点. 
 \end{exam}
 
 \begin{exam}[算术表达式]
@@ -138,9 +147,10 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 
 
 \section{语法分析树}\label{sec:tree}
-
-语法分析树是表示派生过程的一个树
-
+\marginpar{sparse tree 分析树\\
+Pump Lemma 泵引理\\
+Sparse Tree 和 inference 和 derivation 之间的等价性}
+语法分析树是表示派生过程的一个树. 此后在 Context free language 的泵引理的证明之中要用到. 
 \begin{definition}[分析树]\label{def:分析树}
 定义为 
 \begin{itemize}
@@ -153,9 +163,8 @@ if \(w \in \Sigma ^{*} , w = w ^{R}\), then \(w\) 为回文
 \[
 X_{1} , X _{2}, \dots , X _{n}
 \]
-那么 \(A \to X _{1} X _{2}\dots  X_{n}\) 是一个产生式. 
+那么 \(A \to X _{1} X _{2}\dots  X_{n}\) 是一个产生式.\qed 
 \end{itemize}
-注意到空船. 
 \end{definition}
 % definition: 分析树
 
@@ -179,21 +188,25 @@ X_{1} , X _{2}, \dots , X _{n}
 % sec:tree
 
 \section{文法和语言的歧义性}\label{sec:文法和语言的歧义性}
+\marginpar{歧义性\\ 
+歧义性和算法}
+\noindent 算术表达式的语言中 \(L_{\text{exp}}\), 比如说 \(w = 1 * 1 + 1\), 有两个生成树. 此为\textbf{歧义}.
 
-对于 \(G\) 之中某些语句有不同的语法分析树, 则 \(G\) 是有歧义的.
-
-比如说对于算术表达式的文法 \(G_{exp}\) 之中 \(a \cdot a  +  a\) 之中, \textbf{有多种的阅读顺序}, 这就导致了歧义. 
 
 \begin{exam}[表示加法乘法的优先级]
-我们考虑 \(P\)
-\begin{equation}
-\begin{aligned}
-	P  = \{  &E \to E + T \mid T ,\\ 
-	  &T \to T \cdot F \mid F , \\
-	  &F \to (E) \mid I \}
-\end{aligned}
-\end{equation}
-% TODO
+	Fig~\ref{fig:exp} 展示了 \(G_{\text{exp}}\) 的产生式, \(G _{\text{exp}}\) 是歧义的, 因为存在一个语句有两个 Sparse Tree.
+\begin{figure}
+	\centering
+	\begin{tabular}{cccl}
+		1. & \(P \) & \(\to\) & \(\epsilon\) \\ 
+		2. & \(P\) & \(\to\) & \(0\)\\
+		3. & \(P\) & \(\to\) & \(1\)\\
+		4. & \(P\) & \(\to\) & \(0P0\)\\
+		5. & \(P\) & \(\to\) & \(1P1\)\\
+	\end{tabular}
+	\caption{A context free grammar for palindromes}
+	\label{fig:exp}
+\end{figure}
 \end{exam}
 
 \begin{definition}[固有歧义]\label{def:固有歧义}
@@ -203,6 +216,8 @@ X_{1} , X _{2}, \dots , X _{n}
 
 \begin{exam}
 	对于 \(L = \{ a ^{i }  b ^{j} c ^{k} \mid i =  j \text{ or } j = k \} \), \(L\) 是固有歧义的. 
+
+	需要知道的是, 固有歧义的证明非常繁琐, 甚至很难理解. 并且, 并不存在算法能够验证任意一个语言是固有歧义的. 
 \end{exam}
 
 % section 文法和语言的歧义性
@@ -211,6 +226,9 @@ X_{1} , X _{2}, \dots , X _{n}
 \label{sec:文法的化简和设计}
 % TODO 引入
 \subsection{化简}
+\marginpar{Useless \\
+\(\epsilon\)-productions\\
+unit productions}
 
 \begin{itemize}
 \item [1] 
@@ -281,7 +299,7 @@ X_{1} , X _{2}, \dots , X _{n}
 % subsubsection: \( \epsilon\) 产生式
 
 \subsubsection{单元产生式的消除}
-If \(A \Rightarrow B\) then \(A, B\) are equivalent. You may view \(A, B\) as a same variable and merge the relative productions.
+If \(A \overset{*}{\Rightarrow} B\) then \(A, B\) are equivalent. You may view \(A, B\) as the same variable and merge the relative productions.
 
 \begin{exam}
 	\begin{equation}

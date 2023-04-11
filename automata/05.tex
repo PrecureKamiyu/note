@@ -1,11 +1,13 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../main_part1.tex]{subfiles}
 \begin{document}
 
 \section{两种范式}
 \label{sec:两种范式}
+\marginpar{CNF\\
+GNF}
 范式有两种范式, 一种是乔姆斯基范式 (CNF), 另一种是格雷巴赫范式 (GNF). 
 
-\begin{definition}[CNF]
+\begin{definition}[\textbf{CNF}]
 \label{def:CNF}
 每一个不包含 \(\epsilon\) 的 \(G\) 的产生式都能够写为下面的形式: 
 \[
@@ -18,14 +20,19 @@
 % theorem CNF 
 
 \begin{proof}
-能够知道这个定理实际上是显然的. 对于 \(G\) 的一个产生式, 其写为 
+能够知道这个定理实际上是显然的. 步骤为: 
+\begin{enumerate}
+\item 将产生式的 terminate 消除
+\item 让产生式一次只多一个变量. 
+\end{enumerate}
+具体流程为, 给定一个产生式
 \[
 A \to X_1 X_2 X_3 \dots X_m 
 \]
-	其中 \(X _{i} \in V \cup\). 这个时候, 我们将其中的终结符进行这样的处理, \(X_{i}\) 换为 \(V_{i}\), \(V_{i}\) 是新引入的变量. 
-	并且引入产生式 \(V_{i} \to X _{i}\). 这就是将一个表达式 \(A \to X_1 \dots X_{m}\) 之中的终结符处理掉了. 
+	其中 \(X _{i} \in (V \cup T)\). 我们对其中的终结符进行这样的处理: \(X_{i}\) 换为 \(V_{i}\), \(V_{i}\) 是新引入的变量. 
+	且有产生式 \(V_{i} \to X _{i}\). 这就将 \(A \to X_1 \dots X_{m}\) 的终结符处理了. 
 	
-	我们将表达式 \(A \to X _{i}\dots\) 写为 \(A \to V_1 \dots V_{m}\), \(V_{i}\) 是变量. 我们再次引入变量, 将 \(A \to V_1\dots V_{m}\) , 拆解为多个产生式, 就是 \(A \to V_1 B_1\), \(B_1 \to V_2 B_2\)\dots 这样我们就能够将这个产生式拆分为多个满足乔姆斯基范式的形式的产生式
+	我们将表达式 \(A \to X _{i}\dots\) 写为 \(A \to V_1 \dots V_{m}\), \(V_{i}\) 是变量. 我们再次引入变量 \(B _{i}\), 将 \(A \to V_1\dots V_{m}\) , 拆解为多个产生式, 就是 \(A \to V_1 B_1\), \(B_1 \to V_2 B_2\)\dots 于是, \(A \to X_1 X_2 X_3 \dots X_{m}\) 就被被拆分为了多个产生式, 并且他们是属于乔姆斯基范式的. 
 \end{proof}
 
 \begin{exam}
