@@ -88,4 +88,88 @@ Mover, since pushdown automata are equivalent to context free grammar, you can e
 % subsection:The application of Pump Lemma 
 % section The Pump Lemma of grammar 
 
+\section{Shin chapter seven}
+\label{sec:Shin chapter seven}
+\begin{itemize}
+\item What is the outline of the chapter? 
+	\begin{itemize}
+		\item [1] We learn about how to get Chomsky Normal Form
+		which is very important for us to
+		prove the pump lemma of the 
+		context free language. 
+		\item [2] We talk about the pump lemma of the 
+		context free language, and we prove it. 
+		\item [3] We talk about the close property of 
+		the context free language. 
+	\end{itemize}
+
+\end{itemize}
+
+
+\subsection{Simplification and Chomsky Noraml Form}
+\begin{itemize}
+\item 	What is CNF? 
+
+The grammar with only the productions with the form 
+\[
+	A \to a \quad \text{ or } \quad A \to BC
+\]
+\item Why simplification? 
+
+Because we need it to convert the grammar into CNF. 
+
+\item What to simplify? 
+
+We need to eliminate \textbf{useless} symbols and 
+\(\boldsymbol{\epsilon}\)\textbf{-productions} and 
+\textbf{unit productions}. 
+
+\item What is \textbf{useful} symbols? 
+
+Symbols that are used in the derivation of a string of the 
+language are \textbf{useful}, that is to say if a symbol is 
+useless, it shall not appear during the derivation and thus 
+is indeed useless. 
+
+\item What is a \textbf{generating} symbol? 
+
+Symbols that suits that \(A \to w\), where \(w\) is in \(T^{*}\)
+are generating symbols. 
+
+\item What is a \textbf{reachable} symbol?
+
+Symbols that can be derived from the start variable \(S\). 
+
+\item What is the procedure to get rid of the 
+useless symbols? 
+
+\textbf{First}, get rid of non-generating symbols. \\
+\textbf{Next}, get rid of non-reachable symbols.
+
+\item Do we have to first get rid of non-generating symbols and then next? 
+
+Yes. You may get wrong answer otherwise. 
+
+\item Can you prove that? 
+
+Yes. Let us we have a grammar \(G\), and we employ 
+the procedure one, we have \(G _{2}\), and after 
+next procedure, we have \(G_{1}\). We need to 
+prove that \(V _{1} \cup T_{1} \) are all useful. 
+
+First given a symbol in \(V _{1} \cup T _{1}\), \(X\). It 
+should be a symbol after the second procedure, so it should 
+be a symbol that is reachable in \(G _{2}\). And we can 
+easily notice that \(X\) is also generating in \(G\). 
+		That is to say \(X \mathop{\Rightarrow}\limits_{G} w\). And we have that \(X \mathop{\Rightarrow} \limits_{G_{2}} w\). (Since we know that \(X\) is generating in \(G\)).
+
+		From the fact that \(X\) is reachable in \(G_{2}\), that is to say \(S \mathop{\Rightarrow} \limits_{G_{2}}\alpha X\beta \), we know that all the symbols that is used in 
+		\(S \mathop{\Rightarrow}\limits _{G_{2}}\alpha X\beta\) are reachable and thus \(S \Rightarrow _{G_{1}}\alpha X\beta  \) is true in \(G _{1}\)  since the second procedure 
+		does not eliminate the symbols that used in the 
+		derivation (that is because they are reachable in \(G_{2}\)). Thus we have proven that if \(X \in V_{1} \cup T_{1}\), then we have that \(S \Rightarrow\alpha X\beta \Rightarrow\alpha w\beta\)
+\end{itemize}
+
+
+% subsection:Simplification and Chomsky Noraml Form 
+% section Shin chapter seven 
 \end{document}
