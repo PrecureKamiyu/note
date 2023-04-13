@@ -567,3 +567,6 @@ sub 的操作. 此时就别无选择, 得将 sub 指令往后移动一个阶段,
 ** 数据冒险
 ** 控制冒险
 
+
+
+Some reference about the 
