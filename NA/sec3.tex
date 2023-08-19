@@ -1,0 +1,59 @@
+\section{牛顿法}
+\subsection{定义和指标}
+\begin{frame}
+简单来说, 求 \(f (x)\) 的零点, 牛顿法就是
+\[
+	x _{k+1} = x _{k} - \frac{f (x_{k})}{f ' (x_{k})}
+\]
+\end{frame}
+\begin{frame}
+\centering
+\begin{tikzpicture}[thick,yscale=0.6, xscale = 0.75]
+% Axes
+\draw[-latex,name path=xaxis] (-1,0) -- (12,0) node[above]{\large $x$};
+\draw[-latex] (0,-2) -- (0,8)node[right]{\large $y$};;
+% Function plot
+\draw[ultra thick, orange,name path=function]  plot[smooth,domain=1:9.5] (\x, {0.1*\x^2-1.5}) node[left]{$F(x)$};
+% plot tangent line
+\node[violet,right=0.2cm] at (8,4.9) {\large tangent};
+\draw[gray,thin,dotted] (8,0) -- (8,4.9) node[circle,fill,inner sep=2pt]{};
+\draw[dashed, violet,name path=Tfunction]  plot[smooth,domain=4.25:9.5] (\x, {1.6*\x-7.9});
+% x-axis labels
+\draw (8,0.1) -- (8,-0.1) node[below] {$x^{(k)}$};
+\draw [name intersections={of=Tfunction and xaxis}] ($(intersection-1)+(0,0.1)$) -- ++(0,-0.2) node[below,fill=white] {$x^{(k+1)}$} ;
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+为了知道牛顿法的收敛阶, 我们使用前面的那个定理, 考察 \(\varphi ^{(j)}\) 是否为零. 已知 \( \varphi (x) = x - f(x) / f' (x)\), 我们有
+\[
+	\varphi '(x) = \frac{f(x) f '' (x)}{[f '(x) ] ^{2}}
+\]
+这里分情况讨论, 若是 \( \alpha\) 为 \(f\) 的单根, 也就是 \( f( \alpha) = 0\), \( f ' (\alpha) \ne 0\), 那么 \( \varphi ' (\alpha ) =0\), 也就是说, 收敛阶至少为 \(2\).
+\end{frame}
+\begin{frame}
+如果说 \( \alpha\) 是 \(f\) 的重根, 也就是 \( f(\alpha ) = 0\), \( f' (\alpha) = 0\), 我们假设 \( \alpha\) 是二重的, 那么 \( f ''( \alpha) \ne 0\), 然后, 为了求出 \( \varphi ' (\alpha)\) 的值, 应当使用洛必达法则
+\[
+\varphi ' (\alpha) = \frac{f'(x) f''(x) + f(x) f'''(x)}{2 f'(x) f''(x)} = \frac12 + \frac{f(x) f'''(x)}{2 f'(x) f''(x)}
+\]
+对于后面的一坨依然能够使用洛必达法则, 总之 \( \varphi '( \alpha)\) 是不为\(0\)的. 我们知道了如果 \( \alpha\) 是 \(f\) 的单根, 则牛顿法的收敛阶是 \(1\).
+\end{frame}
+\subsection{牛顿法的定理}
+
+\begin{frame}
+\begin{thm}
+若
+	\begin{itemize}
+	\item \(f (a ) f(b) < 0\)
+	\item \(f '(x) \)
+	\item 凹凸性不发生变化, 也即, \(f ''(x)\) 不变号
+	\item \(f ''(x_{0}) f (x _{0}) > 0\)
+	\end{itemize}
+	那么牛顿法全局收敛.
+\end{thm}
+\end{frame}
+
+\subsection{例子}
+\begin{frame}
+使用牛顿法求解 \(a\) 的倒数 \(1/a\), 计算过程之中不能出现除法, 并且此方法在 \((0, 2/a)\) 上全局收敛.
+\end{frame}

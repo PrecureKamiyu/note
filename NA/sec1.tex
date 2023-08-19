@@ -1,0 +1,47 @@
+\section{基础}
+\subsection{根的概念}
+
+\begin{frame}
+		简单来说, \(f(x) = 0\) 的解就是根.
+
+		在这一章之中, 对一维非线性方程进行根的近似求解.
+\end{frame}
+
+\subsection{根的指标}
+\begin{frame}
+		\noindent \textbf{根的重数} \quad 设 \( f (x) = 0\) 的根为 \(\alpha\), 我们说 \(\alpha\) 的重数是 \(m\),
+		如果 \(f (x) = (x -\alpha ) ^{m} g (x)\) 且 \(\alpha\) 不是 \( g(x)\) 的根. 
+
+		如果 \(m = 1\) 那么 \(\alpha\) 是单根, 否则 \(\alpha\) 是重根.
+
+		重根具有这样良好的性质, 若是 \( \alpha\) 是 \(m\) 重的, 那么我们有:
+		\[
+		\begin{cases}
+				f^{(j)} (\alpha) = 0, & \quad j = 1 ,\cdots , m  -  1 \\
+				f^{m} (\alpha) \ne 0
+		\end{cases}
+		\]
+\end{frame}
+
+\subsection{求法}
+\begin{frame}
+		这一章介绍这几种方法:
+		\begin{itemize}
+			\item 二分法
+			\item 迭代法 
+			\begin{itemize}
+				\item 不动点法
+				\item Newton 法
+				\item 多点迭代法(这个随便讲讲)
+			\end{itemize}
+		\end{itemize}
+\end{frame}
+
+\subsection{二分法}
+\begin{frame}
+		\textbf{二分法} \quad 二分的思想我们是熟悉的, 早在学习快速排序的时候我们接触了这个思想, 首先给定了一个区间 \([a , b]\), \(f\) 在这个区间上是单调的, 只有一个根, 则区间 \( [a , \frac{ a + b } 2]\) 和 \([ \frac{a + b } 2, b]\) 之中只有一个区间有零点, 我们找出来并且命名为 \( [a_{1} , b_{1} ]\), 我们能够得到一个区间的序列:
+		\[
+				[a , b] \supset [a_{1}, b_{1}] \supset [a _{2} , b_{2} ] \cdots 
+		\]
+		并且这个区间的长度趋于 \(0\), 也就是 \( \lim _{k \to \infty} [ a_{k} , b_{k}]\) 之中只会有一个数字\footnote{这是一个定理}, 可知这个算法收敛.
+\end{frame}

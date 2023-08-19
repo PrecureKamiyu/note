@@ -1,0 +1,20 @@
+\section{其它方法}
+\subsection{简化牛顿法}
+\begin{frame}
+为了避免计算 \( f'(x)\), 因为有点难算, 于是我们用常数 \(C\) 代替, 也就是
+\[
+x _{k+1} = x_{k} - \frac{f(x_{k})}{C}
+\]
+一般我们取 \(C\) 为 \(f ' (x _{0})\).
+
+\end{frame}
+\subsection{牛顿下山法}
+\begin{frame}
+我们引入标量 \( \lambda\) 来优化性能, 也即
+\[
+x _{k+1} = x _{k} - \lambda \frac{f(x_{k})}{f'(x_{k})}
+\]
+\(\lambda\)的取值是我们定的, 虽然不知道怎么定, 但是这个方法能够优化性能, 可以使原来不收敛的方法变得收敛.
+\end{frame}
+\subsection{多点迭代法 弦截法}
+% 定义 指标 和其他的方法的性能比较

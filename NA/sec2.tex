@@ -1,0 +1,129 @@
+\section{迭代法}
+\subsection{迭代法基础}
+
+\begin{frame}
+		简单来说, 迭代法就是给定了初值 \(x_{0}\) 和迭代公式
+		\[
+				x_{k+1} = \varphi (x _{k})
+		\]
+		来生成一个逼近根 \(\alpha\)的序列 \(\{ \, x_{k} \, \}\) 的方法, 也就是数列满足
+		\[
+				\lim _{k \to \infty} x_{k} =\alpha
+		\]
+		生成的过程描述为\\
+		\textbf{Basic}: 给定一个初始值 \(x_{0}\)\\
+		\textbf{Iteration}: 使用 \( \varphi\) 计算 \(x_1\), 也即 \(x_1 = \varphi(x_0)\), 以此类推
+\end{frame}
+\begin{frame}
+		迭代法有很多, 形如 \(x_{k+1} = \varphi (x_{k})\) 的称为单点迭代, 形如
+		\[
+				x_{k+1} = \varphi\underbrace{(x _{k}, x_{k-1}, \cdots , x_{k + n -1})}_{\text{n args}}
+		\]
+		的称为多点迭代法.
+
+		\smallskip
+		每次迭代之中迭代方程都不发生改变的称为定常迭代, 否则是非定常迭代.
+\end{frame}
+
+\subsection{单点迭代法}
+\begin{frame}
+我们要求 \(f (x)\) 的根, 也就是求方程 \(f (x) = 0\) 的解, 我们将方程没有损失地化为 \( x = \varphi (x)\) 的形式, 将 \( \varphi\) 用作迭代, 这就是 Picard 单点迭代法.
+
+\smallskip
+		由 \(f (x) = 0\) 到 \(x = \varphi (x)\) 的方法不止一种, 不同的方法之间属性不一定相同.
+\end{frame}
+
+\subsection{迭代法的指标}
+\begin{frame}
+		\([a, b]\) 默认为定义域
+\begin{defi}[全局收敛]
+		以 \([ a, b]\) 之中的任意值为初值, 产生的序列都收敛于 \(f\) 的根 \(\alpha\), 则说这个收敛法是全局收敛的.
+\end{defi}
+\begin{defi}[局部收敛]
+		将上面的 \([a, b]\) 更换为 \(\alpha\) 附近的一个领域 \([\alpha -\delta ,\alpha +\delta]\), 若成立, 则是局部收敛的.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+		\begin{defi}[收敛速度]
+		误差为 \(e _{k} =\vert \alpha - x_{k}\vert\), 我们能够得出收敛阶 \(p\), 根据 \(e _{k}\) 变小的速度来判断: \(p\) 满足
+				\[
+						\lim_{k\to \infty} \frac{\vert e_{k+1} \vert}{\ \vert e_{k} \vert ^{p}} = C \ne 0
+				\]
+		特别地, 如果 \(p = 1\) 那么称这个收敛法是线性收敛的. 如果说 \(p = 2\) 则是平方收敛的.
+		\end{defi}
+\begin{defi}[收敛效率]
+		\(\it EI\) 记为收敛效率, 有
+		\[
+				{\it EI} = p ^{1/ \theta}
+		\]
+		其中 \(\theta\) 指的是计算量, 应该是计算 \(f (x)\) 的次数.
+\end{defi}
+\end{frame}
+
+\subsection{迭代法的定理}
+\begin{frame}
+定理的证明全部不用掌握, 但是需要会应用, 记住例子是如何使用它们的即可.
+
+\begin{thm}
+		如果
+		\begin{enumerate}
+				\item \(\forall x, \varphi (x) \in [a ,b ]\)
+				\item \(\exists L < 1\forall x\ \vert \varphi ' (x) \vert \le L < 1\)
+		\end{enumerate}
+		则 \( \varphi\) 的收敛法是全局收敛
+\end{thm}
+\begin{proof}
+不用管
+\end{proof}
+\end{frame}
+
+\begin{frame}
+	\begin{thm}
+		如果
+		\begin{enumerate}
+			\item 同上
+			\item \(\exists L < 1\), \(\forall x _{1} , x_{2} \in [a , b]\), \( \vert \varphi (x_{1}) - \varphi(x_{2}) \vert \le L \vert x_{1} - x_{2} \vert\)
+		\end{enumerate}
+		则说迭代法是全局收敛的.
+	\end{thm}
+	并且我们还有误差估计式:
+	\[
+		\vert\alpha - x_{k}\vert \le \frac{L}{1 - L} \vert x_{k} = x_{k-1} \vert
+	\]
+	以及能够用求和和放缩得到
+	\[
+		\vert \alpha - x_{k} \vert \le \frac{L ^{k}}{1 - L} \vert x _{1} - x_{0} \vert
+	\]
+\end{frame}
+
+\begin{frame}
+	\begin{thm}[局部收敛性]
+		道理是类似的
+	\end{thm}
+	\begin{thm}[重根]
+		设根是 \(\alpha\), \(\alpha\) 的收敛阶为 \(p\) 当且仅当下面的式子成立:
+		\[
+			\begin{cases}
+			\varphi^{(j)} (\alpha) = 0 , \quad & j = 1 , \cdots , p - 1 \\
+			\varphi ^{(p)} (\alpha) \ne 0
+			\end{cases}
+		\]
+	\end{thm}
+\end{frame}
+
+\subsection{例子}
+\begin{frame}
+我们有 \(F (x) = x + c ( x^{2} - 3)\), 问 \(c\) 取什么值的时候迭代法 \[x_{k+1} = F (x_{k}) \] 有局部收敛性?
+\begin{proof}[解]
+我们使用前面的定理能够知道, 我们只需要 \(F\) 在 \(\alpha\) 处的导数小于 \(1\) 即可. 明显 \(x = F(x)\) 有两个解 \(\alpha _{1} = - \sqrt 3\), \(\alpha _{2} = \sqrt 3\), \(F ' (x) = 1 + 2 cx\) 在这两处的值为
+\[
+F'(\alpha_1) = 1 - 2 \sqrt 3 c , \quad F '(\alpha_{2})  = 1  + 2 \sqrt 3 c
+\]
+让它们的绝对值小于 \(1\) 就行.
+\end{proof}
+\end{frame}
+
+\begin{frame}
+我们有迭代式 \( x_{k+1} = 4 - 2 ^{x_{k}}\)
+\end{frame}

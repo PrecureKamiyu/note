@@ -1,0 +1,43 @@
+\documentclass{ctexbeamer}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usetikzlibrary{intersections,calc}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Thm}
+\newtheorem{defi}{Def}
+\setmathfont{Latin Modern Math}
+\title{数值分析第一章}
+\usetheme{Warsaw}
+\usecolortheme{seahorse}
+
+\addtobeamertemplate{frametitle}{\let\insertframetitle\insertsubsectionhead}{}
+\makeatletter
+  \CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+  \renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+\makeatother
+
+\AtBeginSection[]{
+\begin{frame}
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+\usebeamerfont{title}\insertsectionhead\par%
+\end{beamercolorbox}
+\vfill
+\end{frame}
+}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\input sec1.tex
+\input sec2.tex
+\input sec3.tex
+\input sec4.tex
+
+\end{document}
