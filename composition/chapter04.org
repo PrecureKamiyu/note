@@ -499,7 +499,7 @@ offset再接到寄存器单元上, 那么寄存器的输入就有三种情况了
 
 ALU 不能同时进行两对 A, B 的运算, 这大概就是结构冒险. 
 
-**** 数据冒险
+**** 数据冒险 (data hazard)
 
 我们有下面这个指令: 
 
@@ -527,9 +527,11 @@ ALU 不能同时进行两对 A, B 的运算, 这大概就是结构冒险.
 
 这样就拖慢了流水线的执行效率. 面对这样的数据冒险, 一种简单的解决方法称
 为 *前递* (forward), 简单来说, 就是在第一条指令的运算阶段结束之后, 直
-接将结果传入 sub 指令的运算阶段. 前递并不能解决所有问题, 比如说我们将
-add 指令替换为 load 指令. 那么仅有当 Mem 阶段结束之后, 才有可能进行
-sub 的操作. 此时就别无选择, 得将 sub 指令往后移动一个阶段, 再使用前递.
+接将 ALU 运算的结果传入 sub 指令的运算阶段. 
+
+前递并不能解决所有问题, 比如说我们将add 指令替换为 load 指令. 那么仅有
+当 Mem 阶段结束之后, 才有可能进行sub 的操作. 此时就别无选择, 得将 sub
+指令往后移动一个阶段, 再使用前递. 参见下图.
 
 #+CAPTION: 使用了前递之后, 流程就和正常一样. 
 |-----+----+----+-----+-----+-----+----|
@@ -542,19 +544,19 @@ sub 的操作. 此时就别无选择, 得将 sub 指令往后移动一个阶段,
    ld x1, 0(x2)
    sub x2, x2, x1
 
-#+CAPTION: 将 add 换为了 ld
+#+CAPTION: 将 add 换为了 ld, 理想上的流水线
 |-----+----+----+-----+-------+-----+----|
 | ld  | IF | ID | ALU | ~Mem~ | WB  |    |
 | sub |    | IF | ID  | ~ALU~ | Mem | WB |
 |-----+----+----+-----+-------+-----+----|
 
-只有当 Mem 结束之后, 才能处理数据, 才可能进行 sub 的 ALU 阶段. 那么,
-此时, 如果说不能调换指令顺序来消除冒险的话, 无可奈何只能将 sub 延迟一
-个单位. 这个操作称为 *流水线停顿*, 也称 *bubble*, 可以理解为, ld 指令
-和 sub 指令之间塞入了一个 bubble 指令, 此指令是一个空指令, 什么都不作
-的指令. 
+只有当 Mem 结束之后, 才能处理数据, 才可能进行 sub 的 ALU 阶段. 那么,此
+时, 如果说不能调换指令顺序来消除冒险的话, 无可奈何只能将 sub 延迟一个
+单位. 这个操作称为 *流水线停顿* (pipeline stall), 也称 *bubble*, 可以
+理解为, ld 指令和 sub 指令之间塞入了一个 bubble 指令, 此指令是一个空指
+令, 即什么都不作的指令.
 
-#+CAPTION: 流水线停顿, BUBBLE
+#+CAPTION: 流水线停顿, BUBBLE, Mem 阶段结束之后, 立即将数据传到 ALU 中
 |--------+-----+-----+-----+-----+-----+-----+----|
 | ld     | IF  | ID  | ALU | Mem | WB  |     |    |
 | BUBBLE |     | bub | bub | bub | bub | bub |    |
@@ -564,9 +566,107 @@ sub 的操作. 此时就别无选择, 得将 sub 指令往后移动一个阶段,
 书上 Example: 首先我们可以找出前递消除的冒险, 然后再找出前递无法消除的
 冒险, 我们可以调换这些指令的顺序来解决冒险    
 ** 流水线数据通路和控制
-** 数据冒险
-** 控制冒险
+
+流水线的通路过程是复杂的, 届时我们会知道. 
+
+** TODO 数据冒险 (data hazard)
+*** TODO fill in the blanks 
+
+   ld x1, 0(x2)
+   sub x2, x2, x1
+
+此组合构成了数据冒险, 因为我们必须在 ld 的 Mem 阶段结束之后才能将数据
+传输到 sub 阶段中的 ALU 阶段. 
+
+#+CAPTION: 流水线停顿, BUBBLE, Mem 阶段结束之后, 立即将数据传到 ALU 中
+|--------+-----+-----+-----+-----+-----+-----+----|
+| ld     | IF  | ID  | ALU | Mem | WB  |     |    |
+| BUBBLE |     | bub | bub | bub | bub | bub |    |
+| sub    |     |     | IF  | ID  | ALU | Mem | WB |
+|--------+-----+-----+-----+-----+-----+-----+----|
 
 
 
-Some reference about the 
+** DONE 控制冒险
+   CLOSED: [2023-04-14 Fri 00:46]
+
+   - State "DONE"       from "TODO"       [2023-04-14 Fri 00:46]
+
+This section have two parts: 
+
+1. The forward 
+2. The prediction 
+
+*** Forward 
+
+Forward is to say that we treat the B instructions
+simultaneously. That is to say, we
+
+1. Calc PC + offset 
+2. Decode the instructions 
+3. Tell if jump
+
+At the same stage: ID. You may guess that it has a harsh hardware
+requirement.
+
+*** prediction 
+branch direction prediction is some *structures* to predict the branch
+is taken or not, to mitigate the effect caused by branch
+instructions. 
+
+There are two kinds of branch direction prediction. They are: 
+
+1. Static branch prediction 
+2. Dynamic branch prediction
+
+The first kind is achieve by software or something like "we always
+predict that the branch is not taken". 
+
+The second kind is achieved by some structures in the CPU. 
+
+**** Static branch prediction
+
+1. We say that the branch is always taken or is not taken. 
+2. Heuristic depending on the instruction
+3. Hint bits in the ISA. 
+
+**** Dynamic branch prediction
+
+1. We use bimodal predictors. 
+
+We use one bit to write down the previous result. That is if the
+branch now is taken, then we write 1 to the table. If the branch is
+now taken, then we write 0 to the table. 
+
+If the table is 1, then we predict that the branch is to be taken. 
+If the table is 0, then we predict that the branch is not to be
+taken. 
+
+It looks very easy. But performs badly under certain circumstances. 
+
+2. We use bimodal prediction with hyseresis. 
+
+That is a two bit table. If the branch is taken, then the table is
+added with 1. If not, the table is added with -1. 
+
+If the first bit of the table is 1, we predict that it happens. 
+If the first bit of the table is 0, we predict that it does not
+happen. 
+
+
+
+3. We use two-level adaptive branch prediction. 
+
+That is we use a shift register to store the history. If the history
+length is pretty long and it have been run for a while, then it can
+predict the branch result. 
+
+It works better when the loop of the branch is short. 
+
+**** Hybrid or tournament branch prediction
+*** TODO BTB
+*** Some references
+https://www.cs.umd.edu/~meesh/411/CA-online/chapter/dynamic-branch-prediction/index.html
+https://www.cs.cmu.edu/afs/cs/academic/class/15740-s17/www/lectures/L19-BranchPrediction.pdf
+https://people.engr.tamu.edu/djimenez/taco/utsa-www/cs5513-fall07/lecture4.html
+** TODO Exceptions and interruptions

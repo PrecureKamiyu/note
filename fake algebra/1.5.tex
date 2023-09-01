@@ -3,13 +3,13 @@
 \chapter{Normal subgroups and quotient groups}
 \section{What is quotient groups}
 \begin{definition}[Formal subgroups]\label{def:Normal subgroups}
-\(N\) is subgroup of \(G\), and if \(N\) suit that \(\forall g \in G, g N = N g\), viz., \( N = g ^{-1} N g\),
-then \(N\) is a normal group. 
+	\(N\) is subgroup of \(G\), and if \(N\) suit that \(\forall g \in G, g N = N g\), viz., \( N = g ^{-1} N g\),
+	then \(N\) is a normal group. 
 \end{definition}
 % definition: Normal subgroups 
 Normal groups have a property that 
 \[
- N g_1 N g_2 = g_1 N N g_2  = g_1 N g_2 = N g_1 g_2
+	N g_1 N g_2 = g_1 N N g_2  = g_1 N g_2 = N g_1 g_2
 \]
 Consequently, if we have \( \{ \, [g] \mid g \in G \,\} \), where \(g_1 \sim g_2\) iff \( N g_1 = N g_2\). And then, 
 the above property says that \( \{ [g]\}\) is closed under group operation. And furthermore, \(\{ [g]\}\) is a group if we define the operation between \( [ g_{1}] , [g _{2}]\) as \( [g _{1} ] [g_{2}] = [g _{1} g _{2}]\) 
@@ -19,39 +19,39 @@ the above property says that \( \{ [g]\}\) is closed under group operation. And 
 \end{definition}
 % definition: Quotient groups 
 \begin{definition}[Conjugate]\label{def:Conjugate}
-Given a group member \(g\) the conjugation of \(g\) is defined as \( h \mapsto g ^{-1} h g\). If \(\exists g \in G\)
-s.t. \(h_1 = g ^{-1} h_2 g \), then we say that \(h_1\) and \(h_2\) are conjugate. The relation of conjugate is 
-a equivalence relation.
+	Given a group member \(g\) the conjugation of \(g\) is defined as \( h \mapsto g ^{-1} h g\). If \(\exists g \in G\)
+	s.t. \(h_1 = g ^{-1} h_2 g \), then we say that \(h_1\) and \(h_2\) are conjugate. The relation of conjugate is 
+	a equivalence relation.
 \end{definition}
 % definition: Conjugate 
 
 \begin{exam}
-While it remain a little bit ambiguous that we choose normal subgroups to construct 
-quotient group, we can have a look at quotient in linear space and topological space 
-to further understand what quotient is.
+	While it remain a little bit ambiguous that we choose normal subgroups to construct 
+	quotient group, we can have a look at quotient in linear space and topological space 
+	to further understand what quotient is.
 
-In linear algebra, every subspace of a linear space is a normal group if we treat it as group. 
-Given a linear space \(V\) and a subspace \(W\), we have that 
-\[
-\dim V \kern -2pt/\kern 1pt W = \dim V - \dim W
-\]
-It seem that the subspace \(W\) is eliminated and that the space which is orthogonal to \(W\) is isomorphic to 
-\(V \kern -2pt/\kern 1pt W \). 
+	In linear algebra, every subspace of a linear space is a normal group if we treat it as group. 
+	Given a linear space \(V\) and a subspace \(W\), we have that 
+	\[
+		\dim V \kern -2pt/\kern 1pt W = \dim V - \dim W
+		\]
+		It seem that the subspace \(W\) is eliminated and that the space which is orthogonal to \(W\) is isomorphic to 
+		\(V \kern -2pt/\kern 1pt W \). 
 
-Consider the topological space \(X\), and given a equivalence relation of \(X\), we can construct a quotient space 
-	\(Y\), where every member is the equivalence class of the relation. \textbf{And} the family of open sets \(\mathscr F'\) suit that for the function \(\pi \colon O \mapsto \bigcup_{ x \in O} [x]\), 
-	we have that \(\pi (O)\) is an open set in \(Y\) iff \(O\) is an open set in \(X\). 
+		Consider the topological space \(X\), and given a equivalence relation of \(X\), we can construct a quotient space 
+		\(Y\), where every member is the equivalence class of the relation. \textbf{And} the family of open sets \(\mathscr F'\) suit that for the function \(\pi \colon O \mapsto \bigcup_{ x \in O} [x]\), 
+		we have that \(\pi (O)\) is an open set in \(Y\) iff \(O\) is an open set in \(X\). 
 
-	The quotient space of topological space \(X\) is also called identical space. That is to say, we glue the 
-	members in a class into a piece. And that is what we called quotient.  
+		The quotient space of topological space \(X\) is also called identical space. That is to say, we glue the 
+		members in a class into a piece. And that is what we called quotient.  
 
-	So what is happening here is that the algerbric structure is preserved after we view a collection of elements as one 
-	element. 
-	\qed
+		So what is happening here is that the algerbric structure is preserved after we view a collection of elements as one 
+		element. 
+		\qed
 \end{exam}
 % section: What is quotient groups
 
-\section{A basic homomorphism theorem of quotient}
+\section{A Basic Homomorphism Theorem of Quotient}
 \label{sec:A basic homomorphism theorem of quotient}
 Next we talk about an important theorem about quotient groups, before which, we first introduce some 
 definitions.
@@ -59,33 +59,50 @@ definitions.
 	Given a homomorphism \(f \colon G \to G '\) , the kernal of \(f\) (denoted as \(\ker f\)), is defined as 
 	\[
 		\ker f = f ^{-1} (1) \subseteq G
-	\]
-	and it is easy to show that \(\ker f\) is a normal subgroup of \(G\).
+		\]
+		and it is easy to show that \(\ker f\) is a normal subgroup of \(G\).
 \end{definition}
 % definition: kernal 
 \noindent \textbf{Exercise:} Prove that \(\ker f\) is a normal subgroup of \(G\).
 \medskip
 
 \begin{definition}[Image]\label{def:Image}
-The image of \(f\) is defined as 
-\[
-	\text{Im}\ f = \{ \, f (g) \mid g \in G\,\}
-\]
-The image of \(f\) is less important than kernal, since \verb|\ker| is a macro provided by \LaTeX\ while that \verb|\Im| or \verb|\im| does not exist.
+	The image of \(f\) is defined as 
+	\[
+		\text{Im}\ f = \{ \, f (g) \mid g \in G\,\}
+		\]
+		The image of \(f\) is less important than kernal, since \verb|\ker| is a macro provided by \LaTeX\ while that \verb|\Im| or \verb|\im| are not.
 \end{definition}
 % definition: Image 
 Let us state the theorem
 \begin{thm}[a basic theorem of quotients]
-\label{a basic theorem of quotients}
+	\label{a basic theorem of quotients}
 	Given a homomophism \(f \colon G \to G'\), we define \(\bar f\) as that \( \bar f ([g]) = f(g)\), and we have that 
 	\[
 		\bar f \colon G/ \ker f \to \text{Im}\ f
-	\]
-	is an isomorphic.
+		\]
+		is an isomorphic.
 \end{thm}
 % theorem a basic theorem of quotients 
 \begin{proof}
 	We shall prove that \(\bar f\) is a homomorphism and also a bijective. Then we prove that \(\bar f\) is isomorphism.
+\end{proof}
+Is the basic homomorphism theorem really useful? Actually not. It is a trivial fact that we already know. It is better to view the quotient groups in categorical way. Why? After you know about the universal properties, you shall know that the theorem is the case of quotient in category \(\textbf{Grp}\). You know the subgroups just happen to be normal groups, because the kernal of a homo \(\varphi\) is normal.
+
+Anyway, it is important to use the theorem, while one may be not needed to use it.
+\begin{exam}
+	\(K_{4}\) is called Klein group. The definition is omitted here. One shall prove that 
+	\[
+		S_{4}/K_{4} \simeq S_{3}
+	\]
+	by using the theorem or by proving  that \(S _{3}\) is the \(R\) of \(S_{4}\) with the concern of \(K_{4}\).
+\end{exam}
+\begin{proof}
+	Let \(K_{4} = \{ \, (1), (12), (34),(12)(34) \, \}\), and consider \(K _{4}\) and \( S_{3}\) as the subgroups of \(S _{4}\). And it is clear that
+	\[
+	\forall a, b \in S_{3}, a b^{-1} \in K _{4} \iff ab ^{-1} = 1
+	\]
+and \( a b ^{-1} = 1\), we have that \(a  =  b\), so \( S_{3} \subseteq R\), where \(R\) is the represention of \(S _{4}\) with the concern of \(K _{4}\). And because that \(\vert S _{3} \vert = 6\), and that \(\vert R \vert = \vert S_{4}\vert \big/ \vert K_{4} \vert = 6\). Thus, \(R = S_{3}\). Then the proof is complete. 
 \end{proof}
 % section A basic homomorphism theorem of quotient 
 \end{document}

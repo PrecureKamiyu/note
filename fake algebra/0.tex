@@ -1,46 +1,45 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\chapter{TODO}
+\chapter{Some classic groups}
 \section{cyclic group}
 \label{sec:cyclic group}
 
-
-
 \begin{itemize}
-\item 
-What is cyclic group? 
+	\item
+		What is cyclic group? 
 
-If \(\exists q \) s.t. \( \langle q \rangle = G\), then \(G\) 
-is a cyclic group. 
-\item What is \( \langle q \rangle\)? 
+		If \(\exists q \) s.t. \( \langle q \rangle = G\), then \(G\) 
+		is a cyclic group. 
+	\item What is \( \langle q \rangle\)? 
 
-It is the smallest group that contains the \(q\). 
-And we can prove that \( \langle q \rangle \) is equal to 
-\[
-	\{ \, \dots q ^{-1} , 1 , q  , q^{2} , \dots \, \}
-\]
-\item 
-	Can the idea of it be generalized? 
+		It is the smallest group that contains the \(q\). 
+		And we can prove that \( \langle q \rangle \) is equal to 
+		\[
+			\{ \, \dots q ^{-1} , 1 , q  , q^{2} , \dots \, \}
+		\]
+	\item
+		Can the idea of it be generalized? 
 
-There is also \( \langle S \rangle\) (where 
+		There is also \( \langle S \rangle\) (where 
 		\(S\) is a subset of \(G\))
-which is 
-the smallest subgroup that contains the 
-\(S\).
-We can prove that 
-\[
-\langle S \rangle = 
-		\{ \, q ^{k} \mid k \in \mathbb{Z} , q \in S\, \}
-\]
-\item If \(G\) is equal to \(\langle a \rangle\), then \(a\) is 
-	called generator of \(G\). 
-\item Clearly enough, if \(G\) is cyclic then \(G\) is 
-	abelian.
+		which is 
+		the smallest subgroup that contains the 
+		\(S\).
+		We can prove that 
+		\[
+			\langle S \rangle = 
+			\{ \,  q _{1} \dots q_{k}\mid k \in \mathbb{Z} , q_{i} \in S \cup S ^{-1}\, \}
+		\]
+		This thing can be more generalized when we reach the section of free groups.
+	\item If \(G\) is equal to \(\langle a \rangle\), then \(a\) is
+		called generator of \(G\).
+	\item Clearly enough, if \(G\) is cyclic then \(G\) is
+		abelian.
 
-\item If \(G\) is infinite and is equal to \(\langle a \rangle\),
-then \(G\) is isomorphic to \(\mathbb{Z}\). 
-\item If \(G\) is finite and is equal to \(\langle a \rangle\),
-then \(G\) is isomorphic to \(\mathbb{Z} _{n}\), where \(n\) is \(\vert G \vert\) 
+	\item If \(G\) is infinite and is equal to \(\langle a \rangle\),
+		then \(G\) is isomorphic to \(\mathbb{Z}\).
+	\item If \(G\) is finite and is equal to \(\langle a \rangle\),
+		then \(G\) is isomorphic to \(\mathbb{Z} _{n}\), where \(n\) is \(\vert G \vert\).
 \end{itemize}
 
 \vskip .5cm
@@ -49,180 +48,168 @@ then \(G\) is isomorphic to \(\mathbb{Z} _{n}\), where \(n\) is \(\vert G \vert\
 \vskip .5cm
 
 \begin{itemize}
-\item  What is Euler function? 
+	\item  What is Euler (totient) function?
 
-\( \varphi (n)\) is defined as the number of the positive intergets that are less than \(n\) and are relative primes to \(n\).
-\item 
-What is the number of the generators? 
+		\( \varphi (n)\) is defined as the number of the positive intergets that are less than \(n\) and are relative primes to \(n\).
+	\item 
+		What is the number of the generators? 
 
-If \(G\) is finite, and \(\vert G \vert = n\), then \(G\) 
-have \( \varphi (n)\) generators. 
+		If \(G\) is finite, and \(\vert G \vert = n\), then \(G\) 
+		have \( \varphi (n)\) generators. 
 
-\item 
-Can you prove it? 
+	\item 
+		Can you prove it? 
 
-This trivial that \(k\) is relative prime to \(n\) then \(\exists a , b  \in \mathbb{Z}\) such that 
-\[
-a k + b n  = 1
-\]
-which is to say that if \(q\) is generator, then \( q ^{ ak}\) is equals to \(q\), which is to say that \(\langle q ^{ak} \rangle = G\). 
-\item  
-	\(G\) is a finite cyclic group, given a positive factor \(k\), there is one and only one subgroup that is \( \langle a ^{n / k} \rangle\).
-\item Can you tell the number of the subgroups in a cyclic group?
+		This trivial that \(k\) is relative prime to \(n\) then \(\exists a , b  \in \mathbb{Z}\) such that 
+		\[
+			a k + b n  = 1
+		\]
+		which is to say that if \(q\) is generator, then \( q ^{ ak}\) is equals to \(q\), which is to say that \(\langle q ^{ak} \rangle = G\). 
+	\item  
+		\(G\) is a finite cyclic group, given a positive factor \(k\), there is one and only one subgroup that is \( \langle a ^{n / k} \rangle\).
+	\item Can you tell the number of the subgroups in a cyclic group?
 
-It is clear that there are subgroups as many as the factors of 
-\(\vert G \vert\)
+		It is clear that there are subgroups as many as the factors of 
+		\(\vert G \vert\)..
+
+	\item
+		We can study the Automorphisms of the cyclic groups. We have the conclusion that \( \text{Aut} (C_{n}) \simeq (\mathbb{Z}/ n \mathbb{Z} ) ^{*}\). The latter one is defined as the inversable members under the multiplication in the \(\mathbb{Z}/ n\mathbb{Z}\).
+
+
 \end{itemize}
 % section cyclic group 
 
 \section{Transformation groups}
 \label{sec:Transformation groups}
 
-\(M\) is a set. The transformation over a \(M\) is a monoid.
-
-\(S (M)\) is the set of the bijective transformation on \(M\). \(S (M)\) is a group and is called symmetric group.
-
-If \(|M| = n\), then \(S (M)\) is sometimes denoted as \( S_{n}\). 
-
-And \(|S _{n}|  = n !\).  
-
-Transformation group \(G\) on \(M\), 
+\(M\) is a set. The transformation over a \(M\) is a monoid. \(S (M)\) is the set of the bijective transformation on \(M\). \(S (M)\) is a group and is called \textbf{symmetric} group. \(S (M)\) is sometimes denoted as \( S_{n}\) if \(\vert M \vert = n\). 
 
 \begin{thm}
-	Transformation group \(G\) on \(M\), if there is onto function or one-one function in \(G\) then \(G = S(M)\)
+	For a transformation group \(G\) on \(M\), if there is onto function or one--one function in \(G\) then \(G\) is a permutation group.
 \end{thm}
 % theorem  
 
 \begin{proof}
-	If \(\tau \) is onto, consider \( \epsilon \tau(a) =  \tau (a)\) then \(\epsilon\) is \( \text{id}\). 
+	(1) If \(\tau \) is onto, consider \( \epsilon\tau(a) = \tau (a)\), then \(\epsilon\) is \( \text{id}\).
 
-	If \( \tau\) is one-one, consider \(\tau\epsilon (a) =\tau (a)\), then \(\epsilon\) is \( \text{id}\), because \(\epsilon (a) = a\) forall \(a\) in \(G\). 
+	\smallskip
+	(2) If \( \tau\) is one-one, consider \(\tau\epsilon (a) =\tau (a)\), then \(\epsilon\) is \( \text{id}\), because \(\epsilon (a) = a\) forall \(a\) in \(G\).
 
 	\(\forall a \in G\), \( \exists b \in G , b = a ^{-1}\), viz., \( a b =\epsilon\). So \(a\), \(b\) are inversible and thus are
-	bijectives. Then every \(a\) in \(G\) is bijective then 
-	\(G  = S (M)\). 
-\end{proof} 
+	bijectives. Then every \(a\) in \(G\) is bijective then \(G\) is a permutuation group.
+\end{proof}
 
-If a bijective is in a group on \(M\) then the group is 
-bijective group, that is a group whose elements are 
-bijectives. 
-
-If a group is not a bijective group then the group 
-has no bijective or subjective or injective. 
+If \(G\) is the group whose elements are in \(T(M)\). then the fact that \(G\) has a bijection suggests that \(G\) is a permutuation group, that is, all of the elements of \(G\) are bijection; the fact that \(G\) has a non--bijective function suggests that all of the elements in \(G\) are not bijection.
 
 \begin{exam}
-	\(M = \{ \, \ip xy \mid x, y \in \mathbb{R} \, \}\), \(\forall a \in \mathbb{R}\):  
+	\(M = \{ \, \ip xy \mid x, y \in \mathbb{R} \, \}\), \(\forall a \in \mathbb{R}\):
 	\[
 		\tau_{a} \colon M \to M , \ip xy \mapsto (x + a, 0)
-	\]
-	Prove that \(G = \{ \,\tau _{a} \mid a \in \mathbb{R} \, \}\) is a group. 
+		\]
+		Prove that \(G = \{ \,\tau _{a} \mid a \in \mathbb{R} \, \}\) is a group.
 \end{exam}
 
-\begin{thm}[Cayley]
-\label{Cayley}
-Given a \(G\), there exists a bijective group that is isomorphic to \(G\). 
+\begin{thm}[Cayley]\label{Cayley} 
+	Given a \(G\), there exists a permutuation group that is isomorphic to \(G\).
 \end{thm}
 % theorem Cayley 
-\begin{proof}
-Treat the elements in \(G\) as functions which is absolutely a  
-bijective.
-\end{proof}
 % section Transformation 
 
 \section{Symmetric group}
 \label{sec:Symmetric group}
 
 \begin{itemize}
-\item Something writte as
-\[
-	\begin{pmatrix}
-		1 & 2 & 3 \\ 
-		3 & 1 & 2 
-	\end{pmatrix}
-\]
-is called as transformation. And also called \textbf{zhihuan}, 
-\item The above transformation can be written as \( (123)\), which is to say that the number on position \(1\) is given 
-	to postion \(2\), and number on position \(2\) is given to \(3\), and number on position 3 is given to \(1\).
-	
-	Note that there can be more than one expression of the transformation.
-\item For such thing as \( ( i_{1}  i_{2} i _{3} \dots i _{k})\), the order of it is \(k\).
-\item For the compostion of the transformation, we read from left to right. 
-	And if we have \(\sigma\), and \(\tau\), and they are: 
-\[
-\begin{pmatrix}
- 1 & 2 & 3\\
-	\sigma (1) & \sigma (2) & \sigma (3)
-\end{pmatrix}
-\qquad 
-\begin{pmatrix}
-	1 & 2 & 3 \\ 
-	\tau (1)  & \tau (2 ) &\tau (3)
-\end{pmatrix}
-\]
-then we have that 
-\(\sigma\tau\) is equals to 
-\[
-\begin{pmatrix}
-	1 & 2 & 3 \\ 
-	\sigma (\tau 1) &\sigma (\tau 2) &\sigma (\tau 3)
-\end{pmatrix}
-\]
-You may easily know it from the fact that 
-\[
-\begin{pmatrix}
-1 & 2 & 3 \\
-\tau (1) &\tau (2) &\tau (3)
-\end{pmatrix}
-= 
-\begin{pmatrix}
-\sigma (1) &\sigma (2) &\sigma (3) \\ 
-\sigma\tau (1) &\sigma\tau (2) &\sigma\tau (3)
-\end{pmatrix}
-\]
-\item 	
-Moreover we have that 
-\[
-\sigma ^{-1} = 
-\begin{pmatrix}
-	\sigma (1) &\sigma (2) &\sigma (3) \\ 
-	1 & 2 & 3 
-\end{pmatrix} 
-\]
-because we have that 
-\[
-\begin{pmatrix}
-	i_{1} & i_{2} & i_{3} \\ 
-	j_1 & j_2 & j_3 
-\end{pmatrix}
-		{\large \times}
-\begin{pmatrix}
-	j_1 & j_2 & j_3 \\
-	k_1 & k_2 & k_3 
-\end{pmatrix} 
-= 
-\begin{pmatrix}
-	i_{1} & i_{2} & i_{3} \\ 
-	k_1 & k_2 & k_3 
-\end{pmatrix} 
-\]
-\item There is a theorem that easily compute the \(\sigma\tau\sigma ^{-1}\). 
-	If \(\tau\) is written as \( (i_{1} i_2 \dots i_{k})\), then we have that
+	\item Something writte as
+		\[
+			\begin{pmatrix}
+				1 & 2 & 3 \\ 
+				3 & 1 & 2 
+			\end{pmatrix}
+		\]
+		is called as a \textbf{permutuation}. And also called \textbf{cycles},
+	\item The above transformation can be written as \((132)\).
+	\item For such thing as \( ( i_{1}  i_{2} i _{3} \dots i _{k})\), the order of it is \(k\).
+	\item For the compostion of the transformation, we read from left to right. 
+		And if we have \(\sigma\), and \(\tau\), and they are: 
+		\[
+			\begin{pmatrix}
+				1 & 2 & 3\\
+				\sigma (1) & \sigma (2) & \sigma (3)
+			\end{pmatrix}
+			\qquad 
+			\begin{pmatrix}
+				1 & 2 & 3 \\ 
+				\tau (1)  & \tau (2 ) &\tau (3)
+			\end{pmatrix}
+		\]
+		then we have that 
+		\(\sigma\tau\) is equals to 
+		\[
+			\begin{pmatrix}
+				1 & 2 & 3 \\ 
+				\sigma (\tau 1) &\sigma (\tau 2) &\sigma (\tau 3)
+			\end{pmatrix}
+		\]
+		You may easily know it from the fact that 
+		\[
+			\begin{pmatrix}
+				1 & 2 & 3 \\
+				\tau (1) &\tau (2) &\tau (3)
+			\end{pmatrix}
+			= 
+			\begin{pmatrix}
+				\sigma (1) &\sigma (2) &\sigma (3) \\ 
+				\sigma\tau (1) &\sigma\tau (2) &\sigma\tau (3)
+			\end{pmatrix}
+		\]
+	\item 	
+		Moreover we have that 
+		\[
+			\sigma ^{-1} = 
+			\begin{pmatrix}
+				\sigma (1) &\sigma (2) &\sigma (3) \\ 
+				1 & 2 & 3 
+			\end{pmatrix} 
+		\]
+		because we have that 
+		\[
+			\begin{pmatrix}
+				i_{1} & i_{2} & i_{3} \\ 
+				j_1 & j_2 & j_3 
+			\end{pmatrix}
+			{\large \times}
+			\begin{pmatrix}
+				j_1 & j_2 & j_3 \\
+				k_1 & k_2 & k_3 
+			\end{pmatrix} 
+			= 
+			\begin{pmatrix}
+				i_{1} & i_{2} & i_{3} \\ 
+				k_1 & k_2 & k_3 
+			\end{pmatrix} 
+		\]
+	\item There is a theorem that easily compute the \(\sigma\tau\sigma ^{-1}\). 
+		If \(\tau\) is written as \( (i_{1} i_2 \dots i_{k})\), then we have that
 		\[
 			\sigma\tau\sigma ^{-1} =  (\sigma (i_{1}) \sigma (i_{2})\dots\sigma (i_{k}))
-		\]
-	It is given by the fact that 
-	\[
-	\sigma\tau\sigma ^{-1} =  
-	\begin{pmatrix}
-		\sigma (1) &\sigma (2) &\sigma (3) \\
-	\sigma (i_{1}) &\sigma (i_{2}) & \sigma (i_{3 }) % TODO there is a problem here: what is i_k? 
-	\end{pmatrix}
-	\]
-	which exactly is saying that \(\sigma\tau\sigma ^{-1} = (\sigma (i_{1})\sigma (i_{2})\sigma(i_{3}))\)
-	\item The compostion of transformation is quite tricky. 
-	\item If there is no identical number in transformation \(\sigma\), \(\tau\), then \(\sigma\) and \(\tau\) are commutable. 
-		that is \(\sigma\tau =\tau\sigma\).
-		For a random transformation you can easily find the composition of such form like \(\tau\sigma \varphi \dots \), where the transformations are independent (let us call it temporarily).
+			\]
+			It is given by the fact that 
+			\[
+				\sigma\tau\sigma ^{-1} =  
+				\begin{pmatrix}
+					\sigma (1) &\sigma (2) &\sigma (3) \\
+					\sigma (i_{1}) &\sigma (i_{2}) & \sigma (i_{3 }) % TODO there is a problem here: what is i_k? 
+				\end{pmatrix}
+				\]
+				which exactly is saying that \(\sigma\tau\sigma ^{-1} = (\sigma (i_{1})\sigma (i_{2})\sigma(i_{3}))\). One can test the propostion. \[\sigma\tau\sigma^{-1} (\sigma(1)) = \sigma\tau (\sigma^{-1}(\sigma (1))) = \sigma\tau (1) = \sigma (i_{1})\]
+				\(1\) is randomly chosen. One can test all other numbers.
+			\item The compostion of transformation is quite tricky. 
+			\item A cycle can be decomposed as the compostion of the \textbf{duihuan}. In general, a \(k\)--cycle: \((i_1\dots i_{k})\) can be decomposed as \((i_{1}i_{k})(i_{1}i_{k-1})\dots (i_{1}i_{2})\).
+			\item If there is no identical number in transformation \(\sigma\), \(\tau\), then \(\sigma\) and \(\tau\) are commutable. that is \(\sigma\tau =\tau\sigma\). For a random transformation you can easily find the composition of such form like \(\tau\sigma \varphi \dots \), where the transformations are independent (let us call it temporarily).
+			\item The number of the duihuan in the decomposed form of a \(k\)--cycle can be odd or even. If the number is odd then the permutuation is called \textbf{odd}, and if the number is even, then the permutuation is called \textbf{even}. It can be proved that all the \textbf{even} permutuation forms a subgroup of \(S_{n}\), often denoted as \(A_{n}\). And moreover, the zhishu of \(A_{n}\) is \(2\).
+			\item One can prove that if there is a odd permutuation in the permutuation group, then the number of the odd permutuations and the number of even permutuations are equal. Such that \textbf{either} the permutuations are all even, \textbf{or} half the permutuations are odd and half of the permutuations are even.
 \end{itemize}
-% section Symmetric group 
+
+\paragraph{Summary} Symmetric groups are very important. Why? When it comes to the very section of `group actions' we will use the properties of symmetric groups. However, most of the properties above is very useless. Why? Because they are.
+% section Symmetric group
 \end{document}

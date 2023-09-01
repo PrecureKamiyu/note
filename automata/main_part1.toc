@@ -1,48 +1,50 @@
 \contentsline {chapter}{\numberline {第一章\hspace {.3em}}DFA 和 NFA}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}DFA 和 NFA}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}NFA}{3}{subsection.1.1.1}%
-\contentsline {subsubsection}{NFA 的性质}{3}{subsubsection*.2}%
-\contentsline {subsubsection}{NFA 转化为 DFA 的方法}{5}{subsubsection*.3}%
-\contentsline {subsection}{\numberline {1.1.2}带空转移的 NFA}{5}{subsection.1.1.2}%
-\contentsline {subsubsection}{\(\epsilon -\text {NFA}\) 的定义}{5}{subsubsection*.4}%
-\contentsline {subsubsection}{空转 NFA 的性质}{6}{subsubsection*.5}%
-\contentsline {subsubsection}{空转 NFA 转换为 DFA}{6}{subsubsection*.6}%
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}正则语言和正则表达式}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}正则表达式的定义}{7}{section.2.1}%
-\contentsline {paragraph}{正则表达式}{7}{paragraph*.7}%
-\contentsline {subsection}{\numberline {2.1.1}语言之间的运算}{7}{subsection.2.1.1}%
-\contentsline {paragraph}{语言之间的运算}{7}{paragraph*.8}%
-\contentsline {paragraph}{运算和运算的优先级}{8}{paragraph*.9}%
-\contentsline {section}{\numberline {2.2}正则表达式的性质}{9}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}正则表达式和 DFA 的等价性: 根据 DFA 构造正则表达式}{9}{subsection.2.2.1}%
-\contentsline {paragraph}{递归法}{9}{paragraph*.10}%
-\contentsline {paragraph}{状态消除法}{9}{paragraph*.11}%
-\contentsline {subsection}{\numberline {2.2.2}正则表达式和 DFA 的等价性: 根据正则表达式构造 DFA}{10}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}正则表达式的代数性质}{10}{section.2.3}%
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}正则语言的性质}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}泵引理和泵引理的证明}{11}{section.3.1}%
-\contentsline {paragraph}{鸽巢原理}{11}{paragraph*.12}%
-\contentsline {paragraph}{泵引理}{11}{paragraph*.13}%
-\contentsline {paragraph}{证明}{12}{paragraph*.14}%
-\contentsline {paragraph}{通过泵引理证明某些语言并不是正则的. }{12}{paragraph*.15}%
-\contentsline {section}{\numberline {3.2}运算的封闭性}{13}{section.3.2}%
-\contentsline {section}{\numberline {3.3}判定正则语言}{13}{section.3.3}%
-\contentsline {section}{\numberline {3.4}DFA 的最小化}{13}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}填表算法:}{13}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}Regular Expressions in Unix}{14}{section.3.5}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}上下文无关文法}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}上下文无关文法}{15}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}归约和派生}{16}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}文法的语言}{17}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}语法分析树}{18}{section.4.2}%
-\contentsline {section}{\numberline {4.3}文法和语言的歧义性}{19}{section.4.3}%
-\contentsline {section}{\numberline {4.4}文法的化简和设计}{19}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}化简}{19}{subsection.4.4.1}%
-\contentsline {subsubsection}{无用符号的消除}{19}{subsubsection*.16}%
-\contentsline {subsubsection}{\(\epsilon \) 产生式}{20}{subsubsection*.17}%
-\contentsline {subsubsection}{单元产生式的消除}{21}{subsubsection*.18}%
-\contentsline {subsubsection}{化简步骤}{21}{subsubsection*.19}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}两种范式和下推自动机的定义}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}两种范式}{23}{section.5.1}%
-\contentsline {section}{\numberline {5.2}下推自动机}{24}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}下推自动机的定义}{25}{subsection.5.2.1}%
+\contentsline {section}{\numberline {1.1}DFA}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}What is DFA}{3}{subsection.1.1.1}%
+\contentsline {subsubsection}{DFA的定义}{3}{subsubsection*.2}%
+\contentsline {subsubsection}{An Example of DFA}{4}{subsubsection*.3}%
+\contentsline {subsubsection}{An eXtension function of \(\boldsymbol {\delta }\)}{5}{subsubsection*.4}%
+\contentsline {subsection}{\numberline {1.1.2}The language of a DFA}{6}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Nondeterministic Finite State Automata}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}The Definition of the NFA}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}eXtended function of \(\boldsymbol {\delta }\)}{7}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}The Equivalence of NFA and DFA}{7}{subsection.1.2.3}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}正则语言和正则表达式}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}正则表达式的定义}{9}{section.2.1}%
+\contentsline {paragraph}{正则表达式}{9}{paragraph*.5}%
+\contentsline {subsection}{\numberline {2.1.1}语言之间的运算}{9}{subsection.2.1.1}%
+\contentsline {paragraph}{语言之间的运算}{9}{paragraph*.6}%
+\contentsline {paragraph}{运算和运算的优先级}{10}{paragraph*.7}%
+\contentsline {section}{\numberline {2.2}正则表达式的性质}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}正则表达式和 DFA 的等价性: 根据 DFA 构造正则表达式}{11}{subsection.2.2.1}%
+\contentsline {paragraph}{递归法}{11}{paragraph*.8}%
+\contentsline {paragraph}{状态消除法}{11}{paragraph*.9}%
+\contentsline {subsection}{\numberline {2.2.2}正则表达式和 DFA 的等价性: 根据正则表达式构造 DFA}{12}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}正则表达式的代数性质}{12}{section.2.3}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}正则语言的性质}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}泵引理和泵引理的证明}{13}{section.3.1}%
+\contentsline {paragraph}{鸽巢原理}{13}{paragraph*.10}%
+\contentsline {paragraph}{泵引理}{13}{paragraph*.11}%
+\contentsline {paragraph}{证明}{14}{paragraph*.12}%
+\contentsline {paragraph}{通过泵引理证明某些语言并不是正则的. }{14}{paragraph*.13}%
+\contentsline {section}{\numberline {3.2}运算的封闭性}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}判定正则语言}{15}{section.3.3}%
+\contentsline {section}{\numberline {3.4}DFA 的最小化}{15}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}填表算法:}{15}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Regular Expressions in Unix}{16}{section.3.5}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}上下文无关文法}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}上下文无关文法}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}归约和派生}{18}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}文法的语言}{19}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}语法分析树}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}文法和语言的歧义性}{21}{section.4.3}%
+\contentsline {section}{\numberline {4.4}文法的化简和设计}{21}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}化简}{21}{subsection.4.4.1}%
+\contentsline {subsubsection}{无用符号的消除}{21}{subsubsection*.14}%
+\contentsline {subsubsection}{\(\epsilon \) 产生式}{22}{subsubsection*.15}%
+\contentsline {subsubsection}{单元产生式的消除}{23}{subsubsection*.16}%
+\contentsline {subsubsection}{化简步骤}{23}{subsubsection*.17}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}两种范式和下推自动机的定义}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}两种范式}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}下推自动机}{26}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}下推自动机的定义}{27}{subsection.5.2.1}%

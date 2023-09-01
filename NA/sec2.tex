@@ -17,7 +17,7 @@
 \begin{frame}
 		迭代法有很多, 形如 \(x_{k+1} = \varphi (x_{k})\) 的称为单点迭代, 形如
 		\[
-				x_{k+1} = \varphi\underbrace{(x _{k}, x_{k-1}, \cdots , x_{k + n -1})}_{\text{n args}}
+				x_{k+1} = \varphi\underbrace{(x _{k}, x_{k-1}, \cdots , x_{k - n +1})}_{\text{n args}}
 		\]
 		的称为多点迭代法.
 
@@ -31,6 +31,15 @@
 
 \smallskip
 		由 \(f (x) = 0\) 到 \(x = \varphi (x)\) 的方法不止一种, 不同的方法之间属性不一定相同.
+
+\smallskip
+比如说我们求方程 \( 9 x^{2} - \sin x - 1 = 0\) 的根, 我们能够将其转换为两种等价的形式, 而它们的性质是不同的.
+\[
+\begin{aligned}
+& x = \frac 13 \sqrt{\sin x +1}\\
+& x = \arcsin ( 9x^{2} -1)
+\end{aligned}
+\]
 \end{frame}
 
 \subsection{迭代法的指标}
@@ -68,7 +77,7 @@
 \begin{thm}
 		如果
 		\begin{enumerate}
-				\item \(\forall x, \varphi (x) \in [a ,b ]\)
+				\item \(\forall x, \varphi (x) \subset [a ,b ]\)
 				\item \(\exists L < 1\forall x\ \vert \varphi ' (x) \vert \le L < 1\)
 		\end{enumerate}
 		则 \( \varphi\) 的收敛法是全局收敛
@@ -89,7 +98,7 @@
 	\end{thm}
 	并且我们还有误差估计式:
 	\[
-		\vert\alpha - x_{k}\vert \le \frac{L}{1 - L} \vert x_{k} = x_{k-1} \vert
+		\vert\alpha - x_{k}\vert \le \frac{L}{1 - L} \vert x_{k} - x_{k-1} \vert
 	\]
 	以及能够用求和和放缩得到
 	\[
@@ -114,16 +123,32 @@
 
 \subsection{例子}
 \begin{frame}
+求 \( x e ^{x} - 1 = 0\) 在 \([ 1/2 , \ln 2]\)之中的根.
+
+\bigskip
+1. 建立迭代函数 \( \varphi (x) =  e^{-x}\)\\
+2. 考察 \( \varphi(x)\) 的值域. 因为 \( \varphi'(x)\) 在区间内小于零, 于是只看端点 \(\varphi \in [ \varphi (\ln 2) , \varphi(\frac12) ]\)
+
+因为 \( \varphi (\ln 2) = \frac 12, \varphi (1/2) < 1/2\), 于是满足条件一的定理.
+
+3. 对 \( \varphi'\) 的值域进行验证:
+\[
+\vert \varphi'(x) \vert =\vert - e^{-x} \vert \le e^{- \frac12} < 1
+\]
+于是满足条件
+\end{frame}
+
+\begin{frame}
+问 \(x = 4 - 2 ^{x}\) 能否使用? 若是不能, 请将其改写为能够使用迭代法进行求解的形式.
+\end{frame}
+
+\begin{frame}
 我们有 \(F (x) = x + c ( x^{2} - 3)\), 问 \(c\) 取什么值的时候迭代法 \[x_{k+1} = F (x_{k}) \] 有局部收敛性?
 \begin{proof}[解]
 我们使用前面的定理能够知道, 我们只需要 \(F\) 在 \(\alpha\) 处的导数小于 \(1\) 即可. 明显 \(x = F(x)\) 有两个解 \(\alpha _{1} = - \sqrt 3\), \(\alpha _{2} = \sqrt 3\), \(F ' (x) = 1 + 2 cx\) 在这两处的值为
 \[
 F'(\alpha_1) = 1 - 2 \sqrt 3 c , \quad F '(\alpha_{2})  = 1  + 2 \sqrt 3 c
 \]
-让它们的绝对值小于 \(1\) 就行.
+让它们的绝对值小于 \(1\) 就行. 并且! 导数值还是零的时候, 收敛阶更大
 \end{proof}
-\end{frame}
-
-\begin{frame}
-我们有迭代式 \( x_{k+1} = 4 - 2 ^{x_{k}}\)
 \end{frame}

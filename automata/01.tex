@@ -1,136 +1,397 @@
 \documentclass[../main_part1.tex]{subfiles}
 \begin{document}
 
-\section{DFA 和 NFA}
-\subsection{NFA}
-\subsubsection{NFA 的性质}
+\section{DFA}
+\label{sec:DFA}
 
-NFA, 可以允许多个现态, 以及一个现态可以有多个次态. 仅仅是状态转移函数的定义有着不同. 其定义如下: 
-\begin{equation}
-\delta \colon Q \times \Sigma \to 2 ^{Q}
-\end{equation}
-而 DFA 的状态转移函数长这个样子: 
-\begin{equation}
-\delta \colon Q \times \Sigma \to Q 
-\end{equation}
+\subsection{What is DFA}
 
-\begin{exam}
-检测末尾为01的只由0和1组成的序列的 NFA. 状态转移函数如下\footnote{图就不画了, 真不会画}: 
-\begin{figure}[h]
-\centering
-\begin{tabular}{|r|cc|}
-\hline
-& \(0\) & \(1\) \\ 
-\hline 
-$\to$ \(q_{0}\) & \(\{ q_{0}, q_{1}\}\) & \(\{q_{0}\}\)\\ 
-\(q_{1	}\) & $\varnothing$ & \(\{q_{1} \}\) \\
-\(^{*}q_{2}\) & $\varnothing$ & $\varnothing$\\
-\hline
-\end{tabular}
+什么是自动机? 简单来说, 自动机有很多状态, 在这些状态下面, 自动机会接收一些输入, 接收了一些输入之后, 状态将会发生变化. 比如说我们有一个最简单的自动机: 开关. 假设我们有一个开关, 默认是关着的, 就是说其状态是\textbf{关的}.
+随后我们输入 \textbf{On}, 接收了输入之后, 其状态发生变化, 状态变为\textbf{开的}. 类似的, 后者状态下, 接受了输入 \textbf{Off}, 状态再次变为 \textbf{关的}.
+
+这就是一个简单的状态机. 
+
+\subsubsection{DFA的定义}
+
+A DFA is a five tuple: \( \{ \, Q, \Sigma ,\delta , q _{0} , F \, \}\). Here we list the definition of the things above. 
+
+\medskip%
+{\setlength{\parindent}{10pt}
+1. \(Q \) is the set of the states.
+
+\smallskip
+2. \(\Sigma\) is the alphabet.
+
+\smallskip
+3. \( \delta\) is transtion function
+
+\smallskip
+4. \(q_0\)  is in the \(Q\). He is the \textbf{initial} state.
+
+\smallskip
+5. \(F\) is the set of the final states (you may call them the accepting states). }
+
+\medskip
+Why we need the seemed so complex definition? Ok, my friend, it is not complex. What a sad story. Anyway, the definition tells all the
+information we need so far.
+
+\smallskip
+Now lets see a simple example to check for what is an automaton. 
+(Oh, right, do you know that the single form of the word `automata' is actually `automaton'. Cool.)
+
+% subsubsection:DFA的定义 
+
+\subsubsection{An Example of DFA}
+
+我们有一个简单的 DFA, 他能够识别字符串 `shit'. 这个DFA, 用图~\ref{fig:shit}\footnote{Hey, You can import the tikz library named automata to draw automata in a simplest way.}表示. 这里涉及到了 DFA 的表示方法: 我们有两种方法来表示一个 DFA.
+
+\medskip
+{
+	\setlength{\parindent}{10pt} 
+	1. 使用 diagram
+
+	\smallskip
+	2. 使用 \(\delta\) 函数的表格表示.
+}
+\medskip
+
+来看我们这个图, start 表示的是初始状态, 随后, 是箭头, 箭头上面的字符是便是说, ``如果接受到了这个字符, 那么状态转移到\dots'' 的这个意思. 被双线包围的状态便是 \(F\) 之中的状态. 但是这个图还是有问题, 如果说我们在一开始接收到了一个不是 \(s\) 的字符呢? 这个时候状态将会走到哪里? 
+我们这个时候说, 这DFA直接die了, 他将处于一个死掉的状态, 永远不能够从其中出来, 要构造这个状态也是简单的, 我们只需要说, 
+在这个状态之下, 无论接收什么字符, 其都将保持在当前这个状态. 死得很彻底. 
+
+这里是一个简单化地表示, 我们尽量在不引入歧义得情况下, 进行图的设计.
+Ok, 让我们继续. 
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+		\node[state,initial] (q_0)   {$q_0$};
+		\node[state] (q_1) [right=of q_0] {$q_1$};
+		\node[state] (q_2) [right=of q_1] {\(q_{2}\)};
+		\node[state] (q_3) [right=of q_2] {\(q_{3}\)};
+		\node[state,accepting](q_f) [right=of q_3] {$q_f$};
+		\path[->]
+		(q_0) edge node {s} (q_1)
+		(q_1) edge node {h} (q_2)
+		(q_2) edge node {i} (q_3)
+		(q_3) edge node {t} (q_f);
+	\end{tikzpicture}
+	\caption{一个接收shit的DFA}\label{fig:shit}
 \end{figure}
 
-\end{exam}
-\begin{definition}[状态转移函数的拓展]
-\(\delta\) 可以扩展为 \(\hat{\delta}\colon Q \times \Sigma ^{*} \to 2^{Q}\), 定义是递归的, 如下:
+
+
+我们来看看这个DFA, 其是能接受字符串, 这些字符串是由 \(0,1\) 组成的, 
+并且, 对于这些字符串, 存在一个子字符串, 其为 \(01\). 是不是看起来很简单? 为了构建这个 DFA, 我们需要问出几个问题. 
+
+\medskip
+{
+	\setlength{\parindent}{10pt}%
+	\setlength{\hangindent}{10pt}%
+	1. 如果已经接到了 01, 无论后续是什么字符, 我们接收.
+	\smallskip
+
+	\setlength{\hangindent}{10pt}%
+	2. 如果没有接到 01, 且上一个字符为 0, 那么收到 1的话, 我们就看到了 \(01\), 也就是转到 (1).
+	\smallskip
+
+	\setlength{\hangindent}{10pt}%
+	3. 如果没有接到 01, 且上一个字符为 1, 那么收到 0 的话, 我们就得转到 (2).
+
+}
+\medskip
+
+实际上我们可以看出这里有需要有三种状态, 分别对应上面三种情况.
+基本上, 构建一个 DFA 就是一个劲地分类讨论, 对于每一种类, 都赋予一个状态.
+
+
+
+% subsubsection:An example of DFA 
+
+\subsubsection{An eXtension function of \(\boldsymbol{\delta}\)}
+
+Anyway, let us go on. 我们使用一个 extention function of \(\delta\) 来更好的表示一个 DFA 能够接收什么东西. 下面这个定义方法是递归的.
+
+\medskip
+设我们能够诱导出一个函数 \( \hat\delta \colon Q \times \Sigma ^{*}\) 也就是说, 其表示, 状态 \(q\) 之下, 接受了字符串 \( w\) 之后, 其所在的状态. 
+
+\smallskip
+{\setlength{\parindent}{15pt}
+\textbf{Basic:} \(\vert w \vert = 1\), let \(w  = a\). 
 \[
-\hat{\delta}(q, w) = 
-\begin{cases}
-q &, \text{if } w = \epsilon \\
-\bigcup_{p\in \hat{\delta}(q,x)} \delta(p,a) & , \text{if } w = xa
-\end{cases}
+	\hat\delta  ( q ,  w ) =\delta  (q ,a ) 
 \]
-这个函数告诉了我们, 给定初态 \(q_{0}\), 以及一个输入的字符串 \(w\)之后我们的现状 (集合) 是什么. 
-\end{definition}
-\begin{thm}[NFA和DFA之间的等价性]\label{Thm:nfa=dfa}
-一个语言 \(L\) 能被 NFA 接收, 当且仅当能被 DFA 接收
-\end{thm}
-\begin{proof}
-我们需要证明的是: 给定一个 \(N\), 存在一个 \(D\) 使得 \(L (N) = L (D) \), 以及反过来的版本, 给定一个 \(D\) 存在一个 \(N\) 使得 \(L (D) = L(N)\).
-注意到 DFA 是一个 NFA 的一个特例, 于是我们能够知道: \(\forall D \exists N (L(D) = L(N)) \). 于是我们要证明的便是, 如果 \(L\) 能够被 NFA 接收, 那么 \(L\) 能够被 DFA 接收. 
 
-使用构造法. 给定一个 NFA , 能够构造出一个 DFA 接收 \(L\). 这里使用的构造法称为子集构造法. 原理很简单: 对于一个 NFA, 其 `现态集合' 虽然是一个集合, 但是可以视为一个 DFA 的现态. 因为状态是有限的, 所以说, 状态集合的幂集也是有限的, 若是能够将 NFA 看作是一个 DFA , 那么其现态就是一个 \(\Sigma\) 的子集, 当然次态也是一个 \(\Sigma\) 的子集. 
-
-我们给定 NFA \((Q,\Sigma,\delta, q_{0},F)\), 构造 DFA \((Q' , \Sigma, \delta ' , \{q_{0}\}, F')\), 其中 
+\smallskip
+\textbf{Induction:} if \( \vert w \vert \ge 1\), let \(w = x a\), where \(a\) is a symbol:
 \[
-\begin{aligned}
-& Q '  =  2 ^{\Sigma} \\ 
-& F' = \{ S \mid S \in Q ', S \cap F  \ne \varnothing \}
-\end{aligned}
-\]
-注意到, \(\{q_{0}\}\in Q'\), 这是我们加上 \(\{\}\) 的原因. 其中 \(\delta '\) 的定义如下: 
-\[
-\delta ' (S, a) = \bigcup_{q_{i} \in S} \delta (q_{i}, a) 
-\]
-我们需要证明 \(\forall s \in \Sigma ^{*} (\hat{\delta'} (q_{0}, s) = \hat{\delta} (q_{0},s))\). 证明等会在说. 
-\end{proof}
+	\hat\delta (q , w ) =\hat \delta  (q , x a )  = \delta \big( \hat \delta ( q , x ) , a \big) 
+\]}%
+上面就是 \(\hat\delta\) 的定义方法, 我们需要证明, \( \hat\delta \) 确实满足其定义: 
 
-\begin{thm}
-\( \hat{\delta}(q_{0},s) = \hat{\delta'}(q_{0}, s)\)
-\end{thm}
-\begin{proof}
-对字符串的长度进行归纳:
-当长度为 \(n=0\)
-\begin{equation}
-\hat{\delta'} (\{q_{0}\}, \epsilon ) = \{q_{0} \}  = \hat{\delta} (q_{0}, \epsilon) 
-\end{equation}
+{
+	\bigskip
+	\setlength{\parindent}{40pt} 
+	\bf 证明: 若在状态 \(q\) 之下, 接受了 \(w\), 则其状态变为 \(\hat\delta (q,  w) \).
+	\bigskip
+}
 
-当长度为 \(n = k\), 设假设成立.
-
-当长度为 \(n  = k  + 1\), 设 \(w = x a \), 那么 \( \hat{\delta} (q_{0}, w ) = \bigcup_{p \in \hat{\delta} (q_{0}, x) } \delta (p, a)\). 
-而 \( \hat{\delta'} (q_{0}, w) = \delta'  (\delta' (q_{0}, x), a)\). 后者的定义为 \(\bigcup_{p \in \hat{\delta'}(q_{0}, x)} \delta(p, a)\). 
-因为 \(x\) 的长度为 \(k\), 所以 \( \hat{\delta' } (q_{0}, x) = \hat{\delta} (q_{0}, x)\), 因此 \( \hat{\delta ' } (q_{0}, w) = \hat{\delta} (q_{0}, w) \) 恒成立. 
-\begin{equation}
-\delta ' (\delta' (q_{0}, x)) = \bigcup_{p \in \hat{\delta'} (q_{0}, x )} 
-\delta (p, a ) = \bigcup_{p \in \hat{\delta} (q _{0}, x) } \delta (p, a ) = \hat{\delta} (q_{0}, w) 
-\end{equation}
-\end{proof}
-我们知道了 \( \hat{\delta} (q_{0}, w )  = \hat{\delta ' } (q_{0}, w )\) 之后, 就能够证明 \(L (N) = L(D)\) 了. 只需要注意到 \(L (N)\) 的定义: 对于任意的 \(s \in L (N)\), 都有 \( \hat{\delta' } (q_{0}, s) \cap F \ne \varnothing \). 我们知晓了这个定义之后就能够证明 \(L (N) = L (D)\) 了, 这是显然的. 
-
-\subsubsection{NFA 转化为 DFA 的方法}
-使用上面的子集构造法就能够进行转化, 随后我们将不需要的状态进行删除即可. 
-\subsection{带空转移的 NFA}
-空转移的意思便是, 在没有输入的时候状态可以自己发生转移, 这样的自动机记为 \(\epsilon\)-NFA, 其中 \(\epsilon\) 是空字符串的意思. 在本小节之后, 如果没有特别说明, NFA 包括 \(\epsilon\) - NFA 和 NFA. 
-\subsubsection{\(\epsilon-\text{NFA}\) 的定义}
-仅有一处和 NFA 不同, 状态转移函数的定义不同: 
-\begin{equation}
-\delta \colon Q \times (\Sigma \cup \epsilon ) \to 2 ^{Q}
-\end{equation}
-并且, 我们需要理解什么是 \(\epsilon\): 对于一个输入的字符串 \(s\), 其等价于 \(s\epsilon\), 也等价于 \(s\epsilon\epsilon\). 当然, \(\epsilon\) 插在中间也是可以的.
+\noindent 证明是简单的, 需要对 \(w\) 的长度上用 induction. 好了, 证明之后呢? 我们为什么需要 \(\hat\delta\)? 仅仅是为了表示方便而已.
 
 \begin{exam}
-% TODO ! 
+	我们设计一个 DFA \(A\), \(A\) 满足 
+	\[L(A) = \{ \, w \mid w \text{ 有偶数个1's, 有偶数个0's} \, \}\]
+	构造是简单的, 但是图画起来是麻烦的. 但是我还是画出来了, 见图~\ref{fig:even DFA}. 读者可以自行验证其正确性.
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}[shorten >=1pt,node distance=4cm,on grid,auto]
+		\node[state,initial,accepting] (q_0)   {$q_0$};
+		\node[state] (q_1) [right=of q_0] {$q_1$};
+		\node[state] (q_2) [below=of q_0] {\(q_{2}\)};
+		\node[state] (q_3) [right=of q_2] {\(q_{3}\)};
+		\path[->]
+		(q_0) edge [bend left] node {1} (q_1)
+		(q_0) edge [bend left] node {0} (q_2)
+		(q_1) edge [bend left] node {1} (q_0)
+		(q_1) edge [bend left] node {0} (q_3)
+		(q_2) edge [bend left] node {1} (q_3)
+		(q_2) edge [bend left] node {0} (q_0)
+		(q_3) edge [bend left] node {1} (q_2)
+		(q_3) edge [bend left] node {0} (q_1)
+		;
+	\end{tikzpicture}
+	\caption{接收偶数个 1, 偶数个0的 string 的DFA}\label{fig:even DFA}
+\end{figure}
 \end{exam}
+% subsubsection:An eXtension function of \(\delta\) 
 
-\begin{definition}[\(\epsilon\) closure]
-给定一个状态集合 \(S\), 那么 \(S\) 的 \(\epsilon\) closure 为 \(S\) 并上那些当前状态通过空转能够达到的状态, 记为 \(\bar{\epsilon} (S)\). 记 \(\bigcup_{s \in S} \delta (s , \epsilon ) \) 为 \(\epsilon _{1} (S)\), 并且记 \(\bigcup_{s \in \epsilon _{1} (S)} \delta (s, \epsilon )\) 为 \(\epsilon _{2} (S) \), 那么就能够得到 \(\overline{\epsilon} (S)\) 的表达式: 
-\begin{equation}
-\bar\epsilon (S) = S \cup \epsilon_{1} (S) \cup \epsilon_{2	} (S) \cup \cdots
-\end{equation}
-当然可以写为 
-\begin{equation}
-\overline{\epsilon} (S)  = \big(\bigcup_{n = 1} ^{ \infty}\epsilon_{n} (S) \big) \cup S
-\end{equation}
-特别地, 可以称呼 \(S\) 为 \(\epsilon_{0} (S)\). 表达式还可以再精简一点. 
+
+% subsection:What is DFA 
+\subsection{The language of a DFA}
+
+DFA 的 language 指的是其接收的 string 的全体. 那么, 
+\[
+	L (A) =  \{ \,  w \mid \hat\delta ( q_{0} , w ) \in F \, \}
+\]
+其中 \(A\) 是一个 DFA. 其实本节并没有什么知识点, 建议查看书本上的对应章节, 以查看其上记录的那些例子.
+% subsection:The language of a DFA 
+% section DFA 
+
+\section{Nondeterministic Finite State Automata}
+\label{sec:Nondeterministic Finite State Automata}
+
+\subsection{The Definition of the NFA}
+Nondeterministic 的意思是说, 这个 automata 的所处于的状态并不是确定的, 其能够同时处于多个状态. 最初的时候处于 start state. 为什么之后会处于多个状态呢? 这是因为, 在某一个状态, 接收了一个字符, 其跳转到了多个状态. 比如说:
+\[
+	\delta (q , a ) = \{ \, q_{1}, q_{2} \, \}
+\]
+在状态 \(q\) 之下, 接受了 \(a\) 就跳转到了两个状态 \(q _{1}\), \(q _{2}\). 我们的 \(\delta \) 函数的定义就发生了改变: 
+\[
+	\delta: Q \times \Sigma \to P (Q)
+\]
+其中 \(P (Q)\) 是 \(Q\) 的幂集.
+随后, 我们温习一下 DFA 的定义: 
+\begin{definition}[DFA]
+	DFA 是一个 five--tuple: 
+	\[
+	A = ( Q, \Sigma ,\delta , q _{0}, F)
+	\]
+	其中 \(Q\), \( \Sigma\), \(\delta\), \(q _{0}\), \(F\) 的定义都是我们熟知的. NFA 也是如此. 
+	\[
+	N = (Q , \Sigma ,\delta , q _{0} , F) 
+	\]
+	只不過其中 \(\delta\) 的定义稍有不同.
 \end{definition}
+% definition: DFA
+% subsection:The Definition of the NFA
 
-引入 \(\epsilon\) closure 的概念是为了定义 \(\hat{\delta}\), 以及下文之中 \(\epsilon\) -NFA 向 DFA 转换. 
-\begin{definition}[\(\delta\) 函数的扩展]
-同样地, \(\delta'\) 的定义也是递归的. 定义如下: 
-\begin{equation}
-\delta' (q_{0}, w) = 
-\begin{cases}
-\overline{\epsilon} (q_{0}) &, \text{ if } w = \epsilon \\
-\overline{\epsilon} \big(\bigcup_{p\in \hat{\delta'}(q _{0}, x)} \delta (p,a)\big) &, \text{ if } w = xa
-\end{cases}
-\end{equation}
-\end{definition}
+\subsection{eXtended function of \(\boldsymbol{\delta}\)}
+和 DFA 类似的, 我们也有 \(\hat\delta\) 的定义:
 
-\subsubsection{空转 NFA 的性质}
-实际上 \(\epsilon\) - NFA 也是和 NFA 等价的, 这就是说给定一个 \(\epsilon\) - NFA , 我们能够构造出一个 NFA. 且有 \(L (N )  = L (N ' ) \). 
-\begin{thm}[\(\epsilon\)-NFA 和 DFA 等价性] 
+\medskip
+{
+	\setlength{\parindent}{40pt}\setlength{\hangindent}{40pt}%
+	\textbf{Basic:} \(\hat\delta ( q, a ) =\delta (q ,a )\)
+
+	\smallskip
+	\setlength{\parindent}{40pt}\setlength{\hangindent}{40pt}%
+	\textbf{Induction:} let \(w = xa\), \(\hat\delta (q _{0}, x) = \{ \,  p _{1}, \cdots , p _{k} \, \}\)%
+	\[
+	\hat\delta (q _{0} , w ) = \hat\delta ( \{ \, p _{1} , \dots , p _{k} \, \} , a ) = \bigcup_{i = 1} ^{k}\delta ( p_{i} , a)
+	\]%
+是的, 没什么, 但是等到我们引入了 \(\epsilon\)-transition 的时候, 我们还会对 \(\hat \delta\) 进行修正.
+}
+\medskip
+
+有了 \( \hat{\delta} \) 之后, 我们能够定义 NFA 的 language. 设 \(N\) 是一个 NFA, 那么我们有
+\[
+L (N) = \{ \, w \mid \hat{\delta} (q_{0} ,w ) \cap F \ne \varnothing \, \}
+\]
+
+
+% subsection:eXtended function of \(\boldsymbol{\delta}\)
+
+\subsection{The Equivalence of NFA and DFA}
+我们将证明 DFA 和 NFA 实际上是等价的, 那么为什么需要使用 NFA 呢? 其实很简单, 就是 NFA 能够将很多表述简化, 某些问题用 NFA 写出来就是要简单一些, 尽管说 NFA 和 DFA 的能力是一样的.
+\begin{thm}[DFA = NFA]
+\label{DFA = NFA}
+DFA 和 NFA 之间是等价的.
 \end{thm}
-\subsubsection{空转 NFA 转换为 DFA}
-方法是和前面类似的. % TODO 
+% theorem DFA = NFA
+两者之间的等价性是这么描述的: 对于一个 DFA \(A\), 存在一个 NFA \(N\), 使得 \(L (A) =  L (N)\); 并且对于一个 NFA \(N\), 存在一个 DFA \(A\), 使得 \(L(N) =  L(A)\). 于是说, 我们要证明这个等价性就需要进行两方面的证明:
+
+\medskip
+{\setlength{\parindent}{40pt}%
+\textbf{1.} 给定一个DFA \(A\), 构造一个 NFA \(N\), 满足 \(L (A) = L (N)\)
+
+\smallskip
+\textbf{2.} 给定一个 NFA \(N\), 构造一个DFA \(A\), 满足 \(L (N)  = L (A)\).
+}
+\medskip
+
+其中 (1) 的构造是显然的, 因为很简单, DFA 可以视为一个特殊的 NFA. 对于 (2) 的构造, 我们使用的子集构造法: 将 \(Q ' = P (Q)\), 于是我们就能够将 ``多个状态'' 视为 ``单个状态''. 比如说 \( \{ p _{1} ,  p _{2}, \dots, p _{k}\} \) 写为 \(q _{1 \dots k}\). 因为 \(P (Q)\) 也是有限的, 所有从这一个角度出发, NFA 和 DFA 其实没有什么区别. 
+
+\begin{proof}[Proof]
+\noindent (1) 的构造是显然的.
+
+\noindent (2) 的构造也是简单的. 我们将 \( \{ \, p_{1}, \dots, p_{k} \, \}\) 写为 \( q _{1\dots k}\).
+若是 \(\bigcup_{i=1}^{k}\delta ( p_{i} , a) = \{ \,  p_{a_{1}},\dots, p_{a _{m}}\, \}\), 那么有 \(\delta' ( q _{1 \dots k} , a) = q _{a_{1}\dots a_{m}}\). 或者说你不想引入 \( q_{1 \dots k}\) 的符号, 因为反而会看着挺麻烦, 那么你直接说 \(\delta ' ( \{ p_{1} , \dots p_{k} \}, a ) = \{p _{a_{1}}, \dots , p_{a_{m}}\}\) 也是可以的. 
+\end{proof}
+
+% subsection:The Equivalence of NFA and DFA 
+% section Nondeterministic Finite State Automata 
 
 
+
+
+
+% \section{DFA 和 NFA}
+% \subsection{NFA}
+% \subsubsection{NFA 的性质}
+% 
+% NFA, 可以允许多个现态, 以及一个现态可以有多个次态. 仅仅是状态转移函数的定义有着不同. 其定义如下: 
+% \begin{equation}
+% \delta \colon Q \times \Sigma \to 2 ^{Q}
+% \end{equation}
+% 而 DFA 的状态转移函数长这个样子: 
+% \begin{equation}
+% \delta \colon Q \times \Sigma \to Q 
+% \end{equation}
+% 
+% \begin{exam}
+% 检测末尾为01的只由0和1组成的序列的 NFA. 状态转移函数如下\footnote{图就不画了, 真不会画}: 
+% \begin{figure}[h]
+% \centering
+% \begin{tabular}{|r|cc|}
+% \hline
+% & \(0\) & \(1\) \\ 
+% \hline 
+% $\to$ \(q_{0}\) & \(\{ q_{0}, q_{1}\}\) & \(\{q_{0}\}\)\\ 
+% \(q_{1	}\) & $\varnothing$ & \(\{q_{1} \}\) \\
+% \(^{*}q_{2}\) & $\varnothing$ & $\varnothing$\\
+% \hline
+% \end{tabular}
+% \end{figure}
+% 
+% \end{exam}
+% \begin{definition}[状态转移函数的拓展]
+% \(\delta\) 可以扩展为 \(\hat{\delta}\colon Q \times \Sigma ^{*} \to 2^{Q}\), 定义是递归的, 如下:
+% \[
+% \hat{\delta}(q, w) = 
+% \begin{cases}
+% q &, \text{if } w = \epsilon \\
+% \bigcup_{p\in \hat{\delta}(q,x)} \delta(p,a) & , \text{if } w = xa
+% \end{cases}
+% \]
+% 这个函数告诉了我们, 给定初态 \(q_{0}\), 以及一个输入的字符串 \(w\)之后我们的现状 (集合) 是什么. 
+% \end{definition}
+% \begin{thm}[NFA和DFA之间的等价性]\label{Thm:nfa=dfa}
+% 一个语言 \(L\) 能被 NFA 接收, 当且仅当能被 DFA 接收
+% \end{thm}
+% \begin{proof}
+% 我们需要证明的是: 给定一个 \(N\), 存在一个 \(D\) 使得 \(L (N) = L (D) \), 以及反过来的版本, 给定一个 \(D\) 存在一个 \(N\) 使得 \(L (D) = L(N)\).
+% 注意到 DFA 是一个 NFA 的一个特例, 于是我们能够知道: \(\forall D \exists N (L(D) = L(N)) \). 于是我们要证明的便是, 如果 \(L\) 能够被 NFA 接收, 那么 \(L\) 能够被 DFA 接收. 
+% 
+% 使用构造法. 给定一个 NFA , 能够构造出一个 DFA 接收 \(L\). 这里使用的构造法称为子集构造法. 原理很简单: 对于一个 NFA, 其 `现态集合' 虽然是一个集合, 但是可以视为一个 DFA 的现态. 因为状态是有限的, 所以说, 状态集合的幂集也是有限的, 若是能够将 NFA 看作是一个 DFA , 那么其现态就是一个 \(\Sigma\) 的子集, 当然次态也是一个 \(\Sigma\) 的子集. 
+% 
+% 我们给定 NFA \((Q,\Sigma,\delta, q_{0},F)\), 构造 DFA \((Q' , \Sigma, \delta ' , \{q_{0}\}, F')\), 其中 
+% \[
+% \begin{aligned}
+% & Q '  =  2 ^{\Sigma} \\ 
+% & F' = \{ S \mid S \in Q ', S \cap F  \ne \varnothing \}
+% \end{aligned}
+% \]
+% 注意到, \(\{q_{0}\}\in Q'\), 这是我们加上 \(\{\}\) 的原因. 其中 \(\delta '\) 的定义如下: 
+% \[
+% \delta ' (S, a) = \bigcup_{q_{i} \in S} \delta (q_{i}, a) 
+% \]
+% 我们需要证明 \(\forall s \in \Sigma ^{*} (\hat{\delta'} (q_{0}, s) = \hat{\delta} (q_{0},s))\). 证明等会在说. 
+% \end{proof}
+% 
+% \begin{thm}
+% \( \hat{\delta}(q_{0},s) = \hat{\delta'}(q_{0}, s)\)
+% \end{thm}
+% \begin{proof}
+% 对字符串的长度进行归纳:
+% 当长度为 \(n=0\)
+% \begin{equation}
+% \hat{\delta'} (\{q_{0}\}, \epsilon ) = \{q_{0} \}  = \hat{\delta} (q_{0}, \epsilon) 
+% \end{equation}
+% 
+% 当长度为 \(n = k\), 设假设成立.
+% 
+% 当长度为 \(n  = k  + 1\), 设 \(w = x a \), 那么 \( \hat{\delta} (q_{0}, w ) = \bigcup_{p \in \hat{\delta} (q_{0}, x) } \delta (p, a)\). 
+% 而 \( \hat{\delta'} (q_{0}, w) = \delta'  (\delta' (q_{0}, x), a)\). 后者的定义为 \(\bigcup_{p \in \hat{\delta'}(q_{0}, x)} \delta(p, a)\). 
+% 因为 \(x\) 的长度为 \(k\), 所以 \( \hat{\delta' } (q_{0}, x) = \hat{\delta} (q_{0}, x)\), 因此 \( \hat{\delta ' } (q_{0}, w) = \hat{\delta} (q_{0}, w) \) 恒成立. 
+% \begin{equation}
+% \delta ' (\delta' (q_{0}, x)) = \bigcup_{p \in \hat{\delta'} (q_{0}, x )} 
+% \delta (p, a ) = \bigcup_{p \in \hat{\delta} (q _{0}, x) } \delta (p, a ) = \hat{\delta} (q_{0}, w) 
+% \end{equation}
+% \end{proof}
+% 我们知道了 \( \hat{\delta} (q_{0}, w )  = \hat{\delta ' } (q_{0}, w )\) 之后, 就能够证明 \(L (N) = L(D)\) 了. 只需要注意到 \(L (N)\) 的定义: 对于任意的 \(s \in L (N)\), 都有 \( \hat{\delta' } (q_{0}, s) \cap F \ne \varnothing \). 我们知晓了这个定义之后就能够证明 \(L (N) = L (D)\) 了, 这是显然的. 
+% 
+% \subsubsection{NFA 转化为 DFA 的方法}
+% 使用上面的子集构造法就能够进行转化, 随后我们将不需要的状态进行删除即可. 
+% \subsection{带空转移的 NFA}
+% 空转移的意思便是, 在没有输入的时候状态可以自己发生转移, 这样的自动机记为 \(\epsilon\)-NFA, 其中 \(\epsilon\) 是空字符串的意思. 在本小节之后, 如果没有特别说明, NFA 包括 \(\epsilon\) - NFA 和 NFA. 
+% \subsubsection{\(\epsilon-\text{NFA}\) 的定义}
+% 仅有一处和 NFA 不同, 状态转移函数的定义不同: 
+% \begin{equation}
+% \delta \colon Q \times (\Sigma \cup \epsilon ) \to 2 ^{Q}
+% \end{equation}
+% 并且, 我们需要理解什么是 \(\epsilon\): 对于一个输入的字符串 \(s\), 其等价于 \(s\epsilon\), 也等价于 \(s\epsilon\epsilon\). 当然, \(\epsilon\) 插在中间也是可以的.
+% 
+% \begin{exam}
+% % TODO ! 
+% \end{exam}
+% 
+% \begin{definition}[\(\epsilon\) closure]
+% 给定一个状态集合 \(S\), 那么 \(S\) 的 \(\epsilon\) closure 为 \(S\) 并上那些当前状态通过空转能够达到的状态, 记为 \(\bar{\epsilon} (S)\). 记 \(\bigcup_{s \in S} \delta (s , \epsilon ) \) 为 \(\epsilon _{1} (S)\), 并且记 \(\bigcup_{s \in \epsilon _{1} (S)} \delta (s, \epsilon )\) 为 \(\epsilon _{2} (S) \), 那么就能够得到 \(\overline{\epsilon} (S)\) 的表达式: 
+% \begin{equation}
+% \bar\epsilon (S) = S \cup \epsilon_{1} (S) \cup \epsilon_{2	} (S) \cup \cdots
+% \end{equation}
+% 当然可以写为 
+% \begin{equation}
+% \overline{\epsilon} (S)  = \big(\bigcup_{n = 1} ^{ \infty}\epsilon_{n} (S) \big) \cup S
+% \end{equation}
+% 特别地, 可以称呼 \(S\) 为 \(\epsilon_{0} (S)\). 表达式还可以再精简一点. 
+% \end{definition}
+% 
+% 引入 \(\epsilon\) closure 的概念是为了定义 \(\hat{\delta}\), 以及下文之中 \(\epsilon\) -NFA 向 DFA 转换. 
+% \begin{definition}[\(\delta\) 函数的扩展]
+% 同样地, \(\delta'\) 的定义也是递归的. 定义如下: 
+% \begin{equation}
+% \delta' (q_{0}, w) = 
+% \begin{cases}
+% \overline{\epsilon} (q_{0}) &, \text{ if } w = \epsilon \\
+% \overline{\epsilon} \big(\bigcup_{p\in \hat{\delta'}(q _{0}, x)} \delta (p,a)\big) &, \text{ if } w = xa
+% \end{cases}
+% \end{equation}
+% \end{definition}
+% 
+% \subsubsection{空转 NFA 的性质}
+% 实际上 \(\epsilon\) - NFA 也是和 NFA 等价的, 这就是说给定一个 \(\epsilon\) - NFA , 我们能够构造出一个 NFA. 且有 \(L (N )  = L (N ' ) \). 
+% \begin{thm}[\(\epsilon\)-NFA 和 DFA 等价性] 
+% \end{thm}
+% \subsubsection{空转 NFA 转换为 DFA}
+% 方法是和前面类似的. % TODO 
 \end{document}
