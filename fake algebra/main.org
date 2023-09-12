@@ -1,5 +1,0 @@
-* main
-  :PROPERTIES:
-  :NOTER_DOCUMENT: main.pdf
-  :END:
-test

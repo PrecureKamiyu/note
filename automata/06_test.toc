@@ -1,7 +1,0 @@
-\contentsline {chapter}{\numberline {1}Pushdown automata}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}The definition of PDA}{5}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}The precise definition of the pushdown automata}{6}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Instantaneous Descriptions of a Pushdown automata}{6}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}Pushdown automata and Context Free Grammar}{7}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}From grammar to automaton}{7}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}From automaton to grammar}{8}{subsection.1.2.2}%
